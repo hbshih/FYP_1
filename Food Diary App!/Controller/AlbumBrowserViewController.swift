@@ -71,6 +71,9 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
                 }
             }
         }
+        // Reverse order
+        fileImage = fileImage.reversed()
+        caption = caption.reversed()
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
         SKPhotoBrowserOptions.displayStatusbar = false

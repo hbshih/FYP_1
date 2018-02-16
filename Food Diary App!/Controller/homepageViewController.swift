@@ -17,6 +17,7 @@ import FirebaseAnalytics
 
 class homepageViewController: UIViewController {
     
+    @IBOutlet weak var informationLabel: UILabel!
     @IBOutlet weak var dairyCircularSlider: KDCircularProgress!
     @IBOutlet weak var fruitCircularSlider: KDCircularProgress!
     @IBOutlet weak var proteinCircularSlider: KDCircularProgress!
@@ -58,24 +59,7 @@ class homepageViewController: UIViewController {
         fruitList = nutritionDic["fruitList"]!
         grainList = nutritionDic["grainList"]!
         fileName = dataHandler.getImageFilename()
-        
-        let button = UIButton(type: .roundedRect)
-        button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
-        button.setTitle("Crash", for: [])
-        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
-        view.addSubview(button)
-        
     }
-    
-    @IBAction func crashButtonTapped(_ sender: AnyObject) {
-        Crashlytics.sharedInstance().crash()
-    }
-    
-    @IBAction func errorTest(_ sender: Any)
-    {
-        Crashlytics.sharedInstance().crash()
-    }
-    
     
     override func viewDidAppear(_ animated: Bool)
     {
@@ -83,6 +67,7 @@ class homepageViewController: UIViewController {
         if fileName.count > 2 // After 2 meal
         {
             var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
+            informationLabel.text = "\(healthData.getAverageHealth())% Balance"
             healthPercentage = healthData.getAverageHealth() * 3.6
             vegetablePercentage = healthData.getEachNutritionHealthAverage()["averageVegetable"]! * 3.6
             grainPercentage = healthData.getEachNutritionHealthAverage()["averageGrain"]! * 3.6
@@ -94,18 +79,18 @@ class homepageViewController: UIViewController {
         {
             print("Haven't got enough data to show")
         }
-
+        
         animationDemo.alpha = 1
-        self.animationDemo.frame = CGRect(x: 153, y: 123, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
+        let animationStartX = circularSlider.frame.width / 2
+        let animationStartY = circularSlider.frame.height / 2
+        self.animationDemo.frame = CGRect(x: animationStartX, y: animationStartY, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-            self.animationDemo.frame = CGRect(x: 90, y: 50, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
+            self.animationDemo.frame = CGRect(x: animationStartX-30, y: animationStartY-50, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
         }) { (finish) in
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
                 self.animationDemo.alpha = 0
             }, completion: nil)
         }
-       
-
     }
     
     func showCircularSliderData()
@@ -118,7 +103,7 @@ class homepageViewController: UIViewController {
         setSliderColor(value: healthPercentage, slider: circularSlider)
         shake(layer: self.centerFace.layer)
     }
-
+    
     func setSliderColor(value: Double, slider: KDCircularProgress)
     {
         slider.animate(toAngle: value, duration: 1.5, completion: nil)

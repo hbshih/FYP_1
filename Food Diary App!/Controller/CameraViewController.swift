@@ -160,9 +160,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
         }
     }
     
+    
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let imagePicked = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let imagePicked = info[UIImagePickerControllerEditedImage] as! UIImage
         image = imagePicked
         dismiss(animated: true) {
             print("Dismissed")

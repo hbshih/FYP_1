@@ -38,7 +38,7 @@ class SettingTableViewController: UITableViewController {
             performSegue(withIdentifier: "dataSettingsSegue", sender: nil)
         }else if indexPath.row == 2
         {
-                        performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            performSegue(withIdentifier: "privatePolicySegue", sender: nil)
         }else if indexPath.row == 3
         {
             performSegue(withIdentifier: "privatePolicySegue", sender: nil)

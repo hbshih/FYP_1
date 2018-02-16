@@ -16,6 +16,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var centerImage: UIImageView!
     @IBOutlet weak var navDash: UINavigationItem!
+    @IBOutlet weak var informationLabel: UILabel!
     // General Variables
     var images: [UIImage] = []
     var fileName: [String] = []
@@ -69,6 +70,7 @@ class DashboardViewController: UIViewController {
     
     func buildDashboard()
     {
+        informationLabel.text = "Your Recent \(dashboardType!)"
         var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
 
         if dashboardType == "Vegetable"

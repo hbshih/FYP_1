@@ -63,12 +63,18 @@ struct HealthPercentageCalculator
         proteinStandard = userPlan [4]
         
         self.fileName = getTrimmedDate(Name: fileNames)
-        dairyList = nutritionDic["dairyList"]!
-        vegetableList = nutritionDic["vegetableList"]!
-        proteinList = nutritionDic["proteinList"]!
-        fruitList = nutritionDic["fruitList"]!
-        grainList = nutritionDic["grainList"]!
-        calculateOverallHealthRate()
+        if fileName.count > 0
+        {
+            dairyList = nutritionDic["dairyList"]!
+            vegetableList = nutritionDic["vegetableList"]!
+            proteinList = nutritionDic["proteinList"]!
+            fruitList = nutritionDic["fruitList"]!
+            grainList = nutritionDic["grainList"]!
+            calculateOverallHealthRate()
+        }else
+        {
+            print("Nothing is inside")
+        }
     }
     
     private mutating func calculateOverallHealthRate()
@@ -220,6 +226,8 @@ struct HealthPercentageCalculator
     
     mutating func getTrimmedDate(Name: [String]) -> [String]
     {
+        if Name.count > 0
+        {
         var newFileName: [String] = []
         for i in 0 ..< Name.count
         {
@@ -228,6 +236,10 @@ struct HealthPercentageCalculator
             newFileName.append(String(date))
         }
         return newFileName
+        }else
+        {
+            return []
+        }
     }
     
     mutating func getTrimmedDate() -> [String]
@@ -238,6 +250,11 @@ struct HealthPercentageCalculator
     mutating func getDayBalancePercentage() -> [Double]
     {
         return dayBalancePercentage
+    }
+    
+    mutating func getElementPercentage() -> [String:Double]
+    {
+        return ["Vegetable":averageVegetable,"Grain":averageGrain,"Protein":averageProtein,"Fruit":averageFruit,"Dairy":averageDairy]
     }
     
     mutating func getAverageHealth() -> Double

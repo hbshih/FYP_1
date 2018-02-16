@@ -16,7 +16,7 @@ class OnBoardingViewController: UIViewController {
     var swiftyOnboard: SwiftyOnboard!
     let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.6476797462, blue: 0, alpha: 1),#colorLiteral(red: 0.2067656815, green: 0.8225870728, blue: 1, alpha: 1)]
     var titleArray: [String] = ["Welcome to FoodyLife!", "Make food tracking easy", "Balance your diet", "Become Healthier!"]
-    var subTitleArray: [String] = ["Confess lets you anonymously\n send confessions to your friends\n and receive confessions from them.", "All confessions sent are\n anonymous. Your friends will only\n know that it came from one of\n their facebook friends.", "Be nice to your friends.\n Send them confessions that\n will make them smile :)","Be nice to your friends.\n Send them confessions that\n will make them smile :)"]
+    var subTitleArray: [String] = ["Keeping track of what you eat\nhelps you eat right and make\nhealthier food decisions, that\nmuch is given.", "Tracking what you eat has never\nbeen easier. Takes a picture and\nrecord it with simple and intuitive\ninterface.", "You can see your overall balance\non the dashboard and try to make\nhealthier choices to help you get\nmore balanced.","Without a focus on calories, you\ncan take a closer look at the\nchoices you're making and if\nthey're really helping you reach\nyour goals or not."]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view
@@ -43,19 +43,6 @@ class OnBoardingViewController: UIViewController {
             swiftyOnboard.dataSource = self as SwiftyOnboardDataSource
             swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
         }
-        /*
-        if ShowOnBoard == nil || ShowOnBoard == false
-        {
-            gradient()
-            UIApplication.shared.statusBarStyle = .lightContent
-            swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
-            view.addSubview(swiftyOnboard)
-            swiftyOnboard.dataSource = self as SwiftyOnboardDataSource
-            swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
-        }else
-        {
-            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
-        }*/
     }
     
     func gradient() {

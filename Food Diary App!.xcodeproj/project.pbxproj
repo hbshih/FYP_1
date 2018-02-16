@@ -16,9 +16,11 @@
 		B508F577201D37330025205C /* apple.json in Resources */ = {isa = PBXBuildFile; fileRef = B508F576201D37330025205C /* apple.json */; };
 		B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */ = {isa = PBXBuildFile; fileRef = B5214F96201FC53C008E66F4 /* HomeScreenAni.json */; };
 		B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */; };
+		B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52FD02A2031BF6700C41331 /* nougatine.ttf */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
 		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
+		B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
 		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
@@ -101,9 +103,11 @@
 		B508F576201D37330025205C /* apple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple.json; sourceTree = "<group>"; };
 		B5214F96201FC53C008E66F4 /* HomeScreenAni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeScreenAni.json; sourceTree = "<group>"; };
 		B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHomePageViewController.swift; sourceTree = "<group>"; };
+		B52FD02A2031BF6700C41331 /* nougatine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nougatine.ttf; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
 		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
+		B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDataViewController.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
 		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 		B570B1062025F79E008BF8BC /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				B52FD02A2031BF6700C41331 /* nougatine.ttf */,
 				B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */,
 				B570B1002025F771008BF8BC /* Montserrat-Light.otf */,
 				B570B1012025F776008BF8BC /* Montserrat-Medium.otf */,
@@ -310,6 +315,7 @@
 				B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */,
 				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
 				B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */,
+				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 			files = (
 				B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */,
 				B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */,
+				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B5ED8499201D32C8009062D7 /* data.json in Resources */,
 				B5ED8495201D152D009062D7 /* appleOrange.json in Resources */,
@@ -744,6 +751,7 @@
 				B58066FF201E763A00F8FB89 /* validate.swift in Sources */,
 				B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
+				B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */,
 				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,
 				B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */,

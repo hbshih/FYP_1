@@ -156,7 +156,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
         let currentTime = Date()
-        let currentFileName = "img\(format.string(from: currentTime))"
+        
+        let currentFileName = "img\(format.string(from: currentTime)).jpg"
         saveImage(imageName: currentFileName, time: currentTime)
     }
 
@@ -275,7 +276,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         let InstructionPopUpVC = InstructionPopUpViewController(nibName: "InstructionPopUpViewController", bundle: nil)
         
         // Create the dialog
-        let popup = PopupDialog(viewController: InstructionPopUpVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        let popup = PopupDialog(viewController: InstructionPopUpVC, buttonAlignment: .horizontal, transitionStyle: .bounceUp, preferredWidth: 320, gestureDismissal: true, hideStatusBar: true)
         
         // Create first button
         let buttonOne = CancelButton(title: "I understand now", height: 60) {

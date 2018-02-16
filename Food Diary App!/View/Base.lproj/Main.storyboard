@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cmF-4V-OWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W60-A2-Qhn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,6 +25,12 @@
         </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
+        </array>
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="nougatine.ttf">
+            <string>Nougatine</string>
         </array>
     </customFonts>
     <scenes>
@@ -84,9 +90,11 @@
                                 <color key="backgroundColor" white="0.90383232660000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-wO-851">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-wO-851">
                                 <rect key="frame" x="319" y="565" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vb3-wO-851" secondAttribute="height" multiplier="1:1" id="xLx-05-LiN"/>
+                                </constraints>
                                 <state key="normal" image="Icon_UploadPhoto"/>
                                 <connections>
                                     <action selector="uploadPhotoTapped:" destination="uJU-0g-e3D" eventType="touchUpInside" id="ZYm-lm-9rf"/>
@@ -103,8 +111,10 @@
                             <constraint firstItem="fi3-dc-S05" firstAttribute="leading" secondItem="3b5-ph-nPh" secondAttribute="leading" id="k1b-H5-T5L"/>
                             <constraint firstItem="fi3-dc-S05" firstAttribute="top" secondItem="3b5-ph-nPh" secondAttribute="top" constant="84" id="kBW-aO-Z8g"/>
                             <constraint firstItem="2do-0H-5nE" firstAttribute="centerX" secondItem="3b5-ph-nPh" secondAttribute="centerX" id="ly1-8n-C8d"/>
+                            <constraint firstItem="Vb3-wO-851" firstAttribute="centerY" secondItem="2do-0H-5nE" secondAttribute="centerY" id="m4b-mQ-aK7"/>
                             <constraint firstItem="qQs-L8-RbV" firstAttribute="top" secondItem="3b5-ph-nPh" secondAttribute="top" constant="20" id="pyL-3i-p1D"/>
                             <constraint firstItem="fi3-dc-S05" firstAttribute="trailing" secondItem="3b5-ph-nPh" secondAttribute="trailing" id="ygl-cn-eD6"/>
+                            <constraint firstItem="3b5-ph-nPh" firstAttribute="trailing" secondItem="Vb3-wO-851" secondAttribute="trailing" constant="16" id="ymc-Z6-ERt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3b5-ph-nPh"/>
                     </view>
@@ -466,6 +476,7 @@
                                         <state key="normal" image="Button_Done"/>
                                         <connections>
                                             <action selector="completeTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="kxl-zq-omd"/>
+                                            <segue destination="cmF-4V-OWw" kind="show" id="P6Q-cY-eKc"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-gu-p5a">
@@ -1098,13 +1109,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no sincerer love than the love of food." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRq-ls-G3G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25% Balance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRq-ls-G3G">
                                         <rect key="frame" x="16" y="331" width="333" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6KH-To-9SL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Nougatine" family="Nougatine" pointSize="18"/>
+                                        <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1226,13 +1237,14 @@
                         <outlet property="dairyCircularSlider" destination="j4c-vc-uFF" id="bWo-eE-Y9u"/>
                         <outlet property="fruitCircularSlider" destination="5VP-4v-3th" id="WBL-9A-39S"/>
                         <outlet property="grainCircularSlider" destination="0S9-uk-EOq" id="Fwi-zQ-IRC"/>
+                        <outlet property="informationLabel" destination="TRq-ls-G3G" id="98c-6W-xH6"/>
                         <outlet property="proteinCircularSlider" destination="aIr-3K-YQA" id="XwJ-GC-Sy0"/>
                         <outlet property="vegetableCircularSlider" destination="f8U-iT-VGW" id="MU5-Du-8Of"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRB-bk-hPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="96"/>
+            <point key="canvasLocation" x="637.60000000000002" y="95.802098950524751"/>
         </scene>
         <!--Introduction View Controller-->
         <scene sceneID="1V3-NW-7Bm">
@@ -2020,23 +2032,27 @@
                         <segue destination="Rfo-VF-Sm2" kind="show" identifier="nutritionSettings" id="Bqe-XT-nk5"/>
                         <segue destination="W5e-3X-GdF" kind="show" identifier="dataSettingsSegue" id="0J7-0e-fl3"/>
                         <segue destination="2pa-mW-Wbs" kind="show" identifier="privatePolicySegue" id="4Om-yT-r5s"/>
+                        <segue destination="XaQ-dj-0Ww" kind="show" identifier="reportABugSegue" id="RTM-ds-6I9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYK-pa-7WH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1219" y="2511"/>
         </scene>
-        <!--View Controller-->
+        <!--Clear Data View Controller-->
         <scene sceneID="kWY-6b-kzd">
             <objects>
-                <viewController id="W5e-3X-GdF" sceneMemberID="viewController">
+                <viewController id="W5e-3X-GdF" customClass="ClearDataViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-7O-JEB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3z-5R-VTh">
-                                <rect key="frame" x="141" y="72.5" width="93" height="30"/>
+                                <rect key="frame" x="141" y="98.5" width="93" height="30"/>
                                 <state key="normal" title="Clear All Data"/>
+                                <connections>
+                                    <action selector="clearData:" destination="W5e-3X-GdF" eventType="touchUpInside" id="DFz-RZ-2yn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2063,63 +2079,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Privacy Policy
-
 Hau-Ben Benjamin Shih built the FoodyLife app as a Free app. This SERVICE is provided by Hau-Ben Benjamin Shih at no cost and is intended for use as is.
-
 This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
-
 If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
-
 The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at FoodyLife unless otherwise defined in this Privacy Policy.
-
 Information Collection and Use
-
 For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request is retained on your device and is not collected by me in any way
-
 The app does use third party services that may collect information used to identify you.
-
 Link to privacy policy of third party service providers used by the app
-
-Firebase Analytics
+* Firebase Analytics
+* Crashlytics
 Log Data
-
 I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
-
 Cookies
-
 Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your device internal memory.
-
 This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
-
 Service Providers
-
 I may employ third-party companies and individuals due to the following reasons:
-
-To facilitate our Service;
-To provide the Service on our behalf;
-To perform Service-related services; or
-To assist us in analyzing how our Service is used.
+* To facilitate our Service;
+* To provide the Service on our behalf;
+* To perform Service-related services; or
+* To assist us in analyzing how our Service is used.
 I want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
-
 Security
-
 I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
-
 Links to Other Sites
-
 This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
-
 Children’s Privacy
-
 These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.
-
 Changes to This Privacy Policy
-
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
-
 Contact Us
-
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me. h.b.shih@se15.qmul.ac.uk</string>
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at h.b.shih@se15.qmul.ac.uk
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2136,7 +2128,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a83-Vd-nhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2265" y="3505.9859154929577"/>
+            <point key="canvasLocation" x="2367" y="3495"/>
         </scene>
         <!--Send Feedback View Controller-->
         <scene sceneID="oLf-VV-uCM">
@@ -2146,6 +2138,10 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image_Background" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-6N-UWj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-WP-waS" customClass="AnimatableTextView" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="93" width="343" height="224"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2178,8 +2174,12 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-I0-NIB">
-                                <rect key="frame" x="169" y="357" width="36" height="30"/>
+                                <rect key="frame" x="160.5" y="357" width="54" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendBugFeedback:" destination="XaQ-dj-0Ww" eventType="touchUpInside" id="qas-nM-PVY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2196,28 +2196,13 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                         <viewLayoutGuide key="safeArea" id="xPj-n5-pzl"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextfield" destination="PHo-aM-URj" id="zWD-9r-0wZ"/>
-                        <outlet property="feedbackTextField" destination="R5U-WP-waS" id="4cu-Vg-Uvm"/>
+                        <outlet property="emailTextfield" destination="PHo-aM-URj" id="dR6-Ss-UnK"/>
+                        <outlet property="feedbackMessage" destination="R5U-WP-waS" id="fUD-w7-Vpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ5-sF-Vib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274.375" y="4211.0915492957747"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="uHa-kb-1CL">
-            <objects>
-                <viewController id="AKX-cg-1Ib" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LhU-If-vFq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="V17-Fd-OQD"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0n4-xS-iAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2287" y="4930"/>
+            <point key="canvasLocation" x="2272.8000000000002" y="4210.3448275862074"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="qJ2-b3-d1Q">
@@ -2322,6 +2307,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                     <connections>
                         <outlet property="centerImage" destination="S64-hM-eVx" id="6oq-H0-R8j"/>
                         <outlet property="circularProgress" destination="qA0-IQ-J7y" id="mY0-SB-dUi"/>
+                        <outlet property="informationLabel" destination="vBJ-8h-QYx" id="nKt-Yc-qTk"/>
                         <outlet property="navDash" destination="FHi-8x-107" id="sjr-3c-qfc"/>
                         <outlet property="scrollView" destination="7k3-3J-pdv" id="aaF-ds-mMU"/>
                     </connections>
@@ -2351,8 +2337,8 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                 <color key="textColor" red="0.31372871994972229" green="0.31372123956680298" blue="0.31372275948524475" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Average Nutritions Recently" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbH-tm-D35">
-                                <rect key="frame" x="81.5" y="149" width="211" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your all-time average score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbH-tm-D35">
+                                <rect key="frame" x="101.5" y="149" width="172" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.4237537682056427" green="0.42726463079452515" blue="0.43529179692268372" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -2378,17 +2364,35 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Asl-CL-cpp">
+                                <rect key="frame" x="152" y="177" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="44e-OA-YM1"/>
+                                    <constraint firstAttribute="width" constant="70" id="9a2-WM-SPl"/>
+                                    <constraint firstAttribute="width" secondItem="Asl-CL-cpp" secondAttribute="height" multiplier="1:1" id="pkp-c7-Y0c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a type of vegetable human " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au1-vD-K5T">
+                                <rect key="frame" x="59" y="255" width="257.5" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.4237537682056427" green="0.42726463079452515" blue="0.43529179692268372" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ign-TW-UDc" firstAttribute="centerX" secondItem="epl-ay-jib" secondAttribute="centerX" id="1am-vf-WVw"/>
+                            <constraint firstItem="Asl-CL-cpp" firstAttribute="top" secondItem="HbH-tm-D35" secondAttribute="bottom" constant="8" id="1rQ-b8-ELD"/>
                             <constraint firstItem="HbH-tm-D35" firstAttribute="top" secondItem="Ign-TW-UDc" secondAttribute="bottom" constant="-6" id="1ra-Tu-wWO"/>
+                            <constraint firstItem="Au1-vD-K5T" firstAttribute="top" secondItem="Asl-CL-cpp" secondAttribute="bottom" constant="8" id="Ant-gO-3Ur"/>
                             <constraint firstItem="uxy-TI-eGl" firstAttribute="leading" secondItem="epl-ay-jib" secondAttribute="leading" id="OaK-CK-QSH"/>
                             <constraint firstItem="uxy-TI-eGl" firstAttribute="bottom" secondItem="epl-ay-jib" secondAttribute="bottom" id="R4C-l2-HIg"/>
+                            <constraint firstItem="Au1-vD-K5T" firstAttribute="centerX" secondItem="epl-ay-jib" secondAttribute="centerX" id="ef4-Ys-4EQ"/>
                             <constraint firstItem="HbH-tm-D35" firstAttribute="centerX" secondItem="Ign-TW-UDc" secondAttribute="centerX" id="hLv-HU-Ool"/>
                             <constraint firstItem="Ign-TW-UDc" firstAttribute="top" secondItem="NUM-UL-3Fu" secondAttribute="bottom" constant="25" id="hXh-yB-hml"/>
                             <constraint firstItem="uxy-TI-eGl" firstAttribute="trailing" secondItem="epl-ay-jib" secondAttribute="trailing" id="igI-fI-amL"/>
                             <constraint firstItem="epl-ay-jib" firstAttribute="top" secondItem="NUM-UL-3Fu" secondAttribute="bottom" constant="-44" id="jRw-z7-5LG"/>
+                            <constraint firstItem="Asl-CL-cpp" firstAttribute="centerX" secondItem="epl-ay-jib" secondAttribute="centerX" id="qDl-EA-oMo"/>
                             <constraint firstItem="NUM-UL-3Fu" firstAttribute="leading" secondItem="epl-ay-jib" secondAttribute="leading" id="sop-M4-EsP"/>
                             <constraint firstAttribute="trailing" secondItem="NUM-UL-3Fu" secondAttribute="trailing" id="szj-oe-2F0"/>
                         </constraints>
@@ -2403,12 +2407,14 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                     <connections>
                         <outlet property="graphField" destination="uxy-TI-eGl" id="jRx-jM-PGN"/>
                         <outlet property="percentageLabel" destination="Ign-TW-UDc" id="GhQ-5W-BXc"/>
+                        <outlet property="typeHumanLabel" destination="Au1-vD-K5T" id="OFE-he-QGD"/>
+                        <outlet property="typeImage" destination="Asl-CL-cpp" id="wCh-c4-vKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFi-Q1-DQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="4ut-Kc-D5w" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="1388"/>
+            <point key="canvasLocation" x="1628" y="1387.5562218890557"/>
         </scene>
         <!--Diary-->
         <scene sceneID="QiT-w3-ISs">
@@ -2561,7 +2567,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
             <objects>
                 <tableViewController id="Rfo-VF-Sm2" customClass="NutritionSettingTableViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OZT-ea-d9S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -2851,6 +2857,24 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
             </objects>
             <point key="canvasLocation" x="2266.4000000000001" y="2090.5547226386807"/>
         </scene>
+        <!--On Boarding View Controller-->
+        <scene sceneID="qHn-Is-S6p">
+            <objects>
+                <viewController id="W60-A2-Qhn" customClass="OnBoardingViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Frc-ip-shz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oUo-cE-rGp"/>
+                    </view>
+                    <connections>
+                        <segue destination="cmF-4V-OWw" kind="show" identifier="getStartedSegue" id="BLB-XI-lgn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3f-se-l3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2262" y="-590"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qm0-r2-Jrb">
             <objects>
@@ -2861,6 +2885,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Nougatine" family="Nougatine" pointSize="21"/>
                             <color key="textColor" red="0.9184148907661438" green="0.63305550813674927" blue="0.25474673509597778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
@@ -2906,6 +2931,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
         <image name="Icon_Vegetable" width="147" height="148"/>
         <image name="Icon_VegetableBlank" width="47" height="47"/>
         <image name="Icon_VegetableBlank-1" width="47" height="60"/>
+        <image name="Image_Background" width="375" height="667"/>
         <image name="Image_PlateDairy" width="39" height="38"/>
         <image name="Image_PlateFruit" width="37" height="31"/>
         <image name="Image_PlateGrain" width="42" height="36"/>
@@ -12173,13 +12199,13 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hdb-Cv-0Ws"/>
+        <segue reference="P6Q-cY-eKc"/>
         <segue reference="J5g-rl-4FN"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="HzW-k9-dOE"/>
         <segue reference="DSz-U6-guT"/>
-        <segue reference="Byg-c1-ksH"/>
+        <segue reference="gZZ-Bc-RPw"/>
         <segue reference="1gd-EK-yKm"/>
-        <segue reference="v1n-Cz-j5E"/>
+        <segue reference="wSv-ml-raZ"/>
     </inferredMetricsTieBreakers>
 </document>
