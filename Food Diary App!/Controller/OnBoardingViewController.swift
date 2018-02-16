@@ -77,6 +77,7 @@ class OnBoardingViewController: UIViewController {
         // Create first button
         let buttonOne = CancelButton(title: "DECIDE LATER", height: 60) {
             self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
+            self.defaults.setPlanStandard(value: selectPlanVC.custom)
         }
         
         // Create second button

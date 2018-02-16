@@ -104,6 +104,7 @@ struct CoreDataHandler
                 {
                     if let imageName = result.value(forKey: "imageName") as? String
                     {
+                        print(imageName)
                         // Store data in the corresponding array
                         if let grain_value = result.value(forKey: "n_Grain") as? Double
                         {

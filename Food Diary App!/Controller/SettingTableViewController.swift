@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
-
+class SettingTableViewController: UITableViewController
+{
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,17 +38,17 @@ class SettingTableViewController: UITableViewController {
             performSegue(withIdentifier: "dataSettingsSegue", sender: nil)
         }else if indexPath.row == 2
         {
-            performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            performSegue(withIdentifier: "conditionSegue", sender: nil)
         }else if indexPath.row == 3
         {
-            performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            performSegue(withIdentifier: "privacySegue", sender: nil)
         }else if indexPath.row == 4
         {
             performSegue(withIdentifier: "reportABugSegue", sender: nil)
         }else
         {
-            performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            performSegue(withIdentifier: "licenseSegue", sender: nil)
         }
-        
     }
+
 }

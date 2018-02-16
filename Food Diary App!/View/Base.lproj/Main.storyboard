@@ -89,8 +89,8 @@
                                 <color key="backgroundColor" white="0.90383232660000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-wO-851">
-                                <rect key="frame" x="319" y="565" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-wO-851">
+                                <rect key="frame" x="320" y="565.5" width="39" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vb3-wO-851" secondAttribute="height" multiplier="1:1" id="xLx-05-LiN"/>
                                 </constraints>
@@ -430,7 +430,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Add your story" id="xV4-ER-qJi">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="raU-yn-sNr">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="raU-yn-sNr">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V9S-SR-LUO">
                                                 <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -440,7 +440,7 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="buF-2q-tdZ">
+                                        <barButtonItem key="rightBarButtonItem" style="done" id="buF-2q-tdZ">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7EP-wg-rwE">
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -552,10 +552,9 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX5-S5-uSv">
-                                                                <rect key="frame" x="8" y="30" width="24" height="10"/>
+                                                                <rect key="frame" x="14.5" y="30" width="11.5" height="10"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="10" id="6CW-CF-tOS"/>
-                                                                    <constraint firstAttribute="width" constant="24" id="aSs-3B-3Lr"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
                                                                 <nil key="textColor"/>
@@ -591,7 +590,6 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="4ew-bX-clm" firstAttribute="leading" secondItem="mgB-HA-Abf" secondAttribute="leading" constant="5" id="6OB-oY-JlD"/>
-                                                            <constraint firstItem="PVz-H0-BWC" firstAttribute="leading" secondItem="mgB-HA-Abf" secondAttribute="leading" id="8K2-3c-j8E"/>
                                                             <constraint firstAttribute="trailing" secondItem="4ew-bX-clm" secondAttribute="trailing" constant="5" id="GyJ-EN-VsH"/>
                                                             <constraint firstAttribute="trailing" secondItem="PVz-H0-BWC" secondAttribute="trailing" id="O1Z-zi-I5J"/>
                                                             <constraint firstItem="4ew-bX-clm" firstAttribute="top" secondItem="mgB-HA-Abf" secondAttribute="top" id="ZrT-yt-5Xd"/>
@@ -1214,7 +1212,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
-                                    <segue destination="E19-NE-F9i" kind="modal" id="atG-Nb-E9s"/>
+                                    <segue destination="E19-NE-F9i" kind="presentation" id="atG-Nb-E9s"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1398,7 +1396,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="About FoodyLife" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SfA-zy-VYS">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Open Source License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SfA-zy-VYS">
                                                     <rect key="frame" x="60" y="0.0" width="280" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1421,11 +1419,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="58p-tm-y12">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="4pe-rb-ga2">
+                        <barButtonItem key="leftBarButtonItem" image="Background_Image" id="4pe-rb-ga2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D1t-Lt-9j6">
                                 <rect key="frame" x="16" y="6" width="86" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Button_Back_Orange"/>
+                                <state key="normal" title="Back" image="Button_Back_Orange"/>
                                 <connections>
                                     <segue destination="kmQ-HH-xb9" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="gZZ-Bc-RPw"/>
                                 </connections>
@@ -1435,8 +1433,10 @@
                     <connections>
                         <segue destination="Rfo-VF-Sm2" kind="show" identifier="nutritionSettings" id="Bqe-XT-nk5"/>
                         <segue destination="W5e-3X-GdF" kind="show" identifier="dataSettingsSegue" id="0J7-0e-fl3"/>
-                        <segue destination="2pa-mW-Wbs" kind="show" identifier="privatePolicySegue" id="4Om-yT-r5s"/>
+                        <segue destination="2pa-mW-Wbs" kind="show" identifier="privacySegue" id="4Om-yT-r5s"/>
                         <segue destination="XaQ-dj-0Ww" kind="show" identifier="reportABugSegue" id="RTM-ds-6I9"/>
+                        <segue destination="egZ-GT-JZP" kind="show" identifier="conditionSegue" id="irg-Ww-RIo"/>
+                        <segue destination="gkd-w1-6Hu" kind="show" identifier="licenseSegue" id="zks-Nf-6vF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYK-pa-7WH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1492,6 +1492,7 @@ For a better experience, while using our Service, I may require you to provide u
 The app does use third party services that may collect information used to identify you.
 Link to privacy policy of third party service providers used by the app
 * Firebase Analytics
+* Fabric
 * Crashlytics
 Log Data
 I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
@@ -1514,25 +1515,25 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 Changes to This Privacy Policy
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
 Contact Us
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at h.b.shih@se15.qmul.ac.uk
-</string>
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at h.b.shih@se15.qmul.ac.uk.
+This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="top" secondItem="vvz-3Y-PJo" secondAttribute="top" id="E9p-DX-vPD"/>
-                            <constraint firstAttribute="bottom" secondItem="7Vs-aH-JPg" secondAttribute="bottom" id="SEu-4f-cDS"/>
-                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="leading" secondItem="vvz-3Y-PJo" secondAttribute="leading" id="YcH-7o-huq"/>
-                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="trailing" secondItem="vvz-3Y-PJo" secondAttribute="trailing" id="jpI-ph-LFI"/>
+                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="leading" secondItem="vvz-3Y-PJo" secondAttribute="leading" id="JN6-6m-rjM"/>
+                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="bottom" secondItem="vvz-3Y-PJo" secondAttribute="bottom" id="dKP-iK-Rrd"/>
+                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="top" secondItem="vvz-3Y-PJo" secondAttribute="top" id="j9A-iF-AFm"/>
+                            <constraint firstItem="7Vs-aH-JPg" firstAttribute="trailing" secondItem="vvz-3Y-PJo" secondAttribute="trailing" id="pY3-1r-ru6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vvz-3Y-PJo"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a83-Vd-nhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367" y="3495"/>
+            <point key="canvasLocation" x="2393" y="3511"/>
         </scene>
         <!--Send Feedback View Controller-->
         <scene sceneID="oLf-VV-uCM">
@@ -1666,7 +1667,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Dashboard" id="FHi-8x-107">
-                                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="plain" id="UCD-IP-gSb">
+                                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="done" id="UCD-IP-gSb">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xkx-2g-xTJ">
                                                 <rect key="frame" x="16" y="8" width="82" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1755,7 +1756,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Recent Report" id="XfR-Zc-dGD">
-                                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="plain" id="Pfo-r0-Ber">
+                                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="done" id="Pfo-r0-Ber">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="38S-eF-gcR">
                                                 <rect key="frame" x="16" y="8" width="82" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1898,7 +1899,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Album" id="L5A-wI-3XO">
-                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" id="v1o-uQ-err">
+                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="done" id="v1o-uQ-err">
                             <color key="tintColor" red="0.91059392690658569" green="0.59351462125778198" blue="0.2429879903793335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="K1M-cg-dHG" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="GHi-nD-NU8"/>
@@ -2287,6 +2288,233 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHV-Oq-gib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1364" y="-589"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4pZ-08-F4U">
+            <objects>
+                <viewController id="egZ-GT-JZP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1H4-nW-2FX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-Et-VGc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Terms &amp; Conditions
+By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to Hau-Ben Benjamin Shih.
+Hau-Ben Benjamin Shih is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.
+The FoodyLife app stores and processes personal data that you have provided to us, in order to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the FoodyLife app won’t work properly or at all.
+You should be aware that there are certain things that Hau-Ben Benjamin Shih will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but Hau-Ben Benjamin Shih cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.
+
+If you’re using the app outside of an area with Wi-Fi, you should remember that your terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.
+Along the same lines, Hau-Ben Benjamin Shih cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, Hau-Ben Benjamin Shih cannot accept responsibility
+With respect to Hau-Ben Benjamin Shih’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavour to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. Hau-Ben Benjamin Shih accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.
+At some point, we may wish to update the app. The app is currently available on Android and iOS – the requirements for both systems (and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. Hau-Ben Benjamin Shih does not promise that it will always update the app so that it is relevant to you and/or works with the iOS/Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.
+Changes to This Terms and Conditions
+I may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page. These changes are effective immediately after they are posted on this page.
+Contact Us
+If you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me  h.b.shih@se15.qmul.ac.uk.
+This Terms and Conditions page was generated by App Privacy Policy Generator</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jFn-Et-VGc" firstAttribute="top" secondItem="ZCN-Ki-F1a" secondAttribute="top" id="7ud-DG-Xef"/>
+                            <constraint firstItem="jFn-Et-VGc" firstAttribute="bottom" secondItem="ZCN-Ki-F1a" secondAttribute="bottom" id="QVf-73-pal"/>
+                            <constraint firstItem="jFn-Et-VGc" firstAttribute="trailing" secondItem="ZCN-Ki-F1a" secondAttribute="trailing" id="vXp-Un-h7J"/>
+                            <constraint firstItem="jFn-Et-VGc" firstAttribute="leading" secondItem="ZCN-Ki-F1a" secondAttribute="leading" id="xxL-lo-ceH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZCN-Ki-F1a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibD-uD-nMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3279" y="3511"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6Dr-ja-L6q">
+            <objects>
+                <viewController id="gkd-w1-6Hu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y8S-NH-pYs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tda-vd-mLp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">The following sets forth attribution notices for third party software that may be contained in this application.  Designs Related
+Logo inspired by Shannon Hargis
+https://dribbble.com/shannonhargis 
+
+On boarding page 1, image credits to Shannon Hargis
+https://dribbble.com/shannonhargis 
+
+On boarding page 4, image credits to Mohit Sharma
+https://dribbble.com/thearteesta
+
+————————
+
+Frameworks Related
+IBAnimatable
+MIT License
+https://github.com/IBAnimatable/IBAnimatable 
+Copyright (c) 2015 IBAnimatable  
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+SKPhotoBrowser
+MIT License
+https://github.com/suzuki-0000/SKPhotoBrowser 
+Copyright (c) 2015 suzuki_keishi
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. 
+SCLAlertView
+MIT License
+https://github.com/vikmeup/SCLAlertView-Swift
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+IQKeyboardManagerSwift', ‘5.0.0'
+MIT License
+https://github.com/hackiftekhar/IQKeyboardManager
+Copyright (c) 2013-2017 Iftekhar Qurashi
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ScrollableGraphView
+MIT License
+https://github.com/philackm/ScrollableGraphView
+Copyright (c) 2016 Phillip
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+SwiftyOnboard
+MIT License
+https://github.com/juanpablofernandez/SwiftyOnboard
+Copyright (c) 2017 Juan Pablo Fernandez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+PopupDialog
+MIT License
+https://github.com/Orderella/PopupDialog
+Copyright (c) 2016 Orderella Ltd. (http://orderella.co.uk)
+Author - Martin Wildfeuer (http://www.mwfire.de)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Sky floating
+https://github.com/Skyscanner/SkyFloatingLabelTextField
+Copyright {2004} {Skyscanner}
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tda-vd-mLp" firstAttribute="top" secondItem="etb-cR-jYG" secondAttribute="top" id="Y3w-gB-ikR"/>
+                            <constraint firstItem="tda-vd-mLp" firstAttribute="trailing" secondItem="etb-cR-jYG" secondAttribute="trailing" id="iyf-pV-IEZ"/>
+                            <constraint firstItem="tda-vd-mLp" firstAttribute="bottom" secondItem="etb-cR-jYG" secondAttribute="bottom" id="mSB-XX-gEX"/>
+                            <constraint firstItem="tda-vd-mLp" firstAttribute="leading" secondItem="etb-cR-jYG" secondAttribute="leading" id="rFL-1e-Peu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="etb-cR-jYG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rdt-K8-ya9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4308" y="3511"/>
         </scene>
     </scenes>
     <resources>
@@ -11580,12 +11808,11 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7ie-RC-BjS"/>
         <segue reference="P6Q-cY-eKc"/>
         <segue reference="J5g-rl-4FN"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="gZZ-Bc-RPw"/>
         <segue reference="GHi-nD-NU8"/>
-        <segue reference="v1n-Cz-j5E"/>
+        <segue reference="wSv-ml-raZ"/>
     </inferredMetricsTieBreakers>
 </document>

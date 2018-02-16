@@ -18,7 +18,7 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
     private var selectedOption = ""
     private let maleDefaultSet = [9.0,4.0,7.0,2.0,3.0]
     private let femaleDefauthSet = [6.0,3.0,6.0,2.0,3.0]
-    private let custom = [1.0,2.0,3.0,4.0,5.0]
+    let custom = [1.0,2.0,3.0,4.0,5.0]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
