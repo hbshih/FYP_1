@@ -9,9 +9,9 @@
 import UIKit
 import SCLAlertView
 import FirebaseDatabase
-import FirebaseAuth
+//import FirebaseAuth
 import CoreData
-import Spring
+//import Spring
 import Crashlytics
 import FirebaseAnalytics
 

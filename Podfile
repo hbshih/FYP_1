@@ -9,7 +9,7 @@ target 'Food Diary App!' do
 
   # Pods for Food Diary App!
   pod 'Firebase/Core'
-  pod 'Firebase/Auth'
+  #pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'IBAnimatable'
   pod 'SKPhotoBrowser'
@@ -18,14 +18,14 @@ target 'Food Diary App!' do
   pod 'ScrollableGraphView'
   #pod 'SkyFloatingLabelTextField', '~> 3.0'
   #pod 'ACFloatingTextfield-Swift', '~> 1.7'
-  pod ‘FBSDKCoreKit’
-  pod ‘FBSDKShareKit’
-  pod ‘FBSDKLoginKit’
-  pod 'lottie-ios'
-  pod 'RAMAnimatedTabBarController'
+  #pod ‘FBSDKCoreKit’
+  #pod ‘FBSDKShareKit’
+  #pod ‘FBSDKLoginKit’
+  #pod 'lottie-ios'
+  #pod 'RAMAnimatedTabBarController'
   pod 'SwiftyOnboard'
   pod 'PopupDialog'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  #pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'Firebase/Performance'

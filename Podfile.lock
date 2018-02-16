@@ -1,119 +1,107 @@
 PODS:
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
-  - FBSDKCoreKit (4.29.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.29.0):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.29.0):
-    - FBSDKCoreKit
-  - Firebase/Auth (4.0.4):
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
+  - Firebase/Core (4.8.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.13)
+  - Firebase/Database (4.8.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.0.0)
-  - Firebase/Core (4.0.4):
-    - FirebaseAnalytics (= 4.0.2)
-    - FirebaseCore (= 4.0.4)
-  - Firebase/Database (4.0.4):
+    - FirebaseDatabase (= 4.1.3)
+  - Firebase/Messaging (4.8.0):
     - Firebase/Core
-    - FirebaseDatabase (= 4.0.0)
-  - FirebaseAnalytics (4.0.2):
+    - FirebaseMessaging (= 2.0.8)
+  - Firebase/Performance (4.8.0):
+    - Firebase/Core
+    - FirebasePerformance (= 1.1.0)
+  - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (4.0.0):
-    - FirebaseAnalytics (~> 4.0)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.4):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseDatabase (4.0.0):
+  - FirebaseCore (4.0.13):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.1.3):
     - FirebaseAnalytics (~> 4.0)
-  - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
-  - GoogleToolboxForMac/DebugUtils (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
-    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.11)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.8):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.8):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - FirebasePerformance (1.1.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - FirebaseSwizzlingUtilities (~> 1.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.1)
+  - FirebaseSwizzlingUtilities (1.0.0)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/Logger (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GTMSessionFetcher/Core (1.1.12)
   - IBAnimatable (4.1.0)
   - IQKeyboardManagerSwift (5.0.0)
-  - lottie-ios (2.1.5)
+  - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - PopupDialog (0.6.2)
-  - RAMAnimatedTabBarController (3.0.1)
+  - Protobuf (3.5.0)
   - SCLAlertView (0.7.0)
   - ScrollableGraphView (4.0.4)
   - SKPhotoBrowser (4.0.1)
-  - Spring (1.0.5)
   - SwiftyOnboard (1.3.6)
 
 DEPENDENCIES:
-  - FBSDKCoreKit
-  - FBSDKLoginKit
-  - FBSDKShareKit
-  - Firebase/Auth
+  - Crashlytics
+  - Fabric
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Messaging
+  - Firebase/Performance
   - IBAnimatable
   - IQKeyboardManagerSwift (= 5.0.0)
-  - lottie-ios
   - PopupDialog
-  - RAMAnimatedTabBarController
   - SCLAlertView
   - ScrollableGraphView
   - SKPhotoBrowser
-  - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftyOnboard
 
-EXTERNAL SOURCES:
-  Spring:
-    :git: https://github.com/MengTo/Spring.git
-
-CHECKOUT OPTIONS:
-  Spring:
-    :commit: 19b04d730d3edabbb02a39e58121d1d3220690ee
-    :git: https://github.com/MengTo/Spring.git
-
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
-  FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
-  FBSDKShareKit: 18a2cd118aef11dd657fe7e8b64bae5c719088b2
-  Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
-  FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
-  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
-  FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
-  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
+  FirebaseDatabase: 7088bfc4af2cc00231bb36e1404fc2d7509eb4dc
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  FirebasePerformance: 3877d097c59956aa2d7a317dbae503c2b4e78459
+  FirebaseSwizzlingUtilities: f1c49a5a372ac852c853722a5891a0a5e2344a6c
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
-  lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PopupDialog: d4336d7274a6aa3af4cb26d8b6691510eba90cc3
-  RAMAnimatedTabBarController: 78bafa7a1c1b162f0d4a86a936c0d1ee4a06ffcc
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   ScrollableGraphView: 072ea302f4ca27779692656a49d51fe537b2b1e7
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
-  Spring: 48aad470f3ead043b2da98b64e0bf0630b7ebc42
   SwiftyOnboard: 8dec41d4725b3e6ebcae276dd206d7f74c1b7f61
 
-PODFILE CHECKSUM: 49a0cdc8c82b1ad01fe8893cd50810bdbef0dd1f
+PODFILE CHECKSUM: 15798514efe9eb07c6cb22a429e5a846d93a60a5
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

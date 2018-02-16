@@ -136,7 +136,7 @@
             <objects>
                 <tableViewController id="K1M-cg-dHG" customClass="DiaryTableViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jzl-Pe-wzH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1269,14 +1269,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F7l-9g-oHx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="mbri-setting3-1" selectedImage="mbri-setting3-1" id="fQm-71-5Cg" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
-                        <connections>
-                            <outlet property="animation" destination="oEC-4B-R2M" id="iy9-5W-AYp"/>
-                        </connections>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Setting" image="mbri-setting3-1" selectedImage="mbri-setting3-1" id="fQm-71-5Cg" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcr-UE-MbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="oEC-4B-R2M" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="-560.625" y="2527.8169014084506"/>
         </scene>
@@ -1624,8 +1619,8 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-IQ-J7y" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_BiggerVegetable" translatesAutoresizingMaskIntoConstraints="NO" id="S64-hM-eVx">
-                                        <rect key="frame" x="142" y="150" width="91" height="75"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_Fruit" translatesAutoresizingMaskIntoConstraints="NO" id="S64-hM-eVx">
+                                        <rect key="frame" x="114" y="113.5" width="147" height="148"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1807,11 +1802,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="epl-ay-jib"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Report" image="mbri-growing-chart-1" id="7hN-t4-fgX" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
-                        <connections>
-                            <outlet property="animation" destination="4ut-Kc-D5w" id="94b-p2-UNo"/>
-                        </connections>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Report" image="mbri-growing-chart-1" id="7hN-t4-fgX" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="graphField" destination="uxy-TI-eGl" id="jRx-jM-PGN"/>
@@ -1821,7 +1812,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFi-Q1-DQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="4ut-Kc-D5w" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="1628" y="1387.5562218890557"/>
         </scene>
@@ -1829,11 +1819,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
         <scene sceneID="QiT-w3-ISs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfq-2r-gss" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diary" image="mbri-bulleted-list-1" id="hx1-of-fe8" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
-                        <connections>
-                            <outlet property="animation" destination="36c-np-9hd" id="bnb-6l-oLW"/>
-                        </connections>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Diary" image="mbri-bulleted-list-1" id="hx1-of-fe8" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TCK-2u-SVv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1849,7 +1835,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3J-nc-lx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="36c-np-9hd" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="2543.1999999999998" y="95.802098950524751"/>
         </scene>
@@ -1911,9 +1896,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                 <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="TM6-iy-f0P" id="j2x-vr-UbV"/>
-                        </connections>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Album" id="L5A-wI-3XO">
                         <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" id="v1o-uQ-err">
@@ -1928,7 +1910,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-r8-rJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="TM6-iy-f0P" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="5642.3999999999996" y="95.802098950524751"/>
         </scene>
@@ -11587,7 +11568,6 @@ TQAIcVAACHFdAAhxYgAIcWoACHFtAAhxcgAIcXoACHF9AAhxjwAIcZIACHGXAAAAAAAABAEAAAAAAAAA
 WQAAAAAAAAAAAAAAAAAIcZk
 </mutableData>
         </image>
-        <image name="image_BiggerVegetable" width="91" height="75"/>
         <image name="image_DairyPlace" width="57" height="57"/>
         <image name="image_SeparatingLine" width="375" height="3"/>
         <image name="image_mat" width="263" height="158"/>
@@ -11600,12 +11580,12 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="atG-Nb-E9s"/>
+        <segue reference="7ie-RC-BjS"/>
         <segue reference="P6Q-cY-eKc"/>
         <segue reference="J5g-rl-4FN"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="gZZ-Bc-RPw"/>
-        <segue reference="1gd-EK-yKm"/>
+        <segue reference="GHi-nD-NU8"/>
         <segue reference="v1n-Cz-j5E"/>
     </inferredMetricsTieBreakers>
 </document>

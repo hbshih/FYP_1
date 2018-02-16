@@ -161,27 +161,27 @@ struct HealthPercentageCalculator
     {
         for i in 0 ..< dateSaved.count
         {
-            dayCountVegetable[i] = ((dayCountVegetable[i] / vegetableStandard)*100).rounded()
+            dayCountVegetable[i] = ((dayCountVegetable[i] / vegetableStandard)*20).rounded()
             if dayCountVegetable[i] > 20.0
             {
                 dayCountVegetable[i] = 20.0
             }
-            dayCountDairy[i] = ((dayCountDairy[i] / dairyStandard)*100).rounded()
+            dayCountDairy[i] = ((dayCountDairy[i] / dairyStandard)*20).rounded()
             if dayCountDairy[i] > 20
             {
                 dayCountDairy[i] = 20
             }
-            dayCountProtein[i] = ((dayCountProtein[i] / proteinStandard)*100).rounded()
+            dayCountProtein[i] = ((dayCountProtein[i] / proteinStandard)*20).rounded()
             if dayCountProtein[i] > 20
             {
                 dayCountProtein[i] = 20
             }
-            dayCountFruit[i] = ((dayCountFruit[i] / fruitStandard)*100).rounded()
+            dayCountFruit[i] = ((dayCountFruit[i] / fruitStandard)*20).rounded()
             if dayCountFruit[i] > 20
             {
                 dayCountFruit[i] = 20
             }
-            dayCountGrain[i] = ((dayCountGrain[i] / grainStandard)*100).rounded()
+            dayCountGrain[i] = ((dayCountGrain[i] / grainStandard)*20).rounded()
             if dayCountGrain[i] > 20
             {
                 dayCountGrain[i] = 20

@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import RAMAnimatedTabBarController
+//import RAMAnimatedTabBarController
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
