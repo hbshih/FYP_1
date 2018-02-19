@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import PopupDialog
+import Instructions
 
 class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
 {
@@ -29,16 +30,20 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     @IBOutlet weak var proteinCountLabel: UILabel!
     @IBOutlet weak var grainCountLabel: UILabel!
     @IBOutlet weak var fruitCountLabel: UILabel!
+    @IBOutlet weak var foodgroupStackView: UIStackView!
+    @IBOutlet weak var instructionOutlet: UIButton!
     // Genetal Variables
-    var image:UIImage?
+    public var image:UIImage?
+    
     // Saving nutrition info
-    var grain = 0.0
-    var protein = 0.0
-    var fruit = 0.0
-    var vegetable = 0.0
-    var dairy = 0.0
+    private var grain = 0.0
+    private var protein = 0.0
+    private var fruit = 0.0
+    private var vegetable = 0.0
+    private var dairy = 0.0
+    
     // Array of all filters
-    var CIFilterNames = [
+    private var CIFilterNames = [
         "CIPhotoEffectChrome",
         "CIPhotoEffectFade",
         "CIPhotoEffectInstant",
@@ -47,8 +52,13 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         "CIPhotoEffectTonal",
         "CIPhotoEffectTransfer",
         "CISepiaTone",
+        "CIVignette",
+        "CIGaussianBlur",
         "CIColorControls"
     ]
+    
+    //Tutorial for new users
+    private let coachMarksController = CoachMarksController()
     
     override func viewDidLoad()
     {
@@ -104,36 +114,30 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
             vegetableField.alpha = 1
             vegetableCountLabel.alpha = 1
             vegetableCountLabel.text = "x\(String(vegetable))"
-            print("grain: \(vegetable)")
         case 2:
             grain += 0.5
             grainField.alpha = 1
             grainCountLabel.alpha = 1
             grainCountLabel.text = "x\(String(grain))"
-            print("fruit: \(grain)")
         case 3:
             protein += 0.5
             proteinField.alpha = 1
             proteinCountLabel.alpha = 1
             proteinCountLabel.text = "x\(String(protein))"
-            print("protein: \(protein)")
         case 4:
             fruit += 0.5
             fruitField.alpha = 1
             fruitCountLabel.alpha = 1
             fruitCountLabel.text = "x\(String(fruit))"
-            print("vegetable: \(fruit)")
         case 5:
             dairy += 0.5
             dairyField.alpha = 1
             dairyCountLabel.alpha = 1
             dairyCountLabel.text = "x\(String(dairy))"
-            print("dairy: \(dairy)")
         default:
-            alertMessage(title: "You sure?", message: "Are you sure you don't want to add some nutrition?")
             print("none")
         }
- 
+        
     }
     
     override func didReceiveMemoryWarning()
@@ -149,19 +153,24 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         doneButton.alpha = 0
         filtersScrollView.alpha = 0
         addnoteText.alpha = 0
+        // Show tutorial if is a new user.
+        if !(UserDefaultsHandler().getAddDataTutorialStatus())
+        {
+            self.coachMarksController.dataSource = self
+            self.coachMarksController.start(on: self)
+        }
     }
-    // Save image
+    // Prepare to save image
     @IBAction func completeTapped(_ sender: Any)
     {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
         let currentTime = Date()
-        
         let currentFileName = "img\(format.string(from: currentTime)).jpg"
         saveImage(imageName: currentFileName, time: currentTime)
     }
-
-    // Save image processing
+    
+    // Save image to database
     func saveImage(imageName: String, time: Date)
     {
         //create an instance of the FileManager
@@ -172,73 +181,28 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         let imageSaveImage: UIImage
         if imageToFilter.image != nil
         {
+            //Filtered
             imageSaveImage = imageToFilter.image!
         }else
         {
+            //Unfiltered
             imageSaveImage = originalImage.image!
         }
         //get the JPG data for this image
         let data = UIImageJPEGRepresentation(imageSaveImage, 0.5)
         //store it in the document directory
         fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-
-        // Accessing core data
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let newValue = NSEntityDescription.insertNewObject(forEntityName: "UserEntries", into: context)
-        // Setting values for each corresponding data
-        newValue.setValue(time, forKey: "time")
-        newValue.setValue(imageName, forKey: "imageName")
+        
+        // Coredatas
+        var notes = ""
+        let nutritionValues = [grain,vegetable,protein,fruit,dairy] // Grain,Vegetable,Protein,Fruit,Dairy
+        // Set note
         if addnoteText.text != "add some note here..."
         {
-            newValue.setValue(addnoteText.text, forKey: "note")
-        }else
-        {
-            newValue.setValue("", forKey: "note")
+            notes = addnoteText.text
         }
-        if grain != 0
-        {
-            newValue.setValue(grain, forKey: "n_Grain")
-        }else
-        {
-            newValue.setValue(0, forKey: "n_Grain")
-        }
-        if fruit != 0
-        {
-            newValue.setValue(fruit, forKey: "n_Fruit")
-        }else
-        {
-            newValue.setValue(0, forKey: "n_Fruit")
-        }
-        if protein != 0
-        {
-            newValue.setValue(protein
-                , forKey: "n_Protein")
-        }else
-        {
-            newValue.setValue(0, forKey: "n_Protein")
-        }
-        if vegetable != 0
-        {
-            newValue.setValue(vegetable, forKey: "n_Vegetable")
-        }else
-        {
-            newValue.setValue(0, forKey: "n_Vegetable")
-        }
-        if dairy != 0
-        {
-            newValue.setValue(dairy, forKey: "n_Dairy")
-        }else
-        {
-            newValue.setValue(0, forKey: "n_Dairy")
-        }
-        do {
-            try context.save()
-            print("All data saved succesfully")
-        } catch {
-            alertMessage(title: "Problem with saving", message: "Sorry")
-            print("Problem Saving Data")
-        }
+        //Save to Core
+        CoreDataHandler().setNewRecord(time: time, imageName: imageName, note: notes, nutritionInfo: nutritionValues)
     }
     
     //Action when filter is tapped (Change the current image to filtered ones)
@@ -264,12 +228,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
             addnoteText.textColor = UIColor.lightGray
         }
     }
-    //##
-    func alertMessage(title: String, message: String)
-    {
-        let mes = AlertMessage()
-        mes.displayAlert(title: title, message: message, VC: self)
-    }
+
+    // Show instructions
     @IBAction func instructionTapped(_ sender: Any)
     {
         // Create a custom view controller
@@ -292,6 +252,49 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     override var prefersStatusBarHidden: Bool
     {
         return true
+    }
+    
+}
+
+/* Protocol for tutorial walkthrough*/
+
+// MARK: - Protocol Conformance | CoachMarksControllerDataSource
+extension ConfirmPhotoViewController: CoachMarksControllerDataSource
+{
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
+    {
+        return 2
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark
+    {
+        switch(index) {
+        case 0:
+            return coachMarksController.helper.makeCoachMark(for: foodgroupStackView)
+        case 1:
+            return coachMarksController.helper.makeCoachMark(for: instructionOutlet)
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?)
+    {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        switch(index) {
+        case 0:
+            coachViews.bodyView.hintLabel.text = "Add your nutrition data here! Press those groups that you think your plate contains!"
+            coachViews.bodyView.nextLabel.text = "OK"
+            
+        case 1:
+            coachViews.bodyView.hintLabel.text = "If you are not sure about it, or don't know how to count the portions, you call press here for some tips "
+            coachViews.bodyView.nextLabel.text = "Got it"
+            UserDefaultsHandler().setAddDataTutorialStatus(status: true)
+        default: break
+        }
+        
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
     
 }

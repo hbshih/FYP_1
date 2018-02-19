@@ -13,12 +13,12 @@ struct UserDefaultsHandler
 {
     private let defaults = UserDefaults.standard
     
-    mutating func getOnboardingStatus() -> AnyObject
+    mutating func getOnboardingStatus() -> Bool
     {
-        return defaults.object(forKey: "OnboardingSuccess") as AnyObject
+        return defaults.bool(forKey: "OnboardingSuccess")
     }
     
-    mutating func getPlanStandard() -> AnyObject
+    func getPlanStandard() -> AnyObject
     {
         return defaults.object(forKey: "PlanStandardArray") as AnyObject
     }
@@ -32,6 +32,28 @@ struct UserDefaultsHandler
     {
         defaults.set(value, forKey: "PlanStandardArray")
     }
+    
+    func setHomepageTutorialStatus(status: Bool)
+    {
+        defaults.set(status, forKey: "HomepageTutorial")
+    }
+    
+    func setAddDataTutorialStatus(status: Bool)
+    {
+        defaults.set(status, forKey: "AddDataTutorial")
+    }
+    
+    func getHomepageTutorialStatus() -> Bool
+    {
+        return defaults.bool(forKey: "HomepageTutorial")
+    }
+    
+    func getAddDataTutorialStatus() -> Bool
+    {
+        return defaults.bool(forKey: "AddDataTutorial")
+    }
+    
+    
     
     /*
     func getTutorialStatus() -> Bool

@@ -1,24 +1,23 @@
 //
-//  RatingViewController.swift
-//  PopupDialog
+//  TableViewController.swift
+//  Food Diary App!
 //
-//  Created by Martin Wildfeuer on 11.07.16.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//  Edited by Ben Shih on 02/02/2018.
+//  Copyright © 2018 BenShih. All rights reserved.
 //
+
 
 import UIKit
 
-
 class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-
+    /*Outlets and variables*/
     @IBOutlet weak var picker: UIPickerView!
-    
     private let options = ["Male","Female","Custom"]
-    private var selectedOption = ""
-    private let maleDefaultSet = [9.0,4.0,7.0,2.0,3.0]
-    private let femaleDefauthSet = [6.0,3.0,6.0,2.0,3.0]
-    let custom = [1.0,2.0,3.0,4.0,5.0]
+    private var selectedOption = "" // To store which plan user selected
+    private let maleDefaultSet = numberOfServes().getMaleSet()
+    private let femaleDefauthSet = numberOfServes().getFemaleSet()
+    private let custom = numberOfServes().getCustom()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -45,16 +44,17 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }else if selectedOption == "Female"
         {
             return femaleDefauthSet
-        }else
+        }else if selectedOption == "Custom"
         {
             return custom
+        }else
+        {
+            return maleDefaultSet
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       // commentTextField.delegate = self
         picker.delegate = self
         picker.dataSource = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))

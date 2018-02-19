@@ -30,10 +30,12 @@ pod 'Fabric'
 pod 'Crashlytics'
 pod 'Firebase/Performance'
 pod 'Firebase/Messaging'
+pod 'Instructions', '~> 1.0.0'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase'
   end
 
   target 'Food Diary App!UITests' do

@@ -12,6 +12,7 @@
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50322DD20267F4900584FA0 /* SettingTableViewController.swift */; };
 		B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52FD02A2031BF6700C41331 /* nougatine.ttf */; };
+		B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
 		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
@@ -20,7 +21,6 @@
 		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
-		B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */; };
 		B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */; };
 		B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */; };
 		B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */; };
@@ -37,8 +37,8 @@
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
-		B587EF00202899D1001D7F8E /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */; };
 		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
+		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
@@ -87,6 +87,9 @@
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50322DD20267F4900584FA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		B52FD02A2031BF6700C41331 /* nougatine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nougatine.ttf; sourceTree = "<group>"; };
+		B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
+		B5318478203B79F8002085A9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "../../../Downloads/com.crashlytics.ios-manual/Fabric.framework"; sourceTree = "<group>"; };
+		B531847D203B7C40002085A9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
 		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
@@ -96,7 +99,6 @@
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B558A46A202E5A92003AA3F4 /* Food Diary App!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Diary App!.entitlements"; sourceTree = "<group>"; };
-		B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-circle-heart-love-png-4.png"; sourceTree = "<group>"; };
 		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
 		B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlanViewController.xib; sourceTree = "<group>"; };
 		B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
@@ -119,8 +121,8 @@
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
-		B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
 		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
@@ -172,6 +174,8 @@
 		0CEB4A157D41D8E9D1A2D617 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B531847D203B7C40002085A9 /* Crashlytics.framework */,
+				B5318478203B79F8002085A9 /* Fabric.framework */,
 				B5CF54F6202E467800D1B305 /* AdSupport.framework */,
 				AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */,
 				8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */,
@@ -251,7 +255,6 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */,
 				B570B1062025F79E008BF8BC /* Font */,
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
@@ -271,14 +274,14 @@
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
+				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
+				B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */,
 				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
+				B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */,
 				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
 				B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */,
-				B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */,
-				B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */,
-				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
 				B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */,
 				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
 			);
@@ -306,6 +309,7 @@
 				B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */,
 				B58066FE201E763A00F8FB89 /* validate.swift */,
 				B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */,
+				B5A5B893203A5179009C0511 /* numberOfServes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,7 +467,6 @@
 				B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */,
-				B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 			);
@@ -542,9 +545,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-Logger-NSData+zlib/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
@@ -560,6 +564,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
@@ -659,9 +664,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!Tests/Pods-Food Diary App!Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -677,8 +687,8 @@
 			files = (
 				B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */,
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
-				B587EF00202899D1001D7F8E /* InstructionPopUpViewController.swift in Sources */,
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
+				B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
 				B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */,
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
@@ -706,6 +716,7 @@
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,
 				B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */,
+				B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */,
 				B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,6 +888,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 64KKU33NVH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Crashlytics",
+					"$(PROJECT_DIR)/Pods/Fabric",
+				);
 				INFOPLIST_FILE = "Food Diary App!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
@@ -894,6 +910,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Food Diary App!/Food Diary App!.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KKU33NVH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Crashlytics",
+					"$(PROJECT_DIR)/Pods/Fabric",
+				);
 				INFOPLIST_FILE = "Food Diary App!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";

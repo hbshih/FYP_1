@@ -24,7 +24,7 @@ class ClearDataViewController: UIViewController {
     
     @IBAction func clearData(_ sender: Any)
     {
-        //http://swiftdeveloperblog.com/uialertcontroller-confirmation-dialog-swift/
+        // reference from http://swiftdeveloperblog.com/uialertcontroller-confirmation-dialog-swift/
         let dialogMessage = UIAlertController(title: "WARNING", message: "Are you sure you want to delete everything?", preferredStyle: .alert)
         
         // Create OK button with action handler
@@ -45,9 +45,12 @@ class ClearDataViewController: UIViewController {
         self.present(dialogMessage, animated: true, completion: nil)
     }
     
+    /*Delete all data*/
+    
     func deleteRecord()
     {
-        //https://stackoverflow.com/questions/24658641/ios-delete-all-core-data-swift
+        // Delete everything in core data
+        //reference from https://stackoverflow.com/questions/24658641/ios-delete-all-core-data-swift
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context = appDel.persistentContainer.viewContext
         let coord = appDel.persistentContainer.persistentStoreCoordinator
@@ -59,7 +62,8 @@ class ClearDataViewController: UIViewController {
             debugPrint(error)
         }
         
-        //https://stackoverflow.com/questions/34369616/delete-files-in-ios-directory-using-swift
+        // Delete everything in document directory
+        //reference from https://stackoverflow.com/questions/34369616/delete-files-in-ios-directory-using-swift
         let fileManager = FileManager.default
         let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as NSURL
         let documentsPath = documentsUrl.path

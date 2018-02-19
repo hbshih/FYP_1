@@ -71,31 +71,27 @@ class DashboardViewController: UIViewController {
     func buildDashboard()
     {
         informationLabel.text = "Your Recent \(dashboardType!)"
+        navDash.title = "\(dashboardType!) Dashboard"
         var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
-
+        
         if dashboardType == "Vegetable"
         {
-            navDash.title = "Vegetable Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
             setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*3.6)
         } else if dashboardType == "Grain"
         {
-            navDash.title = "Grain Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
             setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*3.6)
         }else if dashboardType == "Protein"
         {
-            navDash.title = "Protein Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
             setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*3.6)
         }else if dashboardType == "Fruit"
         {
-            navDash.title = "Fruit Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
             setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*3.6)
         }else
         {
-            navDash.title = "Dairy Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
             setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*3.6)
         }

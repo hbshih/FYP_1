@@ -18,6 +18,7 @@ struct FileManagerModel
         for imageName in fileNames
         {
             let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+            print(imagePath)
             if fileManager.fileExists(atPath: imagePath){
                 if let outputImage = UIImage(contentsOfFile: imagePath)
                 {

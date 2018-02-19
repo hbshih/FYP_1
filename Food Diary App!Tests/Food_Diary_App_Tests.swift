@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Firebase
 @testable import Food_Diary_App_
 
 class Food_Diary_App_Tests: XCTestCase {

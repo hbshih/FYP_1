@@ -28,56 +28,24 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         caption.removeAll()
         images.removeAll()
         
-        // Accesing core data
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-        request.returnsObjectsAsFaults = false
-        do
-        {
-            let results = try context.fetch(request)
-            if results.count > 0
-            {
-                for result in results as! [NSManagedObject]
-                {
-                    if let imageName = result.value(forKey: "imageName") as? String
-                    {
-                        fileName.append(imageName)
-                        if let note = result.value(forKey: "note") as? String
-                        {
-                            caption.append(note)
-                        }
-                    }
-                }
-            }
-        }catch
-        {
-            print("Retrieving core data error")
-        }
-        
+        // Accessing Core Data
+        var dataHandler = CoreDataHandler()
+        fileName = dataHandler.getImageFilename()
+        caption = dataHandler.getNote()
+
+        //Get photos
         if fileName.count != 0
         {
-            let fileManager = FileManager.default
-            for imageName in fileName
-            {
-                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-                if fileManager.fileExists(atPath: imagePath){
-                    if let outputImage = UIImage(contentsOfFile: imagePath)
-                    {
-                        fileImage.append(outputImage)
-                    }
-                }else{
-                    print("Panic! Image not found --> \(imageName)")
-                }
-            }
+            fileImage = FileManagerModel().lookupImage(fileNames: fileName)
         }
+        
         // Reverse order
         fileImage = fileImage.reversed()
         caption = caption.reversed()
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
         SKPhotoBrowserOptions.displayStatusbar = false
-        SKPhotoBrowserOptions.displayDeleteButton = true
+        SKPhotoBrowserOptions.displayDeleteButton = false
         setupTestData()
         setupCollectionView()
     }
@@ -94,67 +62,6 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
     override var preferredStatusBarStyle: UIStatusBarStyle
     {
         return .lightContent
-    }
-    
-    func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void))
-    {
-        print("remove photo")
-/*
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-        request.predicate = NSPredicate(format: "imageName = %@", "\(fileName[index])")
-        request.returnsObjectsAsFaults = false
-        do
-        {
-            let result = try context.fetch(request)
-            
-            if result.count > 0
-            {
-                for name in result as! [NSManagedObject]
-                {
-                    if let Imagename = name.value(forKey: "imageName") as? String
-                    {
-                        print("\(Imagename) deleted complete")
-                        context.delete(name)
-                        do {
-                            try context.save()
-                        } catch  {
-                            print("Delete Failed")
-                        }
-                    }
-                }
-            }else
-            {
-            }
-            
-            
-        }catch
-        {
-            
-        }
-        
-        let fileManager = FileManager.default
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[index])
-        if fileManager.fileExists(atPath: imagePath)
-        {
-            do
-            {
-                try fileManager.removeItem(atPath: imagePath)
-            }catch
-            {
-                print("error on filemanager remove")
-            }
-            print("image deleted from \(imagePath)")
-        }else{
-            print("Panic! No Image!")
-        }
-        images.remove(at: index)
-        caption.remove(at: index)
-        fileName.remove(at: index)
-        */
-        //browser.reloadData()
-        browser.dismissPhotoBrowser(animated: true)
     }
 }
 
@@ -222,7 +129,7 @@ private extension FromLocalViewController {
 }
 
 class ExampleCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var exampleImageView: UIImageView!
     
     override func awakeFromNib()

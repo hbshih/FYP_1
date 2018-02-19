@@ -8,35 +8,26 @@
 
 import UIKit
 import AVFoundation
-//import RAMAnimatedTabBarController
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var captureSesssion : AVCaptureSession!
-    var cameraOutput : AVCapturePhotoOutput!
-    var previewLayer : AVCaptureVideoPreviewLayer!
-    var image: UIImage?
+    private var captureSesssion : AVCaptureSession!
+    private var cameraOutput : AVCapturePhotoOutput!
+    private var previewLayer : AVCaptureVideoPreviewLayer!
+    private var image: UIImage?
     @IBOutlet weak var cameraView: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var haveCamera = true
+    private var haveCamera = true
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         spinner.alpha = 0
-        //self.tabBarController?.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-//        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
-//        animatedTabBar.animationTabBarHidden(false)
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-//        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
-//        animatedTabBar.animationTabBarHidden(true)
         captureSesssion = AVCaptureSession()
         captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
         cameraOutput = AVCapturePhotoOutput()
@@ -105,9 +96,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
             print("error occure : \(error.localizedDescription)")
         }
         
+        //if let dataImage = photo.fileDataRepresentation()
         if let dataImage = photo.fileDataRepresentation()
         {
-            print(UIImage(data: dataImage)?.size as Any)
             let dataProvider = CGDataProvider(data: dataImage as CFData)
             let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
             let imageOriginalOutput = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
@@ -138,6 +129,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
         return croppedImage
     }
     
+    // Set the image
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "confirmPhotoSegue"
@@ -149,6 +141,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
         }
 
     }
+    // Pick image from album
     @IBAction func uploadPhotoTapped(_ sender: Any)
     {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {

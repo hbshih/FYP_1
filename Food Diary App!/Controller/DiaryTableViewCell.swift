@@ -9,8 +9,8 @@
 import UIKit
 
 class DiaryTableViewCell: UITableViewCell {
-
-
+    
+    
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -27,7 +27,6 @@ class DiaryTableViewCell: UITableViewCell {
     @IBOutlet weak var fruitLabel: UILabel!
     @IBOutlet weak var dairyLabel: UILabel!
     
-    
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -43,11 +42,10 @@ class DiaryTableViewCell: UITableViewCell {
         fruitLabel.alpha = 0
         fruitField.alpha = 0.25
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
+    
 }

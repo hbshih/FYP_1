@@ -10,6 +10,7 @@ import UIKit
 
 class NutritionSettingTableViewController: UITableViewController {
     
+    //Outlets
     @IBOutlet weak var maleCell: UITableViewCell!
     @IBOutlet weak var femaleCell: UITableViewCell!
     @IBOutlet weak var customCell: UITableViewCell!
@@ -24,10 +25,11 @@ class NutritionSettingTableViewController: UITableViewController {
     @IBOutlet weak var fruitSwitch: UIStepper!
     @IBOutlet weak var dairySwitch: UIStepper!
     
-    private var standard: [Double] = [0.0,0.0,0.0,0.0,0.0]
-    private let maleDefaultSet = [9.0,4.0,7.0,2.0,3.0]
-    private let femaleDefauthSet = [6.0,3.0,6.0,2.0,3.0]
-    private var custom = [1.0,2.0,3.0,4.0,5.0]
+    //Info from https://www.eatforhealth.gov.au/food-essentials/how-much-do-we-need-each-day/recommended-number-serves-adults
+    private var standard: [Double] = [0.0,0.0,0.0,0.0,0.0] // Grain,Protein,Vegetable,Fruit,Dairy
+    private let maleDefaultSet = numberOfServes().getMaleSet()
+    private let femaleDefauthSet = numberOfServes().getFemaleSet()
+    private let custom = numberOfServes().getCustom()
     var planType:String = ""
     
     var defaults = UserDefaultsHandler()
@@ -38,6 +40,7 @@ class NutritionSettingTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //Get current data and put checkmark on the interface
         if let plan = defaults.getPlanStandard() as? [Double]
         {
             standard = plan
@@ -61,6 +64,7 @@ class NutritionSettingTableViewController: UITableViewController {
     
     @IBAction func grainStepper(_ sender: UIStepper)
     {
+        //Change values for(Custom)
         let value = Double(sender.value)
         switch sender.tag
         {
@@ -100,6 +104,7 @@ class NutritionSettingTableViewController: UITableViewController {
         setTextfields()
     }
     
+    /*Save to userdefaults*/
     override func viewWillDisappear(_ animated: Bool)
     {
         print("Plan Type : \(planType)")
@@ -112,16 +117,15 @@ class NutritionSettingTableViewController: UITableViewController {
             Callstandard = standard
         }
         defaults.setPlanStandard(value: Callstandard)
-        print("saved \(Callstandard)")
-        print("I am disappearing")
-        //defaults.setPlanStandard(value: standard)
     }
+    
     
     func getCustomValues() -> [Double]
     {
         return [Double(grainValue.text!)!,Double(vegetableValue.text!)!,Double(proteinValue.text!)!,Double(fruitValue.text!)!,Double(dairyValue.text!)!]
     }
     
+    /*User Interface*/
     func setTextfields()
     {
         grainValue.text = String(standard[0])
@@ -168,7 +172,7 @@ class NutritionSettingTableViewController: UITableViewController {
     }
     
     
-    
+    // Setting UI for tableview
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         maleCell.accessoryType = UITableViewCellAccessoryType.none
         femaleCell.accessoryType = UITableViewCellAccessoryType.none

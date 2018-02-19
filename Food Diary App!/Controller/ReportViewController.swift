@@ -71,6 +71,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         }
     }
     
+    /*Show personal most preference food groups*/
     func personType(allElementPercentage: [String:Double])
     {
         let maxValueGroup = allElementPercentage.max(by: {a,b in a.value < b.value})

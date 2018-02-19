@@ -23,6 +23,7 @@ class DiaryTableViewController: UITableViewController {
     var fruitList: [Double] = []
     var grainList: [Double] = []
     
+    @IBOutlet weak var noDataIndicator: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,22 +50,10 @@ class DiaryTableViewController: UITableViewController {
         //-- Accesing App File, getting images
         if fileName.count != 0
         {
-            let fileManager = FileManager.default
-            for imageName in fileName
-            {
-                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-                if fileManager.fileExists(atPath: imagePath){
-                    if let outputImage = UIImage(contentsOfFile: imagePath)
-                    {
-                        images.append(outputImage)
-                    }else
-                    {
-                        print("cannot find \(imagePath)")
-                    }
-                }else{
-                    print("Panic! No Image!")
-                }
-            }
+            images = FileManagerModel().lookupImage(fileNames: fileName)
+        }else
+        {
+            noDataIndicator.alpha = 1
         }
         
     }
@@ -226,7 +215,7 @@ class DiaryTableViewController: UITableViewController {
                 cell.dairyLabel.alpha = 0
                 cell.dairyField.alpha = 0.25
             }
-
+            
             // Add a ending line
             
             if indexPath.row == fileName.count - 1

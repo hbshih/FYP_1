@@ -9,12 +9,13 @@
 import UIKit
 import SwiftyOnboard
 import PopupDialog
+import SCLAlertView
 
 class OnBoardingViewController: UIViewController {
 
     var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
-    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.6476797462, blue: 0, alpha: 1),#colorLiteral(red: 0.2067656815, green: 0.8225870728, blue: 1, alpha: 1)]
+    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1),#colorLiteral(red: 0.4210318029, green: 0.8613941073, blue: 1, alpha: 1),#colorLiteral(red: 0.6617283821, green: 0.9273280501, blue: 0.4699389338, alpha: 1)]
     var titleArray: [String] = ["Welcome to FoodyLife!", "Make food tracking easy", "Balance your diet", "Become Healthier!"]
     var subTitleArray: [String] = ["Keeping track of what you eat\nhelps you eat right and make\nhealthier food decisions, that\nmuch is given.", "Tracking what you eat has never\nbeen easier. Takes a picture and\nrecord it with simple and intuitive\ninterface.", "You can see your overall balance\non the dashboard and try to make\nhealthier choices to help you get\nmore balanced.","Without a focus on calories, you\ncan take a closer look at the\nchoices you're making and if\nthey're really helping you reach\nyour goals or not."]
     
@@ -31,7 +32,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if defaults.getOnboardingStatus() is Bool
+        if defaults.getOnboardingStatus() == true
         {
             DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
         }else
@@ -75,26 +76,60 @@ class OnBoardingViewController: UIViewController {
         let popup = PopupDialog(viewController: selectPlanVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
         
         // Create first button
+        
         let buttonOne = CancelButton(title: "DECIDE LATER", height: 60) {
-            self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
-            self.defaults.setPlanStandard(value: selectPlanVC.custom)
+            self.defaults.setPlanStandard(value: numberOfServes().getCustom())
+            let appearance = SCLAlertView.SCLAppearance(
+                //kCircleIconHeight: 55.0
+                kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                showCloseButton: false
+            )
+            let alert = SCLAlertView(appearance: appearance)
+            let icon = UIImage(named:"Alert_Yellow.png")
+            let color = UIColor.orange
+            alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
+            _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
         }
         
         // Create second button
         let buttonTwo = DefaultButton(title: "LET'S START", height: 60) {
             self.defaults.setOnboardingStatus(status: true)
             self.defaults.setPlanStandard(value: selectPlanVC.getSelectedOption())
-            print("Choosed plan \(selectPlanVC.getSelectedOption())")
-            self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
+            if selectPlanVC.getSelectedOption() == numberOfServes().getCustom()
+            {
+                self.defaults.setPlanStandard(value: numberOfServes().getCustom())
+                let appearance = SCLAlertView.SCLAppearance(
+                    //kCircleIconHeight: 55.0
+                    kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                    kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                    kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                    showCloseButton: false
+                )
+                let alert = SCLAlertView(appearance: appearance)
+                let icon = UIImage(named:"Alert_Yellow.png")
+                let color = UIColor.orange
+                alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
+                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
+            }else
+            {
+                self.segueToHomeScreen()
+            }
         }
         
         // Add buttons to dialog
         popup.addButtons([buttonOne, buttonTwo])
         
         // Present dialog
-        present(popup, animated: true, completion: nil)
+        present(popup, animated: true, completion:nil)
+    }
+    @objc func segueToHomeScreen()
+    {
+        performSegue(withIdentifier: "getStartedSegue", sender: nil)
     }
 }
+
 
 extension OnBoardingViewController: SwiftyOnboardDataSource {
     

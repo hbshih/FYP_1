@@ -33,6 +33,27 @@ struct CoreDataHandler
         request.returnsObjectsAsFaults = false
     }
     
+    func setNewRecord(time: Date, imageName:String,note:String,nutritionInfo:[Double])
+    {
+        let newValue = NSEntityDescription.insertNewObject(forEntityName: "UserEntries", into: context)
+        // Setting values for each corresponding data
+        newValue.setValue(time, forKey: "time")
+        newValue.setValue(imageName, forKey: "imageName")
+        newValue.setValue(note, forKey: "note")
+        newValue.setValue(nutritionInfo[0], forKey: "n_Grain")
+        newValue.setValue(nutritionInfo[1], forKey: "n_Vegetable")
+        newValue.setValue(nutritionInfo[2], forKey: "n_Protein")
+        newValue.setValue(nutritionInfo[3], forKey: "n_Fruit")
+        newValue.setValue(nutritionInfo[4], forKey: "n_Dairy")
+        do {
+            try context.save()
+            print("All data saved succesfully")
+        } catch {
+            SCLAlertMessage.init(title: "Oops!", message: "Sorry, we coundn't save your photo, please try again!").showMessage()
+            print(error)
+        }
+    }
+    
     mutating func getImageFilename() -> [String]
     {
         fileName.removeAll()

@@ -28,6 +28,9 @@
         <array key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
         <array key="nougatine.ttf">
             <string>Nougatine</string>
         </array>
@@ -46,7 +49,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2do-0H-5nE" secondAttribute="height" multiplier="1:1" id="wZv-iO-ajb"/>
                                 </constraints>
-                                <state key="normal" image="Take"/>
+                                <state key="normal" image="Take">
+                                    <color key="titleColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="shotButtonTapped:" destination="uJU-0g-e3D" eventType="touchUpInside" id="Yds-ko-rGE"/>
                                 </connections>
@@ -86,15 +91,14 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-Kk-RKv">
                                 <rect key="frame" x="177" y="281" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.90383232660000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-wO-851">
-                                <rect key="frame" x="320" y="565.5" width="39" height="39"/>
+                                <rect key="frame" x="299" y="555.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vb3-wO-851" secondAttribute="height" multiplier="1:1" id="xLx-05-LiN"/>
                                 </constraints>
-                                <state key="normal" image="Icon_UploadPhoto"/>
+                                <state key="normal" image="Icon_Album"/>
                                 <connections>
                                     <action selector="uploadPhotoTapped:" destination="uJU-0g-e3D" eventType="touchUpInside" id="ZYm-lm-9rf"/>
                                 </connections>
@@ -124,7 +128,7 @@
                     <connections>
                         <outlet property="cameraView" destination="fi3-dc-S05" id="yrn-MF-yVe"/>
                         <outlet property="spinner" destination="QWw-Kk-RKv" id="cfw-UN-i96"/>
-                        <segue destination="sdL-l7-QO5" kind="show" identifier="confirmPhotoSegue" id="U5x-NF-Njp"/>
+                        <segue destination="sdL-l7-QO5" kind="presentation" identifier="confirmPhotoSegue" id="U5x-NF-Njp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9T-X6-xE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,6 +143,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fab-Pt-goG">
+                            <rect key="frame" x="0.0" y="208" width="375" height="117"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">
+
+Add new pictures 
+to play with this page</string>
+                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                            <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="180" id="nkX-WX-kpO" customClass="DiaryTableViewCell" customModule="Food_Diary_App_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="180"/>
@@ -378,6 +393,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noDataIndicator" destination="fab-Pt-goG" id="3HR-Lp-x5E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMK-75-yYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -785,11 +803,13 @@
                         <outlet property="dairyField" destination="d6O-2t-BeI" id="SRv-Gb-j4f"/>
                         <outlet property="doneButton" destination="7EP-wg-rwE" id="hz7-uR-jhQ"/>
                         <outlet property="filtersScrollView" destination="ojv-rY-R1d" id="I5L-ZM-hrt"/>
+                        <outlet property="foodgroupStackView" destination="BAr-gu-p5a" id="Wxj-Df-zJc"/>
                         <outlet property="fruitCountLabel" destination="1r7-F6-JTU" id="0fk-6w-R9w"/>
                         <outlet property="fruitField" destination="4Mf-f9-2fO" id="vyH-ac-7WX"/>
                         <outlet property="grainCountLabel" destination="nGZ-Tw-YJI" id="ZeC-BJ-LKL"/>
                         <outlet property="grainField" destination="ZNV-Kk-VuX" id="df3-Uv-l5x"/>
                         <outlet property="imageToFilter" destination="vpi-wb-Eqi" id="Lxh-ju-PSx"/>
+                        <outlet property="instructionOutlet" destination="tTU-an-rri" id="ofg-vn-xsc"/>
                         <outlet property="originalImage" destination="C0V-Nr-47V" id="Lcy-9m-05A"/>
                         <outlet property="proteinCountLabel" destination="PVz-H0-BWC" id="3hi-bm-9Lt"/>
                         <outlet property="proteinField" destination="4ew-bX-clm" id="13p-qy-jf8"/>
@@ -811,6 +831,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background_Image" translatesAutoresizingMaskIntoConstraints="NO" id="L4n-5d-aYt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="547"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joy-pB-Ave">
                                 <rect key="frame" x="5" y="44" width="365" height="498"/>
@@ -818,13 +839,25 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Center_Image" translatesAutoresizingMaskIntoConstraints="NO" id="ous-LR-51I">
                                         <rect key="frame" x="-10" y="0.0" width="385" height="498"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook-circle-heart-love-png-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="XKL-G5-tWd">
-                                        <rect key="frame" x="90" y="50" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUp-ne-UsP" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
                                         <rect key="frame" x="6" y="-5" width="353" height="353"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFm-PL-ai4">
+                                                <rect key="frame" x="144.5" y="144" width="65" height="65"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmb-77-CTh">
+                                                        <rect key="frame" x="-14" y="-19" width="93" height="103"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="yFm-PL-ai4" secondAttribute="height" multiplier="1:1" id="AtA-xj-XNA"/>
+                                                    <constraint firstAttribute="width" constant="65" id="YKF-De-gwV"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVH-L1-Sfy">
                                                 <rect key="frame" x="65" y="65" width="223" height="223"/>
                                                 <constraints>
@@ -836,7 +869,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="yFm-PL-ai4" firstAttribute="centerX" secondItem="VUp-ne-UsP" secondAttribute="centerX" id="3hJ-xb-K8B"/>
+                                            <constraint firstItem="yFm-PL-ai4" firstAttribute="centerY" secondItem="VUp-ne-UsP" secondAttribute="centerY" id="6OX-yE-s9X"/>
                                             <constraint firstItem="AVH-L1-Sfy" firstAttribute="centerY" secondItem="VUp-ne-UsP" secondAttribute="centerY" id="83m-Gy-u3x"/>
                                             <constraint firstAttribute="width" secondItem="VUp-ne-UsP" secondAttribute="height" multiplier="1:1" id="GWJ-7l-QgF"/>
                                             <constraint firstItem="AVH-L1-Sfy" firstAttribute="centerX" secondItem="VUp-ne-UsP" secondAttribute="centerX" id="T77-YA-SkR"/>
@@ -844,7 +880,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                <real key="value" value="30"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
                                                 <real key="value" value="-90"/>
@@ -903,7 +939,7 @@
                                                         <real key="value" value="-90"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -944,7 +980,7 @@
                                                         <real key="value" value="-90"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -985,7 +1021,7 @@
                                                         <real key="value" value="-90"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -1026,7 +1062,7 @@
                                                         <real key="value" value="-90"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -1067,7 +1103,7 @@
                                                         <real key="value" value="-90"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -1106,7 +1142,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25% Balance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRq-ls-G3G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRq-ls-G3G">
                                         <rect key="frame" x="16" y="331" width="333" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6KH-To-9SL"/>
@@ -1141,63 +1177,68 @@
                                     <constraint firstItem="hDN-GU-KBk" firstAttribute="top" secondItem="F1x-aq-haG" secondAttribute="bottom" id="spl-hp-Mkj"/>
                                     <constraint firstItem="leL-t3-wnw" firstAttribute="centerX" secondItem="j4c-vc-uFF" secondAttribute="centerX" id="vZB-H4-e7E"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rY3-bS-j7y" appends="YES" id="9Vx-D5-PlR"/>
+                                    <outletCollection property="gestureRecognizers" destination="eiM-it-5jL" appends="YES" id="pvV-8O-wLr"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-Pu-XUF" userLabel="Camera">
                                 <rect key="frame" x="107.5" y="592" width="160" height="50"/>
                                 <state key="normal" image="Button_Camera"/>
                                 <connections>
-                                    <segue destination="uJU-0g-e3D" kind="presentation" id="v1n-Cz-j5E"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-qP-a8d" userLabel="Report">
-                                <rect key="frame" x="20" y="602" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="IkS-qP-a8d" secondAttribute="height" multiplier="1:1" id="bD6-qb-mbC"/>
-                                </constraints>
-                                <state key="normal" image="Icon_Report"/>
-                                <connections>
-                                    <segue destination="zzn-M5-u8p" kind="presentation" id="hdb-Cv-0Ws"/>
+                                    <segue destination="uJU-0g-e3D" kind="presentation" identifier="cameraSegue" id="v1n-Cz-j5E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-fa-Pzw" userLabel="Diary">
-                                <rect key="frame" x="310" y="602" width="45" height="45"/>
+                                <rect key="frame" x="310" y="595" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xgs-fa-Pzw" secondAttribute="height" multiplier="1:1" id="J5W-au-kts"/>
                                 </constraints>
                                 <state key="normal" image="Icon_Diary"/>
                                 <connections>
-                                    <segue destination="wfq-2r-gss" kind="presentation" id="2qy-tm-OSw"/>
+                                    <segue destination="wfq-2r-gss" kind="presentation" identifier="diarySegue" customClass="PresentSlideSegue" customModule="IBAnimatable" id="2qy-tm-OSw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-O3-Tft">
-                                <rect key="frame" x="318.5" y="646" width="28.5" height="16.5"/>
+                                <rect key="frame" x="318.5" y="639" width="28.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNt-Nh-D4S">
-                                <rect key="frame" x="24" y="646" width="37" height="16.5"/>
+                                <rect key="frame" x="24" y="639" width="37" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-qP-a8d" userLabel="Report">
+                                <rect key="frame" x="20" y="595" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IkS-qP-a8d" secondAttribute="height" multiplier="1:1" id="bD6-qb-mbC"/>
+                                </constraints>
+                                <state key="normal" image="Icon_Report"/>
+                                <connections>
+                                    <segue destination="zzn-M5-u8p" kind="presentation" identifier="reportSegue" id="hdb-Cv-0Ws"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="L4n-5d-aYt" firstAttribute="leading" secondItem="RgD-7g-VAq" secondAttribute="leading" id="2qJ-W3-sxx"/>
                             <constraint firstItem="DaH-Pu-XUF" firstAttribute="centerX" secondItem="RgD-7g-VAq" secondAttribute="centerX" id="8Ds-zI-GAL"/>
                             <constraint firstItem="kXh-O3-Tft" firstAttribute="centerX" secondItem="Xgs-fa-Pzw" secondAttribute="centerX" id="BOI-6X-kOa"/>
                             <constraint firstItem="RgD-7g-VAq" firstAttribute="bottom" secondItem="L4n-5d-aYt" secondAttribute="bottom" constant="100" id="Ebf-ZE-Hig"/>
                             <constraint firstItem="L4n-5d-aYt" firstAttribute="trailing" secondItem="RgD-7g-VAq" secondAttribute="trailing" id="FSZ-7A-AUA"/>
-                            <constraint firstItem="RgD-7g-VAq" firstAttribute="bottom" secondItem="IkS-qP-a8d" secondAttribute="bottom" constant="20" id="FZj-5Y-iRD"/>
                             <constraint firstItem="RgD-7g-VAq" firstAttribute="trailing" secondItem="Xgs-fa-Pzw" secondAttribute="trailing" constant="20" id="Ga2-IS-NtV"/>
                             <constraint firstItem="L4n-5d-aYt" firstAttribute="top" secondItem="RgD-7g-VAq" secondAttribute="top" id="GaC-Zd-1fB"/>
                             <constraint firstItem="kXh-O3-Tft" firstAttribute="top" secondItem="Xgs-fa-Pzw" secondAttribute="bottom" constant="-1" id="JWl-1m-vx5"/>
                             <constraint firstItem="SNt-Nh-D4S" firstAttribute="top" secondItem="IkS-qP-a8d" secondAttribute="bottom" constant="-1" id="LjC-Fp-bsP"/>
                             <constraint firstItem="IkS-qP-a8d" firstAttribute="leading" secondItem="q4G-b5-3FT" secondAttribute="leading" constant="20" id="QKy-SV-vVC"/>
                             <constraint firstItem="joy-pB-Ave" firstAttribute="top" secondItem="RgD-7g-VAq" secondAttribute="top" constant="24" id="V3F-c7-m0d"/>
-                            <constraint firstItem="RgD-7g-VAq" firstAttribute="bottom" secondItem="Xgs-fa-Pzw" secondAttribute="bottom" constant="20" id="Wb5-eX-dFg"/>
+                            <constraint firstItem="Xgs-fa-Pzw" firstAttribute="centerY" secondItem="DaH-Pu-XUF" secondAttribute="centerY" id="XLT-nr-SAt"/>
                             <constraint firstItem="joy-pB-Ave" firstAttribute="leading" secondItem="RgD-7g-VAq" secondAttribute="leading" constant="5" id="ddo-6m-EVo"/>
+                            <constraint firstItem="IkS-qP-a8d" firstAttribute="centerY" secondItem="DaH-Pu-XUF" secondAttribute="centerY" id="gKj-37-wmZ"/>
                             <constraint firstItem="RgD-7g-VAq" firstAttribute="trailing" secondItem="joy-pB-Ave" secondAttribute="trailing" constant="5" id="gOq-FV-XDU"/>
                             <constraint firstItem="SNt-Nh-D4S" firstAttribute="centerX" secondItem="IkS-qP-a8d" secondAttribute="centerX" id="i1G-7X-Cnj"/>
                             <constraint firstItem="RgD-7g-VAq" firstAttribute="bottom" secondItem="joy-pB-Ave" secondAttribute="bottom" constant="125" id="m1B-f9-uhK"/>
@@ -1228,10 +1269,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="animationDemo" destination="XKL-G5-tWd" id="XoI-Y9-MUO"/>
+                        <outlet property="cameraButtonOutlet" destination="DaH-Pu-XUF" id="1Uy-v1-4jG"/>
                         <outlet property="centerFace" destination="AVH-L1-Sfy" id="LNW-JV-ent"/>
+                        <outlet property="centerFaceArea" destination="AVH-L1-Sfy" id="YBJ-Qu-tT3"/>
+                        <outlet property="centerInformationArea" destination="bmb-77-CTh" id="PAS-1u-Jzh"/>
+                        <outlet property="centerInformationView" destination="yFm-PL-ai4" id="7cC-st-f3V"/>
                         <outlet property="circularSlider" destination="VUp-ne-UsP" id="9xu-EC-2fC"/>
                         <outlet property="dairyCircularSlider" destination="j4c-vc-uFF" id="bWo-eE-Y9u"/>
+                        <outlet property="foodgroupsStackView" destination="F1x-aq-haG" id="iov-l5-SAN"/>
                         <outlet property="fruitCircularSlider" destination="5VP-4v-3th" id="WBL-9A-39S"/>
                         <outlet property="grainCircularSlider" destination="0S9-uk-EOq" id="Fwi-zQ-IRC"/>
                         <outlet property="informationLabel" destination="TRq-ls-G3G" id="98c-6W-xH6"/>
@@ -1240,8 +1285,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRB-bk-hPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="rY3-bS-j7y">
+                    <connections>
+                        <action selector="handleSwipeupWithRecognizer:" destination="kmQ-HH-xb9" id="pip-t8-9GX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="eiM-it-5jL">
+                    <connections>
+                        <action selector="handleSwipedownWithRecognizer:" destination="kmQ-HH-xb9" id="Fu4-D1-5do"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="637.60000000000002" y="95.802098950524751"/>
+            <point key="canvasLocation" x="150" y="72"/>
         </scene>
         <!--Setting-->
         <scene sceneID="U9B-Bl-5nC">
@@ -1340,7 +1395,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_terms" id="xzX-hs-a8p">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_terms-1" id="xzX-hs-a8p">
                                                     <rect key="frame" x="16" y="7" width="29" height="29"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -1403,7 +1458,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_nutritionSetting" id="oZv-lN-VgU">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_copyright" id="oZv-lN-VgU">
                                                     <rect key="frame" x="16" y="7" width="29" height="29"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -1425,7 +1480,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back" image="Button_Back_Orange"/>
                                 <connections>
-                                    <segue destination="kmQ-HH-xb9" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="gZZ-Bc-RPw"/>
+                                    <segue destination="kmQ-HH-xb9" kind="showDetail" customClass="DismissSegue" customModule="IBAnimatable" id="gZZ-Bc-RPw"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1540,7 +1595,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
             <objects>
                 <viewController id="XaQ-dj-0Ww" customClass="SendFeedbackViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNi-Zv-jPA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image_Background" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-6N-UWj">
@@ -1548,7 +1603,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-WP-waS" customClass="AnimatableTextView" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="93" width="343" height="224"/>
+                                <rect key="frame" x="16" y="73" width="343" height="224"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="KUb-BZ-Yrc"/>
@@ -1573,13 +1628,13 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-aM-URj" customClass="SkyFloatingLabelTextField" customModule="Food_Diary_App_" customModuleProvider="target">
-                                <rect key="frame" x="16" y="40" width="343" height="30"/>
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-I0-NIB">
-                                <rect key="frame" x="160.5" y="357" width="54" height="37"/>
+                                <rect key="frame" x="160.5" y="337" width="54" height="37"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
@@ -2338,11 +2393,11 @@ This Terms and Conditions page was generated by App Privacy Policy Generator</st
             <objects>
                 <viewController id="gkd-w1-6Hu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y8S-NH-pYs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tda-vd-mLp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">The following sets forth attribution notices for third party software that may be contained in this application.  Designs Related
 Logo inspired by Shannon Hargis
@@ -2527,6 +2582,7 @@ Copyright {2004} {Skyscanner}
         <image name="Button_Done" width="160" height="50"/>
         <image name="Center_Image" width="375" height="457"/>
         <image name="Face_Yellow" width="118" height="118"/>
+        <image name="Icon_Album" width="60" height="60"/>
         <image name="Icon_Dairy" width="147" height="148"/>
         <image name="Icon_DairyBlank" width="47" height="47"/>
         <image name="Icon_DairyBlank-1" width="47" height="60"/>
@@ -2541,7 +2597,6 @@ Copyright {2004} {Skyscanner}
         <image name="Icon_ProteinBlank" width="46" height="47"/>
         <image name="Icon_ProteinBlank-1" width="47" height="58"/>
         <image name="Icon_Report" width="45" height="45"/>
-        <image name="Icon_UploadPhoto" width="39" height="39"/>
         <image name="Icon_Vegetable" width="147" height="148"/>
         <image name="Icon_VegetableBlank" width="47" height="47"/>
         <image name="Icon_VegetableBlank-1" width="47" height="60"/>
@@ -2557,11 +2612,12 @@ Copyright {2004} {Skyscanner}
         <image name="Timeline_Line" width="3" height="481"/>
         <image name="Timeline_Rect" width="54" height="28"/>
         <image name="camera" width="28" height="25"/>
-        <image name="facebook-circle-heart-love-png-4.png" width="2362" height="2362"/>
+        <image name="icon_copyright" width="29" height="29"/>
         <image name="icon_dataSetting" width="29" height="29"/>
         <image name="icon_nutritionSetting" width="29" height="29"/>
         <image name="icon_reportABug" width="29" height="29"/>
         <image name="icon_terms" width="29" height="29"/>
+        <image name="icon_terms-1" width="29" height="29"/>
         <image name="imageView:0qI-qL-mml:image" width="375" height="365">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
@@ -11809,10 +11865,10 @@ WQAAAAAAAAAAAAAAAAAIcZk
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="P6Q-cY-eKc"/>
-        <segue reference="J5g-rl-4FN"/>
+        <segue reference="34h-gc-Teg"/>
         <segue reference="127-SN-MXU"/>
-        <segue reference="gZZ-Bc-RPw"/>
+        <segue reference="zeu-GQ-M0F"/>
         <segue reference="GHi-nD-NU8"/>
-        <segue reference="wSv-ml-raZ"/>
+        <segue reference="v1n-Cz-j5E"/>
     </inferredMetricsTieBreakers>
 </document>
