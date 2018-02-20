@@ -34,6 +34,7 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerFaceArea: UIButton!
     @IBOutlet weak var cameraButtonOutlet: UIButton!
     @IBOutlet weak var centerInformationView: UIView!
+    @IBOutlet weak var cardView: UIView!
     
     // Variables to store percentage informations
     private var healthPercentage = 0.0
@@ -50,6 +51,7 @@ class homepageViewController: UIViewController {
     private var notes: [String] = [] // Storing notes
     private var messageCounter = 0
     private var messageToUsers = ["You just poked my face, don't do that","My face is not a button. Tapping it does abosolutely nothing except irritate me","I know I conditioned you to tap my face in my counterpart apps, but I'm really serious: it doesn't do anything this time","Yet you're still poking my face","There are lots of other fun things you could be doing with this app right now instead of poking my face.","You could go seeing your recent foods, for example","But apparently poking my face is more enjoyable","Please stop - you'll make my face dirty","When's the last time you washed your hands, anyhow?","Why don't you go wash your hand?","You didn't take my advice, I can tell","Tapping my face isn't anywhere near as amusing as you think it is","You see, I have a great sense of humor"]
+    private var showStartingMessageToNewUsers = false
     
     // Access Data
     private var dataHandler = CoreDataHandler()
@@ -61,10 +63,10 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
         {
             /*Existing user, watched tutorial already*/
-            centerInformationArea.alpha = 0
         }else
         {
             /*New User*/
@@ -81,12 +83,22 @@ class homepageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        fileName = dataHandler.getImageFilename()
         // Present data and slider only when have data in database
-        
+        fileName = dataHandler.getImageFilename()
         //Existing User
         if fileName.count > 0
         {
+            if fileName.count == 1 && showStartingMessageToNewUsers == false
+            {
+                showStartingMessageToNewUsers = true
+                SCLAlertMessage(title: "Congrats!", message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!").showMessage()
+                self.centerFaceArea.alpha = 0
+                self.centerInformationArea.alpha = 1
+                UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations: {
+                    self.centerFaceArea.alpha = 1
+                    self.centerInformationArea.alpha = 0
+                })
+            }
             // If some new data is recorded
             if fileName.count != currentNames.count
             {
@@ -109,6 +121,7 @@ class homepageViewController: UIViewController {
                 
                 // Present the slider
                 showCircularSliderData()
+                shake(layer: self.centerFace.layer)
             }
         }else
         {
@@ -120,6 +133,7 @@ class homepageViewController: UIViewController {
             fruitPercentage = 0
             dairyPercentage = 0
             showCircularSliderData()
+            presentTodayInformation()
             informationLabel.text = "No data yet"
         }
     }
@@ -214,7 +228,6 @@ class homepageViewController: UIViewController {
         setSliderColor(valueP: dairyPercentage, slider: dairyCircularSlider)
         setSliderColor(valueP: fruitPercentage, slider: fruitCircularSlider)
         setSliderColor(valueP: healthPercentage, slider: circularSlider)
-        shake(layer: self.centerFace.layer)
     }
     
     func setSliderColor(valueP: Double, slider: KDCircularProgress)
@@ -272,7 +285,7 @@ class homepageViewController: UIViewController {
     
     @IBAction func faceTapped(_ sender: Any)
     {
-        Analytics.logEvent("FaceTapped", parameters: ["times": messageCounter])
+        Analytics.logEvent("FaceTapped", parameters: nil)
         let appearance = SCLAlertView.SCLAppearance(
             //kCircleIconHeight: 55.0
             kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
@@ -332,28 +345,25 @@ extension homepageViewController: CoachMarksControllerDataSource {
         let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
         switch(index) {
         case 0:
-            coachViews.bodyView.hintLabel.text = "Welcome to FoodyLife\nLet's have a quick tour!"
+            coachViews.bodyView.hintLabel.text = "Let's start a quick tour!"
             coachViews.bodyView.nextLabel.text = "Go!"
         case 1:
-            coachViews.bodyView.hintLabel.text = "This is your health slider, it tells you your average balance diet"
+            coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was"
             coachViews.bodyView.nextLabel.text = "Next"
         case 2:
-            coachViews.bodyView.hintLabel.text = "Swipe up to see your daily diet info, press the face for some magics"
+            coachViews.bodyView.hintLabel.text = "Swipe up to get diet information / recommendation for today."
             coachViews.bodyView.nextLabel.text = "Next"
         case 3:
-            coachViews.bodyView.hintLabel.text = "See your average balance on all food groups here!"
+            coachViews.bodyView.hintLabel.text = "Tap on each of the 5 food groups to find out individual balance"
             coachViews.bodyView.nextLabel.text = "Next"
         case 4:
-            coachViews.bodyView.hintLabel.text = "You don't have any data yet! Explore more by adding your food now!"
+            coachViews.bodyView.hintLabel.text = "Explore more by adding your food now!"
             coachViews.bodyView.nextLabel.text = "Start!"
         default: break
         }
         return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
-    
-    
-    
-    
+
     func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
         switch(index)
         {
@@ -364,8 +374,12 @@ extension homepageViewController: CoachMarksControllerDataSource {
         case 1:
             return coachMarksController.helper.makeCoachMark(for: self.circularSlider)
         case 2:
+            self.centerFaceArea.alpha = 0
+            self.centerInformationArea.alpha = 1
             return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
         case 3:
+            self.centerFaceArea.alpha = 1
+            self.centerInformationArea.alpha = 0
             return coachMarksController.helper.makeCoachMark(for: self.foodgroupsStackView)
         case 4:
             UserDefaultsHandler().setHomepageTutorialStatus(status: true)

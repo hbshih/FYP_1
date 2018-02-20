@@ -8,6 +8,7 @@
 
 import UIKit
 import ScrollableGraphView
+import FirebaseAnalytics
 
 class ReportViewController: UIViewController, ScrollableGraphViewDataSource
 {
@@ -48,6 +49,9 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         self.graphField.addSubview(graphView)
         percentageLabel.text = "\((round(healthData.getAverageHealth()*100)/100))%"
         setupConstraints()
+        
+        // -- Log Analytics
+        Analytics.logEvent("ReportVisited", parameters: nil)
         
     }
     

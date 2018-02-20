@@ -417,6 +417,9 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};

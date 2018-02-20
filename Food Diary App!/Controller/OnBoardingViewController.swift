@@ -15,9 +15,9 @@ class OnBoardingViewController: UIViewController {
 
     var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
-    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1),#colorLiteral(red: 0.4210318029, green: 0.8613941073, blue: 1, alpha: 1),#colorLiteral(red: 0.6617283821, green: 0.9273280501, blue: 0.4699389338, alpha: 1)]
-    var titleArray: [String] = ["Welcome to FoodyLife!", "Make food tracking easy", "Balance your diet", "Become Healthier!"]
-    var subTitleArray: [String] = ["Keeping track of what you eat\nhelps you eat right and make\nhealthier food decisions, that\nmuch is given.", "Tracking what you eat has never\nbeen easier. Takes a picture and\nrecord it with simple and intuitive\ninterface.", "You can see your overall balance\non the dashboard and try to make\nhealthier choices to help you get\nmore balanced.","Without a focus on calories, you\ncan take a closer look at the\nchoices you're making and if\nthey're really helping you reach\nyour goals or not."]
+    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
+    var titleArray: [String] = ["Welcome to FoodyLife!", "Track your food", "Balance the five food groups", "Become healthier and happier!"]
+    var subTitleArray: [String] = ["Understanding more of your diet helps you eat right and live a healthier life!", "Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier.", "Have you eaten vegetables today? Check your Balance Board of the 5 food groups and get all nutrition needed every day.","Transform the way you eat without the focus on calories counting! Become a Foody with a balanced diet and a balanced life!."]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view

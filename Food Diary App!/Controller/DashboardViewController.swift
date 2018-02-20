@@ -77,23 +77,23 @@ class DashboardViewController: UIViewController {
         if dashboardType == "Vegetable"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*5*3.6)
         } else if dashboardType == "Grain"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*5*3.6)
         }else if dashboardType == "Protein"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*5*3.6)
         }else if dashboardType == "Fruit"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*5*3.6)
         }else
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*5*3.6)
         }
     }
     

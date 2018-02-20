@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAnalytics
 
 class DiaryTableViewController: UITableViewController {
     
@@ -55,6 +56,9 @@ class DiaryTableViewController: UITableViewController {
         {
             noDataIndicator.alpha = 1
         }
+        
+        //-- Log firebase analytics
+        Analytics.logEvent("DiaryVisited", parameters: nil)
         
     }
     

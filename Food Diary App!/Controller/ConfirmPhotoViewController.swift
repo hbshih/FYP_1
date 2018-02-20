@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import PopupDialog
 import Instructions
+import FirebaseAnalytics
 
 class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
 {
@@ -137,7 +138,6 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         default:
             print("none")
         }
-        
     }
     
     override func didReceiveMemoryWarning()
@@ -232,6 +232,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     // Show instructions
     @IBAction func instructionTapped(_ sender: Any)
     {
+        // Log to analytics
+        Analytics.logEvent("instructionShown", parameters: nil)
         // Create a custom view controller
         let InstructionPopUpVC = InstructionPopUpViewController(nibName: "InstructionPopUpViewController", bundle: nil)
         
@@ -284,11 +286,11 @@ extension ConfirmPhotoViewController: CoachMarksControllerDataSource
         
         switch(index) {
         case 0:
-            coachViews.bodyView.hintLabel.text = "Add your nutrition data here! Press those groups that you think your plate contains!"
+            coachViews.bodyView.hintLabel.text = "Tap those groups that you think your plate contains!"
             coachViews.bodyView.nextLabel.text = "OK"
             
         case 1:
-            coachViews.bodyView.hintLabel.text = "If you are not sure about it, or don't know how to count the portions, you call press here for some tips "
+            coachViews.bodyView.hintLabel.text = "Tap here for some tips to help you categorize them."
             coachViews.bodyView.nextLabel.text = "Got it"
             UserDefaultsHandler().setAddDataTutorialStatus(status: true)
         default: break

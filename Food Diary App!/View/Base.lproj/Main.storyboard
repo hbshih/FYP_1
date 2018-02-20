@@ -91,6 +91,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-Kk-RKv">
                                 <rect key="frame" x="177" y="281" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-wO-851">
@@ -148,8 +149,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">
 
-Add new pictures 
-to play with this page</string>
+Add new records
+to display this page</string>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                             <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -1270,6 +1271,7 @@ to play with this page</string>
                     </navigationItem>
                     <connections>
                         <outlet property="cameraButtonOutlet" destination="DaH-Pu-XUF" id="1Uy-v1-4jG"/>
+                        <outlet property="cardView" destination="joy-pB-Ave" id="jGv-dJ-IJm"/>
                         <outlet property="centerFace" destination="AVH-L1-Sfy" id="LNW-JV-ent"/>
                         <outlet property="centerFaceArea" destination="AVH-L1-Sfy" id="YBJ-Qu-tT3"/>
                         <outlet property="centerInformationArea" destination="bmb-77-CTh" id="PAS-1u-Jzh"/>
