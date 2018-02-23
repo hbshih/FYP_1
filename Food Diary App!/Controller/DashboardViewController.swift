@@ -101,22 +101,22 @@ class DashboardViewController: UIViewController {
     {
         let slider = circularProgress!
         slider.animate(toAngle: value, duration: 1.0, completion: nil)
-        if value >= 0 && value <= 30
+        if value >= 0 && value <= 75
         {
             slider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))
             slider.trackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
         }// Yellow -- Neutral
-        else if value > 30 && value <= 180
+        else if value > 75 && value <= 225
         {
             slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
             slider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
         }
             // Blue -- Good
-        else if value > 180 && value <= 330
+        else if value > 225 && value <= 300
         {
             slider.set(colors:UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0))
             slider.trackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
-        }else if value > 330 && value <= 360
+        }else if value > 300 && value <= 360
         {
             slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
             slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)

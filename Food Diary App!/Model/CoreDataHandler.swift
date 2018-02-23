@@ -80,8 +80,8 @@ struct CoreDataHandler
     
     mutating func getImageFilename(type: String) -> [String]
     {
-        let queryFor = type
         fileName.removeAll()
+        let queryFor = type
         do
         {
             let results = try context.fetch(request)

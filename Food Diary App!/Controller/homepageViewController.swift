@@ -202,6 +202,7 @@ class homepageViewController: UIViewController {
         var proteinInfo = ""
         if dataDate == todayDate
         {
+            //   return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
             grainInfo = "\(todayCount[0]) / \(Standard[0])"
             vegetableInfo = "\(todayCount[1]) / \(Standard[1])"
             fruitInfo = "\(todayCount[2]) / \(Standard[2])"
