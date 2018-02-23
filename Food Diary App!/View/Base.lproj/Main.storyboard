@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -564,12 +563,16 @@ to display this page</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG9-Nh-Skz">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_PlateVegetable" translatesAutoresizingMaskIntoConstraints="NO" id="UUE-Yi-btN">
+                                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA9-Vw-YOT">
                                                                 <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="UUE-Yi-btN" secondAttribute="height" multiplier="1:1" id="tol-p0-vwm"/>
+                                                                    <constraint firstAttribute="width" secondItem="cA9-Vw-YOT" secondAttribute="height" multiplier="1:1" id="a6J-ma-VUj"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                                <state key="normal" image="Image_PlateVegetable"/>
+                                                                <connections>
+                                                                    <action selector="decreaseNutritionElement:" destination="sdL-l7-QO5" eventType="touchUpInside" id="94C-zd-dKK"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX5-S5-uSv">
                                                                 <rect key="frame" x="14.5" y="30" width="11.5" height="10"/>
                                                                 <constraints>
@@ -581,22 +584,26 @@ to display this page</string>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="UUE-Yi-btN" firstAttribute="leading" secondItem="kG9-Nh-Skz" secondAttribute="leading" constant="5" id="MDJ-79-vCF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cA9-Vw-YOT" secondAttribute="trailing" constant="5" id="KT8-qz-GK0"/>
                                                             <constraint firstAttribute="bottom" secondItem="WX5-S5-uSv" secondAttribute="bottom" id="UJQ-h2-hnQ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="UUE-Yi-btN" secondAttribute="trailing" constant="5" id="UL5-l2-nsS"/>
-                                                            <constraint firstItem="UUE-Yi-btN" firstAttribute="top" secondItem="kG9-Nh-Skz" secondAttribute="top" id="VZt-Zz-Xtr"/>
+                                                            <constraint firstItem="cA9-Vw-YOT" firstAttribute="leading" secondItem="kG9-Nh-Skz" secondAttribute="leading" constant="5" id="f9G-FE-A3H"/>
                                                             <constraint firstItem="WX5-S5-uSv" firstAttribute="centerX" secondItem="kG9-Nh-Skz" secondAttribute="centerX" id="fZa-kb-bYD"/>
+                                                            <constraint firstItem="cA9-Vw-YOT" firstAttribute="top" secondItem="kG9-Nh-Skz" secondAttribute="top" id="lYD-zo-sKt"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgB-HA-Abf">
                                                         <rect key="frame" x="40" y="0.0" width="40" height="40"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_PlateProtein" translatesAutoresizingMaskIntoConstraints="NO" id="4ew-bX-clm">
+                                                            <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPr-Ax-t8y">
                                                                 <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="4ew-bX-clm" secondAttribute="height" multiplier="1:1" id="3AL-ad-RY1"/>
+                                                                    <constraint firstAttribute="width" secondItem="kPr-Ax-t8y" secondAttribute="height" multiplier="1:1" id="DET-wr-LRO"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                                <state key="normal" image="Image_PlateProtein"/>
+                                                                <connections>
+                                                                    <action selector="decreaseNutritionElement:" destination="sdL-l7-QO5" eventType="touchUpInside" id="ZiI-0C-8jW"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVz-H0-BWC">
                                                                 <rect key="frame" x="0.0" y="30" width="40" height="10"/>
                                                                 <constraints>
@@ -608,12 +615,12 @@ to display this page</string>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="4ew-bX-clm" firstAttribute="leading" secondItem="mgB-HA-Abf" secondAttribute="leading" constant="5" id="6OB-oY-JlD"/>
-                                                            <constraint firstAttribute="trailing" secondItem="4ew-bX-clm" secondAttribute="trailing" constant="5" id="GyJ-EN-VsH"/>
+                                                            <constraint firstItem="kPr-Ax-t8y" firstAttribute="leading" secondItem="mgB-HA-Abf" secondAttribute="leading" constant="5" id="5Xk-Wm-FEx"/>
                                                             <constraint firstAttribute="trailing" secondItem="PVz-H0-BWC" secondAttribute="trailing" id="O1Z-zi-I5J"/>
-                                                            <constraint firstItem="4ew-bX-clm" firstAttribute="top" secondItem="mgB-HA-Abf" secondAttribute="top" id="ZrT-yt-5Xd"/>
                                                             <constraint firstItem="PVz-H0-BWC" firstAttribute="centerX" secondItem="mgB-HA-Abf" secondAttribute="centerX" id="b5k-qw-8ny"/>
                                                             <constraint firstAttribute="bottom" secondItem="PVz-H0-BWC" secondAttribute="bottom" id="ia9-VD-VuS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="kPr-Ax-t8y" secondAttribute="trailing" constant="5" id="nJl-By-LG4"/>
+                                                            <constraint firstItem="kPr-Ax-t8y" firstAttribute="top" secondItem="mgB-HA-Abf" secondAttribute="top" id="tSj-ad-IhF"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -624,12 +631,16 @@ to display this page</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPX-KM-rIC">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_PlateFruit" translatesAutoresizingMaskIntoConstraints="NO" id="4Mf-f9-2fO">
+                                                            <button opaque="NO" alpha="0.0" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCt-AC-K8V">
                                                                 <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="4Mf-f9-2fO" secondAttribute="height" multiplier="1:1" id="DYH-6b-YaX"/>
+                                                                    <constraint firstAttribute="width" secondItem="UCt-AC-K8V" secondAttribute="height" multiplier="1:1" id="952-I3-8nK"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                                <state key="normal" image="Image_PlateFruit"/>
+                                                                <connections>
+                                                                    <action selector="decreaseNutritionElement:" destination="sdL-l7-QO5" eventType="touchUpInside" id="8bv-DM-KOI"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r7-F6-JTU">
                                                                 <rect key="frame" x="0.0" y="30" width="40" height="10"/>
                                                                 <constraints>
@@ -641,23 +652,27 @@ to display this page</string>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="UCt-AC-K8V" firstAttribute="top" secondItem="fPX-KM-rIC" secondAttribute="top" id="06A-gg-Dc0"/>
                                                             <constraint firstAttribute="bottom" secondItem="1r7-F6-JTU" secondAttribute="bottom" id="F0t-dV-iTM"/>
                                                             <constraint firstAttribute="trailing" secondItem="1r7-F6-JTU" secondAttribute="trailing" id="N9Q-89-97S"/>
                                                             <constraint firstItem="1r7-F6-JTU" firstAttribute="leading" secondItem="fPX-KM-rIC" secondAttribute="leading" id="RX4-6s-NLh"/>
-                                                            <constraint firstAttribute="trailing" secondItem="4Mf-f9-2fO" secondAttribute="trailing" constant="5" id="Ssy-Iw-zPS"/>
-                                                            <constraint firstItem="4Mf-f9-2fO" firstAttribute="top" secondItem="fPX-KM-rIC" secondAttribute="top" id="e3a-y2-QUE"/>
-                                                            <constraint firstItem="4Mf-f9-2fO" firstAttribute="leading" secondItem="fPX-KM-rIC" secondAttribute="leading" constant="5" id="sVw-7h-5aO"/>
+                                                            <constraint firstItem="UCt-AC-K8V" firstAttribute="leading" secondItem="fPX-KM-rIC" secondAttribute="leading" constant="5" id="UTa-zd-aYI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="UCt-AC-K8V" secondAttribute="trailing" constant="5" id="Y4v-wv-YIm"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eE9-Lz-JyK">
                                                         <rect key="frame" x="40" y="0.0" width="40" height="40"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_PlateGrain" translatesAutoresizingMaskIntoConstraints="NO" id="ZNV-Kk-VuX">
+                                                            <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3K-jj-wm9">
                                                                 <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="ZNV-Kk-VuX" secondAttribute="height" multiplier="1:1" id="7M3-Wz-L8v"/>
+                                                                    <constraint firstAttribute="width" secondItem="w3K-jj-wm9" secondAttribute="height" multiplier="1:1" id="0fw-qD-OOW"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                                <state key="normal" image="Image_PlateGrain"/>
+                                                                <connections>
+                                                                    <action selector="decreaseNutritionElement:" destination="sdL-l7-QO5" eventType="touchUpInside" id="s5K-2N-tMn"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGZ-Tw-YJI">
                                                                 <rect key="frame" x="0.0" y="30" width="40" height="10"/>
                                                                 <constraints>
@@ -669,12 +684,12 @@ to display this page</string>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="ZNV-Kk-VuX" firstAttribute="leading" secondItem="eE9-Lz-JyK" secondAttribute="leading" constant="5" id="4po-cc-LNJ"/>
+                                                            <constraint firstItem="w3K-jj-wm9" firstAttribute="leading" secondItem="eE9-Lz-JyK" secondAttribute="leading" constant="5" id="8XP-33-BpE"/>
                                                             <constraint firstAttribute="trailing" secondItem="nGZ-Tw-YJI" secondAttribute="trailing" id="90s-tT-UfS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="w3K-jj-wm9" secondAttribute="trailing" constant="5" id="GOX-7C-RNY"/>
                                                             <constraint firstAttribute="bottom" secondItem="nGZ-Tw-YJI" secondAttribute="bottom" id="Phu-ST-sTy"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ZNV-Kk-VuX" secondAttribute="trailing" constant="5" id="gwp-H1-cYY"/>
+                                                            <constraint firstItem="w3K-jj-wm9" firstAttribute="top" secondItem="eE9-Lz-JyK" secondAttribute="top" id="VuR-FC-dU8"/>
                                                             <constraint firstItem="nGZ-Tw-YJI" firstAttribute="leading" secondItem="eE9-Lz-JyK" secondAttribute="leading" id="tay-Oh-b8G"/>
-                                                            <constraint firstItem="ZNV-Kk-VuX" firstAttribute="top" secondItem="eE9-Lz-JyK" secondAttribute="top" id="ztQ-7X-Z15"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -692,12 +707,16 @@ to display this page</string>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_DairyPlace" translatesAutoresizingMaskIntoConstraints="NO" id="vr7-gL-BIG">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_PlateDairy" translatesAutoresizingMaskIntoConstraints="NO" id="d6O-2t-BeI">
+                                            <button opaque="NO" alpha="0.0" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fts-Dt-Yi3">
                                                 <rect key="frame" x="6" y="0.0" width="36" height="36"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="d6O-2t-BeI" secondAttribute="height" multiplier="1:1" id="v6R-p6-obl"/>
+                                                    <constraint firstAttribute="width" secondItem="Fts-Dt-Yi3" secondAttribute="height" multiplier="1:1" id="L04-UU-BQo"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" image="Image_PlateDairy"/>
+                                                <connections>
+                                                    <action selector="decreaseNutritionElement:" destination="sdL-l7-QO5" eventType="touchUpInside" id="Asz-8R-rUS"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO9-uL-XPO">
                                                 <rect key="frame" x="0.0" y="36" width="48" height="10"/>
                                                 <constraints>
@@ -709,9 +728,9 @@ to display this page</string>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="d6O-2t-BeI" firstAttribute="leading" secondItem="ZY3-Rg-iWd" secondAttribute="leading" constant="6" id="0f0-IT-Woy"/>
                                             <constraint firstAttribute="bottom" secondItem="vr7-gL-BIG" secondAttribute="bottom" id="2Rl-OD-G8S"/>
-                                            <constraint firstItem="d6O-2t-BeI" firstAttribute="top" secondItem="ZY3-Rg-iWd" secondAttribute="top" id="Gob-WH-zjI"/>
+                                            <constraint firstItem="Fts-Dt-Yi3" firstAttribute="top" secondItem="ZY3-Rg-iWd" secondAttribute="top" id="HJs-qn-dTG"/>
+                                            <constraint firstItem="Fts-Dt-Yi3" firstAttribute="width" secondItem="Fts-Dt-Yi3" secondAttribute="height" multiplier="1:1" id="JHj-G2-LzM"/>
                                             <constraint firstAttribute="height" constant="48" id="K2D-X1-QrV"/>
                                             <constraint firstItem="vr7-gL-BIG" firstAttribute="top" secondItem="ZY3-Rg-iWd" secondAttribute="top" id="LeG-Wr-7Sg"/>
                                             <constraint firstAttribute="trailing" secondItem="vr7-gL-BIG" secondAttribute="trailing" id="R7e-s0-vw1"/>
@@ -719,8 +738,9 @@ to display this page</string>
                                             <constraint firstAttribute="trailing" secondItem="YO9-uL-XPO" secondAttribute="trailing" id="XOE-as-LbV"/>
                                             <constraint firstItem="vr7-gL-BIG" firstAttribute="leading" secondItem="ZY3-Rg-iWd" secondAttribute="leading" id="byT-et-Lt5"/>
                                             <constraint firstAttribute="width" secondItem="ZY3-Rg-iWd" secondAttribute="height" multiplier="1:1" id="eJe-hE-Pxd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fts-Dt-Yi3" secondAttribute="trailing" constant="6" id="ei2-72-uYA"/>
                                             <constraint firstAttribute="width" constant="48" id="kQ1-56-xPK"/>
-                                            <constraint firstAttribute="trailing" secondItem="d6O-2t-BeI" secondAttribute="trailing" constant="6" id="pB4-EW-LlT"/>
+                                            <constraint firstItem="Fts-Dt-Yi3" firstAttribute="leading" secondItem="ZY3-Rg-iWd" secondAttribute="leading" constant="6" id="tHI-Ys-IKM"/>
                                             <constraint firstAttribute="bottom" secondItem="YO9-uL-XPO" secondAttribute="bottom" constant="2" id="ye3-0F-PMk"/>
                                         </constraints>
                                     </view>
@@ -801,21 +821,21 @@ to display this page</string>
                         <outlet property="buttonBar" destination="CIb-Xu-utK" id="O9f-YA-Jrt"/>
                         <outlet property="containerView" destination="ell-Kq-JZu" id="jQ0-ZL-Scp"/>
                         <outlet property="dairyCountLabel" destination="YO9-uL-XPO" id="xQF-pw-MtZ"/>
-                        <outlet property="dairyField" destination="d6O-2t-BeI" id="SRv-Gb-j4f"/>
+                        <outlet property="dairyField" destination="Fts-Dt-Yi3" id="7DD-bs-md7"/>
                         <outlet property="doneButton" destination="7EP-wg-rwE" id="hz7-uR-jhQ"/>
                         <outlet property="filtersScrollView" destination="ojv-rY-R1d" id="I5L-ZM-hrt"/>
                         <outlet property="foodgroupStackView" destination="BAr-gu-p5a" id="Wxj-Df-zJc"/>
                         <outlet property="fruitCountLabel" destination="1r7-F6-JTU" id="0fk-6w-R9w"/>
-                        <outlet property="fruitField" destination="4Mf-f9-2fO" id="vyH-ac-7WX"/>
+                        <outlet property="fruitField" destination="UCt-AC-K8V" id="bbb-4I-QKQ"/>
                         <outlet property="grainCountLabel" destination="nGZ-Tw-YJI" id="ZeC-BJ-LKL"/>
-                        <outlet property="grainField" destination="ZNV-Kk-VuX" id="df3-Uv-l5x"/>
+                        <outlet property="grainField" destination="w3K-jj-wm9" id="dNj-6Q-nLR"/>
                         <outlet property="imageToFilter" destination="vpi-wb-Eqi" id="Lxh-ju-PSx"/>
                         <outlet property="instructionOutlet" destination="tTU-an-rri" id="ofg-vn-xsc"/>
                         <outlet property="originalImage" destination="C0V-Nr-47V" id="Lcy-9m-05A"/>
                         <outlet property="proteinCountLabel" destination="PVz-H0-BWC" id="3hi-bm-9Lt"/>
-                        <outlet property="proteinField" destination="4ew-bX-clm" id="13p-qy-jf8"/>
+                        <outlet property="proteinField" destination="kPr-Ax-t8y" id="mQh-Zg-ecR"/>
                         <outlet property="vegetableCountLabel" destination="WX5-S5-uSv" id="Gsg-cj-zog"/>
-                        <outlet property="vegetableField" destination="UUE-Yi-btN" id="Ucn-xD-1CG"/>
+                        <outlet property="vegetableField" destination="cA9-Vw-YOT" id="PYM-7e-nof"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWa-ma-eix" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -11871,6 +11891,6 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <segue reference="127-SN-MXU"/>
         <segue reference="zeu-GQ-M0F"/>
         <segue reference="GHi-nD-NU8"/>
-        <segue reference="v1n-Cz-j5E"/>
+        <segue reference="wSv-ml-raZ"/>
     </inferredMetricsTieBreakers>
 </document>

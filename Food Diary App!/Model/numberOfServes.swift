@@ -14,6 +14,8 @@ struct numberOfServes
     private let femaleDefauthSet = [6.0,2.5,5.0,2.0,2.5] // Grain,Protein,Vegetable,Fruit,Dairy
     private var customSet = [6.0,8.0,5.0,4.0,3.0]//Add yourself
     
+
+    
     func getMaleSet() -> [Double]
     {
         return maleDefaultSet

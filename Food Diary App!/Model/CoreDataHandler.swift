@@ -89,7 +89,7 @@ struct CoreDataHandler
             {
                 for result in results as! [NSManagedObject]
                 {
-                    if let queryElement = result.value(forKey: queryFor) as? Int
+                    if let queryElement = result.value(forKey: queryFor) as? Double
                     {
                         // Store data in the corresponding array
                         if queryElement != 0

@@ -85,6 +85,8 @@ class homepageViewController: UIViewController {
         super.viewDidAppear(animated)
         // Present data and slider only when have data in database
         fileName = dataHandler.getImageFilename()
+        let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
+        var Standard = [0.0,0.0,0.0,0.0,0.0]
         //Existing User
         if fileName.count > 0
         {
@@ -100,8 +102,11 @@ class homepageViewController: UIViewController {
                 })
             }
             // If some new data is recorded
-            if fileName.count != currentNames.count
+            if fileName.count != currentNames.count || Standard != planStandard!
             {
+                //Update standard
+                Standard = planStandard!
+                
                 currentNames = fileName
                 // update value via healthpercentagecalculator
                 let nutritionDic = dataHandler.get5nList()
@@ -114,10 +119,10 @@ class homepageViewController: UIViewController {
                 informationLabel.text = "\(round(healthData.getAverageHealth()*100)/100)% Balance"
                 
                 // Get the user's standard
-                let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
+//                let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
                 
                 // Present the nutrition elements that users needs to intake today
-                presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: planStandard!, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
+                presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
                 
                 // Present the slider
                 showCircularSliderData()
@@ -133,7 +138,7 @@ class homepageViewController: UIViewController {
             fruitPercentage = 0
             dairyPercentage = 0
             showCircularSliderData()
-            presentTodayInformation()
+            presentTodayInformation(Standard: planStandard!)
             informationLabel.text = "No data yet"
         }
     }
@@ -165,10 +170,8 @@ class homepageViewController: UIViewController {
         })
     }
     
-    private func presentTodayInformation()
+    private func presentTodayInformation(Standard: [Double])
     {
-        let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
-        let Standard = planStandard!
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd"
@@ -204,17 +207,17 @@ class homepageViewController: UIViewController {
         {
             //   return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
             grainInfo = "\(todayCount[0]) / \(Standard[0])"
-            vegetableInfo = "\(todayCount[1]) / \(Standard[1])"
-            fruitInfo = "\(todayCount[2]) / \(Standard[2])"
-            dairyInfo = "\(todayCount[3]) / \(Standard[3])"
-            proteinInfo = "\(todayCount[4]) / \(Standard[4])"
+            vegetableInfo = "\(todayCount[1]) / \(Standard[2])"
+            fruitInfo = "\(todayCount[2]) / \(Standard[3])"
+            dairyInfo = "\(todayCount[3]) / \(Standard[4])"
+            proteinInfo = "\(todayCount[4]) / \(Standard[1])"
         }else
         {
             grainInfo = "0.0 / \(Standard[0])"
-            vegetableInfo = "0.0 / \(Standard[1])"
-            fruitInfo = "0.0 / \(Standard[2])"
-            dairyInfo = "0.0 / \(Standard[3])"
-            proteinInfo = "0.0 / \(Standard[4])"
+            vegetableInfo = "0.0 / \(Standard[2])"
+            fruitInfo = "0.0 / \(Standard[3])"
+            dairyInfo = "0.0 / \(Standard[4])"
+            proteinInfo = "0.0 / \(Standard[1])"
         }
         
         centerInformationArea.text =

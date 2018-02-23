@@ -102,17 +102,18 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
             let dataProvider = CGDataProvider(data: dataImage as CFData)
             let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
             let imageOriginalOutput = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
-            let height = CGFloat(imageOriginalOutput.size.height)
-            let width = CGFloat(imageOriginalOutput.size.width)
-            let refWidth = CGFloat(imageOriginalOutput.cgImage!.width)
-            let refHeight = CGFloat(imageOriginalOutput.cgImage!.height)
-            let x = (refWidth - imageOriginalOutput.size.width) / 2
-            let y = (refHeight - imageOriginalOutput.size.height) / 2
-            let rect = CGRect(x: x, y: y, width: width , height: height)
-            //Cropping the image to the desired square photo
-            self.image = cropImage(image: imageOriginalOutput, toRect: rect)
+//            let height = CGFloat(imageOriginalOutput.size.height)
+//            let width = CGFloat(imageOriginalOutput.size.width)
+//            let refWidth = CGFloat(imageOriginalOutput.cgImage!.width)
+//            let refHeight = CGFloat(imageOriginalOutput.cgImage!.height)
+//            let x = (refWidth - imageOriginalOutput.size.width) / 2
+//            let y = (refHeight - imageOriginalOutput.size.height) / 2
+//            let rect = CGRect(x: x, y: y, width: width , height: height)
+//            //Cropping the image to the desired square photo
+//            self.image = cropImage(image: imageOriginalOutput, toRect: rect)
             //Rotate it to the correct direction
-            self.image = self.image?.imageRotatedByDegrees(degrees: 90, flip: false)
+            //self.image = self.image?.imageRotatedByDegrees(degrees: 90, flip: false)
+            self.image = imageOriginalOutput
             performSegue(withIdentifier: "confirmPhotoSegue", sender: nil)
             spinner.stopAnimating()
             spinner.alpha = 0

@@ -21,11 +21,11 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     @IBOutlet weak var buttonBar:UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var addnoteText: UITextView!
-    @IBOutlet weak var dairyField: UIImageView!
-    @IBOutlet weak var proteinField: UIImageView!
-    @IBOutlet weak var grainField: UIImageView!
-    @IBOutlet weak var fruitField: UIImageView!
-    @IBOutlet weak var vegetableField: UIImageView!
+    @IBOutlet weak var vegetableField: UIButton!
+    @IBOutlet weak var proteinField: UIButton!
+    @IBOutlet weak var fruitField: UIButton!
+    @IBOutlet weak var grainField: UIButton!
+    @IBOutlet weak var dairyField: UIButton!
     @IBOutlet weak var vegetableCountLabel: UILabel!
     @IBOutlet weak var dairyCountLabel: UILabel!
     @IBOutlet weak var proteinCountLabel: UILabel!
@@ -103,6 +103,55 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
             filtersScrollView.addSubview(filterButton)
         }
         filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
+    }
+    
+    @IBAction func decreaseNutritionElement(_ sender: AnyObject)
+    {
+        switch sender.tag
+        {
+        case 0:
+            vegetable -= 0.5
+            if vegetable == 0.0
+            {
+                vegetableField.alpha = 0
+                vegetableCountLabel.alpha = 0
+            }
+            vegetableCountLabel.text = "x\(String(vegetable))"
+        case 1:
+            protein -= 0.5
+            if protein == 0.0
+            {
+                proteinField.alpha = 0
+                proteinCountLabel.alpha = 0
+            }
+            proteinCountLabel.text = "x\(String(protein))"
+        case 2:
+            fruit -= 0.5
+            if fruit == 0.0
+            {
+                fruitField.alpha = 0
+                fruitCountLabel.alpha = 0
+            }
+            fruitCountLabel.text = "x\(String(fruit))"
+        case 3:
+            grain -= 0.5
+            if grain == 0.0
+            {
+                grainField.alpha = 0
+                grainCountLabel.alpha = 0
+            }
+            grainCountLabel.text = "x\(String(grain))"
+        case 4:
+            dairy -= 0.5
+            if dairy == 0.0
+            {
+                dairyField.alpha = 0
+                dairyCountLabel.alpha = 0
+            }
+            dairyCountLabel.text = "x\(String(dairy))"
+        default:
+            print("none")
+        }
     }
     
     //Working with nutrition element selection

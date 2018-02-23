@@ -37,6 +37,7 @@ class DashboardViewController: UIViewController {
         {
             // Core data handler
             fileName = dataHandler.getImageFilename(type: "n_\(dashboardType!)")
+            print(fileName)
             //Display image in order of the most recent first
             fileName = fileName.reversed()
             

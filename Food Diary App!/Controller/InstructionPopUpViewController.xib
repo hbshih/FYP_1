@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,9 +37,10 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5T-WB-KOH">
-                            <rect key="frame" x="93" y="320" width="222.5" height="48"/>
-                            <string key="text">Your fist = 
+                            <rect key="frame" x="93" y="312" width="223" height="64"/>
+                            <string key="text">Fist = 
 1 portion of grain, vegetable, fruit 
+AND 
 1 cup of dairy </string>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                             <nil key="textColor"/>
@@ -74,7 +74,9 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="TZ8-Np-gIT" firstAttribute="top" secondItem="FuU-Cj-kOa" secondAttribute="bottom" constant="16" id="1sv-kB-816"/>
+                        <constraint firstItem="FuU-Cj-kOa" firstAttribute="leading" secondItem="IS1-mO-qkH" secondAttribute="leading" constant="5" id="AJl-Nc-3In"/>
                         <constraint firstItem="TZ8-Np-gIT" firstAttribute="centerX" secondItem="IS1-mO-qkH" secondAttribute="centerX" id="LWd-yR-9Zt"/>
+                        <constraint firstAttribute="trailing" secondItem="FuU-Cj-kOa" secondAttribute="trailing" constant="5" id="MQm-eu-92l"/>
                         <constraint firstItem="M1T-z7-fcX" firstAttribute="leading" secondItem="IS1-mO-qkH" secondAttribute="leading" constant="10" id="NCS-3w-cls"/>
                         <constraint firstAttribute="width" constant="320" id="NTp-yP-e8b"/>
                         <constraint firstItem="FuU-Cj-kOa" firstAttribute="centerX" secondItem="IS1-mO-qkH" secondAttribute="centerX" id="Ovc-Ij-lpY"/>
