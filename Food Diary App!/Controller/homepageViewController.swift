@@ -53,6 +53,8 @@ class homepageViewController: UIViewController {
     private var messageToUsers = ["You just poked my face, don't do that","My face is not a button. Tapping it does abosolutely nothing except irritate me","I know I conditioned you to tap my face in my counterpart apps, but I'm really serious: it doesn't do anything this time","Yet you're still poking my face","There are lots of other fun things you could be doing with this app right now instead of poking my face.","You could go seeing your recent foods, for example","But apparently poking my face is more enjoyable","Please stop - you'll make my face dirty","When's the last time you washed your hands, anyhow?","Why don't you go wash your hand?","You didn't take my advice, I can tell","Tapping my face isn't anywhere near as amusing as you think it is","You see, I have a great sense of humor"]
     private var showStartingMessageToNewUsers = false
     
+    private var Standard = [0.0,0.0,0.0,0.0,0.0]
+    
     // Access Data
     private var dataHandler = CoreDataHandler()
     let defaults = UserDefaultsHandler()
@@ -86,7 +88,6 @@ class homepageViewController: UIViewController {
         // Present data and slider only when have data in database
         fileName = dataHandler.getImageFilename()
         let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
-        var Standard = [0.0,0.0,0.0,0.0,0.0]
         //Existing User
         if fileName.count > 0
         {
@@ -183,9 +184,9 @@ class homepageViewController: UIViewController {
         var proteinInfo = ""
         grainInfo = "0.0 / \(Standard[0])"
         vegetableInfo = "0.0 / \(Standard[1])"
-        fruitInfo = "0.0 / \(Standard[2])"
-        dairyInfo = "0.0 / \(Standard[3])"
-        proteinInfo = "0.0 / \(Standard[4])"
+        fruitInfo = "0.0 / \(Standard[3])"
+        dairyInfo = "0.0 / \(Standard[4])"
+        proteinInfo = "0.0 / \(Standard[2])"
         centerInformationArea.text =
         "\(dateOnly)\nVege : \(vegetableInfo)\nProtein : \(proteinInfo)\nGrain : \(grainInfo)\nFruit : \(fruitInfo)\n Dairy : \(dairyInfo)"
     }
@@ -205,19 +206,18 @@ class homepageViewController: UIViewController {
         var proteinInfo = ""
         if dataDate == todayDate
         {
-            //   return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
             grainInfo = "\(todayCount[0]) / \(Standard[0])"
-            vegetableInfo = "\(todayCount[1]) / \(Standard[2])"
+            vegetableInfo = "\(todayCount[1]) / \(Standard[1])"
             fruitInfo = "\(todayCount[2]) / \(Standard[3])"
             dairyInfo = "\(todayCount[3]) / \(Standard[4])"
-            proteinInfo = "\(todayCount[4]) / \(Standard[1])"
+            proteinInfo = "\(todayCount[4]) / \(Standard[2])"
         }else
         {
             grainInfo = "0.0 / \(Standard[0])"
-            vegetableInfo = "0.0 / \(Standard[2])"
+            vegetableInfo = "0.0 / \(Standard[1])"
             fruitInfo = "0.0 / \(Standard[3])"
             dairyInfo = "0.0 / \(Standard[4])"
-            proteinInfo = "0.0 / \(Standard[1])"
+            proteinInfo = "0.0 / \(Standard[2])"
         }
         
         centerInformationArea.text =
