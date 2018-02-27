@@ -8,11 +8,11 @@
 
 import UIKit
 import Firebase
-//import FBSDKCoreKit
 import IQKeyboardManagerSwift
 import CoreData
 import Fabric
 import UserNotifications
+//import Appsee
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         {
             print("Token : \(token)")
         }
+        
+        //Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
 
         
         Fabric.sharedSDK().debug = true
