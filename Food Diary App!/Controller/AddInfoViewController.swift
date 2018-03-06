@@ -53,6 +53,8 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         addnoteText.text = "add some note here..."
         addnoteText.textColor = UIColor.lightGray
         addnoteText.delegate = self
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -65,9 +67,10 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         {
             if image.image == nil
             {
-                dismiss(animated: true, completion: nil)
+                performSegue(withIdentifier: "closeSegue", sender: nil)
+                //dismiss(animated: true, completion: nil)
                 image.image = #imageLiteral(resourceName: "Sample_Image")
-                dismiss(animated: true, completion: nil)
+             //   dismiss(animated: true, completion: nil)
                 print("Cancel No image AH")
                 // Return Home
             }else
