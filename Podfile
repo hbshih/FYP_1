@@ -32,6 +32,7 @@ pod 'Firebase/Performance'
 pod 'Firebase/Messaging'
 pod 'Instructions', '~> 1.0.0'
 pod 'Appsee'
+pod 'YPImagePicker'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

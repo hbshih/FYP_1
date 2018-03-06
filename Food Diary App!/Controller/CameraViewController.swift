@@ -138,7 +138,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
         {
             if let ConfirmPhotoVC = segue.destination as? ConfirmPhotoViewController
             {
-                ConfirmPhotoVC.image = image
+             //   ConfirmPhotoVC.image = image!
             }
         }
 

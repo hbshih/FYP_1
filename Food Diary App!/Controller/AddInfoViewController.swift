@@ -1,25 +1,23 @@
 //
-//  ConfirmPhotoViewController.swift
+//  AddInfoViewController.swift
 //  Food Diary App!
 //
-//  Created by Ben Shih on 21/12/2017.
-//  Copyright © 2017 BenShih. All rights reserved.
+//  Created by Ben Shih on 01/03/2018.
+//  Copyright © 2018 BenShih. All rights reserved.
 //
 
 import UIKit
-import CoreData
-import PopupDialog
-import Instructions
+import YPImagePicker
 import FirebaseAnalytics
+import PopupDialog
 
-class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
-{
-    @IBOutlet weak var containerView:UIView!
-    @IBOutlet weak var originalImage:UIImageView!
-    @IBOutlet weak var imageToFilter:UIImageView!
-    @IBOutlet weak var filtersScrollView:UIScrollView!
-    @IBOutlet weak var buttonBar:UIView!
-    @IBOutlet weak var doneButton: UIButton!
+class AddInfoViewController: UIViewController,UITextViewDelegate {
+    
+    var LaunchCamera: Bool?
+    var pickerdismiss: Bool?
+    var LaunchCameraTimes = 0
+
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var addnoteText: UITextView!
     @IBOutlet weak var vegetableField: UIButton!
     @IBOutlet weak var proteinField: UIButton!
@@ -33,8 +31,11 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     @IBOutlet weak var fruitCountLabel: UILabel!
     @IBOutlet weak var foodgroupStackView: UIStackView!
     @IBOutlet weak var instructionOutlet: UIButton!
-    // Genetal Variables
-    var image: UIImage?
+    @IBOutlet weak var doneButton: UIButton!
+    
+    //Layout
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var centerView: UIView!
     
     // Saving nutrition info
     private var grain = 0.0
@@ -43,67 +44,128 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     private var vegetable = 0.0
     private var dairy = 0.0
     
-    // Array of all filters
-    private var CIFilterNames = [
-        "CIPhotoEffectChrome",
-        "CIPhotoEffectFade",
-        "CIPhotoEffectInstant",
-        "CIPhotoEffectNoir",
-        "CIPhotoEffectProcess",
-        "CIPhotoEffectTonal",
-        "CIPhotoEffectTransfer",
-        "CISepiaTone",
-        "CIVignette",
-        "CIGaussianBlur",
-        "CIColorControls"
-    ]
-    
-    //Tutorial for new users
-    private let coachMarksController = CoachMarksController()
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        LaunchCamera = true
+        pickerdismiss = false
         // Working with interface transition
         addnoteText.text = "add some note here..."
         addnoteText.textColor = UIColor.lightGray
         addnoteText.delegate = self
-        originalImage.image = image
-       // originalImage.image = image
-        doneButton.alpha = 1
-        buttonBar.alpha = 0
-        //Working with scrollbar
-        var XCoord:CGFloat = 5
-        let yCoord:CGFloat = 5
-        let buttonWidth:CGFloat = 80
-        let buttonHeight:CGFloat = 80
-        let gapBetweenButtons:CGFloat = 5
-        
-        // For each filter, create it as a button with filtered-image in the scroll bar
-        var itemCount = 5
-        for i in 0..<CIFilterNames.count
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        if LaunchCamera! && LaunchCameraTimes < 1
         {
-            itemCount = i
-            let filterButton = UIButton(type:.custom)
-            filterButton.frame = CGRect(x: XCoord,y: yCoord,width: buttonWidth,height: buttonHeight)
-            filterButton.tag = itemCount
-            filterButton.addTarget(self,action:#selector(filterButtonTapped(sender:)),for:.touchUpInside)
-            filterButton.layer.cornerRadius = 6
-            filterButton.clipsToBounds = true
-            
-            let ciContext = CIContext(options:nil)
-            let coreImage = CIImage(image:originalImage.image!)
-            let filter = CIFilter(name:"\(CIFilterNames[i])")
-            filter?.setDefaults()
-            filter!.setValue(coreImage,forKey:kCIInputImageKey)
-            let filteredImageData = filter!.value(forKey:kCIOutputImageKey) as! CIImage
-            let filteredImageRef = ciContext.createCGImage(filteredImageData,from:filteredImageData.extent)
-            let imageForButton = UIImage(cgImage:filteredImageRef!)
-            filterButton.setBackgroundImage(imageForButton,for:.normal)
-            XCoord += buttonWidth + gapBetweenButtons
-            filtersScrollView.addSubview(filterButton)
+            showPicker()
+            LaunchCameraTimes += 1
+        }else
+        {
+            if image.image == nil
+            {
+                dismiss(animated: true, completion: nil)
+                image.image = #imageLiteral(resourceName: "Sample_Image")
+                dismiss(animated: true, completion: nil)
+                print("Cancel No image AH")
+                // Return Home
+            }else
+            {
+                LaunchCamera = false
+                
+            }
         }
-        filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        image.image = nil
+    }
+    
+    @objc func showPicker() {
+        // Configuration
+        var config = YPImagePickerConfiguration()
+        
+        // Uncomment and play around with the configuration 👨‍🔬 🚀
+        
+        //        /// Set this to true if you want to force the  library output to be a squared image. Defaults to false
+        config.onlySquareImagesFromLibrary = true
+        //
+        //        /// Set this to true if you want to force the camera output to be a squared image. Defaults to true
+        config.onlySquareImagesFromCamera = true
+        //
+        //        /// Ex: cappedTo:1024 will make sure images from the library will be
+        //        /// resized to fit in a 1024x1024 box. Defaults to original image size.
+        //        config.libraryTargetImageSize = .cappedTo(size: 1024)
+        //
+        //        /// Enables videos within the library. Defaults to false
+        //        config.showsVideoInLibrary = true
+        //
+        //        /// Enables selecting the front camera by default, useful for avatars. Defaults to false
+        //        config.usesFrontCamera = true
+        //
+        //        /// Adds a Filter step in the photo taking process.  Defaults to true
+        config.showsFilters = true
+        //
+        //        /// Enables you to opt out from saving new (or old but filtered) images to the
+        //        /// user's photo library. Defaults to true.
+        //        config.shouldSaveNewPicturesToAlbum = true
+        //
+        //        /// Choose the videoCompression.  Defaults to AVAssetExportPresetHighestQuality
+        //        config.videoCompression = AVAssetExportPreset640x480
+        //
+        //        /// Defines the name of the album when saving pictures in the user's photo library.
+        //        /// In general that would be your App name. Defaults to "DefaultYPImagePickerAlbumName"
+        //        config.albumName = "ThisIsMyAlbum"
+        //
+        //        /// Defines which screen is shown at launch. Video mode will only work if `showsVideo = true`.
+        //        /// Default value is `.photo`
+        //        config.startOnScreen = .video
+        //
+        //        /// Defines which screens are shown at launch, and their order.
+        //        /// Default value is `[.library, .photo]`
+        //  config.screens = [.library, .photo]
+        //
+        //        /// Defines the time limit for recording videos.
+        //        /// Default is 30 seconds.
+        //        config.videoRecordingTimeLimit = 5.0
+        //
+        //        /// Defines the time limit for videos from the library.
+        //        /// Defaults to 60 seconds.
+        //        config.videoFromLibraryTimeLimit = 10.0
+        //
+        //        /// Adds a Crop step in the photo taking process, after filters.  Defaults to .none
+        //        config.showsCrop = .rectangle(ratio: (16/9))
+        
+        // Set it the default conf for all Pickers
+        //      YPImagePicker.setDefaultConfiguration(config)
+        // And then use the default configuration like so:
+        //      let picker = YPImagePicker()
+        
+        
+        
+        // Here we use a per picker configuration.
+        let picker = YPImagePicker(configuration: config)
+        
+        // unowned is Mandatory since it would create a retain cycle otherwise :)
+        picker.didSelectImage = { [unowned picker] img in
+            // image picked
+            print(img.size)
+            self.image.image = img
+            self.image.alpha = 1
+            self.addnoteText.alpha = 1
+            self.centerView.alpha = 1
+            self.doneButton.alpha = 1
+            self.navBar.alpha = 1
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
+    }
+    @IBAction func close(_ sender: Any)
+    {
+        addnoteText.text = nil
+        image.image = nil
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func decreaseNutritionElement(_ sender: AnyObject)
@@ -189,29 +251,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
             print("none")
         }
     }
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // Show pop up dialog
     @IBAction func doneTapped(_ sender: Any)
-    {
-        UIView.animate(withDuration: 0.2, animations: {self.buttonBar.alpha = 1}, completion: nil)
-        doneButton.alpha = 0
-        filtersScrollView.alpha = 0
-        addnoteText.alpha = 0
-        // Show tutorial if is a new user.
-        if !(UserDefaultsHandler().getAddDataTutorialStatus())
-        {
-            self.coachMarksController.dataSource = self
-            self.coachMarksController.start(on: self)
-        }
-    }
-    // Prepare to save image
-    @IBAction func completeTapped(_ sender: Any)
     {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
@@ -227,19 +267,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         let fileManager = FileManager.default
         //get the image path
         let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-        //get the image we took with camera
-        let imageSaveImage: UIImage
-        if imageToFilter.image != nil
-        {
-            //Filtered
-            imageSaveImage = imageToFilter.image!
-        }else
-        {
-            //Unfiltered
-            imageSaveImage = originalImage.image!
-        }
         //get the JPG data for this image
-        let data = UIImageJPEGRepresentation(imageSaveImage, 0.5)
+        let data = UIImageJPEGRepresentation(image.image!, 0.5)
         //store it in the document directory
         fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
         
@@ -253,13 +282,6 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         }
         //Save to Core
         CoreDataHandler().setNewRecord(time: time, imageName: imageName, note: notes, nutritionInfo: nutritionValues)
-    }
-    
-    //Action when filter is tapped (Change the current image to filtered ones)
-    @objc func filterButtonTapped(sender:UIButton)
-    {
-        let button = sender as UIButton
-        imageToFilter.image = button.backgroundImage(for: UIControlState.normal)
     }
     
     // Working with textfield ##
@@ -278,7 +300,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
             addnoteText.textColor = UIColor.lightGray
         }
     }
-
+    
     // Show instructions
     @IBAction func instructionTapped(_ sender: Any)
     {
@@ -301,52 +323,13 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         present(popup, animated: true, completion: nil)
     }
     
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
-    }
     
-}
+    
 
-/* Protocol for tutorial walkthrough*/
-
-// MARK: - Protocol Conformance | CoachMarksControllerDataSource
-extension ConfirmPhotoViewController: CoachMarksControllerDataSource
-{
-    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
-    {
-        return 2
-    }
     
-    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark
+    override func didReceiveMemoryWarning()
     {
-        switch(index) {
-        case 0:
-            return coachMarksController.helper.makeCoachMark(for: foodgroupStackView)
-        case 1:
-            return coachMarksController.helper.makeCoachMark(for: instructionOutlet)
-        default:
-            return coachMarksController.helper.makeCoachMark()
-        }
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?)
-    {
-        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
-        
-        switch(index) {
-        case 0:
-            coachViews.bodyView.hintLabel.text = "Tap those groups that you think your plate contains!"
-            coachViews.bodyView.nextLabel.text = "OK"
-            
-        case 1:
-            coachViews.bodyView.hintLabel.text = "Tap here for some tips to help you categorize them."
-            coachViews.bodyView.nextLabel.text = "Got it"
-            UserDefaultsHandler().setAddDataTutorialStatus(status: true)
-        default: break
-        }
-        
-        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
-    }
-    
 }

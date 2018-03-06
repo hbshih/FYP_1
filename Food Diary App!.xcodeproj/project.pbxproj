@@ -53,6 +53,9 @@
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
+		B5ECA91D20489E0A00E7F819 /* CameraAndImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */; };
+		B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91E2048B16900E7F819 /* photoProcessor.swift */; };
+		B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */; };
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
 		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
@@ -137,6 +140,9 @@
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
+		B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndImagePickerViewController.swift; sourceTree = "<group>"; };
+		B5ECA91E2048B16900E7F819 /* photoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoProcessor.swift; sourceTree = "<group>"; };
+		B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
 		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 				B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */,
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
+				B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
@@ -284,6 +291,7 @@
 				B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */,
 				B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */,
 				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
+				B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 				B58066FE201E763A00F8FB89 /* validate.swift */,
 				B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */,
 				B5A5B893203A5179009C0511 /* numberOfServes.swift */,
+				B5ECA91E2048B16900E7F819 /* photoProcessor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -557,7 +566,9 @@
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -573,7 +584,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -703,6 +716,7 @@
 				B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */,
 				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
 				B58066FF201E763A00F8FB89 /* validate.swift in Sources */,
+				B5ECA91D20489E0A00E7F819 /* CameraAndImagePickerViewController.swift in Sources */,
 				B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
 				B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */,
@@ -717,9 +731,11 @@
 				B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */,
 				B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */,
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
+				B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,
 				B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */,
 				B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */,
+				B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */,
 				B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
