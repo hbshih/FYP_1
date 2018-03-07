@@ -52,6 +52,7 @@
 		B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
+		B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DA2A852050A525003BCDB1 /* Localizable.strings */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
 		B5ECA91D20489E0A00E7F819 /* CameraAndImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */; };
 		B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91E2048B16900E7F819 /* photoProcessor.swift */; };
@@ -139,6 +140,10 @@
 		B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPercentageCalculator.swift; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		B5DA2A7F2050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		B5DA2A802050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B5DA2A842050A525003BCDB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5DA2A862050A53B003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
 		B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndImagePickerViewController.swift; sourceTree = "<group>"; };
 		B5ECA91E2048B16900E7F819 /* photoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoProcessor.swift; sourceTree = "<group>"; };
@@ -266,6 +271,7 @@
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
 				B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */,
 				B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */,
+				B5DA2A852050A525003BCDB1 /* Localizable.strings */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = B57935291FE022DE00E663DB;
 			productRefGroup = B57935331FE022DE00E663DB /* Products */;
@@ -473,6 +480,7 @@
 			files = (
 				B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */,
 				B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */,
+				B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */,
 				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
@@ -776,6 +784,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B579353A1FE022DE00E663DB /* Base */,
+				B5DA2A7F2050A4E2003BCDB1 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -784,8 +793,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				B579353F1FE022DE00E663DB /* Base */,
+				B5DA2A802050A4E2003BCDB1 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5DA2A852050A525003BCDB1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5DA2A842050A525003BCDB1 /* en */,
+				B5DA2A862050A53B003BCDB1 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -795,6 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -852,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -913,7 +934,7 @@
 					"$(PROJECT_DIR)/Pods/Fabric",
 				);
 				INFOPLIST_FILE = "Food Diary App!/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -936,7 +957,7 @@
 					"$(PROJECT_DIR)/Pods/Fabric",
 				);
 				INFOPLIST_FILE = "Food Diary App!/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
 				PRODUCT_NAME = "$(TARGET_NAME)";

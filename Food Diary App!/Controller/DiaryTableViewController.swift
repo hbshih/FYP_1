@@ -165,6 +165,29 @@ class DiaryTableViewController: UITableViewController {
             
             // Show nutrition icons and counts
             
+//            cell.vegetableField.alpha = 1
+//            cell.vegetableLabel.alpha = 1
+//            cell.vegetableLabel.text = String(vegetableList[indexPath.row])
+//            cell.proteinField.alpha = 1
+//            cell.proteinLabel.alpha = 1
+//            cell.proteinLabel.text =
+//                String(proteinList[indexPath.row])
+//            cell.grainField.alpha = 1
+//            cell.grainLabel.alpha = 1
+//            cell.grainLabel.text = String(grainList[indexPath.row])
+//            cell.fruitField.alpha = 1
+//            cell.fruitLabel.alpha = 1
+//            cell.fruitLabel.text = String(fruitList[indexPath.row])
+//            cell.dairyLabel.alpha = 1
+//            cell.dairyField.alpha = 1
+//            cell.dairyLabel.text = String(dairyList[indexPath.row])
+            
+            cell.vegetableLabel.text = String(vegetableList[indexPath.row])
+            cell.proteinLabel.text = String(proteinList[indexPath.row])
+            cell.grainLabel.text = String(grainList[indexPath.row])
+            cell.fruitLabel.text = String(fruitList[indexPath.row])
+            cell.dairyLabel.text = String(dairyList[indexPath.row])
+            
             if vegetableList[indexPath.row] > 0
             {
                 cell.vegetableField.alpha = 1
@@ -173,7 +196,7 @@ class DiaryTableViewController: UITableViewController {
             }else
             {
                 cell.vegetableField.alpha = 0.25
-                cell.vegetableLabel.alpha = 0
+                cell.vegetableLabel.alpha = 0.25
             }
             
             if proteinList[indexPath.row] > 0
@@ -184,7 +207,7 @@ class DiaryTableViewController: UITableViewController {
             }else
             {
                 cell.proteinField.alpha = 0.25
-                cell.proteinLabel.alpha = 0
+                cell.proteinLabel.alpha = 0.25
             }
             
             if grainList[indexPath.row] > 0
@@ -195,7 +218,7 @@ class DiaryTableViewController: UITableViewController {
             }else
             {
                 cell.grainField.alpha = 0.25
-                cell.grainLabel.alpha = 0
+                cell.grainLabel.alpha = 0.25
             }
             
             if fruitList[indexPath.row] > 0
@@ -206,7 +229,7 @@ class DiaryTableViewController: UITableViewController {
             }else
             {
                 cell.fruitField.alpha = 0.25
-                cell.fruitLabel.alpha = 0
+                cell.fruitLabel.alpha = 0.25
             }
             
             if dairyList[indexPath.row] != 0
@@ -216,7 +239,7 @@ class DiaryTableViewController: UITableViewController {
                 cell.dairyLabel.text = String(dairyList[indexPath.row])
             }else
             {
-                cell.dairyLabel.alpha = 0
+                cell.dairyLabel.alpha = 0.25
                 cell.dairyField.alpha = 0.25
             }
             

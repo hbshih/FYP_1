@@ -33,6 +33,8 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var instructionOutlet: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
+    public var skip = false
+    
     //Layout
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var centerView: UIView!
@@ -127,7 +129,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         //
         //        /// Defines which screens are shown at launch, and their order.
         //        /// Default value is `[.library, .photo]`
-        //  config.screens = [.library, .photo]
+        // config.screens = [.library, .photo]
         //
         //        /// Defines the time limit for recording videos.
         //        /// Default is 30 seconds.

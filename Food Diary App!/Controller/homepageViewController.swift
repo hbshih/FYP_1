@@ -38,7 +38,7 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     
     @IBOutlet weak var cameraButton: UIButton!
-    public var imageView = UIImageView()
+    
     // Variables to store percentage informations
     private var healthPercentage = 0.0
     private var vegetablePercentage = 0.0
@@ -77,8 +77,11 @@ class homepageViewController: UIViewController {
             /*New User*/
             self.coachMarksController.dataSource = self
             self.coachMarksController.start(on: self)
+            self.coachMarksController.overlay.allowTap = true
+            let skipView = CoachMarkSkipDefaultView()
+            skipView.setTitle("Skip", for: .normal)
+            self.coachMarksController.skipView = skipView
         }
-        //cameraButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -121,7 +124,7 @@ class homepageViewController: UIViewController {
                 updatePercentageData(healthData: healthData)
                 
                 // text below the slider
-                informationLabel.text = "\(round(healthData.getAverageHealth()*100)/100)% Balance"
+                informationLabel.text = "Recent Score: \(round(healthData.getAverageHealth()*100)/100)%"
                 
                 // Get the user's standard
 //                let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
@@ -201,8 +204,6 @@ class homepageViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let todayDate = formatter.string(from: date)
-        formatter.dateFormat = "MM/dd"
-        let dateOnly = formatter.string(from: date)
         var grainInfo = ""
         var vegetableInfo = ""
         var fruitInfo = ""
@@ -225,7 +226,7 @@ class homepageViewController: UIViewController {
         }
         
         centerInformationArea.text =
-        "\(dateOnly)\nVege : \(vegetableInfo)\nProtein : \(proteinInfo)\nGrain : \(grainInfo)\nFruit : \(fruitInfo)\n Dairy : \(dairyInfo)"
+        "Today Info\nVege : \(vegetableInfo)\nProtein : \(proteinInfo)\nGrain : \(grainInfo)\nFruit : \(fruitInfo)\n Dairy : \(dairyInfo)"
     }
     
     func showCircularSliderData()
@@ -352,101 +353,6 @@ class homepageViewController: UIViewController {
         {
         }
     }
-    /*
-    @objc func showPicker() {
-        
-        // Configuration
-        var config = YPImagePickerConfiguration()
-        
-        // Uncomment and play around with the configuration 👨‍🔬 🚀
-        
-        //        /// Set this to true if you want to force the  library output to be a squared image. Defaults to false
-        config.onlySquareImagesFromLibrary = true
-        //
-        //        /// Set this to true if you want to force the camera output to be a squared image. Defaults to true
-        config.onlySquareImagesFromCamera = true
-        //
-        //        /// Ex: cappedTo:1024 will make sure images from the library will be
-        //        /// resized to fit in a 1024x1024 box. Defaults to original image size.
-        //        config.libraryTargetImageSize = .cappedTo(size: 1024)
-        //
-        //        /// Enables videos within the library. Defaults to false
-        //        config.showsVideoInLibrary = true
-        //
-        //        /// Enables selecting the front camera by default, useful for avatars. Defaults to false
-        //        config.usesFrontCamera = true
-        //
-        //        /// Adds a Filter step in the photo taking process.  Defaults to true
-        config.showsFilters = true
-        //
-        //        /// Enables you to opt out from saving new (or old but filtered) images to the
-        //        /// user's photo library. Defaults to true.
-        //        config.shouldSaveNewPicturesToAlbum = true
-        //
-        //        /// Choose the videoCompression.  Defaults to AVAssetExportPresetHighestQuality
-        //        config.videoCompression = AVAssetExportPreset640x480
-        //
-        //        /// Defines the name of the album when saving pictures in the user's photo library.
-        //        /// In general that would be your App name. Defaults to "DefaultYPImagePickerAlbumName"
-        //        config.albumName = "ThisIsMyAlbum"
-        //
-        //        /// Defines which screen is shown at launch. Video mode will only work if `showsVideo = true`.
-        //        /// Default value is `.photo`
-        //        config.startOnScreen = .video
-        //
-        //        /// Defines which screens are shown at launch, and their order.
-        //        /// Default value is `[.library, .photo]`
-        //  config.screens = [.library, .photo]
-        //
-        //        /// Defines the time limit for recording videos.
-        //        /// Default is 30 seconds.
-        //        config.videoRecordingTimeLimit = 5.0
-        //
-        //        /// Defines the time limit for videos from the library.
-        //        /// Defaults to 60 seconds.
-        //        config.videoFromLibraryTimeLimit = 10.0
-        //
-        //        /// Adds a Crop step in the photo taking process, after filters.  Defaults to .none
-        //        config.showsCrop = .rectangle(ratio: (16/9))
-        
-        // Set it the default conf for all Pickers
-        //      YPImagePicker.setDefaultConfiguration(config)
-        // And then use the default configuration like so:
-        //      let picker = YPImagePicker()
-        
-        // Here we use a per picker configuration.
-        let picker = YPImagePicker(configuration: config)
-        
-        // unowned is Mandatory since it would create a retain cycle otherwise :)
-        picker.didSelectImage = { [unowned picker] img in
-            // image picked
-            print(img.size)
-            self.imageView.image = img
-            //hotoProcessor(image: img)
-            self.sendPhoto()
-            picker.dismiss(animated: false, completion: nil)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                self.performSegue(withIdentifier: "confirmPhotoSegue", sender: self)
-//            }
-            
-//            picker.present(AddInfoViewController(), animated: true, completion: nil)
-//            self.imageView.image = img
-//            //picker.performSegue(withIdentifier: "confirmPhotoSegue", sender: nil)
-//            picker.dismiss(animated: true, completion:
-//            {
-//                self.performSegue(withIdentifier: "confirmPhotoSegue", sender: nil)
-//            })
-        }
-        present(picker, animated: true, completion: nil)
-    }
-    
-    
-    
-    func getImage() -> UIImage
-    {
-        return imageView.image!
-    }
- */
 }
 
 // MARK: - Protocol Conformance | CoachMarksControllerDataSource
@@ -455,18 +361,15 @@ extension homepageViewController: CoachMarksControllerDataSource {
         let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
         switch(index) {
         case 0:
-            coachViews.bodyView.hintLabel.text = "Let's start a quick tour!"
-            coachViews.bodyView.nextLabel.text = "Go!"
-        case 1:
             coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was"
             coachViews.bodyView.nextLabel.text = "Next"
-        case 2:
+        case 1:
             coachViews.bodyView.hintLabel.text = "Swipe up to get diet information / recommendation for today."
             coachViews.bodyView.nextLabel.text = "Next"
-        case 3:
+        case 2:
             coachViews.bodyView.hintLabel.text = "Tap on each of the 5 food groups to find out individual balance"
             coachViews.bodyView.nextLabel.text = "Next"
-        case 4:
+        case 3:
             coachViews.bodyView.hintLabel.text = "Explore more by adding your food now!"
             coachViews.bodyView.nextLabel.text = "Start!"
         default: break
@@ -478,20 +381,16 @@ extension homepageViewController: CoachMarksControllerDataSource {
         switch(index)
         {
         case 0:
-            return coachMarksController.helper.makeCoachMark(for: self.navigationController?.navigationBar) { (frame: CGRect) -> UIBezierPath in
-                return UIBezierPath(rect: frame)
-            }
-        case 1:
             return coachMarksController.helper.makeCoachMark(for: self.circularSlider)
-        case 2:
+        case 1:
             self.centerFaceArea.alpha = 0
             self.centerInformationArea.alpha = 1
             return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
-        case 3:
+        case 2:
             self.centerFaceArea.alpha = 1
             self.centerInformationArea.alpha = 0
             return coachMarksController.helper.makeCoachMark(for: self.foodgroupsStackView)
-        case 4:
+        case 3:
             UserDefaultsHandler().setHomepageTutorialStatus(status: true)
             return coachMarksController.helper.makeCoachMark(for: self.cameraButtonOutlet)
         default:
@@ -500,7 +399,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
     }
     
     func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
-        return 5
+        return 4
     }
 }
 
