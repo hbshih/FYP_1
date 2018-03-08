@@ -22,7 +22,6 @@
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
 		B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */; };
-		B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */; };
 		B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */; };
 		B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */; };
 		B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */; };
@@ -38,6 +37,7 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
+		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
 		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
@@ -104,7 +104,6 @@
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B558A46A202E5A92003AA3F4 /* Food Diary App!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Diary App!.entitlements"; sourceTree = "<group>"; };
 		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
-		B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlanViewController.xib; sourceTree = "<group>"; };
 		B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		B570B1002025F771008BF8BC /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -126,6 +125,8 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
+		B5965DFF2050B14B002A2648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
@@ -289,7 +290,7 @@
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
-				B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */,
+				B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */,
 				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
 				B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */,
@@ -486,7 +487,7 @@
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
-				B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */,
+				B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 			);
@@ -796,6 +797,15 @@
 				B5DA2A802050A4E2003BCDB1 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5965DFC2050B120002A2648 /* Base */,
+				B5965DFF2050B14B002A2648 /* zh-Hant */,
+			);
+			name = SelectPlanViewController.xib;
 			sourceTree = "<group>";
 		};
 		B5DA2A852050A525003BCDB1 /* Localizable.strings */ = {

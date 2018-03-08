@@ -1,12 +1,12 @@
 
 /* Class = "UITableViewSection"; headerTitle = "choose custom to edit the values "; ObjectID = "0KQ-zb-gfQ"; */
-"0KQ-zb-gfQ.headerTitle" = "choose custom to edit the values ";
+"0KQ-zb-gfQ.headerTitle" = "選擇自訂調整攝取量";
 
 /* Class = "UILabel"; text = "Fruit"; ObjectID = "0yn-Zo-a1U"; */
 "0yn-Zo-a1U.text" = "水果";
 
 /* Class = "UILabel"; text = "Custom"; ObjectID = "11z-qZ-szh"; */
-"11z-qZ-szh.text" = "預設";
+"11z-qZ-szh.text" = "自訂";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "17d-xp-VSm"; */
 "17d-xp-VSm.text" = "1.0";
@@ -114,7 +114,7 @@
 "PVz-H0-BWC.text" = "x1";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "RKR-AI-eyG"; */
-"RKR-AI-eyG.text" = "蛋白質";
+"RKR-AI-eyG.text" = "豆魚肉蛋";
 
 /* Class = "UILabel"; text = "Report"; ObjectID = "SNt-Nh-D4S"; */
 "SNt-Nh-D4S.text" = "報告";
@@ -162,7 +162,7 @@
 "fQm-71-5Cg.title" = "設定";
 
 /* Class = "UILabel"; text = "\n\nAdd new records\nto display this page"; ObjectID = "fab-Pt-goG"; */
-"fab-Pt-goG.text" = "\n\nAdd new records\nto display this page";
+"fab-Pt-goG.text" = "\n\n新增新的紀錄\n才看得到這一頁喔！";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "hDN-GU-KBk"; */
 "hDN-GU-KBk.text" = "五穀根莖";

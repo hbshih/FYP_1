@@ -51,6 +51,7 @@ class DiaryTableViewController: UITableViewController {
         //-- Accesing App File, getting images
         if fileName.count != 0
         {
+            noDataIndicator.alpha = 0
             images = FileManagerModel().lookupImage(fileNames: fileName)
         }else
         {

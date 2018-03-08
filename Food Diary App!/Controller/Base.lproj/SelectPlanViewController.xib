@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectPlanViewController" customModule="Foody_life_onbaording" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectPlanViewController" customModule="Food_Diary_App_" customModuleProvider="target">
             <connections>
                 <outlet property="picker" destination="WRF-4t-dOE" id="xdY-bG-DeR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
