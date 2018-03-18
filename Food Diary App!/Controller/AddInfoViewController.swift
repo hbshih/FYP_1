@@ -114,7 +114,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         //
         //        /// Enables you to opt out from saving new (or old but filtered) images to the
         //        /// user's photo library. Defaults to true.
-        //        config.shouldSaveNewPicturesToAlbum = true
+                config.shouldSaveNewPicturesToAlbum = false
         //
         //        /// Choose the videoCompression.  Defaults to AVAssetExportPresetHighestQuality
         //        config.videoCompression = AVAssetExportPreset640x480

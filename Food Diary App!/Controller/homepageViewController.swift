@@ -119,12 +119,14 @@ class homepageViewController: UIViewController {
                 // update value via healthpercentagecalculator
                 let nutritionDic = dataHandler.get5nList()
                 var healthData = HealthPercentageCalculator(fileNames: fileName,nutritionDic: nutritionDic)
+                print(healthData.getLastSevenDaysPercentage())
+                print(healthData.getLastSevenDaysDailyCountIntoBalancePercentage())
                 
                 // update percentage
                 updatePercentageData(healthData: healthData)
                 
                 // text below the slider
-                informationLabel.text = "Recent Score: \(round(healthData.getAverageHealth()*100)/100)%"
+                informationLabel.text = "7-Day: \(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
                 
                 // Get the user's standard
 //                let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]

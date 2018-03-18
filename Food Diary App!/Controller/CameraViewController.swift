@@ -97,9 +97,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
         if let error = error {
             print("error occure : \(error.localizedDescription)")
         }
-        //if let dataImage = photo.fileDataRepresentation()
         if let dataImage = photo.fileDataRepresentation()
         {
+            //Getting the photo
             let dataProvider = CGDataProvider(data: dataImage as CFData)
             let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
             let imageOriginalOutput = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
@@ -114,7 +114,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINa
             self.image = cropImage(image: imageOriginalOutput, toRect: rect)
             //Rotate it to the correct direction
             self.image = self.image?.imageRotatedByDegrees(degrees: 90, flip: false)
-            //self.image = imageOriginalOutput
             performSegue(withIdentifier: "confirmPhotoSegue", sender: nil)
             spinner.stopAnimating()
             spinner.alpha = 0

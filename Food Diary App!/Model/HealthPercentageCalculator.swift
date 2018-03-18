@@ -186,69 +186,75 @@ struct HealthPercentageCalculator
         print("Average: \(dayBalancePercentage)")
     }
     
-    private mutating func convertLastSevenDaysDailyCountIntoBalancePercentage()
+    
+    var sevenDayAverageList: [Double] = []
+    var sevenDayAverage: Double = 0.0
+    
+    mutating func getLastSevenDaysPercentage() -> Double
     {
-        if dateSaved.count > 7
+        sevenDayAverageList = [0.0,0.0,0.0,0.0,0.0,0.0]
+        var count = 0
+        if dateSaved.count > 7 // a Week
         {
-            dayCountVegetablePercentage = dayCountVegetable
-            dayCountProteinPercentage = dayCountProtein
-            dayCountFruitPercentage = dayCountFruit
-            dayCountGrainPercentage = dayCountGrain
-            dayCountDairyPercentage = dayCountDairy
-            
             for i in dateSaved.count - 7 ..< dateSaved.count
             {
-                if dayCountVegetablePercentage[i] > 0.0
-                {
-                    dayCountVegetablePercentage[i] = ((dayCountVegetable[i] / vegetableStandard)*20).rounded()
-                    if dayCountVegetablePercentage[i] > 20.0
-                    {
-                        dayCountVegetablePercentage[i] = 20.0
-                    }
-                }
-                if dayCountDairyPercentage[i] > 0.0
-                {
-                    dayCountDairyPercentage[i] = ((dayCountDairy[i] / dairyStandard)*20).rounded()
-                    if dayCountDairyPercentage[i] > 20
-                    {
-                        dayCountDairyPercentage[i] = 20
-                    }
-                }
-                if dayCountProteinPercentage[i] > 0.0
-                {
-                    dayCountProteinPercentage[i] = ((dayCountProtein[i] / proteinStandard)*20).rounded()
-                    if dayCountProteinPercentage[i] > 20
-                    {
-                        dayCountProteinPercentage[i] = 20
-                    }
-                }
-                if dayCountFruitPercentage[i] > 0.0
-                {
-                    dayCountFruitPercentage[i] = ((dayCountFruit[i] / fruitStandard)*20).rounded()
-                    if dayCountFruitPercentage[i] > 20
-                    {
-                        dayCountFruitPercentage[i] = 20
-                    }
-                }
-                if dayCountGrainPercentage[i] > 0.0
-                {
-                    dayCountGrainPercentage[i] = ((dayCountGrain[i] / grainStandard)*20).rounded()
-                    if dayCountGrainPercentage[i] > 20
-                    {
-                        dayCountGrainPercentage[i] = 20
-                    }
-                }
-                dayBalancePercentage.append((dayCountGrainPercentage[i] + dayCountFruitPercentage[i] + dayCountProteinPercentage[i] + dayCountDairyPercentage[i] + dayCountVegetablePercentage[i]))
+                sevenDayAverageList.append(dayBalancePercentage[i])
             }
-            
-            print("###")
-            print("convertDailyCountIntoBalancePercentage V: \(dayCountVegetablePercentage)")
-            print("convertDailyCountIntoBalancePercentage G: \(dayCountGrainPercentage)")
-            print("convertDailyCountIntoBalancePercentage P: \(dayCountProteinPercentage)")
-            print("convertDailyCountIntoBalancePercentage F: \(dayCountFruitPercentage)")
-            print("convertDailyCountIntoBalancePercentage D: \(dayCountDairyPercentage)")
-            print("Average: \(dayBalancePercentage)")
+            count = 7
+        }else
+        {
+            for i in 0 ..< dateSaved.count
+            {
+                sevenDayAverageList.append(dayBalancePercentage[i])
+                count+=1
+            }
         }
+        var sum = 0.0
+        for i in 0 ..< sevenDayAverageList.count
+        {
+            sum += sevenDayAverageList[i]
+        }
+        sevenDayAverage = sum / Double(count)
+        return sevenDayAverage
+    }
+    
+    
+    var sevenDayVAverageList: [Double] = []
+    var sevenDayGAverageList: [Double] = []
+    var sevenDayPAverageList: [Double] = []
+    var sevenDayDAverageList: [Double] = []
+    var sevenDayFAverageList: [Double] = []
+    
+    mutating func getLastSevenDaysDailyCountIntoBalancePercentage() -> [String:[Double]]
+    {
+        sevenDayVAverageList.removeAll()
+        sevenDayGAverageList.removeAll()
+        sevenDayPAverageList.removeAll()
+        sevenDayDAverageList.removeAll()
+        sevenDayFAverageList.removeAll()
+        
+        if dateSaved.count > 7
+        {
+            for i in dateSaved.count - 7 ..< dateSaved.count
+            {
+                sevenDayVAverageList.append(dayCountVegetablePercentage[i])
+                sevenDayGAverageList.append(dayCountGrainPercentage[i])
+                sevenDayPAverageList.append(dayCountProteinPercentage[i])
+                sevenDayDAverageList.append(dayCountDairyPercentage[i])
+                sevenDayFAverageList.append(dayCountFruitPercentage[i])
+            }
+        }else
+        {
+            for i in 0 ..< dateSaved.count
+            {
+                sevenDayVAverageList.append(dayCountVegetablePercentage[i])
+                sevenDayGAverageList.append(dayCountGrainPercentage[i])
+                sevenDayDAverageList.append(dayCountDairyPercentage[i])
+                sevenDayFAverageList.append(dayCountFruitPercentage[i])
+                sevenDayPAverageList.append(dayCountProteinPercentage[i])
+            }
+        }
+        return ["V":sevenDayVAverageList,"G":sevenDayGAverageList,"P":sevenDayPAverageList,"F":sevenDayFAverageList,"D":sevenDayDAverageList]
     }
     
     private mutating func getAverageOfEachElement()
