@@ -116,20 +116,16 @@ class homepageViewController: UIViewController {
                 Standard = planStandard!
                 
                 currentNames = fileName
+                
                 // update value via healthpercentagecalculator
                 let nutritionDic = dataHandler.get5nList()
                 var healthData = HealthPercentageCalculator(fileNames: fileName,nutritionDic: nutritionDic)
-                print(healthData.getLastSevenDaysPercentage())
-                print(healthData.getLastSevenDaysDailyCountIntoBalancePercentage())
                 
                 // update percentage
-                updatePercentageData(healthData: healthData)
+                updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
                 
                 // text below the slider
-                informationLabel.text = "7-Day: \(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
-                
-                // Get the user's standard
-//                let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
+                informationLabel.text = "7-Days Balance: \(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
                 
                 // Present the nutrition elements that users needs to intake today
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
@@ -153,16 +149,14 @@ class homepageViewController: UIViewController {
         }
     }
     
-    func updatePercentageData(healthData: HealthPercentageCalculator)
+    func updatePercentageData(totalBalancePercentage: Double, eachElementPercentage: [String:Double])
     {
-        var healthData = healthData
-        // 3.6 is the degree of circle
-        healthPercentage = healthData.getAverageHealth() * 3.6
-        vegetablePercentage = healthData.getEachNutritionHealthAverage()["averageVegetable"]! * 3.6
-        grainPercentage = healthData.getEachNutritionHealthAverage()["averageGrain"]! * 3.6
-        proteinPercentage = healthData.getEachNutritionHealthAverage()["averageProtein"]! * 3.6
-        fruitPercentage = healthData.getEachNutritionHealthAverage()["averageFruit"]! * 3.6
-        dairyPercentage = healthData.getEachNutritionHealthAverage()["averageDairy"]! * 3.6
+        healthPercentage = totalBalancePercentage
+        vegetablePercentage = eachElementPercentage["V"]!
+        grainPercentage = eachElementPercentage["G"]!
+        proteinPercentage = eachElementPercentage["P"]!
+        fruitPercentage = eachElementPercentage["F"]!
+        dairyPercentage = eachElementPercentage["D"]!
     }
     
     @IBAction func handleSwipeup(recognizer:UISwipeGestureRecognizer) {
@@ -243,13 +237,25 @@ class homepageViewController: UIViewController {
     
     func setSliderColor(valueP: Double, slider: KDCircularProgress)
     {
+        print("----------")
+        print(valueP)
         var value = valueP
         if slider != circularSlider
         {
             // The maximum percentage of each element is 20.0
             value *= 5
         }
+        print(slider)
+        print(value)
+        var sliderController = circularSliderDeterminer.init(value: value)
+        value = sliderController.getSliderValue()
+        print(value)
         slider.animate(toAngle: value, duration: 1.5, completion: nil)
+        slider.set(colors: sliderController.getSliderColour())
+        print(sliderController.getSliderValue())
+        slider.trackColor = sliderController.getSliderTrackColour()
+        
+        /*
         if value == 0.0 && slider == circularSlider
         {
             slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
@@ -282,7 +288,7 @@ class homepageViewController: UIViewController {
                 slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
                 if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Smile.png"), for: .normal)}
             }
-        }
+        }*/
     }
     
     func sendPhoto()

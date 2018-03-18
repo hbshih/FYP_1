@@ -20,6 +20,13 @@ struct UserDefaultsHandler
     
     func getPlanStandard() -> AnyObject
     {
+        /* Return list
+         grainStandard = userPlan[0]
+         vegetableStandard = userPlan[1]
+         proteinStandard = userPlan [2]
+         fruitStandard = userPlan[3]
+         dairyStandard = userPlan[4]
+         */
         return defaults.object(forKey: "PlanStandardArray") as AnyObject
     }
     

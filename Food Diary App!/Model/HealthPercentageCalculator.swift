@@ -60,13 +60,15 @@ struct HealthPercentageCalculator
          */
         let defaults = UserDefaultsHandler()
         let userPlan = defaults.getPlanStandard() as! [Double]
+        print("##Plan")
+        print(userPlan)
         
         //-- Set Standard
         grainStandard = userPlan[0]
         vegetableStandard = userPlan[1]
-        fruitStandard = userPlan[2]
-        dairyStandard = userPlan[3]
-        proteinStandard = userPlan [4]
+        proteinStandard = userPlan [2]
+        fruitStandard = userPlan[3]
+        dairyStandard = userPlan[4]
         
         self.fileName = getTrimmedDate(Name: fileNames)
         if fileName.count > 0
@@ -154,6 +156,9 @@ struct HealthPercentageCalculator
             if dayCountProteinPercentage[i] > 0.0
             {
                 dayCountProteinPercentage[i] = ((dayCountProtein[i] / proteinStandard)*20).rounded()
+                print("Day count protein \(dayCountProtein[i])")
+                 print("Day count protein \(proteinStandard)")
+                print("Day count protein percent \(dayCountProteinPercentage[i])")
                 if dayCountProteinPercentage[i] > 20
                 {
                     dayCountProteinPercentage[i] = 20
@@ -225,7 +230,7 @@ struct HealthPercentageCalculator
     var sevenDayDAverageList: [Double] = []
     var sevenDayFAverageList: [Double] = []
     
-    mutating func getLastSevenDaysDailyCountIntoBalancePercentage() -> [String:[Double]]
+    mutating func getLastSevenDaysEachElementPercentage() -> [String:Double]
     {
         sevenDayVAverageList.removeAll()
         sevenDayGAverageList.removeAll()
@@ -254,8 +259,33 @@ struct HealthPercentageCalculator
                 sevenDayPAverageList.append(dayCountProteinPercentage[i])
             }
         }
-        return ["V":sevenDayVAverageList,"G":sevenDayGAverageList,"P":sevenDayPAverageList,"F":sevenDayFAverageList,"D":sevenDayDAverageList]
+        
+        var sumEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
+        var averageEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
+        let finalCount = sevenDayPAverageList.count
+        
+        for i in 0 ..< finalCount
+        {
+            sumEachElement["V"]! += sevenDayVAverageList[i]
+            sumEachElement["G"]! += sevenDayGAverageList[i]
+            sumEachElement["P"]! += sevenDayPAverageList[i]
+            sumEachElement["D"]! += sevenDayDAverageList[i]
+            sumEachElement["F"]! += sevenDayFAverageList[i]
+            
+            if i == finalCount - 1
+            {
+                averageEachElement["V"]! = sumEachElement["V"]! / Double(finalCount)
+                averageEachElement["G"]! = sumEachElement["G"]! / Double(finalCount)
+                averageEachElement["P"]! = sumEachElement["P"]! / Double(finalCount)
+                averageEachElement["D"]! = sumEachElement["D"]! / Double(finalCount)
+                averageEachElement["F"]! = sumEachElement["F"]! / Double(finalCount)
+            }
+        }
+        
+        return averageEachElement
     }
+    
+    
     
     private mutating func getAverageOfEachElement()
     {
