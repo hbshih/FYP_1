@@ -16,7 +16,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     var LaunchCamera: Bool?
     var pickerdismiss: Bool?
     var LaunchCameraTimes = 0
-
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var addnoteText: UITextView!
     @IBOutlet weak var vegetableField: UIButton!
@@ -32,6 +32,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var foodgroupStackView: UIStackView!
     @IBOutlet weak var instructionOutlet: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var dateButton: UIButton!
     
     public var skip = false
     
@@ -64,21 +65,20 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         if LaunchCamera! && LaunchCameraTimes < 1
         {
             showPicker()
+            print("Image Description --")
+            // print(image.)
             LaunchCameraTimes += 1
         }else
         {
             if image.image == nil
             {
                 performSegue(withIdentifier: "closeSegue", sender: nil)
-                //dismiss(animated: true, completion: nil)
                 image.image = #imageLiteral(resourceName: "Sample_Image")
-             //   dismiss(animated: true, completion: nil)
                 print("Cancel No image AH")
                 // Return Home
             }else
             {
                 LaunchCamera = false
-                
             }
         }
     }
@@ -114,7 +114,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         //
         //        /// Enables you to opt out from saving new (or old but filtered) images to the
         //        /// user's photo library. Defaults to true.
-                config.shouldSaveNewPicturesToAlbum = false
+        config.shouldSaveNewPicturesToAlbum = false
         //
         //        /// Choose the videoCompression.  Defaults to AVAssetExportPresetHighestQuality
         //        config.videoCompression = AVAssetExportPreset640x480
@@ -258,11 +258,51 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     }
     @IBAction func doneTapped(_ sender: Any)
     {
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-        let currentTime = Date()
-        let currentFileName = "img\(format.string(from: currentTime)).jpg"
-        saveImage(imageName: currentFileName, time: currentTime)
+        print("DonePRESSED")
+        if(vegetable == 0.0 && grain == 0.0 && protein == 0.0 && fruit == 0.0 && dairy == 0.0)
+        {
+            let noEntryAlert = UIAlertController(title: nil, message: "Are you sure you don't want to record anything?", preferredStyle: UIAlertControllerStyle.alert)
+            noEntryAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (Alert) in
+                if !self.dateChanged
+                {
+                    let format = DateFormatter()
+                    format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                    let currentTime = Date()
+                    let currentFileName = "img\(format.string(from: currentTime)).jpg"
+                    print(currentFileName)
+                    self.saveImage(imageName: currentFileName, time: currentTime)
+                }else
+                {
+                    let format = DateFormatter()
+                    format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                    let currentFileName = "img\(format.string(from: self.savedDate!)).jpg"
+                    print(currentFileName)
+                    self.saveImage(imageName: currentFileName, time: self.savedDate!)
+                }
+                self.performSegue(withIdentifier: "closeSegue", sender: nil)
+            }))
+            noEntryAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            present(noEntryAlert, animated: true, completion: nil)
+        }else
+        {
+            if !dateChanged
+            {
+                let format = DateFormatter()
+                format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                let currentTime = Date()
+                let currentFileName = "img\(format.string(from: currentTime)).jpg"
+                print(currentFileName)
+                saveImage(imageName: currentFileName, time: currentTime)
+            }else
+            {
+                let format = DateFormatter()
+                format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                let currentFileName = "img\(format.string(from: savedDate!)).jpg"
+                print(currentFileName)
+                saveImage(imageName: currentFileName, time: savedDate!)
+            }
+            self.performSegue(withIdentifier: "closeSegue", sender: nil)
+        }
     }
     
     // Save image to database
@@ -327,10 +367,72 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         // Present dialog
         present(popup, animated: true, completion: nil)
     }
+    var dateChanged = false
+    var showDate = ""
+    var savedDate: Date?
+    @IBAction func changeDateTapped(_ sender: Any)
+    {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let todayAction = UIAlertAction(title: "Today", style: .default) { (Alert) in
+            self.dateChanged = true
+            self.showDate = "Today"
+            
+            self.dateButton.setTitle(self.showDate, for: .normal)
+            self.savedDate = Date()
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd"
+        
+        let formatterSaved = DateFormatter()
+        formatterSaved.dateFormat = "yyyy-MM-dd"
+        
+        let yesterdayAction = UIAlertAction(title: "Yesterday", style: .default) { (Alert) in
+            self.showDate = formatter.string(from: Date().yesterday)
+            self.dateChanged = true
+            self.dateButton.setTitle(self.showDate, for: .normal)
+            self.savedDate = Date().yesterday
+        }
+        
+        let customAction = UIAlertAction(title: "Set Custom Date", style: .default) { (Alert) in
+            // Create a custom view controller
+            let ChangeDateVC = ChangeDateViewController(nibName: "ChangeDateViewController", bundle: nil)
+            
+            // Create the dialog
+            let popup = PopupDialog(viewController: ChangeDateVC, buttonAlignment: .horizontal, transitionStyle: .bounceUp, preferredWidth: 320, gestureDismissal: true, hideStatusBar: true)
+            
+            // Create first button
+            let buttonOne = CancelButton(title: "Set Date", action:
+            {
+                self.showDate = formatter.string(from: ChangeDateVC.dateSelected.date)
+                self.dateChanged = true
+                self.dateButton.setTitle(self.showDate, for: .normal)
+                self.savedDate =  ChangeDateVC.dateSelected.date
+            })
+            // Add buttons to dialog
+            popup.addButtons([buttonOne])
+            
+            // Present dialog
+            self.present(popup, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        optionMenu.addAction(todayAction)
+        optionMenu.addAction(yesterdayAction)
+        optionMenu.addAction(customAction)
+        optionMenu.addAction(cancelAction)
+        
+        //dateButton.setTitle(showDate, for: .normal)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+        
+    }
     
     
     
-
     
     override func didReceiveMemoryWarning()
     {

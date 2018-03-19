@@ -30,6 +30,8 @@ struct CoreDataHandler
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+        let sort = NSSortDescriptor(key: "imageName", ascending: true)
+        request.sortDescriptors = [sort]
         request.returnsObjectsAsFaults = false
     }
     

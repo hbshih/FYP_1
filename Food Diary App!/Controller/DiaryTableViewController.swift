@@ -39,6 +39,14 @@ class DiaryTableViewController: UITableViewController {
         fruitList = nutritionDic["fruitList"]!
         grainList = nutritionDic["grainList"]!
         
+//       fileName = fileName.sorted()
+//        notes = notes.sorted()
+//        fruitList = fruitList.sorted()
+//        dairyList = dairyList.sorted()
+//        vegetableList = vegetableList.sorted()
+//        proteinList = proteinList.sorted()
+//        grainList = grainList.sorted()
+        
         //-- to display the most up to date items first
         fileName = fileName.reversed()
         notes = notes.reversed()

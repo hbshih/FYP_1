@@ -60,8 +60,6 @@ struct HealthPercentageCalculator
          */
         let defaults = UserDefaultsHandler()
         let userPlan = defaults.getPlanStandard() as! [Double]
-        print("##Plan")
-        print(userPlan)
         
         //-- Set Standard
         grainStandard = userPlan[0]
@@ -71,13 +69,19 @@ struct HealthPercentageCalculator
         dairyStandard = userPlan[4]
         
         self.fileName = getTrimmedDate(Name: fileNames)
+//        self.fileName = self.fileName.sorted()
         if fileName.count > 0
         {
             dairyList = nutritionDic["dairyList"]!
+
             vegetableList = nutritionDic["vegetableList"]!
+
             proteinList = nutritionDic["proteinList"]!
+
             fruitList = nutritionDic["fruitList"]!
+
             grainList = nutritionDic["grainList"]!
+
             calculateOverallHealthRate()
         }else
         {
