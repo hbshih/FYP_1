@@ -35,6 +35,16 @@ struct UserDefaultsHandler
         defaults.set(status, forKey: "OnboardingSuccess")
     }
     
+    func setPersonalData(value: [String:Int])
+    {
+        defaults.set(value, forKey: "PersonalData")
+    }
+    
+    func getPersonalData() -> AnyObject
+    {
+        return defaults.object(forKey: "PersonalData") as AnyObject
+    }
+    
     func setPlanStandard(value: [Double])
     {
         defaults.set(value, forKey: "PlanStandardArray")

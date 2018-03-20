@@ -15,6 +15,7 @@ struct circularSliderDeterminer
     var sliderValue: Double = 0.0
     var sliderColor: UIColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
     var sliderTrackColor: UIColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
+    var face: UIImage?
     
     init(value:Double)
     {
@@ -42,19 +43,28 @@ struct circularSliderDeterminer
         {
             sliderColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
             sliderTrackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
-        }else if value > 20.0 && value <= 60.0
+            face = #imageLiteral(resourceName: "Face_Sad")
+        }else if value > 20.0 && value <= 60.0 || value == 0
         {
             sliderColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0)
             sliderTrackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
+            face = #imageLiteral(resourceName: "Face_Yellow")
         }else if value > 60.0 && value <= 80.0
         {
             sliderColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0)
             sliderTrackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
+            face = #imageLiteral(resourceName: "Face_Happy")
         }else
         {
             sliderColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0)
             sliderTrackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
+            face = #imageLiteral(resourceName: "Face_Smile")
         }
         sliderValue = value * 3.6
+    }
+    
+    mutating func getFace() -> UIImage
+    {
+        return face!
     }
 }

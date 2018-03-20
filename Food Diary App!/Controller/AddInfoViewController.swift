@@ -33,6 +33,8 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var instructionOutlet: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var decreaseIntro: UILabel!
+    @IBOutlet weak var savingDateLabel: UILabel!
     
     public var skip = false
     
@@ -162,6 +164,8 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
             self.centerView.alpha = 1
             self.doneButton.alpha = 1
             self.navBar.alpha = 1
+            self.savingDateLabel.alpha = 1
+            self.dateButton.alpha = 1
             picker.dismiss(animated: true, completion: nil)
         }
         present(picker, animated: true, completion: nil)
@@ -220,11 +224,17 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         default:
             print("none")
         }
+        if (vegetable == 0.0 && grain == 0.0 && protein == 0.0 && fruit == 0.0 && dairy == 0.0)
+        {
+            print("No more decrease")
+            decreaseIntro.alpha = 0
+        }
     }
     
     //Working with nutrition element selection
     @IBAction func nutritionTapped(_ sender: AnyObject)
     {
+        decreaseIntro.alpha = 1
         switch sender.tag
         {
         case 1:
@@ -382,7 +392,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         }
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         
         let formatterSaved = DateFormatter()
         formatterSaved.dateFormat = "yyyy-MM-dd"

@@ -10,8 +10,15 @@ import Foundation
 
 struct numberOfServes
 {
-    private let maleDefaultSet = [6.0,3.0,6.0,2.0,2.5] // Grain,Protein,Vegetable,Fruit,Dairy
-    private let femaleDefauthSet = [6.0,2.5,5.0,2.0,2.5] // Grain,Protein,Vegetable,Fruit,Dairy
+    /* Return list
+     grainStandard = userPlan[0]
+     vegetableStandard = userPlan[1]
+     proteinStandard = userPlan [2]
+     fruitStandard = userPlan[3]
+     dairyStandard = userPlan[4]
+     */
+    private let maleDefaultSet = [6.0,3.0,6.0,2.0,2.5] // Grain,Vegetable,Protein,Fruit,Dairy
+    private let femaleDefauthSet = [6.0,2.5,5.0,2.0,2.5] // Grain,Vegetable,Protein,Fruit,Dairy
     private var customSet = [6.0,8.0,5.0,4.0,3.0]//Add yourself
     
 

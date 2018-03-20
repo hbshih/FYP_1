@@ -68,6 +68,7 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    
         centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
         {
@@ -254,6 +255,7 @@ class homepageViewController: UIViewController {
         slider.set(colors: sliderController.getSliderColour())
         print(sliderController.getSliderValue())
         slider.trackColor = sliderController.getSliderTrackColour()
+        centerFace.setImage(sliderController.getFace(), for: .normal)
         
         /*
         if value == 0.0 && slider == circularSlider

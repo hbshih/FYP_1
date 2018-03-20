@@ -95,25 +95,28 @@ class OnBoardingViewController: UIViewController {
         
         // Create second button
         let buttonTwo = DefaultButton(title: "LET'S START", height: 60) {
-            self.defaults.setOnboardingStatus(status: true)
             self.defaults.setPlanStandard(value: selectPlanVC.getSelectedOption())
             if selectPlanVC.getSelectedOption() == numberOfServes().getCustom()
             {
-                self.defaults.setPlanStandard(value: numberOfServes().getCustom())
-                let appearance = SCLAlertView.SCLAppearance(
-                    //kCircleIconHeight: 55.0
-                    kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
-                    kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
-                    kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
-                    showCloseButton: false
-                )
-                let alert = SCLAlertView(appearance: appearance)
-                let icon = UIImage(named:"Alert_Yellow.png")
-                let color = UIColor.orange
-                alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
-                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
+                //print("Customize")
+                self.segueToCustomize()
+//                self.defaults.setPlanStandard(value: numberOfServes().getCustom())
+//                let appearance = SCLAlertView.SCLAppearance(
+//                    //kCircleIconHeight: 55.0
+//                    kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+//                    kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+//                    kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+//                    showCloseButton: false
+//                )
+//                let alert = SCLAlertView(appearance: appearance)
+//                let icon = UIImage(named:"Alert_Yellow.png")
+//                let color = UIColor.orange
+//                alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
+//                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
             }else
             {
+                self.defaults.setOnboardingStatus(status: true)
+                //print("Customize2")
                 self.segueToHomeScreen()
             }
         }
@@ -127,6 +130,11 @@ class OnBoardingViewController: UIViewController {
     @objc func segueToHomeScreen()
     {
         performSegue(withIdentifier: "getStartedSegue", sender: nil)
+    }
+    
+    @objc func segueToCustomize()
+    {
+        performSegue(withIdentifier: "customizeSegue", sender: nil)
     }
 }
 

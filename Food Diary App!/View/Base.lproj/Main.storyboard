@@ -20,6 +20,9 @@
             <string>Avenir-Medium</string>
             <string>Avenir-Roman</string>
         </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Light</string>
+        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
@@ -525,7 +528,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p41-V9-Eii">
+                            <navigationBar alpha="0.0" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p41-V9-Eii">
                                 <rect key="frame" x="0.0" y="20" width="307" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -542,28 +545,29 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="6Aq-hD-O5Z">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8mX-Hk-AA2">
-                                                <rect key="frame" x="223" y="7" width="68" height="30"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="6Aq-hD-O5Z">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8mX-Hk-AA2">
+                                                <rect key="frame" x="223" y="5" width="68" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Today">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal" title="Done">
                                                     <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeDateTapped:" destination="dWP-h6-qtF" eventType="touchUpInside" id="WS9-mf-nDk"/>
+                                                    <action selector="doneTapped:" destination="dWP-h6-qtF" eventType="touchUpInside" id="qNK-Md-t6v"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-Jn-4dD">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-Jn-4dD">
                                 <rect key="frame" x="16" y="84" width="89" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Eqa-Jn-4dD" secondAttribute="height" multiplier="1:1" id="mmQ-8Y-WNd"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-UP-vLG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" text="Enter your note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-UP-vLG">
                                 <rect key="frame" x="113" y="84" width="178" height="89"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -572,21 +576,24 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-yC-z4E">
-                                <rect key="frame" x="16" y="183" width="275" height="305"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-yC-z4E">
+                                <rect key="frame" x="16" y="183" width="275" height="311"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="73h-Oj-lfl">
                                         <rect key="frame" x="0.0" y="8" width="275" height="1"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="tOM-bL-Hdo">
-                                        <rect key="frame" x="0.0" y="296.5" width="275" height="1"/>
+                                        <rect key="frame" x="0.0" y="302.5" width="275" height="1"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlI-vP-xgT">
                                         <rect key="frame" x="0.0" y="15" width="275" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTU-an-rri">
-                                                <rect key="frame" x="131" y="2.5" width="25" height="25"/>
-                                                <state key="normal" image="info-2"/>
+                                                <rect key="frame" x="131" y="3" width="61" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title=" Help" image="info-2">
+                                                    <color key="titleColor" red="0.19096472859382629" green="0.43610948324203491" blue="0.92553603649139404" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="instructionTapped:" destination="dWP-h6-qtF" eventType="touchUpInside" id="GTA-U9-HSf"/>
                                                     <action selector="instructionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="Ib4-3v-WqH"/>
@@ -614,7 +621,7 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mV-Cy-LKK">
-                                        <rect key="frame" x="0.0" y="221.5" width="275" height="60"/>
+                                        <rect key="frame" x="0.0" y="227.5" width="275" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-gu-p5a">
                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="60"/>
@@ -691,19 +698,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI8-bq-b4t">
-                                        <rect key="frame" x="0.0" y="46" width="275" height="175.5"/>
+                                        <rect key="frame" x="0.0" y="46" width="275" height="181.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_mat" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-8v-sIh">
-                                                <rect key="frame" x="16" y="8.5" width="243" height="158"/>
+                                                <rect key="frame" x="16" y="11.5" width="243" height="158"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_plate" translatesAutoresizingMaskIntoConstraints="NO" id="wTj-0z-QPC">
-                                                <rect key="frame" x="63" y="13.5" width="149" height="149"/>
+                                                <rect key="frame" x="63" y="16.5" width="149" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wTj-0z-QPC" secondAttribute="height" multiplier="1:1" id="AYh-rC-p7m"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-Bv-kMW">
-                                                <rect key="frame" x="97.5" y="47.5" width="80" height="80"/>
+                                                <rect key="frame" x="97.5" y="50.5" width="80" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J0G-Fi-6L8">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -854,7 +861,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-Rg-iWd">
-                                                <rect key="frame" x="211" y="-21.5" width="48" height="48"/>
+                                                <rect key="frame" x="211" y="-18.5" width="48" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_DairyPlace" translatesAutoresizingMaskIntoConstraints="NO" id="vr7-gL-BIG">
                                                         <rect key="frame" x="-4.5" y="0.0" width="57" height="57"/>
@@ -908,11 +915,19 @@
                                             <constraint firstItem="g9E-8v-sIh" firstAttribute="top" secondItem="ZY3-Rg-iWd" secondAttribute="bottom" constant="-18" id="tWY-z7-oyB"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap icons on plate to decrease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gA-uS-Ror">
+                                        <rect key="frame" x="10" y="46" width="165.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
+                                        <color key="textColor" red="0.63604795932769775" green="0.63654297590255737" blue="0.63612467050552368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="73h-Oj-lfl" secondAttribute="trailing" id="3dd-XS-WPr"/>
                                     <constraint firstItem="WlI-vP-xgT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="73h-Oj-lfl" secondAttribute="bottom" constant="6" id="4LO-iU-kVL"/>
+                                    <constraint firstItem="7gA-uS-Ror" firstAttribute="top" secondItem="9Yz-n9-XeC" secondAttribute="bottom" constant="5" id="4VW-cN-AdZ"/>
+                                    <constraint firstItem="7gA-uS-Ror" firstAttribute="leading" secondItem="9Yz-n9-XeC" secondAttribute="leading" id="7Gt-tv-m8F"/>
                                     <constraint firstItem="73h-Oj-lfl" firstAttribute="top" secondItem="OvY-yC-z4E" secondAttribute="top" constant="8" id="9fR-cj-F2d"/>
                                     <constraint firstItem="3mV-Cy-LKK" firstAttribute="leading" secondItem="OvY-yC-z4E" secondAttribute="leading" id="AJg-lg-Bu0"/>
                                     <constraint firstItem="WlI-vP-xgT" firstAttribute="top" secondItem="73h-Oj-lfl" secondAttribute="bottom" constant="6" id="DPb-9I-7d5"/>
@@ -930,11 +945,20 @@
                                     <constraint firstAttribute="bottom" secondItem="tOM-bL-Hdo" secondAttribute="bottom" constant="8" id="y6L-6C-TeT"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-Hg-xUM">
-                                <rect key="frame" x="73.5" y="498" width="160" height="50"/>
-                                <state key="normal" image="Button_Done"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Date?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SW-H4-YKN">
+                                <rect key="frame" x="26" y="511.5" width="100" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-Hg-xUM">
+                                <rect key="frame" x="131" y="504" width="156" height="34"/>
+                                <color key="backgroundColor" red="0.92661553621292114" green="0.73139512538909912" blue="0.34889471530914307" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Today"/>
                                 <connections>
-                                    <action selector="doneTapped:" destination="dWP-h6-qtF" eventType="touchUpInside" id="neA-w2-Ney"/>
+                                    <action selector="changeDateTapped:" destination="dWP-h6-qtF" eventType="touchUpInside" id="9pD-G5-Wek"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -947,13 +971,16 @@
                             <constraint firstItem="OvY-yC-z4E" firstAttribute="top" secondItem="Eqa-Jn-4dD" secondAttribute="bottom" constant="10" id="EP1-LH-NyN"/>
                             <constraint firstItem="p41-V9-Eii" firstAttribute="leading" secondItem="rGw-vO-1qR" secondAttribute="leading" id="Iqp-oe-iuY"/>
                             <constraint firstItem="p41-V9-Eii" firstAttribute="top" secondItem="rGw-vO-1qR" secondAttribute="top" id="Kwn-RN-rqB"/>
+                            <constraint firstItem="4SW-H4-YKN" firstAttribute="leading" secondItem="9Yz-n9-XeC" secondAttribute="leading" id="OIC-ZI-aQn"/>
+                            <constraint firstItem="Rbt-Hg-xUM" firstAttribute="leading" secondItem="4SW-H4-YKN" secondAttribute="trailing" constant="5" id="OnZ-y0-hPG"/>
                             <constraint firstItem="rGw-vO-1qR" firstAttribute="trailing" secondItem="2LY-UP-vLG" secondAttribute="trailing" constant="16" id="Roy-T2-CnD"/>
-                            <constraint firstItem="rGw-vO-1qR" firstAttribute="bottom" secondItem="Rbt-Hg-xUM" secondAttribute="bottom" constant="20" id="dgW-3u-2y7"/>
+                            <constraint firstItem="4SW-H4-YKN" firstAttribute="centerY" secondItem="Rbt-Hg-xUM" secondAttribute="centerY" id="bpd-sE-Xn9"/>
+                            <constraint firstItem="rGw-vO-1qR" firstAttribute="bottom" secondItem="Rbt-Hg-xUM" secondAttribute="bottom" constant="30" id="dgW-3u-2y7"/>
                             <constraint firstItem="Rbt-Hg-xUM" firstAttribute="top" secondItem="OvY-yC-z4E" secondAttribute="bottom" constant="10" id="ett-tj-0Fn"/>
                             <constraint firstItem="2LY-UP-vLG" firstAttribute="leading" secondItem="Eqa-Jn-4dD" secondAttribute="trailing" constant="8" id="fsA-e6-WFd"/>
                             <constraint firstItem="Eqa-Jn-4dD" firstAttribute="leading" secondItem="rGw-vO-1qR" secondAttribute="leading" constant="16" id="gI2-6F-UeG"/>
+                            <constraint firstItem="rGw-vO-1qR" firstAttribute="trailing" secondItem="Rbt-Hg-xUM" secondAttribute="trailing" constant="20" id="j8u-50-i8X"/>
                             <constraint firstItem="OvY-yC-z4E" firstAttribute="leading" secondItem="rGw-vO-1qR" secondAttribute="leading" constant="16" id="jrr-hA-twO"/>
-                            <constraint firstItem="Rbt-Hg-xUM" firstAttribute="centerX" secondItem="rGw-vO-1qR" secondAttribute="centerX" id="kqs-nA-d0e"/>
                             <constraint firstItem="rGw-vO-1qR" firstAttribute="trailing" secondItem="OvY-yC-z4E" secondAttribute="trailing" constant="16" id="vcL-hK-0Nu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rGw-vO-1qR"/>
@@ -964,8 +991,9 @@
                         <outlet property="centerView" destination="OvY-yC-z4E" id="JsV-OB-oY1"/>
                         <outlet property="dairyCountLabel" destination="YO9-uL-XPO" id="5QB-ec-ec8"/>
                         <outlet property="dairyField" destination="Fts-Dt-Yi3" id="3MU-ab-Cbl"/>
-                        <outlet property="dateButton" destination="8mX-Hk-AA2" id="6bj-0r-a5z"/>
-                        <outlet property="doneButton" destination="Rbt-Hg-xUM" id="Ddy-bd-xxP"/>
+                        <outlet property="dateButton" destination="Rbt-Hg-xUM" id="7H2-BD-mTt"/>
+                        <outlet property="decreaseIntro" destination="7gA-uS-Ror" id="lxg-gk-2CV"/>
+                        <outlet property="doneButton" destination="8mX-Hk-AA2" id="5Ap-jt-ErQ"/>
                         <outlet property="foodgroupStackView" destination="BAr-gu-p5a" id="Lg7-9f-oEB"/>
                         <outlet property="fruitCountLabel" destination="1r7-F6-JTU" id="obc-tF-roC"/>
                         <outlet property="fruitField" destination="UCt-AC-K8V" id="Hs8-sn-gIn"/>
@@ -976,6 +1004,7 @@
                         <outlet property="navBar" destination="p41-V9-Eii" id="VJ6-6s-QLu"/>
                         <outlet property="proteinCountLabel" destination="PVz-H0-BWC" id="os6-Eu-6Qx"/>
                         <outlet property="proteinField" destination="kPr-Ax-t8y" id="re7-I3-yH2"/>
+                        <outlet property="savingDateLabel" destination="4SW-H4-YKN" id="DWe-Ps-bM0"/>
                         <outlet property="vegetableCountLabel" destination="WX5-S5-uSv" id="fc5-4S-DI1"/>
                         <outlet property="vegetableField" destination="cA9-Vw-YOT" id="kxD-N8-YMt"/>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="closeSegue" id="D70-QE-Rdu"/>
@@ -985,10 +1014,10 @@
             </objects>
             <point key="canvasLocation" x="5761.875" y="-946.47887323943667"/>
         </scene>
-        <!--Foody Life-->
+        <!--FoodyLife-->
         <scene sceneID="4rI-3L-YcL">
             <objects>
-                <viewController id="kmQ-HH-xb9" customClass="homepageViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FoodyLife" id="kmQ-HH-xb9" customClass="homepageViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4G-b5-3FT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1311,7 +1340,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6KH-To-9SL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1448,25 +1477,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RgD-7g-VAq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Foody Life" id="bBq-gu-2tE">
-                        <barButtonItem key="leftBarButtonItem" image="settings" style="done" id="kwG-E7-N9b">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="awo-YJ-o6d">
-                                <rect key="frame" x="16" y="11" width="21" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="settings"/>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="BV7-g9-4V8">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Eg-Oj-O7b">
-                                <rect key="frame" x="228" y="11" width="76" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="photo-library"/>
-                                <connections>
-                                    <segue destination="tGS-QA-qMt" kind="show" id="J5g-rl-4FN"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraButton" destination="DaH-Pu-XUF" id="kqs-1h-Rr8"/>
                         <outlet property="cameraButtonOutlet" destination="DaH-Pu-XUF" id="1Uy-v1-4jG"/>
@@ -1500,6 +1512,37 @@
             </objects>
             <point key="canvasLocation" x="150" y="72"/>
         </scene>
+        <!--Customized Plan Setting View Controller-->
+        <scene sceneID="ke5-sH-W9P">
+            <objects>
+                <viewController id="8Uv-Vk-yRr" customClass="CustomizedPlanSettingViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e8b-7W-koj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgW-LQ-7ax">
+                                <rect key="frame" x="80" y="498" width="160" height="50"/>
+                                <state key="normal" image="Button_Done"/>
+                                <connections>
+                                    <action selector="doneTapped:" destination="8Uv-Vk-yRr" eventType="touchUpInside" id="xFV-LB-eoF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fgW-LQ-7ax" firstAttribute="centerX" secondItem="LMi-Pb-t8m" secondAttribute="centerX" id="MGb-Ug-2wz"/>
+                            <constraint firstItem="LMi-Pb-t8m" firstAttribute="bottom" secondItem="fgW-LQ-7ax" secondAttribute="bottom" constant="20" id="OHt-Jr-Isy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LMi-Pb-t8m"/>
+                    </view>
+                    <connections>
+                        <segue destination="kmQ-HH-xb9" kind="show" identifier="showHomeSegue" id="DTX-2Y-Kk5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0q-LZ-MuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1059.375" y="1911.9718309859154"/>
+        </scene>
         <!--Setting-->
         <scene sceneID="U9B-Bl-5nC">
             <objects>
@@ -1525,10 +1568,12 @@
                         <viewLayoutGuide key="safeArea" id="F7l-9g-oHx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="mbri-setting3-1" selectedImage="mbri-setting3-1" id="fQm-71-5Cg" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcr-UE-MbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560.625" y="2527.8169014084506"/>
+            <point key="canvasLocation" x="234.375" y="2527.8169014084506"/>
         </scene>
         <!--Settings-->
         <scene sceneID="po3-1v-xmf">
@@ -1698,7 +1743,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYK-pa-7WH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1219" y="2511"/>
+            <point key="canvasLocation" x="2013.75" y="2510.9154929577467"/>
         </scene>
         <!--Clear Data View Controller-->
         <scene sceneID="kWY-6b-kzd">
@@ -1976,7 +2021,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gu-xe-igv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="1388"/>
+            <point key="canvasLocation" x="1666.875" y="1386.9718309859154"/>
         </scene>
         <!--Report-->
         <scene sceneID="D8q-EV-BlN">
@@ -2071,7 +2116,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFi-Q1-DQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="1387.5562218890557"/>
+            <point key="canvasLocation" x="2422.5" y="1386.9718309859154"/>
         </scene>
         <!--Diary-->
         <scene sceneID="QiT-w3-ISs">
@@ -2208,7 +2253,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQx-dG-AWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485.625" y="2511.9718309859154"/>
+            <point key="canvasLocation" x="1280.625" y="2511.9718309859154"/>
         </scene>
         <!--Nutrition Setting Table View Controller-->
         <scene sceneID="yeZ-zt-VrE">
@@ -2271,6 +2316,9 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="LKV-18-Udt" kind="show" id="KfG-iu-jo4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2503,7 +2551,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKt-ws-nav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266.4000000000001" y="2090.5547226386807"/>
+            <point key="canvasLocation" x="3060" y="2090.4929577464791"/>
         </scene>
         <!--On Boarding View Controller-->
         <scene sceneID="qHn-Is-S6p">
@@ -2517,6 +2565,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                     </view>
                     <connections>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="getStartedSegue" id="1BD-Ta-gEc"/>
+                        <segue destination="8Uv-Vk-yRr" kind="show" identifier="customizeSegue" id="OQk-Zv-MDF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3f-se-l3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2749,6 +2798,21 @@ Copyright {2004} {Skyscanner}
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdt-K8-ya9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4308" y="3511"/>
+        </scene>
+        <!--Customized Plan Setting View Controller-->
+        <scene sceneID="nC2-Xh-25B">
+            <objects>
+                <viewController id="LKV-18-Udt" customClass="CustomizedPlanSettingViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K39-Gs-hOj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5vl-dZ-bOJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cir-pu-IcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3921" y="2090"/>
         </scene>
     </scenes>
     <resources>
@@ -12040,13 +12104,11 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="mbri-bulleted-list-1" width="30" height="27"/>
         <image name="mbri-growing-chart-1" width="30" height="30"/>
         <image name="mbri-setting3-1" width="30" height="30"/>
-        <image name="photo-library" width="22" height="22"/>
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J5g-rl-4FN"/>
         <segue reference="127-SN-MXU"/>
-        <segue reference="D70-QE-Rdu"/>
+        <segue reference="1BD-Ta-gEc"/>
         <segue reference="Wh2-1l-RiZ"/>
         <segue reference="1gd-EK-yKm"/>
     </inferredMetricsTieBreakers>

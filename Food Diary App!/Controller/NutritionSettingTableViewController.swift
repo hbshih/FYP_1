@@ -48,11 +48,11 @@ class NutritionSettingTableViewController: UITableViewController {
             if plan == maleDefaultSet
             {
                 maleCell.accessoryType = .checkmark
-                planType = "Male"
+                planType = "Standard Male"
             }else if plan == femaleDefauthSet
             {
                 femaleCell.accessoryType = .checkmark
-                planType = "Female"
+                planType = "Standard Female"
             }else
             {
                 customCell.accessoryType = .checkmark
@@ -91,10 +91,10 @@ class NutritionSettingTableViewController: UITableViewController {
     
     func setStandard()
     {
-        if planType == "Male"
+        if planType == "Standard Male"
         {
             standard = maleDefaultSet
-        }else if planType == "Female"
+        }else if planType == "Standard Female"
         {
             standard = femaleDefauthSet
         }else
@@ -184,16 +184,22 @@ class NutritionSettingTableViewController: UITableViewController {
             {
             case 0:
                 maleCell.accessoryType = UITableViewCellAccessoryType.checkmark
+                femaleCell.accessoryType = UITableViewCellAccessoryType.none
+                customCell.accessoryType = UITableViewCellAccessoryType.none
                 valueEditable(flag: false)
-                planType = "Male"
+                planType = "Standard Male"
                 
             case 1:
                 femaleCell.accessoryType = UITableViewCellAccessoryType.checkmark
+                maleCell.accessoryType = UITableViewCellAccessoryType.none
+                customCell.accessoryType = UITableViewCellAccessoryType.none
                 valueEditable(flag: false)
-                planType = "Female"
+                planType = "Standard Female"
                 
             case 2:
-                customCell.accessoryType = UITableViewCellAccessoryType.checkmark
+//                customCell.accessoryType = UITableViewCellAccessoryType.checkmark
+//                femaleCell.accessoryType = UITableViewCellAccessoryType.none
+//                maleCell.accessoryType = UITableViewCellAccessoryType.none
                 valueEditable(flag: true)
                 planType = "Custom"
             default:

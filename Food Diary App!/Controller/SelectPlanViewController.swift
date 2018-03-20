@@ -13,7 +13,7 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     /*Outlets and variables*/
     @IBOutlet weak var picker: UIPickerView!
-    private let options = ["Male","Female","Custom"]
+    private let options = ["Standard Male","Standard Female","Customize"]
     private var selectedOption = "" // To store which plan user selected
     private let maleDefaultSet = numberOfServes().getMaleSet()
     private let femaleDefauthSet = numberOfServes().getFemaleSet()
@@ -38,13 +38,13 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func getSelectedOption() -> [Double]
     {
-        if selectedOption == "Male"
+        if selectedOption == "Standard Male"
         {
             return maleDefaultSet
-        }else if selectedOption == "Female"
+        }else if selectedOption == "Standard Female"
         {
             return femaleDefauthSet
-        }else if selectedOption == "Custom"
+        }else if selectedOption == "Customize"
         {
             return custom
         }else
