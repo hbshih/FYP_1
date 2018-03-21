@@ -55,7 +55,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         LaunchCamera = true
         pickerdismiss = false
         // Working with interface transition
-        addnoteText.text = "add some note here..."
+        addnoteText.text = "add some note here...".localized()
         addnoteText.textColor = UIColor.lightGray
         addnoteText.delegate = self
         
@@ -67,8 +67,6 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         if LaunchCamera! && LaunchCameraTimes < 1
         {
             showPicker()
-            print("Image Description --")
-            // print(image.)
             LaunchCameraTimes += 1
         }else
         {
@@ -76,7 +74,6 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
             {
                 performSegue(withIdentifier: "closeSegue", sender: nil)
                 image.image = #imageLiteral(resourceName: "Sample_Image")
-                print("Cancel No image AH")
                 // Return Home
             }else
             {
@@ -226,7 +223,6 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         }
         if (vegetable == 0.0 && grain == 0.0 && protein == 0.0 && fruit == 0.0 && dairy == 0.0)
         {
-            print("No more decrease")
             decreaseIntro.alpha = 0
         }
     }
@@ -268,10 +264,9 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     }
     @IBAction func doneTapped(_ sender: Any)
     {
-        print("DonePRESSED")
         if(vegetable == 0.0 && grain == 0.0 && protein == 0.0 && fruit == 0.0 && dairy == 0.0)
         {
-            let noEntryAlert = UIAlertController(title: nil, message: "Are you sure you don't want to record anything?", preferredStyle: UIAlertControllerStyle.alert)
+            let noEntryAlert = UIAlertController(title: nil, message: "Are you sure you don't want to record anything?".localized(), preferredStyle: UIAlertControllerStyle.alert)
             noEntryAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (Alert) in
                 if !self.dateChanged
                 {
@@ -331,7 +326,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         var notes = ""
         let nutritionValues = [grain,vegetable,protein,fruit,dairy] // Grain,Vegetable,Protein,Fruit,Dairy
         // Set note
-        if addnoteText.text != "add some note here..."
+        if addnoteText.text != "add some note here...".localized()
         {
             notes = addnoteText.text
         }
@@ -351,7 +346,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     {
         if addnoteText.text == ""
         {
-            addnoteText.text = "add some note here..."
+            addnoteText.text = "add some note here...".localized()
             addnoteText.textColor = UIColor.lightGray
         }
     }
@@ -368,7 +363,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         let popup = PopupDialog(viewController: InstructionPopUpVC, buttonAlignment: .horizontal, transitionStyle: .bounceUp, preferredWidth: 320, gestureDismissal: true, hideStatusBar: true)
         
         // Create first button
-        let buttonOne = CancelButton(title: "I understand now", height: 60) {
+        let buttonOne = CancelButton(title: "I understand now".localized(), height: 60) {
         }
         
         // Add buttons to dialog

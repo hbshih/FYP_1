@@ -145,7 +145,7 @@ class homepageViewController: UIViewController {
             if fileName.count == 1 && showStartingMessageToNewUsers == false
             {
                 showStartingMessageToNewUsers = true
-                SCLAlertMessage(title: "Congrats!", message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!").showMessage()
+                SCLAlertMessage(title: "Congrats!".localized(), message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!".localized()).showMessage()
                 self.centerFaceArea.alpha = 0
                 self.centerInformationArea.alpha = 1
                 UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations: {
@@ -169,7 +169,7 @@ class homepageViewController: UIViewController {
                 updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
                 
                 // text below the slider
-                informationLabel.text = "7-Days Balance: \(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
+                informationLabel.text = "7-Days Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
                 
                 // Present the nutrition elements that users needs to intake today
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
@@ -189,7 +189,7 @@ class homepageViewController: UIViewController {
             dairyPercentage = 0
             showCircularSliderData()
             presentTodayInformation(Standard: planStandard!)
-            informationLabel.text = "No data yet"
+            informationLabel.text = "No data yet".localized()
         }
     }
     
@@ -281,69 +281,28 @@ class homepageViewController: UIViewController {
     
     func setSliderColor(valueP: Double, slider: KDCircularProgress)
     {
-        print("----------")
-        print(valueP)
         var value = valueP
         if slider != circularSlider
         {
             // The maximum percentage of each element is 20.0
             value *= 5
         }
-        print(slider)
-        print(value)
         var sliderController = circularSliderDeterminer.init(value: value)
         value = sliderController.getSliderValue()
-        print(value)
         slider.animate(toAngle: value, duration: 1.5, completion: nil)
         slider.set(colors: sliderController.getSliderColour())
-        print(sliderController.getSliderValue())
         slider.trackColor = sliderController.getSliderTrackColour()
         centerFace.setImage(sliderController.getFace(), for: .normal)
-        
-        /*
-        if value == 0.0 && slider == circularSlider
-        {
-            slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
-            slider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
-            if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Yellow.png"), for: .normal)}
-        }else
-        {
-            if value > 0 && value <= 75
-            {
-                slider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))
-                slider.trackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
-                if slider == circularSlider
-                {centerFace.setImage(UIImage(named: "Face_Sad.png"), for: .normal);print("I am slider : \(slider)")}
-            }// Yellow -- Neutral
-            else if value > 75 && value <= 225
-            {
-                slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
-                slider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
-                if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Yellow.png"), for: .normal)}
-            }
-                // Blue -- Good
-            else if value > 225 && value <= 300
-            {
-                slider.set(colors:UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0))
-                slider.trackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
-                if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Happy.png"), for: .normal)}
-            }else if value > 300 && value <= 360
-            {
-                slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
-                slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
-                if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Smile.png"), for: .normal)}
-            }
-        }*/
     }
     
+    /*
     func sendPhoto()
     {
-        print("SEND!")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.performSegue(withIdentifier: "confirmPhotoSegue", sender: self)
         }
     }
-    
+    */
     
     func shake(layer: CALayer)
     {

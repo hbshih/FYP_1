@@ -37,6 +37,7 @@
 		B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57935631FE0234600E663DB /* GoogleService-Info.plist */; };
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
+		B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F44BD20627B90001FD68C /* StringExtension.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
 		B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F339205F110C0070124D /* ChangeDateViewController.swift */; };
@@ -133,6 +134,7 @@
 		B57935631FE0234600E663DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
+		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
 				B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */,
+				B57F44BD20627B90001FD68C /* StringExtension.swift */,
 				B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */,
 				B5DA2A852050A525003BCDB1 /* Localizable.strings */,
 				B595F33C205F1DFC0070124D /* Date_Extension.swift */,
@@ -752,6 +755,7 @@
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
+				B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */,
 				B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */,
 				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
 				B574322920616C9300C998D0 /* CustomizedPlanSettingViewController.swift in Sources */,

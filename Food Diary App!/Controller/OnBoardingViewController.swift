@@ -17,7 +17,7 @@ class OnBoardingViewController: UIViewController {
     var swiftyOnboard: SwiftyOnboard!
     let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
     
-    var titleArray: [String] = [NSLocalizedString("Welcome to FoodyLife!", comment: ""), NSLocalizedString("Track your food", comment: ""), NSLocalizedString("Balance the five food groups", comment: ""),NSLocalizedString("Become healthier and happier!", comment: "")]
+    var titleArray: [String] = ["Welcome to FoodyLife!".localized(), NSLocalizedString("Track your food", comment: ""), NSLocalizedString("Balance the five food groups", comment: ""),NSLocalizedString("Become healthier and happier!", comment: "")]
     
     var subTitleArray: [String] = [
         NSLocalizedString("Understanding more of your diet helps you eat right and live a healthier life!", comment: ""),
