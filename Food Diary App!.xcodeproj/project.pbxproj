@@ -39,7 +39,6 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
-		B595F33A205F110D0070124D /* ChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595F338205F110C0070124D /* ChangeDateViewController.xib */; };
 		B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F339205F110C0070124D /* ChangeDateViewController.swift */; };
 		B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F33C205F1DFC0070124D /* Date_Extension.swift */; };
 		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
@@ -47,6 +46,7 @@
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5B56931206176ED003158F8 /* calorieDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B56930206176ED003158F8 /* calorieDeterminer.swift */; };
+		B5B569342061D3D3003158F8 /* ChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */; };
 		B5CDCEC3205ECB550010213A /* circularSliderDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */; };
@@ -57,6 +57,7 @@
 		B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */; };
 		B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */; };
+		B5D8A6522061DA9B002BE648 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D8A6542061DA9B002BE648 /* InfoPlist.strings */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
 		B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DA2A852050A525003BCDB1 /* Localizable.strings */; };
@@ -134,7 +135,6 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
-		B595F338205F110C0070124D /* ChangeDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChangeDateViewController.xib; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.xib"; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
 		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5B56930206176ED003158F8 /* calorieDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calorieDeterminer.swift; sourceTree = "<group>"; };
+		B5B569392061D3DA003158F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChangeDateViewController.xib; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackViewController.swift; sourceTree = "<group>"; };
 		B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularSliderDeterminer.swift; sourceTree = "<group>"; };
@@ -153,6 +154,9 @@
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPercentageCalculator.swift; sourceTree = "<group>"; };
+		B5D8A64F2061D575002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5D8A6552061DAA2002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5D8A6572061DAFD002BE648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		B5DA2A7F2050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */,
 				B5DA2A852050A525003BCDB1 /* Localizable.strings */,
 				B595F33C205F1DFC0070124D /* Date_Extension.swift */,
+				B5D8A6542061DA9B002BE648 /* InfoPlist.strings */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -307,7 +312,7 @@
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
 				B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */,
 				B595F339205F110C0070124D /* ChangeDateViewController.swift */,
-				B595F338205F110C0070124D /* ChangeDateViewController.xib */,
+				B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */,
 				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
 				B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */,
@@ -501,8 +506,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */,
-				B595F33A205F110D0070124D /* ChangeDateViewController.xib in Resources */,
+				B5B569342061D3D3003158F8 /* ChangeDateViewController.xib in Resources */,
 				B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */,
+				B5D8A6522061DA9B002BE648 /* InfoPlist.strings in Resources */,
 				B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */,
 				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
@@ -838,11 +844,30 @@
 			name = SelectPlanViewController.xib;
 			sourceTree = "<group>";
 		};
+		B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5B569392061D3DA003158F8 /* Base */,
+			);
+			name = ChangeDateViewController.xib;
+			path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog";
+			sourceTree = "<group>";
+		};
+		B5D8A6542061DA9B002BE648 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D8A6552061DAA2002BE648 /* Base */,
+				B5D8A6572061DAFD002BE648 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B5DA2A852050A525003BCDB1 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B5DA2A842050A525003BCDB1 /* en */,
 				B5DA2A862050A53B003BCDB1 /* zh-Hant */,
+				B5D8A64F2061D575002BE648 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

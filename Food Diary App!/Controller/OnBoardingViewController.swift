@@ -16,8 +16,14 @@ class OnBoardingViewController: UIViewController {
     var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
     let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
-    var titleArray: [String] = ["Welcome to FoodyLife!", "Track your food", "Balance the five food groups", "Become healthier and happier!"]
-    var subTitleArray: [String] = ["Understanding more of your diet helps you eat right and live a healthier life!", "Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier.", "Have you eaten vegetables today? Check your Balance Board of the 5 food groups and get all nutrition needed every day.","Transform the way you eat without the focus on calories counting! Become a Foody with a balanced diet and a balanced life!."]
+    
+    var titleArray: [String] = [NSLocalizedString("Welcome to FoodyLife!", comment: ""), NSLocalizedString("Track your food", comment: ""), NSLocalizedString("Balance the five food groups", comment: ""),NSLocalizedString("Become healthier and happier!", comment: "")]
+    
+    var subTitleArray: [String] = [
+        NSLocalizedString("Understanding more of your diet helps you eat right and live a healthier life!", comment: ""),
+        NSLocalizedString("Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier.", comment: ""),
+        NSLocalizedString("Have you eaten vegetables today? Check your Balance Board of the 5 food groups and get all nutrition needed every day.", comment: ""),
+        NSLocalizedString("Transform the way you eat without the focus on calories counting! Become a Foody with a balanced diet and a balanced life!.", comment: "")]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view
@@ -61,7 +67,6 @@ class OnBoardingViewController: UIViewController {
         swiftyOnboard?.goToPage(index: index + 1, animated: true)
         if index == 3
         {
-            print("GET STARTED!")
             selectPlan()
          //   performSegue(withIdentifier: "getStartedSegue", sender: nil)
         }
@@ -77,7 +82,7 @@ class OnBoardingViewController: UIViewController {
         
         // Create first button
         
-        let buttonOne = CancelButton(title: "DECIDE LATER", height: 60) {
+        let buttonOne = CancelButton(title: NSLocalizedString("DECIDE LATER", comment: ""), height: 60) {
             self.defaults.setPlanStandard(value: numberOfServes().getCustom())
             let appearance = SCLAlertView.SCLAppearance(
                 //kCircleIconHeight: 55.0
@@ -89,12 +94,12 @@ class OnBoardingViewController: UIViewController {
             let alert = SCLAlertView(appearance: appearance)
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
-            alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
-            _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
+            alert.addButton(NSLocalizedString("Ready to explore", comment: ""), target: self, selector: #selector(self.segueToHomeScreen))
+            _ = alert.showCustom(NSLocalizedString("Undecided plan?", comment: ""), subTitle: NSLocalizedString("Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", comment: ""), color: color, icon: icon!)
         }
         
         // Create second button
-        let buttonTwo = DefaultButton(title: "LET'S START", height: 60) {
+        let buttonTwo = DefaultButton(title: NSLocalizedString("LET'S START", comment: ""), height: 60) {
             self.defaults.setPlanStandard(value: selectPlanVC.getSelectedOption())
             if selectPlanVC.getSelectedOption() == numberOfServes().getCustom()
             {
@@ -193,11 +198,11 @@ extension OnBoardingViewController: SwiftyOnboardDataSource {
         overlay.continueButton.tag = Int(position)
         
         if currentPage == 0.0 || currentPage == 1.0 || currentPage == 2.0{
-            overlay.continueButton.setTitle("Continue", for: .normal)
-            overlay.skipButton.setTitle("Skip", for: .normal)
+            overlay.continueButton.setTitle(NSLocalizedString("Continue", comment: ""), for: .normal)
+            overlay.skipButton.setTitle(NSLocalizedString("Skip", comment: ""), for: .normal)
             overlay.skipButton.isHidden = false
         } else {
-            overlay.continueButton.setTitle("Get Started!", for: .normal)
+            overlay.continueButton.setTitle(NSLocalizedString("Get Started!", comment: ""), for: .normal)
             overlay.skipButton.isHidden = true
         }
     }

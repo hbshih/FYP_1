@@ -68,6 +68,7 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        getInteractionMessages()
     
         centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
@@ -88,6 +89,48 @@ class homepageViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.coachMarksController.stop(immediately: true)
+    }
+    
+    func getInteractionMessages()
+    {
+        let notify = ""
+        
+        /*
+        let url = URL(string: "https://icanhazdadjoke.com/")
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil
+            {
+                print(error)
+            }else
+            {
+                if let urlContent = data
+                {
+                    do
+                    {
+                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                        
+                        print(jsonResult)
+                    } catch
+                    {
+                        print("Json Processing failed")
+                    }
+                }
+            }
+        }
+        task.resume()
+        */
+        var ref = Database.database().reference()
+        ref.child("FaceTappedMessages").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let username = value?["message"] as? String ?? ""
+            print("Message")
+           print(username)
+        }) { (error) in
+            
+            print(error.localizedDescription)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)
