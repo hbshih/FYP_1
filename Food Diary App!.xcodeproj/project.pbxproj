@@ -41,7 +41,6 @@
 		B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F44BD20627B90001FD68C /* StringExtension.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
-		B58C4F7D20648ECB00F588E4 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B58C4F7C20648ECB00F588E4 /* popSound.mp3 */; };
 		B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F339205F110C0070124D /* ChangeDateViewController.swift */; };
 		B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F33C205F1DFC0070124D /* Date_Extension.swift */; };
 		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
@@ -59,6 +58,7 @@
 		B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */; };
 		B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */; };
 		B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		B5D187062065516400F884E8 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5D187052065516400F884E8 /* popSound.mp3 */; };
 		B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */; };
 		B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */; };
 		B5D8A6522061DA9B002BE648 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D8A6542061DA9B002BE648 /* InfoPlist.strings */; };
@@ -154,7 +154,6 @@
 		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
-		B58C4F7C20648ECB00F588E4 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = popSound.mp3; path = ../../../../../Downloads/popSound.mp3; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
 		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
@@ -173,6 +172,7 @@
 		B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		B5D187052065516400F884E8 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
 		B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPercentageCalculator.swift; sourceTree = "<group>"; };
 		B5D8A64F2061D575002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				B58C4F7C20648ECB00F588E4 /* popSound.mp3 */,
+				B5D187052065516400F884E8 /* popSound.mp3 */,
 				B570B1062025F79E008BF8BC /* Font */,
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
@@ -537,13 +537,13 @@
 				B5D8A6522061DA9B002BE648 /* InfoPlist.strings in Resources */,
 				B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */,
 				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
+				B5D187062065516400F884E8 /* popSound.mp3 in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
-				B58C4F7D20648ECB00F588E4 /* popSound.mp3 in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

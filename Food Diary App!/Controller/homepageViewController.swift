@@ -503,7 +503,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
             return coachMarksController.helper.makeCoachMark(for: self.foodgroupsStackView)
         case 3:
             UserDefaultsHandler().setHomepageTutorialStatus(status: true)
-            return coachMarksController.helper.makeCoachMark(for: self.cameraButtonOutlet)
+            return coachMarksController.helper.makeCoachMark(for: self.fanMenu)
         default:
             return coachMarksController.helper.makeCoachMark()
         }

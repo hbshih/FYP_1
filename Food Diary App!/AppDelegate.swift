@@ -24,43 +24,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         //Firebases
         FirebaseApp.configure()
-        
-    /*    if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
- 
-        
-        application.registerForRemoteNotifications()*/
-        
-        if let token = InstanceID.instanceID().token()
+        if #available(iOS 8.0, *)
         {
-            print("Token : \(token)")
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }else
+        {
+            let types: UIRemoteNotificationType = [.alert,.sound]
+            application.registerForRemoteNotifications(matching: types)
         }
         
-     //  Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
-
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
         
+     //  Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
         Fabric.sharedSDK().debug = true
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
         //--facebook
-//                FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        registerForPushNotifications()
-        
+        //FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
+    }
+    
+    @objc func tokenRefreshNotification(notification: NSNotification)
+    {
+        connectToFCM()
+    }
+    
+    func connectToFCM()
+    {
+        Messaging.messaging().connect { (error) in
+            if (error != nil)
+            {
+                print("Unable to connect \(error)")
+            }else
+            {
+                print("connected to FCM")
+            }
+            
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -75,11 +82,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
       //  FBSDKAppEvents.activateApp()
+        connectToFCM()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -130,38 +139,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
-    
-
-    func getNotificationSettings() {
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-            print("Notification settings: \(settings)")
-            guard settings.authorizationStatus == .authorized else { return }
-            DispatchQueue.main.async(execute: {
-                UIApplication.shared.registerForRemoteNotifications()
-            }) 
-        }
-    }
-    
-    func registerForPushNotifications() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-            (granted, error) in
-            print("Permission granted: \(granted)")
-            
-            guard granted else { return }
-            self.getNotificationSettings()
-        }
-    }
-    
-    func application(_ application: UIApplication,                   didRegisterForRemoteNotificationsWithDeviceToken deviceToken:Data) {
-        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        print(deviceTokenString)
-        /* send the device token to your server */
-    }
-    
-    func application(_ application: UIApplication,                   didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("i am not available in simulator \(error)")
-    }
-    
-    
 }
 

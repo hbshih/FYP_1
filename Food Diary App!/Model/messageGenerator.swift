@@ -97,22 +97,50 @@ struct messageGenerator {
                  "One way to improve your balance is eat more \(Least)",
                  "Add more \(Least) to your plate!",
             ]
+        }else
+        {
+            lackMessage =
+            [
+                    "You are doing a great job balancing your diet",
+                    "There is more than one way to eat healthfully and everyone has their own eating style.",
+                    "Be physically active at least 2 1/2 hours per week.",
+                
+            ]
         }
         
-        let healthQuote = ["Balance your diet prevents you from getting diseases and infections",
-                           "A balanced diet may be the best medicine",
-                           "A balanced diet, adequate exercise, and common sense keep the doctor away",
-                           "When diet is wrong, medicine is of no use.",
-                            "Keep calm and eat well"
-                           ]
         
         var message : [String] = []
         let diceRoll:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
-        let diceRoll2:Int = Int(arc4random_uniform(UInt32(healthQuote.count - 1)))
-        
-        message = [lackMessage[diceRoll],healthQuote[diceRoll2]]
-        
+        message = [lackMessage[diceRoll]]
         return message
+    }
+    
+    func healthQuotes() -> [String]
+    {
+        let healthQuote = ["Balance your diet prevents you from getting diseases and infections",
+                           "Everything You Eat and Drink Matters — Focus on Variety, Amount, and Nutrition",
+                           "Choose Foods and Beverages with Less Saturated Fat, Sodium, and Added Sugars",
+                           "A balanced diet may be the best medicine",
+                           "A balanced diet, adequate exercise, and common sense keep the doctor away",
+                           "When diet is wrong, medicine is of no use.",
+                           "Keep calm and eat well",
+                           "Focus on whole fruits. Whole fruits include fresh, frozen, dried, and canned options. Choose whole fruits more often than 100% fruit juice.",
+                           "Vary your veggies. Vegetables are divided into five subgroups and include dark-green vegetables, red and orange vegetables, legumes (beans and peas), starchy vegetables, and other vegetables.",
+                           "Make half your grains whole grains. Grains include whole grains and refined, enriched grains. Choose whole grains more often.",
+                           "Vary your protein routine. Protein foods include both animal and plant sources. Choose a variety of lean protein foods from both plant and animal sources.",
+                           "Move to low-fat or fat-free milk or yogurt. Dairy includes milk, yogurt, cheese, and calcium-fortified soy beverages (soymilk).",
+                           ]
+        
+        let diceRoll:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
+        let diceRoll2:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
+        
+        if diceRoll == diceRoll2
+        {
+            diceRoll2:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
+        }
+        
+        return [healthQuote[diceRoll2],healthQuote[diceRoll]]
+        
     }
     
     func setAnnoyingMessages() -> [String] // Start annoying
@@ -165,7 +193,12 @@ struct messageGenerator {
         //[vegetablePercentage,proteinPercentage,grainPercentage,fruitPercentage,dairyPercentage]
         Max = nList.max()
         Min = nList.min()
+        messageList.append(setGreetingMessages())
+        if count > 2
+        {
         messageList += setInformationMessages()
+        }
+        messageList += healthQuotes()
         messageList += setAnnoyingMessages()
     }
     
