@@ -27,11 +27,11 @@ struct messageGenerator {
     
     var momo: [String] = []
     var Databasecalled = false
-    
+    /*
     mutating func setMessagingMessages() -> [String] // From online
     {
         var mes : [String] = []
-        var ref = Database.database().reference()
+        let ref = Database.database().reference()
         ref.child("FaceTappedMessages").observeSingleEvent(of: .value, with:
         { (snapshot) in
             if let value = snapshot.value as? [String:Any]
@@ -47,29 +47,29 @@ struct messageGenerator {
             print(error.localizedDescription)
         }
         return mes
-    }
+    }*/
     
     func setInformationMessages() -> [String] // Three type of message
     {
         //[vegetablePercentage,proteinPercentage,grainPercentage,fruitPercentage,dairyPercentage]
         
-        var Most = ""
+//        var Most = ""
         var Least = ""
-        
-        switch Max {
-        case nList[0]?:
-            Most = "vegetable"
-        case nList[1]?:
-            Most = "protein"
-        case nList[2]?:
-            Most = "grain"
-        case nList[3]?:
-            Most = "fruit"
-        case nList[4]?:
-            Most = "dairy"
-        default:
-            Most = ""
-        }
+//
+//        switch Max {
+//        case nList[0]?:
+//            Most = "vegetable"
+//        case nList[1]?:
+//            Most = "protein"
+//        case nList[2]?:
+//            Most = "grain"
+//        case nList[3]?:
+//            Most = "fruit"
+//        case nList[4]?:
+//            Most = "dairy"
+//        default:
+//            Most = ""
+//        }
         
         switch Min
         {
@@ -127,7 +127,7 @@ struct messageGenerator {
             "I am not going to talk anymore"]
         return message
     }
-    
+    /*
     func setQuoteMessages() -> [String] // Give you some quote
     {
         let message = ["OK, stop", "I am not going to talk anymore", "I regret for that", "You need to grow up", "Look at some quotes"]
@@ -156,7 +156,7 @@ struct messageGenerator {
         task.resume()
         return message
     }
-    
+    */
     
     init(nList: [Double], count: Int)
     {

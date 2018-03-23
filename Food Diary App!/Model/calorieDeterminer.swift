@@ -17,7 +17,7 @@ struct calorieDeterminer
     
     func getCalculateCalorie() -> Double
     {
-        var Calculation = 10 * (weight) + 6.25 * (height)
+        let Calculation = 10 * (weight) + 6.25 * (height)
         if sex == "Male"
         {
             return Calculation - 5 * age + 5
