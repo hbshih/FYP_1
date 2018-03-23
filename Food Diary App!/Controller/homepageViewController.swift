@@ -12,7 +12,9 @@ import FirebaseDatabase
 import CoreData
 import FirebaseAnalytics
 import Instructions
-import YPImagePicker
+import FanMenu
+import Macaw
+import AVFoundation
 
 class homepageViewController: UIViewController {
     
@@ -36,6 +38,8 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var cameraButtonOutlet: UIButton!
     @IBOutlet weak var centerInformationView: UIView!
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var fanMenu: FanMenu!
+    @IBOutlet weak var coverView: UIView!
     
     @IBOutlet weak var cameraButton: UIButton!
     
@@ -53,8 +57,10 @@ class homepageViewController: UIViewController {
     private var currentNames: [String] = []
     private var notes: [String] = [] // Storing notes
     private var messageCounter = 0
-    private var messageToUsers = ["You just poked my face, don't do that","My face is not a button. Tapping it does abosolutely nothing except irritate me","I know I conditioned you to tap my face in my counterpart apps, but I'm really serious: it doesn't do anything this time","Yet you're still poking my face","There are lots of other fun things you could be doing with this app right now instead of poking my face.","You could go seeing your recent foods, for example","But apparently poking my face is more enjoyable","Please stop - you'll make my face dirty","When's the last time you washed your hands, anyhow?","Why don't you go wash your hand?","You didn't take my advice, I can tell","Tapping my face isn't anywhere near as amusing as you think it is","You see, I have a great sense of humor"]
+    private var messageToUsers: [String] = []
     private var showStartingMessageToNewUsers = false
+    
+    var player: AVAudioPlayer?
     
     private var Standard = [0.0,0.0,0.0,0.0,0.0]
     
@@ -68,8 +74,8 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    //    fetchDatabaseMessage()
         getInteractionMessages()
-    
         centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
         {
@@ -84,53 +90,116 @@ class homepageViewController: UIViewController {
             skipView.setTitle("Skip", for: .normal)
             self.coachMarksController.skipView = skipView
         }
+        
+        fanMenu.button = FanMenuButton(id: "main", image: "Icon_AddNew", color: Color(val: 0xADADAD))
+        
+        fanMenu.items = [
+            FanMenuButton(
+                id: "camAdd",
+                image: "icon_camAdd",
+                color: Color(val: 0xCECBCB)
+            ),
+            FanMenuButton(
+                id: "noteAdd",
+                image: "icon_noteAdd",
+                color: Color(val: 0xCECBCB)
+            ),
+        ]
+        
+        fanMenu.menuRadius = 90.0
+        fanMenu.duration = 0.2
+        fanMenu.interval = (Double.pi + Double.pi/4, Double.pi + 3 * Double.pi/4)
+        fanMenu.radius = 25.0
+        fanMenu.delay = 0.0
+        
+        fanMenu.onItemWillClick = { button in
+            self.showView()
+        }
+        
+        fanMenu.onItemDidClick = { button in
+            print("ItemWillClick: \(button.id)")
+            if button.id == "camAdd"
+            {
+                self.performSegue(withIdentifier: "showCameraSegue", sender: nil)
+            }else if button.id == "noteAdd"
+            {
+                self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
+            }
+        }
+    }
+    
+    func showView() {
+        print(coverView.alpha)
+        let newValue: CGFloat = coverView.alpha == 0.0 ? 0.75 : 0.0
+        UIView.animate(withDuration: 0.35, animations: {
+            self.coverView.alpha = newValue
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.coachMarksController.stop(immediately: true)
     }
-    
+    /*
+    var DatabaseCalled = false
+    func fetchDatabaseMessage()
+    {
+        if defaults.getMessageSeen() == false
+        {
+            var titleOfMessage = ""
+            var messageToPresent = ""
+            let connectedRef = Database.database().reference(withPath: ".info/connected")
+            connectedRef.observe(.value, with: { snapshot in
+                if snapshot.value as? Bool ?? false {
+                    var ref = Database.database().reference()
+                    ref.child("FaceTappedMessages").observeSingleEvent(of: .value, with:
+                        { (snapshot) in
+                            DispatchQueue.main.async
+                                {
+                                    if !self.DatabaseCalled
+                                    {
+                                        if let value = snapshot.value as? [String:Any]
+                                        {
+                                            if let t = value["title"] as? String
+                                            {
+                                                if t != ""
+                                                {
+                                                    titleOfMessage = t
+                                                }
+         
+                                            }
+                                            if var m = value["message"] as? String
+                                            {
+                                                if m != ""
+                                                {
+                                                    messageToPresent = m
+                                                }
+                                            }
+                                        }
+                                        self.DatabaseCalled = true
+                                    }
+                                    if titleOfMessage != "" && messageToPresent != ""
+                                    {
+                                        SCLAlertMessage(title: titleOfMessage, message: messageToPresent).showMessage()
+                                    }
+                                    self.defaults.setMessageSeen(seen: true)
+                            }
+                    }) { (error) in
+                        print("Error on")
+                        print(error.localizedDescription)
+                    }
+                } else {
+                    print("Not connected")
+                }
+            })
+        }
+    }*/
+ 
     func getInteractionMessages()
     {
-        let notify = ""
-        
-        /*
-        let url = URL(string: "https://icanhazdadjoke.com/")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil
-            {
-                print(error)
-            }else
-            {
-                if let urlContent = data
-                {
-                    do
-                    {
-                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                        
-                        print(jsonResult)
-                    } catch
-                    {
-                        print("Json Processing failed")
-                    }
-                }
-            }
-        }
-        task.resume()
-        */
-        var ref = Database.database().reference()
-        ref.child("FaceTappedMessages").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let username = value?["message"] as? String ?? ""
-            print("Message")
-           print(username)
-        }) { (error) in
-            
-            print(error.localizedDescription)
-        }
+        messageToUsers.removeAll()
+        let mesGenerator = messageGenerator(nList: [self.vegetablePercentage,self.proteinPercentage,self.grainPercentage,self.fruitPercentage,self.dairyPercentage], count: self.fileName.count)
+        self.messageToUsers += mesGenerator.getMessage()
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -173,6 +242,8 @@ class homepageViewController: UIViewController {
                 
                 // Present the nutrition elements that users needs to intake today
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
+                
+                getInteractionMessages()
                 
                 // Present the slider
                 showCircularSliderData()
@@ -296,13 +367,13 @@ class homepageViewController: UIViewController {
     }
     
     /*
-    func sendPhoto()
-    {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.performSegue(withIdentifier: "confirmPhotoSegue", sender: self)
-        }
-    }
-    */
+     func sendPhoto()
+     {
+     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+     self.performSegue(withIdentifier: "confirmPhotoSegue", sender: self)
+     }
+     }
+     */
     
     func shake(layer: CALayer)
     {
@@ -315,18 +386,21 @@ class homepageViewController: UIViewController {
     @IBAction func faceTapped(_ sender: Any)
     {
         Analytics.logEvent("FaceTapped", parameters: nil)
-        let appearance = SCLAlertView.SCLAppearance(
-            //kCircleIconHeight: 55.0
-            kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
-            kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
-            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
-            showCloseButton: true
-        )
-        let alert = SCLAlertView(appearance: appearance)
-        let icon = UIImage(named:"Alert_Yellow.png")
-        let color = UIColor.orange
-        _ = alert.showCustom("FOODY FACE", subTitle: messageToUsers[messageCounter % messageToUsers.count], color: color, icon: icon!)
-        messageCounter += 1
+        playSound()
+        if !(messageCounter == messageToUsers.count)
+        {
+            let appearance = SCLAlertView.SCLAppearance(
+                kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                showCloseButton: true
+            )
+            let alert = SCLAlertView(appearance: appearance)
+            let icon = UIImage(named:"Alert_Yellow.png")
+            let color = UIColor.orange
+            _ = alert.showCustom("FOODY FACE", subTitle: messageToUsers[messageCounter % messageToUsers.count], color: color, icon: icon!)
+            messageCounter += 1
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -365,6 +439,31 @@ class homepageViewController: UIViewController {
         {
         }
     }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
 
 // MARK: - Protocol Conformance | CoachMarksControllerDataSource
@@ -388,7 +487,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
         }
         return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
-
+    
     func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
         switch(index)
         {

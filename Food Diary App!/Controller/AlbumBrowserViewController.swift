@@ -15,7 +15,7 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var collectionView: UICollectionView!
     
     var images = [SKPhotoProtocol]()
-    var caption: [String] = []
+    //var caption: [String] = []
     var fileImage: [UIImage] = []
     var fileName: [String] = []
     
@@ -25,13 +25,13 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         // Making sure that the arrays are empty
         fileName.removeAll()
         fileImage.removeAll()
-        caption.removeAll()
+      //  caption.removeAll()
         images.removeAll()
         
         // Accessing Core Data
         var dataHandler = CoreDataHandler()
         fileName = dataHandler.getImageFilename()
-        caption = dataHandler.getNote()
+      //  caption = dataHandler.getNote()
 
         //Get photos
         if fileName.count != 0
@@ -41,11 +41,12 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // Reverse order
         fileImage = fileImage.reversed()
-        caption = caption.reversed()
+     //   caption = caption.reversed()
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
         SKPhotoBrowserOptions.displayStatusbar = false
         SKPhotoBrowserOptions.displayDeleteButton = false
+        
         setupTestData()
         setupCollectionView()
     }
@@ -122,7 +123,7 @@ private extension FromLocalViewController {
     {
         return (0..<fileImage.count).map { (i: Int) -> SKPhotoProtocol in
             let photo = SKPhoto.photoWithImage(fileImage[i])
-            photo.caption = caption[i]
+           // photo.caption = caption[i]
             return photo
         }
     }

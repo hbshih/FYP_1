@@ -43,7 +43,7 @@ struct circularSliderDeterminer
         {
             sliderColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
             sliderTrackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
-            face = #imageLiteral(resourceName: "Face_Sad")
+            face = #imageLiteral(resourceName: "Face_Red")
         }else if value > 20.0 && value <= 60.0 || value == 0
         {
             sliderColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0)
@@ -51,14 +51,14 @@ struct circularSliderDeterminer
             face = #imageLiteral(resourceName: "Face_Yellow")
         }else if value > 60.0 && value <= 80.0
         {
-            sliderColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0)
-            sliderTrackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
-            face = #imageLiteral(resourceName: "Face_Happy")
+            sliderColor = UIColor(red:0.59, green:0.79, blue:0.30, alpha:1.0)
+            sliderTrackColor = UIColor(red:0.59, green:0.79, blue:0.30, alpha:0.2)
+            face = #imageLiteral(resourceName: "Face_Green")
         }else
         {
-            sliderColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0)
-            sliderTrackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
-            face = #imageLiteral(resourceName: "Face_Smile")
+            sliderColor = UIColor(red:0.94, green:0.60, blue:0.18, alpha:1.0)
+            sliderTrackColor = UIColor(red:0.94, green:0.60, blue:0.18, alpha:0.2)
+            face = #imageLiteral(resourceName: "Face_Orange")
         }
         sliderValue = value * 3.6
     }

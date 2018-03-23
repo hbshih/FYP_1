@@ -34,6 +34,8 @@ pod 'Instructions', '~> 1.0.0'
 pod 'Appsee'
 pod 'YPImagePicker'
 pod 'Former'
+pod 'FanMenu'
+pod 'ReachabilitySwift'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

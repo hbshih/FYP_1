@@ -45,6 +45,16 @@ struct UserDefaultsHandler
         return defaults.object(forKey: "PersonalData") as AnyObject
     }
     
+    func setMessageSeen(seen: Bool)
+    {
+        defaults.set(seen, forKey: "seenMessages")
+    }
+    
+    func getMessageSeen() -> Bool
+    {
+        return defaults.bool(forKey: "seenMessages")
+    }
+    
     func setPlanStandard(value: [Double])
     {
         defaults.set(value, forKey: "PlanStandardArray")

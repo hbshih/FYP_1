@@ -49,7 +49,6 @@ struct CoreDataHandler
         newValue.setValue(nutritionInfo[4], forKey: "n_Dairy")
         do {
             try context.save()
-            print("All data saved succesfully")
         } catch {
             SCLAlertMessage.init(title: "Oops!", message: "Sorry, we coundn't save your photo, please try again!").showMessage()
             print(error)

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //Firebases
         FirebaseApp.configure()
         
-        if #available(iOS 10.0, *) {
+    /*    if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
@@ -38,16 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
-        }
+ 
         
-        application.registerForRemoteNotifications()
+        application.registerForRemoteNotifications()*/
         
         if let token = InstanceID.instanceID().token()
         {
             print("Token : \(token)")
         }
         
-//       Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
+     //  Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
 
         
         Fabric.sharedSDK().debug = true
@@ -56,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //--facebook
 //                FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        registerForPushNotifications()
+        
+        
         return true
     }
     
@@ -126,6 +130,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
+    
+
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.registerForRemoteNotifications()
+            }) 
+        }
+    }
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    
+    func application(_ application: UIApplication,                   didRegisterForRemoteNotificationsWithDeviceToken deviceToken:Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print(deviceTokenString)
+        /* send the device token to your server */
+    }
+    
+    func application(_ application: UIApplication,                   didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("i am not available in simulator \(error)")
+    }
+    
     
 }
 

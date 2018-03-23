@@ -11,6 +11,7 @@
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50322DD20267F4900584FA0 /* SettingTableViewController.swift */; };
+		B52DB05620630557001C4003 /* messageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DB05520630557001C4003 /* messageGenerator.swift */; };
 		B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52FD02A2031BF6700C41331 /* nougatine.ttf */; };
 		B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
@@ -40,12 +41,14 @@
 		B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F44BD20627B90001FD68C /* StringExtension.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
+		B58C4F7D20648ECB00F588E4 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B58C4F7C20648ECB00F588E4 /* popSound.mp3 */; };
 		B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F339205F110C0070124D /* ChangeDateViewController.swift */; };
 		B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F33C205F1DFC0070124D /* Date_Extension.swift */; };
 		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
 		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
+		B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */; };
 		B5B56931206176ED003158F8 /* calorieDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B56930206176ED003158F8 /* calorieDeterminer.swift */; };
 		B5B569342061D3D3003158F8 /* ChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
@@ -88,6 +91,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B58C4F8D20649DBF00F588E4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		17D559FE78D2CB8ABDCD4C2F /* Pods-Food Diary App!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!.release.xcconfig"; sourceTree = "<group>"; };
 		425204C9F820E487D21A9541 /* Pods-Food Diary App!Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!Tests/Pods-Food Diary App!Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +115,7 @@
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50322DD20267F4900584FA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		B52DB05520630557001C4003 /* messageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageGenerator.swift; sourceTree = "<group>"; };
 		B52FD02A2031BF6700C41331 /* nougatine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nougatine.ttf; sourceTree = "<group>"; };
 		B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
 		B5318478203B79F8002085A9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "../../../Downloads/com.crashlytics.ios-manual/Fabric.framework"; sourceTree = "<group>"; };
@@ -137,6 +154,7 @@
 		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B58C4F7C20648ECB00F588E4 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = popSound.mp3; path = ../../../../../Downloads/popSound.mp3; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
 		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
@@ -144,6 +162,7 @@
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
+		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		B5B56930206176ED003158F8 /* calorieDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calorieDeterminer.swift; sourceTree = "<group>"; };
 		B5B569392061D3DA003158F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChangeDateViewController.xib; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
@@ -287,6 +306,7 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B58C4F7C20648ECB00F588E4 /* popSound.mp3 */,
 				B570B1062025F79E008BF8BC /* Font */,
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
@@ -325,6 +345,7 @@
 				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
 				B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */,
 				B574322820616C9300C998D0 /* CustomizedPlanSettingViewController.swift */,
+				B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,6 +376,7 @@
 				B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */,
 				B5743220206082A200C998D0 /* personalisePlanCalculator.swift */,
 				B5B56930206176ED003158F8 /* calorieDeterminer.swift */,
+				B52DB05520630557001C4003 /* messageGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +418,7 @@
 				45DF41A33E2D34CDD3329B77 /* [CP] Embed Pods Frameworks */,
 				19CF577C6426E4B9DBF3B16E /* [CP] Copy Pods Resources */,
 				B5CF54F5202E439900D1B305 /* ShellScript */,
+				B58C4F8D20649DBF00F588E4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -520,6 +543,7 @@
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
+				B58C4F7D20648ECB00F588E4 /* popSound.mp3 in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,16 +620,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FanMenu/FanMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Former/Former.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-Logger-NSData+zlib/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
+				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
@@ -615,16 +643,20 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FanMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Former.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
@@ -752,6 +784,7 @@
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
 				B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
+				B52DB05620630557001C4003 /* messageGenerator.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
@@ -780,6 +813,7 @@
 				B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */,
 				B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */,
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
+				B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */,
 				B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,
 				B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */,

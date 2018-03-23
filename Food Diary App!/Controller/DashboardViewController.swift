@@ -78,29 +78,34 @@ class DashboardViewController: UIViewController {
         if dashboardType == "Vegetable"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*5*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*5)
         } else if dashboardType == "Grain"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*5*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*5)
         }else if dashboardType == "Protein"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*5*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*5)
         }else if dashboardType == "Fruit"
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*5*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*5)
         }else
         {
             centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*5*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*5)
         }
     }
     
     func setUpSlider(value: Double)
     {
-        let slider = circularProgress!
+        var sliderDeterminer = circularSliderDeterminer(value: value)
+        var slider = circularProgress!
+        slider.set(colors: sliderDeterminer.getSliderColour())
+        slider.trackColor = sliderDeterminer.getSliderTrackColour()
+        slider.animate(toAngle: sliderDeterminer.getSliderValue(), duration: 1.0, completion: nil)
+        /*
         slider.animate(toAngle: value, duration: 1.0, completion: nil)
         if value >= 0 && value <= 75
         {
@@ -121,7 +126,7 @@ class DashboardViewController: UIViewController {
         {
             slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
             slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
-        }
+        }*/
     }
     @IBAction func BackTapped(_ sender: Any)
     {

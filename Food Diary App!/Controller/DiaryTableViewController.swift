@@ -60,7 +60,7 @@ class DiaryTableViewController: UITableViewController {
         if fileName.count != 0
         {
             noDataIndicator.alpha = 0
-            images = FileManagerModel().lookupImage(fileNames: fileName)
+            images = FileManagerModel().lookupImageDiary(fileNames: fileName)
         }else
         {
             noDataIndicator.alpha = 1
