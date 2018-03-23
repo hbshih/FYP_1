@@ -556,6 +556,7 @@
 		B58D53F8B6565779B62D6FFE49C3253B /* FormSegmentedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1F65ED57B6FD9C987DFD6DF442EC7 /* FormSegmentedCell.swift */; };
 		B591F2CDF96903636AA52EA67708E97C /* filename.cc in Sources */ = {isa = PBXBuildFile; fileRef = DFF7B35364B31615799BA68CCDE8B85E /* filename.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		B5B1312B0BB32E4BFFA9D3A7844F8C1D /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46348AC9E9B61FFAB7697D8DB0233C11 /* AnimatableCollectionViewCell.swift */; };
+		B5D18704206546A100F884E8 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B5D18703206546A000F884E8 /* zh-Hant.lproj */; };
 		B5F73944228C092B475588A67D266C1A /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE85411663B659ECD6BE12345B36BB /* NatGeoAnimator.swift */; };
 		B642F412CEB13FF4909AC0CCB13B7B66 /* PresentFlipSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16744E71F12B402D740BF35F335D66E /* PresentFlipSegue.swift */; };
 		B66404162FFB2CB8510E9211E3E69927 /* GPBDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B9DC46105F08316EB53742D3C7C9F2 /* GPBDescriptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1637,6 +1638,7 @@
 		B52C8C7F08BFAFA0E34781440201C73B /* GPBRuntimeTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBRuntimeTypes.h; path = objectivec/GPBRuntimeTypes.h; sourceTree = "<group>"; };
 		B571018D6D8DB62430FCC1C4468D1DAA /* GTMLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMLogger.m; path = Foundation/GTMLogger.m; sourceTree = "<group>"; };
 		B5C70F114EE3D4178DEC51E4C0D18081 /* coding.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = coding.cc; path = util/coding.cc; sourceTree = "<group>"; };
+		B5D18703206546A000F884E8 /* zh-Hant.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "zh-Hant.lproj"; path = "Resources/zh-Hant.lproj"; sourceTree = "<group>"; };
 		B6AC33D7931AB6005EF6E39BD7BD4479 /* GoogleToolboxForMac-Defines-NSData+zlib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GoogleToolboxForMac-Defines-NSData+zlib-umbrella.h"; path = "../GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac-Defines-NSData+zlib-umbrella.h"; sourceTree = "<group>"; };
 		B6B7F79C33BEB6770C7383295E85F948 /* Navigator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Navigator.swift; path = IBAnimatable/Navigator.swift; sourceTree = "<group>"; };
 		B6B8224511A08201DB3D29C45AE621D0 /* IBAnimatable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IBAnimatable.xcconfig; sourceTree = "<group>"; };
@@ -3496,6 +3498,7 @@
 			isa = PBXGroup;
 			children = (
 				E4E2BC85CAA1E3B2BA8CA782FBB19147 /* Assets.xcassets */,
+				B5D18703206546A000F884E8 /* zh-Hant.lproj */,
 				50E72DE7094BA9FE1E2549F2248C81C7 /* en.lproj */,
 				2D479442D47210EA0519E4F478E03B6A /* es.lproj */,
 				36E6422E8AFE90CBCAE143F4010BE541 /* fr.lproj */,
@@ -4469,6 +4472,7 @@
 				B4567B0B197F827019C371D77A314631 /* en.lproj in Resources */,
 				9044DC02103DFAEDC47F6B2BC6BD4159 /* es.lproj in Resources */,
 				ADE3A1BF6A257FA644F61142CF5C26D3 /* fr.lproj in Resources */,
+				B5D18704206546A100F884E8 /* zh-Hant.lproj in Resources */,
 				ABFE705B2041EE10D493354CC52F31D9 /* YPLibraryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
