@@ -36,6 +36,13 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var decreaseIntro: UILabel!
     @IBOutlet weak var savingDateLabel: UILabel!
     
+    @IBOutlet weak var vIncreaseButtonn: UIButton!
+    @IBOutlet weak var gIncreaseButton: UIButton!
+    @IBOutlet weak var pIncreaseButton: UIButton!
+    @IBOutlet weak var fIncreaseButton: UIButton!
+    @IBOutlet weak var dIncreaseButton: UIButton!
+    
+    
     public var skip = false
     
     //Layout
@@ -52,6 +59,17 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let locale = NSLocale.current.languageCode
+        if (locale! == "zh")
+        {
+            vIncreaseButtonn.setImage(#imageLiteral(resourceName: "zh_Icon_VegetableBlank"), for: .normal)
+            gIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_GrainBlank"), for: .normal)
+            pIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_ProteinBlank"), for: .normal)
+            fIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_FruitBlank"), for: .normal)
+            dIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_DairyBlank"), for: .normal)
+        }
+        
         LaunchCamera = true
         pickerdismiss = false
         // Working with interface transition
@@ -273,14 +291,14 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                     let currentTime = Date()
-                    let currentFileName = "img\(format.string(from: currentTime)).jpg"
+                    let currentFileName = "ont\(format.string(from: currentTime)).jpg"
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: currentTime)
                 }else
                 {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                    let currentFileName = "img\(format.string(from: self.savedDate!)).jpg"
+                    let currentFileName = "not\(format.string(from: self.savedDate!)).jpg"
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: self.savedDate!)
                 }
@@ -295,14 +313,14 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                 let currentTime = Date()
-                let currentFileName = "img\(format.string(from: currentTime)).jpg"
+                let currentFileName = "ont\(format.string(from: currentTime)).jpg"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: currentTime)
             }else
             {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                let currentFileName = "img\(format.string(from: savedDate!)).jpg"
+                let currentFileName = "not\(format.string(from: savedDate!)).jpg"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: savedDate!)
             }
@@ -389,9 +407,9 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         formatter.dateFormat = "yyyy-MM-dd"
         
         let formatterSaved = DateFormatter()
-        formatterSaved.dateFormat = "yyyy-MM-dd"
+        formatterSaved.dateFormat = "yyyy-MM-dd-mm-ss"
         
-        let yesterdayAction = UIAlertAction(title: "Yesterday", style: .default) { (Alert) in
+        let yesterdayAction = UIAlertAction(title: "Yesterday".localized(), style: .default) { (Alert) in
             self.showDate = formatter.string(from: Date().yesterday)
             self.dateChanged = true
             self.dateButton.setTitle(self.showDate, for: .normal)

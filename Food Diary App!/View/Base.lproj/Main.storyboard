@@ -530,7 +530,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p41-V9-Eii">
-                                <rect key="frame" x="0.0" y="20" width="307" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
@@ -548,7 +548,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="6Aq-hD-O5Z">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8mX-Hk-AA2">
-                                                <rect key="frame" x="223" y="5" width="68" height="34"/>
+                                                <rect key="frame" x="291" y="5" width="68" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <state key="normal" title="Done">
@@ -563,13 +563,13 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-Jn-4dD">
-                                <rect key="frame" x="16" y="84" width="89" height="89"/>
+                                <rect key="frame" x="16" y="84" width="111.5" height="111.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Eqa-Jn-4dD" secondAttribute="height" multiplier="1:1" id="mmQ-8Y-WNd"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-UP-vLG">
-                                <rect key="frame" x="113" y="84" width="178" height="89"/>
+                                <rect key="frame" x="135.5" y="84" width="223.5" height="111.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2LY-UP-vLG" secondAttribute="height" multiplier="2:1" id="eKU-Hd-iYh"/>
@@ -578,19 +578,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-yC-z4E">
-                                <rect key="frame" x="16" y="183" width="275" height="410"/>
+                                <rect key="frame" x="16" y="205.5" width="343" height="387.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="73h-Oj-lfl">
-                                        <rect key="frame" x="0.0" y="8" width="275" height="1"/>
+                                        <rect key="frame" x="0.0" y="8" width="343" height="1"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="tOM-bL-Hdo">
-                                        <rect key="frame" x="0.0" y="401.5" width="275" height="1"/>
+                                        <rect key="frame" x="0.0" y="379" width="343" height="1"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlI-vP-xgT">
-                                        <rect key="frame" x="0.0" y="15" width="275" height="31"/>
+                                        <rect key="frame" x="0.0" y="15" width="343" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTU-an-rri">
-                                                <rect key="frame" x="131" y="3" width="139" height="25"/>
+                                                <rect key="frame" x="131" y="3" width="207" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title=" Help" image="info-2">
                                                     <color key="titleColor" red="0.19096472859382629" green="0.43610948324203491" blue="0.92553603649139404" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -623,10 +623,10 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mV-Cy-LKK">
-                                        <rect key="frame" x="0.0" y="326.5" width="275" height="60"/>
+                                        <rect key="frame" x="0.0" y="304" width="343" height="60"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-gu-p5a">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="60"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-gu-p5a">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="grain" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5k-mq-luV">
                                                         <rect key="frame" x="0.0" y="0.0" width="47" height="60"/>
@@ -641,7 +641,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="fruit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPi-98-Nai">
-                                                        <rect key="frame" x="57" y="1" width="47" height="58"/>
+                                                        <rect key="frame" x="74.5" y="1" width="47" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="CYV-l6-Mkd"/>
                                                             <constraint firstAttribute="width" constant="47" id="LbZ-Jd-93w"/>
@@ -653,7 +653,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="vegetable" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VB-fa-GaZ">
-                                                        <rect key="frame" x="114" y="1" width="47" height="58"/>
+                                                        <rect key="frame" x="148.5" y="1" width="47" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="mLk-3g-uVm"/>
                                                             <constraint firstAttribute="width" constant="47" id="pf9-m5-XXk"/>
@@ -665,7 +665,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="dairy" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtU-a7-0LC">
-                                                        <rect key="frame" x="171" y="1" width="47" height="58"/>
+                                                        <rect key="frame" x="223" y="1" width="46" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="P4C-Pd-W6b"/>
                                                         </constraints>
@@ -676,7 +676,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="protein" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-eq-IRy">
-                                                        <rect key="frame" x="228" y="0.0" width="47" height="60"/>
+                                                        <rect key="frame" x="296" y="0.0" width="47" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="cva-oM-pMu"/>
                                                             <constraint firstAttribute="width" constant="47" id="wIq-wf-NNW"/>
@@ -700,19 +700,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI8-bq-b4t">
-                                        <rect key="frame" x="0.0" y="46" width="275" height="280.5"/>
+                                        <rect key="frame" x="0.0" y="46" width="343" height="258"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_mat" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-8v-sIh">
-                                                <rect key="frame" x="16" y="61" width="243" height="158"/>
+                                                <rect key="frame" x="16" y="50" width="311" height="158"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_plate" translatesAutoresizingMaskIntoConstraints="NO" id="wTj-0z-QPC">
-                                                <rect key="frame" x="63" y="66" width="149" height="149"/>
+                                                <rect key="frame" x="97" y="55" width="149" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wTj-0z-QPC" secondAttribute="height" multiplier="1:1" id="AYh-rC-p7m"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-Bv-kMW">
-                                                <rect key="frame" x="97.5" y="100" width="80" height="80"/>
+                                                <rect key="frame" x="131.5" y="89" width="80" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J0G-Fi-6L8">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -863,7 +863,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-Rg-iWd">
-                                                <rect key="frame" x="211" y="31" width="48" height="48"/>
+                                                <rect key="frame" x="279" y="20" width="48" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_DairyPlace" translatesAutoresizingMaskIntoConstraints="NO" id="vr7-gL-BIG">
                                                         <rect key="frame" x="-4.5" y="0.0" width="57" height="57"/>
@@ -918,7 +918,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap icons on plate to decrease" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gA-uS-Ror">
-                                        <rect key="frame" x="10" y="51" width="255" height="14"/>
+                                        <rect key="frame" x="10" y="51" width="323" height="14"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                         <color key="textColor" red="0.63604795932769775" green="0.63654297590255737" blue="0.63612467050552368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -955,7 +955,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-Hg-xUM">
-                                <rect key="frame" x="131" y="603" width="156" height="34"/>
+                                <rect key="frame" x="131" y="603" width="224" height="34"/>
                                 <color key="backgroundColor" red="0.92661553621292114" green="0.73139512538909912" blue="0.34889471530914307" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -992,22 +992,27 @@
                     <connections>
                         <outlet property="addnoteText" destination="2LY-UP-vLG" id="ahS-OZ-qE3"/>
                         <outlet property="centerView" destination="OvY-yC-z4E" id="JsV-OB-oY1"/>
+                        <outlet property="dIncreaseButton" destination="msZ-eq-IRy" id="ahB-bQ-oux"/>
                         <outlet property="dairyCountLabel" destination="YO9-uL-XPO" id="5QB-ec-ec8"/>
                         <outlet property="dairyField" destination="Fts-Dt-Yi3" id="3MU-ab-Cbl"/>
                         <outlet property="dateButton" destination="Rbt-Hg-xUM" id="7H2-BD-mTt"/>
                         <outlet property="decreaseIntro" destination="7gA-uS-Ror" id="lxg-gk-2CV"/>
                         <outlet property="doneButton" destination="8mX-Hk-AA2" id="5Ap-jt-ErQ"/>
+                        <outlet property="fIncreaseButton" destination="CtU-a7-0LC" id="CgO-LW-2eY"/>
                         <outlet property="foodgroupStackView" destination="BAr-gu-p5a" id="Lg7-9f-oEB"/>
                         <outlet property="fruitCountLabel" destination="1r7-F6-JTU" id="obc-tF-roC"/>
                         <outlet property="fruitField" destination="UCt-AC-K8V" id="Hs8-sn-gIn"/>
+                        <outlet property="gIncreaseButton" destination="FPi-98-Nai" id="faX-5R-ALS"/>
                         <outlet property="grainCountLabel" destination="nGZ-Tw-YJI" id="lxC-zF-OP8"/>
                         <outlet property="grainField" destination="w3K-jj-wm9" id="3CY-f9-VgJ"/>
                         <outlet property="image" destination="Eqa-Jn-4dD" id="6qY-jQ-Boy"/>
                         <outlet property="instructionOutlet" destination="tTU-an-rri" id="Nbc-By-Nv8"/>
                         <outlet property="navBar" destination="p41-V9-Eii" id="VJ6-6s-QLu"/>
+                        <outlet property="pIncreaseButton" destination="8VB-fa-GaZ" id="Wi5-5U-Z8a"/>
                         <outlet property="proteinCountLabel" destination="PVz-H0-BWC" id="os6-Eu-6Qx"/>
                         <outlet property="proteinField" destination="kPr-Ax-t8y" id="re7-I3-yH2"/>
                         <outlet property="savingDateLabel" destination="4SW-H4-YKN" id="DWe-Ps-bM0"/>
+                        <outlet property="vIncreaseButtonn" destination="r5k-mq-luV" id="egw-kj-uTx"/>
                         <outlet property="vegetableCountLabel" destination="WX5-S5-uSv" id="fc5-4S-DI1"/>
                         <outlet property="vegetableField" destination="cA9-Vw-YOT" id="kxD-N8-YMt"/>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="closeSegue" id="D70-QE-Rdu"/>
@@ -2828,7 +2833,7 @@ Copyright {2004} {Skyscanner}
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daJ-6B-iBm">
-                                <rect key="frame" x="0.0" y="20" width="307" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
@@ -2846,7 +2851,7 @@ Copyright {2004} {Skyscanner}
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="0Ph-WE-rHD">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="szm-w4-61O">
-                                                <rect key="frame" x="223" y="5" width="68" height="34"/>
+                                                <rect key="frame" x="291" y="5" width="68" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <state key="normal" title="Done">
@@ -2861,16 +2866,16 @@ Copyright {2004} {Skyscanner}
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8Y-Av-5ln">
-                                <rect key="frame" x="16" y="183" width="275" height="410"/>
+                                <rect key="frame" x="16" y="205" width="343" height="388"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="3FR-1K-42c">
-                                        <rect key="frame" x="0.0" y="8" width="275" height="1"/>
+                                        <rect key="frame" x="0.0" y="8" width="343" height="1"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="9Cb-yk-Ock">
-                                        <rect key="frame" x="0.0" y="401" width="275" height="1"/>
+                                        <rect key="frame" x="0.0" y="379" width="343" height="1"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT6-80-hpg">
-                                        <rect key="frame" x="0.0" y="15" width="275" height="31"/>
+                                        <rect key="frame" x="0.0" y="15" width="343" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-ug-LCs">
                                                 <rect key="frame" x="131" y="3" width="61" height="25"/>
@@ -2905,10 +2910,10 @@ Copyright {2004} {Skyscanner}
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5L-zJ-RR2">
-                                        <rect key="frame" x="0.0" y="326" width="275" height="60"/>
+                                        <rect key="frame" x="0.0" y="304" width="343" height="60"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-aO-VZj">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="60"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-aO-VZj">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="grain" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-st-ttO">
                                                         <rect key="frame" x="0.0" y="0.0" width="47" height="60"/>
@@ -2923,7 +2928,7 @@ Copyright {2004} {Skyscanner}
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="fruit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-ux-jrD">
-                                                        <rect key="frame" x="57" y="1" width="47" height="58"/>
+                                                        <rect key="frame" x="74.5" y="1" width="47" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="fFY-Wc-2Ce"/>
                                                             <constraint firstAttribute="width" constant="47" id="lxz-vX-Nmc"/>
@@ -2935,7 +2940,7 @@ Copyright {2004} {Skyscanner}
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="vegetable" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpm-tb-g7n">
-                                                        <rect key="frame" x="114" y="1" width="47" height="58"/>
+                                                        <rect key="frame" x="148.5" y="1" width="47" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="47" id="9c2-LH-4w5"/>
                                                             <constraint firstAttribute="height" constant="58" id="W9h-Eg-opG"/>
@@ -2947,7 +2952,7 @@ Copyright {2004} {Skyscanner}
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="dairy" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWG-MA-sU7">
-                                                        <rect key="frame" x="171" y="1" width="47" height="58"/>
+                                                        <rect key="frame" x="223" y="1" width="46" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="8ED-sL-5QX"/>
                                                         </constraints>
@@ -2958,7 +2963,7 @@ Copyright {2004} {Skyscanner}
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="protein" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDJ-xc-V3K">
-                                                        <rect key="frame" x="228" y="0.0" width="47" height="60"/>
+                                                        <rect key="frame" x="296" y="0.0" width="47" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="47" id="OJ9-GA-USI"/>
                                                             <constraint firstAttribute="height" constant="60" id="pfC-lk-gol"/>
@@ -2982,19 +2987,19 @@ Copyright {2004} {Skyscanner}
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLS-Ex-eHQ">
-                                        <rect key="frame" x="0.0" y="46" width="275" height="280"/>
+                                        <rect key="frame" x="0.0" y="46" width="343" height="258"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_mat" translatesAutoresizingMaskIntoConstraints="NO" id="BTM-i7-Wwk">
-                                                <rect key="frame" x="16" y="61" width="243" height="158"/>
+                                                <rect key="frame" x="16" y="50" width="311" height="158"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_plate" translatesAutoresizingMaskIntoConstraints="NO" id="83k-Wx-LDS">
-                                                <rect key="frame" x="63" y="66" width="149" height="149"/>
+                                                <rect key="frame" x="97" y="55" width="149" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="83k-Wx-LDS" secondAttribute="height" multiplier="1:1" id="IZy-sl-JAb"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sDU-fH-ODB">
-                                                <rect key="frame" x="97.5" y="100" width="80" height="80"/>
+                                                <rect key="frame" x="131.5" y="89" width="80" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-o2-Mel">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -3145,7 +3150,7 @@ Copyright {2004} {Skyscanner}
                                                 </constraints>
                                             </stackView>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0A-m6-uWV">
-                                                <rect key="frame" x="211" y="31" width="48" height="48"/>
+                                                <rect key="frame" x="279" y="20" width="48" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_DairyPlace" translatesAutoresizingMaskIntoConstraints="NO" id="fng-OK-dNF">
                                                         <rect key="frame" x="-4.5" y="0.0" width="57" height="57"/>
@@ -3236,7 +3241,7 @@ Copyright {2004} {Skyscanner}
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RB8-Sx-zBY">
-                                <rect key="frame" x="131" y="603" width="156" height="34"/>
+                                <rect key="frame" x="131" y="603" width="224" height="34"/>
                                 <color key="backgroundColor" red="0.92661553620000003" green="0.73139512539999996" blue="0.34889471529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -3246,7 +3251,7 @@ Copyright {2004} {Skyscanner}
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MBS-dE-m9b">
-                                <rect key="frame" x="16" y="86" width="275" height="89"/>
+                                <rect key="frame" x="16" y="86" width="343" height="111"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MBS-dE-m9b" secondAttribute="height" multiplier="275:89" id="5xJ-UE-eFO"/>
@@ -3279,21 +3284,26 @@ Copyright {2004} {Skyscanner}
                     <connections>
                         <outlet property="addnoteText" destination="MBS-dE-m9b" id="0MZ-wu-FWi"/>
                         <outlet property="centerView" destination="R8Y-Av-5ln" id="wuA-NX-NyU"/>
+                        <outlet property="dIncreaseButton" destination="jDJ-xc-V3K" id="wYX-cb-gxR"/>
                         <outlet property="dairyCountLabel" destination="gqg-lw-KK1" id="Z8h-n5-HU1"/>
                         <outlet property="dairyField" destination="Ajj-In-SPT" id="R4q-0H-bUc"/>
                         <outlet property="dateButton" destination="RB8-Sx-zBY" id="t3F-CB-9gE"/>
                         <outlet property="decreaseIntro" destination="IVs-3q-s13" id="U48-hB-WWi"/>
                         <outlet property="doneButton" destination="szm-w4-61O" id="fhQ-NC-nZe"/>
+                        <outlet property="fIncreaseButton" destination="HWG-MA-sU7" id="xCZ-ot-AcE"/>
                         <outlet property="foodgroupStackView" destination="Nax-aO-VZj" id="4LH-3M-4WT"/>
                         <outlet property="fruitCountLabel" destination="Bi5-9f-lpO" id="a9P-jZ-EKX"/>
                         <outlet property="fruitField" destination="5E3-bk-0QC" id="tbC-P7-UnY"/>
+                        <outlet property="gIncreaseButton" destination="f1d-ux-jrD" id="aYf-oI-cNe"/>
                         <outlet property="grainCountLabel" destination="Tul-JP-aHo" id="rYk-PJ-0G1"/>
                         <outlet property="grainField" destination="4eO-Lr-jkH" id="NbT-Mp-Ett"/>
                         <outlet property="instructionOutlet" destination="ZHI-ug-LCs" id="pmD-vL-yax"/>
                         <outlet property="navBar" destination="daJ-6B-iBm" id="TM6-uu-h8W"/>
+                        <outlet property="pIncreaseButton" destination="Wpm-tb-g7n" id="vTC-ft-YIW"/>
                         <outlet property="proteinCountLabel" destination="hhz-HC-bWV" id="1G7-MO-QIc"/>
                         <outlet property="proteinField" destination="WcM-6h-jXR" id="FVf-hQ-Qxk"/>
                         <outlet property="savingDateLabel" destination="HlD-Px-NUJ" id="seR-QV-cZG"/>
+                        <outlet property="vIncreaseButtonn" destination="g9j-st-ttO" id="lhj-5w-WCn"/>
                         <outlet property="vegetableCountLabel" destination="Xln-E3-m1S" id="UCq-zT-25q"/>
                         <outlet property="vegetableField" destination="Wvs-Lw-mcL" id="Mxh-Yh-h1i"/>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="closeSegue" id="gYU-EM-wti"/>
@@ -12595,7 +12605,6 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TD2-mF-IdH"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="D70-QE-Rdu"/>
         <segue reference="Wh2-1l-RiZ"/>

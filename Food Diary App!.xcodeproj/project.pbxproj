@@ -40,10 +40,10 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F44BD20627B90001FD68C /* StringExtension.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
-		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
 		B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F339205F110C0070124D /* ChangeDateViewController.swift */; };
 		B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F33C205F1DFC0070124D /* Date_Extension.swift */; };
 		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
+		B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */; };
 		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
@@ -154,11 +154,13 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
-		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
 		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
 		B5965DFF2050B14B002A2648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
+		B59701552066A9E90044ED73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B59701572066A9F50044ED73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
+		B59701582066AAB80044ED73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
@@ -323,29 +325,29 @@
 		B59F55851FE9566000E22CCD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */,
+				B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */,
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
+				B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */,
 				B55234321FE9AC79009A757D /* CameraViewController.swift */,
+				B595F339205F110C0070124D /* ChangeDateViewController.swift */,
+				B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */,
+				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
 				B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */,
+				B574322820616C9300C998D0 /* CustomizedPlanSettingViewController.swift */,
 				B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */,
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
-				B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
-				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
+				B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */,
+				B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */,
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
-				B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */,
-				B595F339205F110C0070124D /* ChangeDateViewController.swift */,
-				B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */,
 				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
-				B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */,
-				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
 				B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */,
+				B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */,
 				B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */,
-				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
-				B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */,
-				B574322820616C9300C998D0 /* CustomizedPlanSettingViewController.swift */,
-				B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */,
+				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -540,7 +542,7 @@
 				B5D187062065516400F884E8 /* popSound.mp3 in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
-				B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */,
+				B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
@@ -880,6 +882,16 @@
 				B5965DFF2050B14B002A2648 /* zh-Hant */,
 			);
 			name = SelectPlanViewController.xib;
+			sourceTree = "<group>";
+		};
+		B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B59701552066A9E90044ED73 /* en */,
+				B59701572066A9F50044ED73 /* zh-Hant */,
+				B59701582066AAB80044ED73 /* Base */,
+			);
+			name = InstructionPopUpViewController.xib;
 			sourceTree = "<group>";
 		};
 		B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */ = {

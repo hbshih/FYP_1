@@ -56,6 +56,9 @@ class DiaryTableViewController: UITableViewController {
         proteinList = proteinList.reversed()
         grainList = grainList.reversed()
         
+        print("filenames")
+        print(fileName)
+        
         //-- Accesing App File, getting images
         if fileName.count != 0
         {
@@ -155,6 +158,7 @@ class DiaryTableViewController: UITableViewController {
         {
             // Manipulating Data, showing correct information
             let str = self.fileName[indexPath.row]
+            let type = str.prefix(3)
             var subString = str.prefix(10)
             let month = subString.suffix(2)
             subString = str.prefix(13)
@@ -166,10 +170,20 @@ class DiaryTableViewController: UITableViewController {
             let date = "\(month)/\(day)"
             let time = "\(hour):\(minute)"
             
+            print("FileName")
+            print(str)
+            
             // Displaying informations
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
-            cell.time.text = time
+            if type == "not" || time == "No:te"
+            {
+                cell.time.alpha = 0
+            }else
+            {
+                cell.time.text = time
+            }
+         //   cell.time.text = time
             cell.note.text = notes[indexPath.row]
             
             // Show nutrition icons and counts

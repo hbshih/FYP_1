@@ -34,6 +34,12 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var centerView: UIView!
     
+    @IBOutlet weak var vIncreaseButtonn: UIButton!
+    @IBOutlet weak var gIncreaseButton: UIButton!
+    @IBOutlet weak var pIncreaseButton: UIButton!
+    @IBOutlet weak var fIncreaseButton: UIButton!
+    @IBOutlet weak var dIncreaseButton: UIButton!
+    
     // Saving nutrition info
     private var grain = 0.0
     private var protein = 0.0
@@ -44,6 +50,18 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let locale = NSLocale.current.languageCode
+        if (locale! == "zh")
+        {
+            vIncreaseButtonn.setImage(#imageLiteral(resourceName: "zh_Icon_VegetableBlank"), for: .normal)
+            gIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_GrainBlank"), for: .normal)
+            pIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_ProteinBlank"), for: .normal)
+            fIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_FruitBlank"), for: .normal)
+            dIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_DairyBlank"), for: .normal)
+        }
+        
+        
         // Working with interface transition
         addnoteText.text = "add some note here...".localized()
         addnoteText.textColor = UIColor.lightGray
@@ -161,14 +179,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                     let currentTime = Date()
-                    let currentFileName = "img\(format.string(from: currentTime)).jpg"
+                    let currentFileName = "ont\(format.string(from: currentTime))Note" // Save Ontime
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: currentTime)
                 }else
                 {
                     let format = DateFormatter()
-                    format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                    let currentFileName = "img\(format.string(from: self.savedDate!)).jpg"
+                    format.dateFormat = "yyyy-MM-dd"
+                    let currentFileName = "not\(format.string(from: self.savedDate!))Note" // Not Save Ontime
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: self.savedDate!)
                 }
@@ -183,14 +201,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                 let currentTime = Date()
-                let currentFileName = "img\(format.string(from: currentTime)).jpg"
+                let currentFileName = "ont\(format.string(from: currentTime))Note"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: currentTime)
             }else
             {
                 let format = DateFormatter()
-                format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                let currentFileName = "img\(format.string(from: savedDate!)).jpg"
+                format.dateFormat = "yyyy-MM-dd"
+                let currentFileName = "not\(format.string(from: savedDate!))Note"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: savedDate!)
             }
@@ -201,15 +219,6 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     // Save image to database
     func saveImage(imageName: String, time: Date)
     {
-//        //create an instance of the FileManager
-//        let fileManager = FileManager.default
-//        //get the image path
-//        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-//        //get the JPG data for this image
-//        let data = UIImageJPEGRepresentation(image!, 0.1)
-//        //store it in the document directory
-//        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-        
         // Coredatas
         var notes = ""
         let nutritionValues = [grain,vegetable,protein,fruit,dairy] // Grain,Vegetable,Protein,Fruit,Dairy
@@ -269,13 +278,12 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         let todayAction = UIAlertAction(title: "Today", style: .default) { (Alert) in
             self.dateChanged = true
             self.showDate = "Today"
-            
             self.dateButton.setTitle(self.showDate, for: .normal)
             self.savedDate = Date()
         }
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd-mm-ss"
+        formatter.dateFormat = "yyyy-MM-dd"
         
         let formatterSaved = DateFormatter()
         formatterSaved.dateFormat = "yyyy-MM-dd-mm-ss"

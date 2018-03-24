@@ -51,7 +51,14 @@ struct FileManagerModel
                     print("cannot find \(imagePath)")
                 }
             }else{
-                images.append(#imageLiteral(resourceName: "image_None"))
+                let locale = NSLocale.current.languageCode
+                if (locale! == "zh")
+                {
+                    images.append(#imageLiteral(resourceName: "zh_NoImage"))
+                }else
+                {
+                    images.append(#imageLiteral(resourceName: "image_None"))
+                }
                 print("Panic! No Image!")
             }
         }

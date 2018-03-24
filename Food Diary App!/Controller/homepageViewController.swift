@@ -60,7 +60,7 @@ class homepageViewController: UIViewController {
     private var messageToUsers: [String] = []
     private var showStartingMessageToNewUsers = false
     
-    var player: AVAudioPlayer?
+    var objPlayer: AVAudioPlayer?
     
     private var Standard = [0.0,0.0,0.0,0.0,0.0]
     
@@ -74,7 +74,7 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    //    fetchDatabaseMessage()
+        //    fetchDatabaseMessage()
         getInteractionMessages()
         centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
@@ -141,60 +141,60 @@ class homepageViewController: UIViewController {
         self.coachMarksController.stop(immediately: true)
     }
     /*
-    var DatabaseCalled = false
-    func fetchDatabaseMessage()
-    {
-        if defaults.getMessageSeen() == false
-        {
-            var titleOfMessage = ""
-            var messageToPresent = ""
-            let connectedRef = Database.database().reference(withPath: ".info/connected")
-            connectedRef.observe(.value, with: { snapshot in
-                if snapshot.value as? Bool ?? false {
-                    var ref = Database.database().reference()
-                    ref.child("FaceTappedMessages").observeSingleEvent(of: .value, with:
-                        { (snapshot) in
-                            DispatchQueue.main.async
-                                {
-                                    if !self.DatabaseCalled
-                                    {
-                                        if let value = snapshot.value as? [String:Any]
-                                        {
-                                            if let t = value["title"] as? String
-                                            {
-                                                if t != ""
-                                                {
-                                                    titleOfMessage = t
-                                                }
-         
-                                            }
-                                            if var m = value["message"] as? String
-                                            {
-                                                if m != ""
-                                                {
-                                                    messageToPresent = m
-                                                }
-                                            }
-                                        }
-                                        self.DatabaseCalled = true
-                                    }
-                                    if titleOfMessage != "" && messageToPresent != ""
-                                    {
-                                        SCLAlertMessage(title: titleOfMessage, message: messageToPresent).showMessage()
-                                    }
-                                    self.defaults.setMessageSeen(seen: true)
-                            }
-                    }) { (error) in
-                        print("Error on")
-                        print(error.localizedDescription)
-                    }
-                } else {
-                    print("Not connected")
-                }
-            })
-        }
-    }*/
- 
+     var DatabaseCalled = false
+     func fetchDatabaseMessage()
+     {
+     if defaults.getMessageSeen() == false
+     {
+     var titleOfMessage = ""
+     var messageToPresent = ""
+     let connectedRef = Database.database().reference(withPath: ".info/connected")
+     connectedRef.observe(.value, with: { snapshot in
+     if snapshot.value as? Bool ?? false {
+     var ref = Database.database().reference()
+     ref.child("FaceTappedMessages").observeSingleEvent(of: .value, with:
+     { (snapshot) in
+     DispatchQueue.main.async
+     {
+     if !self.DatabaseCalled
+     {
+     if let value = snapshot.value as? [String:Any]
+     {
+     if let t = value["title"] as? String
+     {
+     if t != ""
+     {
+     titleOfMessage = t
+     }
+     
+     }
+     if var m = value["message"] as? String
+     {
+     if m != ""
+     {
+     messageToPresent = m
+     }
+     }
+     }
+     self.DatabaseCalled = true
+     }
+     if titleOfMessage != "" && messageToPresent != ""
+     {
+     SCLAlertMessage(title: titleOfMessage, message: messageToPresent).showMessage()
+     }
+     self.defaults.setMessageSeen(seen: true)
+     }
+     }) { (error) in
+     print("Error on")
+     print(error.localizedDescription)
+     }
+     } else {
+     print("Not connected")
+     }
+     })
+     }
+     }*/
+    
     func getInteractionMessages()
     {
         messageToUsers.removeAll()
@@ -440,24 +440,27 @@ class homepageViewController: UIViewController {
         }
     }
     
-    func playSound() {
+    func playSound()
+    {
         guard let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3") else { return }
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategorySoloAmbient)
             try AVAudioSession.sharedInstance().setActive(true)
             
+            // For iOS 11
+            if #available(iOS 11.0, *)
+            {
+                objPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            }
+            else{
+            // For iOS versions < 11
             
+                objPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+        }
             
-            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            
-            /* iOS 10 and earlier require the following line:
-             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-            
-            guard let player = player else { return }
-            
-            player.play()
+            guard let aPlayer = objPlayer else { return }
+            aPlayer.play()
             
         } catch let error {
             print(error.localizedDescription)

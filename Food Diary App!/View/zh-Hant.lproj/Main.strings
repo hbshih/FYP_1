@@ -6,7 +6,7 @@
 "0Ph-WE-rHD.title" = "完成";
 
 /* Class = "UILabel"; text = "Fruit"; ObjectID = "0yn-Zo-a1U"; */
-"0yn-Zo-a1U.text" = "水果類";
+"0yn-Zo-a1U.text" = "水果";
 
 /* Class = "UILabel"; text = "Custom"; ObjectID = "11z-qZ-szh"; */
 "11z-qZ-szh.text" = "自訂";
@@ -57,7 +57,7 @@
 "8qe-IK-tHa.title" = "相片";
 
 /* Class = "UILabel"; text = "Plate contains?"; ObjectID = "9Yz-n9-XeC"; */
-"9Yz-n9-XeC.text" = "您的食物包含哪些類別呢？";
+"9Yz-n9-XeC.text" = "餐盤包含？";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "A3I-k9-6zo"; */
 "A3I-k9-6zo.text" = "1.0";
@@ -144,7 +144,7 @@
 "RB8-Sx-zBY.normalTitle" = "今天";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "RKR-AI-eyG"; */
-"RKR-AI-eyG.text" = "豆魚肉蛋類";
+"RKR-AI-eyG.text" = "豆魚肉蛋";
 
 /* Class = "UIButton"; normalTitle = "Today"; ObjectID = "Rbt-Hg-xUM"; */
 "Rbt-Hg-xUM.normalTitle" = "今天";
@@ -189,13 +189,13 @@
 "a9I-zX-7th.title" = "新增一筆紀錄";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "b4H-ls-2Om"; */
-"b4H-ls-2Om.text" = "豆魚肉蛋類";
+"b4H-ls-2Om.text" = "豆魚肉蛋";
 
 /* Class = "UINavigationItem"; title = "Foody Life"; ObjectID = "cB6-8z-GiS"; */
 "cB6-8z-GiS.title" = "吃貨人生";
 
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "fCM-ws-go0"; */
-"fCM-ws-go0.text" = "蔬菜類";
+"fCM-ws-go0.text" = "蔬菜";
 
 /* Class = "UILabel"; text = "Add new records to display\n"; ObjectID = "fEK-X8-18c"; */
 "fEK-X8-18c.text" = "還沒有任何記錄\n";
@@ -207,7 +207,7 @@
 "gqg-lw-KK1.text" = "x1";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "hDN-GU-KBk"; */
-"hDN-GU-KBk.text" = "全穀雜糧類";
+"hDN-GU-KBk.text" = "全穀雜糧";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "hhz-HC-bWV"; */
 "hhz-HC-bWV.text" = "x1";
@@ -231,13 +231,13 @@
 "kmQ-HH-xb9.title" = "吃貨人生";
 
 /* Class = "UILabel"; text = "Dairy"; ObjectID = "leL-t3-wnw"; */
-"leL-t3-wnw.text" = "乳品類";
+"leL-t3-wnw.text" = "乳品";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "nGZ-Tw-YJI"; */
 "nGZ-Tw-YJI.text" = "x1";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "nak-Oc-QQT"; */
-"nak-Oc-QQT.text" = "全穀雜糧類";
+"nak-Oc-QQT.text" = "全穀雜糧";
 
 /* Class = "UILabel"; text = "Term & Condition"; ObjectID = "qz9-z0-BXC"; */
 "qz9-z0-BXC.text" = "使用者條款";
@@ -264,10 +264,10 @@
 "vBJ-8h-QYx.text" = "Your Recent Vegetables";
 
 /* Class = "UILabel"; text = "Plate contains?"; ObjectID = "vWK-3y-Qsr"; */
-"vWK-3y-Qsr.text" = "您的食物包含哪些類別呢？";
+"vWK-3y-Qsr.text" = "餐盤包含？";
 
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "wBm-Tm-X1Q"; */
-"wBm-Tm-X1Q.text" = "蔬菜類";
+"wBm-Tm-X1Q.text" = "蔬菜";
 
 /* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "xV4-ER-qJi"; */
 "xV4-ER-qJi.title" = "新增一筆紀錄";
