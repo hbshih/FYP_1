@@ -33,6 +33,27 @@
 "add some note here..." = "加入筆記...";
 "Are you sure you don't want to record anything?" = "您確定不加入任何營養資訊嗎？";
 "I understand now" = "我懂了";
+"Your Recent Vegetable" = "最近的蔬菜";
+"Your Recent Grain" = "最近的全穀雜糧";
+"Your Recent Protein" = "最近的豆魚肉蛋";
+"Your Recent Fruit" = "最近的水果";
+"Your Recent Dairy" = "最近的乳品";
+"Set Date" = "設定日期";
+"Set Custom Date" = "設定其他日期";
+"Yesterday" = "昨天";
+"Today" = "今天";
+"Cancel" = "取消";
+"You don't have enough data yet :-(" = "你還沒有任何的資料 :-(";
+"No Data Available" = "沒有任何資料";
+"You are a type of " = "你屬於 ";
+"Vegetable human" = "蔬菜人";
+"Protein human" = "豆魚肉蛋人";
+"Grain human" = "全穀雜糧人";
+"Fruit human" = "水果人";
+"Diary human" = "乳品人";
+
+
+
 
 
 

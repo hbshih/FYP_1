@@ -131,12 +131,12 @@ struct messageGenerator {
                            "Move to low-fat or fat-free milk or yogurt. Dairy includes milk, yogurt, cheese, and calcium-fortified soy beverages (soymilk).",
                            ]
         
-        let diceRoll:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
-        let diceRoll2:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
+        let diceRoll:Int = Int(arc4random_uniform(UInt32(healthQuote.count - 1)))
+        var diceRoll2:Int = Int(arc4random_uniform(UInt32(healthQuote.count - 1)))
         
         if diceRoll == diceRoll2
         {
-            diceRoll2:Int = Int(arc4random_uniform(UInt32(lackMessage.count - 1)))
+            diceRoll2 = Int(arc4random_uniform(UInt32(healthQuote.count - 1)))
         }
         
         return [healthQuote[diceRoll2],healthQuote[diceRoll]]

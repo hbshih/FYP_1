@@ -50,7 +50,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>MIcrophone</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Photos is used to share and upload photos</string>
+	<string>Will need your permission to access the album</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photos is used to share and upload photos</string>
 	<key>UIAppFonts</key>

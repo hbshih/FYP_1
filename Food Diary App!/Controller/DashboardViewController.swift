@@ -71,7 +71,7 @@ class DashboardViewController: UIViewController {
     
     func buildDashboard()
     {
-        informationLabel.text = "Your Recent \(dashboardType!)"
+        informationLabel.text = "Your Recent \(dashboardType!)".localized()
         navDash.title = "\(dashboardType!) Dashboard"
         var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
         

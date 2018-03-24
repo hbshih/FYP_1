@@ -2,8 +2,11 @@
 /* Class = "UITableViewSection"; headerTitle = "choose custom to edit the values "; ObjectID = "0KQ-zb-gfQ"; */
 "0KQ-zb-gfQ.headerTitle" = "選擇自訂調整攝取量";
 
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "0Ph-WE-rHD"; */
+"0Ph-WE-rHD.title" = "完成";
+
 /* Class = "UILabel"; text = "Fruit"; ObjectID = "0yn-Zo-a1U"; */
-"0yn-Zo-a1U.text" = "水果";
+"0yn-Zo-a1U.text" = "水果類";
 
 /* Class = "UILabel"; text = "Custom"; ObjectID = "11z-qZ-szh"; */
 "11z-qZ-szh.text" = "自訂";
@@ -18,13 +21,19 @@
 "1r7-F6-JTU.text" = "x1";
 
 /* Class = "UITextView"; text = "Enter your note here..."; ObjectID = "2LY-UP-vLG"; */
-"2LY-UP-vLG.text" = "加相片解說．．．";
+"2LY-UP-vLG.text" = "加入筆記...";
 
 /* Class = "UINavigationItem"; title = "Your Food Diary"; ObjectID = "3fr-MI-9Zb"; */
-"3fr-MI-9Zb.title" = "日記";
+"3fr-MI-9Zb.title" = "您的食物日記";
+
+/* Class = "UILabel"; text = "Saving Date?"; ObjectID = "4SW-H4-YKN"; */
+"4SW-H4-YKN.text" = "儲存日期？";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "58p-tm-y12"; */
 "58p-tm-y12.title" = "設定";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "6Aq-hD-O5Z"; */
+"6Aq-hD-O5Z.title" = "完成";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "7EP-wg-rwE"; */
 "7EP-wg-rwE.normalTitle" = "下一步";
@@ -32,17 +41,23 @@
 /* Class = "UITextView"; text = "Privacy Policy\nHau-Ben Benjamin Shih built the FoodyLife app as a Free app. This SERVICE is provided by Hau-Ben Benjamin Shih at no cost and is intended for use as is.\nThis page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.\nIf you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.\nThe terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at FoodyLife unless otherwise defined in this Privacy Policy.\nInformation Collection and Use\nFor a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request is retained on your device and is not collected by me in any way\nThe app does use third party services that may collect information used to identify you.\nLink to privacy policy of third party service providers used by the app\n* Firebase Analytics\n* Fabric\n* Crashlytics\nLog Data\nI want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.\nCookies\nCookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your device internal memory.\nThis Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.\nService Providers\nI may employ third-party companies and individuals due to the following reasons:\n* To facilitate our Service;\n* To provide the Service on our behalf;\n* To perform Service-related services; or\n* To assist us in analyzing how our Service is used.\nI want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.\nSecurity\nI value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.\nLinks to Other Sites\nThis Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.\nChildren’s Privacy\nThese Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.\nChanges to This Privacy Policy\nI may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.\nContact Us\nIf you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at h.b.shih@se15.qmul.ac.uk.\nThis privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator"; ObjectID = "7Vs-aH-JPg"; */
 "7Vs-aH-JPg.text" = "Privacy Policy\nHau-Ben Benjamin Shih built the FoodyLife app as a Free app. This SERVICE is provided by Hau-Ben Benjamin Shih at no cost and is intended for use as is.\nThis page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.\nIf you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.\nThe terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at FoodyLife unless otherwise defined in this Privacy Policy.\nInformation Collection and Use\nFor a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request is retained on your device and is not collected by me in any way\nThe app does use third party services that may collect information used to identify you.\nLink to privacy policy of third party service providers used by the app\n* Firebase Analytics\n* Fabric\n* Crashlytics\nLog Data\nI want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.\nCookies\nCookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your device internal memory.\nThis Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.\nService Providers\nI may employ third-party companies and individuals due to the following reasons:\n* To facilitate our Service;\n* To provide the Service on our behalf;\n* To perform Service-related services; or\n* To assist us in analyzing how our Service is used.\nI want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.\nSecurity\nI value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.\nLinks to Other Sites\nThis Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.\nChildren’s Privacy\nThese Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.\nChanges to This Privacy Policy\nI may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.\nContact Us\nIf you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at h.b.shih@se15.qmul.ac.uk.\nThis privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator";
 
+/* Class = "UILabel"; text = "Tap icons on plate to decrease"; ObjectID = "7gA-uS-Ror"; */
+"7gA-uS-Ror.text" = "點擊餐盤上的圖示減少份量";
+
 /* Class = "UITabBarItem"; title = "Report"; ObjectID = "7hN-t4-fgX"; */
 "7hN-t4-fgX.title" = "報告";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "8ke-b8-SAP"; */
 "8ke-b8-SAP.text" = "1.0";
 
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "8mX-Hk-AA2"; */
+"8mX-Hk-AA2.normalTitle" = "完成";
+
 /* Class = "UITabBarItem"; title = "Photo"; ObjectID = "8qe-IK-tHa"; */
 "8qe-IK-tHa.title" = "相片";
 
 /* Class = "UILabel"; text = "Plate contains?"; ObjectID = "9Yz-n9-XeC"; */
-"9Yz-n9-XeC.text" = "包含哪些食物類別呢？";
+"9Yz-n9-XeC.text" = "您的食物包含哪些類別呢？";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "A3I-k9-6zo"; */
 "A3I-k9-6zo.text" = "1.0";
@@ -51,16 +66,16 @@
 "Au1-vD-K5T.text" = "You are a type of vegetable human ";
 
 /* Class = "UILabel"; text = "Data Setting"; ObjectID = "BBc-p3-8Zu"; */
-"BBc-p3-8Zu.text" = "數據設定";
+"BBc-p3-8Zu.text" = "資料設定";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "Bi5-9f-lpO"; */
+"Bi5-9f-lpO.text" = "x1";
 
 /* Class = "UILabel"; text = "Dairy"; ObjectID = "CXy-Ef-cfA"; */
-"CXy-Ef-cfA.text" = "乳製品";
+"CXy-Ef-cfA.text" = "日記";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "D1t-Lt-9j6"; */
 "D1t-Lt-9j6.normalTitle" = "上一步";
-
-/* Class = "UILabel"; text = "New"; ObjectID = "DFj-U7-qbX"; */
-"DFj-U7-qbX.text" = "新增";
 
 /* Class = "UILabel"; text = "Did you set the CollectionViewController to "; ObjectID = "E6F-HJ-J7T"; */
 "E6F-HJ-J7T.text" = "Did you set the CollectionViewController to ";
@@ -75,16 +90,28 @@
 "HbH-tm-D35.text" = "您的歷史平均";
 
 /* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "HdS-vv-iym"; */
-"HdS-vv-iym.text" = "隱私權政策";
+"HdS-vv-iym.text" = "隱私權";
+
+/* Class = "UILabel"; text = "Saving Date?"; ObjectID = "HlD-Px-NUJ"; */
+"HlD-Px-NUJ.text" = "儲存日期？";
+
+/* Class = "UILabel"; text = "Tap icons on plate to decrease"; ObjectID = "IVs-3q-s13"; */
+"IVs-3q-s13.text" = "點擊餐盤上的圖示減少份量";
 
 /* Class = "UILabel"; text = "100%"; ObjectID = "Ign-TW-UDc"; */
 "Ign-TW-UDc.text" = "100%";
+
+/* Class = "UILabel"; text = "- Past 7 days score on each group -"; ObjectID = "KlM-AF-Ct2"; */
+"KlM-AF-Ct2.text" = "- 過去七天各食物類別的表現 -";
 
 /* Class = "UINavigationItem"; title = "Album"; ObjectID = "L5A-wI-3XO"; */
 "L5A-wI-3XO.title" = "相簿";
 
 /* Class = "UILabel"; text = "Fruit"; ObjectID = "Lby-sG-nLH"; */
 "Lby-sG-nLH.text" = "水果";
+
+/* Class = "UITextView"; text = "Enter your note here..."; ObjectID = "MBS-dE-m9b"; */
+"MBS-dE-m9b.text" = "加入筆記...";
 
 /* Class = "UILabel"; text = "9:41"; ObjectID = "NDt-bR-wql"; */
 "NDt-bR-wql.text" = "9:41";
@@ -99,31 +126,40 @@
 "Nuc-aW-mSp.headerTitle" = "設定";
 
 /* Class = "UILabel"; text = "Male"; ObjectID = "ObH-m5-Skf"; */
-"ObH-m5-Skf.text" = "男";
+"ObH-m5-Skf.text" = "標準男性計畫";
 
 /* Class = "UITextField"; placeholder = "E-Mail"; ObjectID = "PHo-aM-URj"; */
-"PHo-aM-URj.placeholder" = "E-Mail";
+"PHo-aM-URj.placeholder" = "信箱";
 
 /* Class = "UILabel"; text = "Nutrition Setting"; ObjectID = "PNN-2B-PIG"; */
-"PNN-2B-PIG.text" = "營養設定";
+"PNN-2B-PIG.text" = "營養數值設定";
 
 /* Class = "UILabel"; text = "Give us some feedback"; ObjectID = "PRK-lL-4td"; */
-"PRK-lL-4td.text" = "與我們聯絡";
+"PRK-lL-4td.text" = "給我們一些回饋";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "PVz-H0-BWC"; */
 "PVz-H0-BWC.text" = "x1";
 
+/* Class = "UIButton"; normalTitle = "Today"; ObjectID = "RB8-Sx-zBY"; */
+"RB8-Sx-zBY.normalTitle" = "今天";
+
 /* Class = "UILabel"; text = "Protein"; ObjectID = "RKR-AI-eyG"; */
-"RKR-AI-eyG.text" = "豆魚肉蛋";
+"RKR-AI-eyG.text" = "豆魚肉蛋類";
+
+/* Class = "UIButton"; normalTitle = "Today"; ObjectID = "Rbt-Hg-xUM"; */
+"Rbt-Hg-xUM.normalTitle" = "今天";
 
 /* Class = "UILabel"; text = "Report"; ObjectID = "SNt-Nh-D4S"; */
 "SNt-Nh-D4S.text" = "報告";
 
 /* Class = "UILabel"; text = "Open Source License"; ObjectID = "SfA-zy-VYS"; */
-"SfA-zy-VYS.text" = "感謝名單";
+"SfA-zy-VYS.text" = "授權說明";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "Tul-JP-aHo"; */
+"Tul-JP-aHo.text" = "x1";
 
 /* Class = "UITableViewSection"; headerTitle = "Plan"; ObjectID = "URR-xl-aSt"; */
-"URR-xl-aSt.headerTitle" = "方案";
+"URR-xl-aSt.headerTitle" = "計畫";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "WX5-S5-uSv"; */
 "WX5-S5-uSv.text" = "x1";
@@ -135,37 +171,46 @@
 "XJz-43-ZqM.text" = "1.0";
 
 /* Class = "UINavigationItem"; title = "Recent Report"; ObjectID = "XfR-Zc-dGD"; */
-"XfR-Zc-dGD.title" = "最近報告";
+"XfR-Zc-dGD.title" = "最近的報告";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xkx-2g-xTJ"; */
 "Xkx-2g-xTJ.normalTitle" = "Button";
 
+/* Class = "UILabel"; text = "x1"; ObjectID = "Xln-E3-m1S"; */
+"Xln-E3-m1S.text" = "x1";
+
 /* Class = "UILabel"; text = "x1"; ObjectID = "YO9-uL-XPO"; */
 "YO9-uL-XPO.text" = "x1";
 
+/* Class = "UIButton"; normalTitle = " Help"; ObjectID = "ZHI-ug-LCs"; */
+"ZHI-ug-LCs.normalTitle" = " 小幫手";
+
 /* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "a9I-zX-7th"; */
-"a9I-zX-7th.title" = "新增您的日記";
+"a9I-zX-7th.title" = "新增一筆紀錄";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "b4H-ls-2Om"; */
-"b4H-ls-2Om.text" = "蛋白質";
-
-/* Class = "UINavigationItem"; title = "Foody Life"; ObjectID = "bBq-gu-2tE"; */
-"bBq-gu-2tE.title" = "吃貨人生";
+"b4H-ls-2Om.text" = "豆魚肉蛋類";
 
 /* Class = "UINavigationItem"; title = "Foody Life"; ObjectID = "cB6-8z-GiS"; */
 "cB6-8z-GiS.title" = "吃貨人生";
 
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "fCM-ws-go0"; */
-"fCM-ws-go0.text" = "蔬菜";
+"fCM-ws-go0.text" = "蔬菜類";
+
+/* Class = "UILabel"; text = "Add new records to display\n"; ObjectID = "fEK-X8-18c"; */
+"fEK-X8-18c.text" = "還沒有任何記錄\n";
 
 /* Class = "UITabBarItem"; title = "Setting"; ObjectID = "fQm-71-5Cg"; */
 "fQm-71-5Cg.title" = "設定";
 
-/* Class = "UILabel"; text = "\n\nAdd new records\nto display this page"; ObjectID = "fab-Pt-goG"; */
-"fab-Pt-goG.text" = "\n\n新增新的紀錄\n才看得到這一頁喔！";
+/* Class = "UILabel"; text = "x1"; ObjectID = "gqg-lw-KK1"; */
+"gqg-lw-KK1.text" = "x1";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "hDN-GU-KBk"; */
-"hDN-GU-KBk.text" = "五穀根莖";
+"hDN-GU-KBk.text" = "全穀雜糧類";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "hhz-HC-bWV"; */
+"hhz-HC-bWV.text" = "x1";
 
 /* Class = "UITabBarItem"; title = "Diary"; ObjectID = "hx1-of-fe8"; */
 "hx1-of-fe8.title" = "日記";
@@ -174,7 +219,7 @@
 "iam-p0-skx.text" = "08/16";
 
 /* Class = "UIButton"; normalTitle = "Clear All Data"; ObjectID = "j3z-5R-VTh"; */
-"j3z-5R-VTh.normalTitle" = "清除所有內容";
+"j3z-5R-VTh.normalTitle" = "清除所有資料";
 
 /* Class = "UITextView"; text = "Terms & Conditions\nBy downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to Hau-Ben Benjamin Shih.\nHau-Ben Benjamin Shih is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.\nThe FoodyLife app stores and processes personal data that you have provided to us, in order to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the FoodyLife app won’t work properly or at all.\nYou should be aware that there are certain things that Hau-Ben Benjamin Shih will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but Hau-Ben Benjamin Shih cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.\n\nIf you’re using the app outside of an area with Wi-Fi, you should remember that your terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.\nAlong the same lines, Hau-Ben Benjamin Shih cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, Hau-Ben Benjamin Shih cannot accept responsibility\nWith respect to Hau-Ben Benjamin Shih’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavour to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. Hau-Ben Benjamin Shih accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.\nAt some point, we may wish to update the app. The app is currently available on Android and iOS – the requirements for both systems (and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. Hau-Ben Benjamin Shih does not promise that it will always update the app so that it is relevant to you and/or works with the iOS/Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.\nChanges to This Terms and Conditions\nI may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page. These changes are effective immediately after they are posted on this page.\nContact Us\nIf you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me  h.b.shih@se15.qmul.ac.uk.\nThis Terms and Conditions page was generated by App Privacy Policy Generator"; ObjectID = "jFn-Et-VGc"; */
 "jFn-Et-VGc.text" = "Terms & Conditions\nBy downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to Hau-Ben Benjamin Shih.\nHau-Ben Benjamin Shih is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.\nThe FoodyLife app stores and processes personal data that you have provided to us, in order to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the FoodyLife app won’t work properly or at all.\nYou should be aware that there are certain things that Hau-Ben Benjamin Shih will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but Hau-Ben Benjamin Shih cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.\n\nIf you’re using the app outside of an area with Wi-Fi, you should remember that your terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.\nAlong the same lines, Hau-Ben Benjamin Shih cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, Hau-Ben Benjamin Shih cannot accept responsibility\nWith respect to Hau-Ben Benjamin Shih’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavour to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. Hau-Ben Benjamin Shih accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.\nAt some point, we may wish to update the app. The app is currently available on Android and iOS – the requirements for both systems (and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. Hau-Ben Benjamin Shih does not promise that it will always update the app so that it is relevant to you and/or works with the iOS/Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.\nChanges to This Terms and Conditions\nI may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page. These changes are effective immediately after they are posted on this page.\nContact Us\nIf you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me  h.b.shih@se15.qmul.ac.uk.\nThis Terms and Conditions page was generated by App Privacy Policy Generator";
@@ -182,38 +227,50 @@
 /* Class = "UILabel"; text = "Diary"; ObjectID = "kXh-O3-Tft"; */
 "kXh-O3-Tft.text" = "日記";
 
+/* Class = "UIViewController"; title = "FoodyLife"; ObjectID = "kmQ-HH-xb9"; */
+"kmQ-HH-xb9.title" = "吃貨人生";
+
 /* Class = "UILabel"; text = "Dairy"; ObjectID = "leL-t3-wnw"; */
-"leL-t3-wnw.text" = "乳製品";
+"leL-t3-wnw.text" = "乳品類";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "nGZ-Tw-YJI"; */
 "nGZ-Tw-YJI.text" = "x1";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "nak-Oc-QQT"; */
-"nak-Oc-QQT.text" = "五穀根莖";
+"nak-Oc-QQT.text" = "全穀雜糧類";
 
 /* Class = "UILabel"; text = "Term & Condition"; ObjectID = "qz9-z0-BXC"; */
 "qz9-z0-BXC.text" = "使用者條款";
 
 /* Class = "UIViewController"; title = "Add more?"; ObjectID = "sdL-l7-QO5"; */
-"sdL-l7-QO5.title" = "加入更多";
+"sdL-l7-QO5.title" = "新增更多？";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "szm-w4-61O"; */
+"szm-w4-61O.normalTitle" = "完成";
+
+/* Class = "UIButton"; normalTitle = " Help"; ObjectID = "tTU-an-rri"; */
+"tTU-an-rri.normalTitle" = " 小幫手";
 
 /* Class = "UITextView"; text = "The following sets forth attribution notices for third party software that may be contained in this application.  Designs Related\nLogo inspired by Shannon Hargis\nhttps://dribbble.com/shannonhargis \n\nOn boarding page 1, image credits to Shannon Hargis\nhttps://dribbble.com/shannonhargis \n\nOn boarding page 4, image credits to Mohit Sharma\nhttps://dribbble.com/thearteesta\n\n————————\n\nFrameworks Related\nIBAnimatable\nMIT License\nhttps://github.com/IBAnimatable/IBAnimatable \nCopyright (c) 2015 IBAnimatable  \nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nSKPhotoBrowser\nMIT License\nhttps://github.com/suzuki-0000/SKPhotoBrowser \nCopyright (c) 2015 suzuki_keishi\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE. \nSCLAlertView\nMIT License\nhttps://github.com/vikmeup/SCLAlertView-Swift\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\nIQKeyboardManagerSwift', ‘5.0.0'\nMIT License\nhttps://github.com/hackiftekhar/IQKeyboardManager\nCopyright (c) 2013-2017 Iftekhar Qurashi\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nScrollableGraphView\nMIT License\nhttps://github.com/philackm/ScrollableGraphView\nCopyright (c) 2016 Phillip\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nSwiftyOnboard\nMIT License\nhttps://github.com/juanpablofernandez/SwiftyOnboard\nCopyright (c) 2017 Juan Pablo Fernandez\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nPopupDialog\nMIT License\nhttps://github.com/Orderella/PopupDialog\nCopyright (c) 2016 Orderella Ltd. (http://orderella.co.uk)\nAuthor - Martin Wildfeuer (http://www.mwfire.de)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\nSky floating\nhttps://github.com/Skyscanner/SkyFloatingLabelTextField\nCopyright {2004} {Skyscanner}\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License."; ObjectID = "tda-vd-mLp"; */
 "tda-vd-mLp.text" = "The following sets forth attribution notices for third party software that may be contained in this application.  Designs Related\nLogo inspired by Shannon Hargis\nhttps://dribbble.com/shannonhargis \n\nOn boarding page 1, image credits to Shannon Hargis\nhttps://dribbble.com/shannonhargis \n\nOn boarding page 4, image credits to Mohit Sharma\nhttps://dribbble.com/thearteesta\n\n————————\n\nFrameworks Related\nIBAnimatable\nMIT License\nhttps://github.com/IBAnimatable/IBAnimatable \nCopyright (c) 2015 IBAnimatable  \nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nSKPhotoBrowser\nMIT License\nhttps://github.com/suzuki-0000/SKPhotoBrowser \nCopyright (c) 2015 suzuki_keishi\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE. \nSCLAlertView\nMIT License\nhttps://github.com/vikmeup/SCLAlertView-Swift\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\nIQKeyboardManagerSwift', ‘5.0.0'\nMIT License\nhttps://github.com/hackiftekhar/IQKeyboardManager\nCopyright (c) 2013-2017 Iftekhar Qurashi\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nScrollableGraphView\nMIT License\nhttps://github.com/philackm/ScrollableGraphView\nCopyright (c) 2016 Phillip\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nSwiftyOnboard\nMIT License\nhttps://github.com/juanpablofernandez/SwiftyOnboard\nCopyright (c) 2017 Juan Pablo Fernandez\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nPopupDialog\nMIT License\nhttps://github.com/Orderella/PopupDialog\nCopyright (c) 2016 Orderella Ltd. (http://orderella.co.uk)\nAuthor - Martin Wildfeuer (http://www.mwfire.de)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\nSky floating\nhttps://github.com/Skyscanner/SkyFloatingLabelTextField\nCopyright {2004} {Skyscanner}\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.";
 
+/* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "tjh-Pv-ZgY"; */
+"tjh-Pv-ZgY.title" = "增加一筆紀錄";
+
 /* Class = "UILabel"; text = "Female"; ObjectID = "uLr-sc-3LD"; */
-"uLr-sc-3LD.text" = "女";
+"uLr-sc-3LD.text" = "標準女性計畫";
 
 /* Class = "UILabel"; text = "Your Recent Vegetables"; ObjectID = "vBJ-8h-QYx"; */
 "vBJ-8h-QYx.text" = "Your Recent Vegetables";
 
+/* Class = "UILabel"; text = "Plate contains?"; ObjectID = "vWK-3y-Qsr"; */
+"vWK-3y-Qsr.text" = "您的食物包含哪些類別呢？";
+
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "wBm-Tm-X1Q"; */
-"wBm-Tm-X1Q.text" = "蔬菜";
+"wBm-Tm-X1Q.text" = "蔬菜類";
 
 /* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "xV4-ER-qJi"; */
-"xV4-ER-qJi.title" = "Add your story";
+"xV4-ER-qJi.title" = "新增一筆紀錄";
 
 /* Class = "UIViewController"; title = "Dashboard"; ObjectID = "zBE-bZ-8WM"; */
 "zBE-bZ-8WM.title" = "Dashboard";
-
-
-"KlM-AF-Ct2.text" = " - 您在各食物類別的表現 - ";

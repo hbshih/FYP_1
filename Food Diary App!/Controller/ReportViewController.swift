@@ -71,7 +71,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         {
             return "\(dates![pointIndex].suffix(5))"
         }else{
-            return "No Data Available"
+            return "No Data Available".localized()
         }
     }
     
@@ -79,7 +79,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
     func personType(allElementPercentage: [String:Double])
     {
         let maxValueGroup = allElementPercentage.max(by: {a,b in a.value < b.value})
-        typeHumanLabel.text = "You are a type of \(maxValueGroup?.key ?? "foody") human"
+        typeHumanLabel.text = "You are a type of ".localized() + "\(maxValueGroup?.key ?? "foody") human".localized()
         if maxValueGroup!.value != 0
         {
             if let personType = maxValueGroup?.key
@@ -101,7 +101,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
             }
         }else
         {
-            typeHumanLabel.text = "You don't have enough data yet :-("
+            typeHumanLabel.text = "You don't have enough data yet :-(".localized()
         }
     }
     

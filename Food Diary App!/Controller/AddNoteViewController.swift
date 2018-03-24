@@ -275,10 +275,10 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         }
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd-mm-ss"
         
         let formatterSaved = DateFormatter()
-        formatterSaved.dateFormat = "yyyy-MM-dd"
+        formatterSaved.dateFormat = "yyyy-MM-dd-mm-ss"
         
         let yesterdayAction = UIAlertAction(title: "Yesterday", style: .default) { (Alert) in
             self.showDate = formatter.string(from: Date().yesterday)

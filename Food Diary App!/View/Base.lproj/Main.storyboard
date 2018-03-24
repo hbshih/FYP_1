@@ -12595,6 +12595,7 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="TD2-mF-IdH"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="D70-QE-Rdu"/>
         <segue reference="Wh2-1l-RiZ"/>

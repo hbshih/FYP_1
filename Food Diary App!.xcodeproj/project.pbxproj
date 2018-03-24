@@ -127,6 +127,7 @@
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
 		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		B554A14F2065E63300B58EF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B558A46A202E5A92003AA3F4 /* Food Diary App!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Diary App!.entitlements"; sourceTree = "<group>"; };
 		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +181,6 @@
 		B5D8A6572061DAFD002BE648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
-		B5DA2A7F2050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B5DA2A802050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		B5DA2A842050A525003BCDB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5DA2A862050A53B003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -859,7 +859,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B579353A1FE022DE00E663DB /* Base */,
-				B5DA2A7F2050A4E2003BCDB1 /* zh-Hant */,
+				B554A14F2065E63300B58EF4 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
