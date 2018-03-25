@@ -20,10 +20,6 @@
             <string>Avenir-Medium</string>
             <string>Avenir-Roman</string>
         </array>
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
-            <string>Helvetica-Light</string>
-        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
@@ -143,7 +139,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEK-X8-18c">
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEK-X8-18c">
                             <rect key="frame" x="0.0" y="233" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">Add new records to display
@@ -264,7 +260,7 @@
                                                         <constraint firstAttribute="width" secondItem="4Jb-12-6Fr" secondAttribute="height" multiplier="1:1" id="L9i-J8-PX8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-b8-SAP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-b8-SAP">
                                                     <rect key="frame" x="214" y="0.0" width="13.666666666666657" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -525,7 +521,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p41-V9-Eii">
+                            <navigationBar alpha="0.0" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p41-V9-Eii">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -558,13 +554,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-Jn-4dD">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-Jn-4dD">
                                 <rect key="frame" x="16.000000000000007" y="108" width="111.66666666666669" height="111.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Eqa-Jn-4dD" secondAttribute="height" multiplier="1:1" id="mmQ-8Y-WNd"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-UP-vLG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" text="Enter your note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-UP-vLG">
                                 <rect key="frame" x="135.66666666666663" y="108" width="223.33333333333337" height="111.66666666666669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -573,7 +569,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-yC-z4E">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-yC-z4E">
                                 <rect key="frame" x="16" y="229.66666666666666" width="343" height="474.33333333333337"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Divider" translatesAutoresizingMaskIntoConstraints="NO" id="73h-Oj-lfl">
@@ -699,16 +695,16 @@
                                         <rect key="frame" x="0.0" y="46.000000000000028" width="343" height="345"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_mat" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-8v-sIh">
-                                                <rect key="frame" x="16" y="93.666666666666629" width="311" height="158"/>
+                                                <rect key="frame" x="16" y="93.333333333333314" width="311" height="158"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_plate" translatesAutoresizingMaskIntoConstraints="NO" id="wTj-0z-QPC">
-                                                <rect key="frame" x="97" y="98.666666666666629" width="149" height="149"/>
+                                                <rect key="frame" x="97" y="98.333333333333314" width="149" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wTj-0z-QPC" secondAttribute="height" multiplier="1:1" id="AYh-rC-p7m"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-Bv-kMW">
-                                                <rect key="frame" x="131.66666666666666" y="132.66666666666663" width="80" height="80"/>
+                                                <rect key="frame" x="131.66666666666666" y="132.33333333333331" width="80" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J0G-Fi-6L8">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -859,7 +855,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-Rg-iWd">
-                                                <rect key="frame" x="279" y="63.666666666666629" width="48" height="48"/>
+                                                <rect key="frame" x="289" y="63.333333333333314" width="48" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_DairyPlace" translatesAutoresizingMaskIntoConstraints="NO" id="vr7-gL-BIG">
                                                         <rect key="frame" x="-4.3333333333333144" y="0.0" width="57" height="57"/>
@@ -905,7 +901,7 @@
                                             <constraint firstItem="Z4K-Bv-kMW" firstAttribute="centerX" secondItem="wTj-0z-QPC" secondAttribute="centerX" id="FKd-Dd-UY3"/>
                                             <constraint firstAttribute="trailing" secondItem="g9E-8v-sIh" secondAttribute="trailing" constant="16" id="Jm8-6F-6x5"/>
                                             <constraint firstItem="wTj-0z-QPC" firstAttribute="centerY" secondItem="g9E-8v-sIh" secondAttribute="centerY" id="O5N-zz-ev6"/>
-                                            <constraint firstItem="ZY3-Rg-iWd" firstAttribute="trailing" secondItem="g9E-8v-sIh" secondAttribute="trailing" id="Y3Q-Vh-ZKz"/>
+                                            <constraint firstItem="ZY3-Rg-iWd" firstAttribute="trailing" secondItem="g9E-8v-sIh" secondAttribute="trailing" constant="10" id="Y3Q-Vh-ZKz"/>
                                             <constraint firstItem="Z4K-Bv-kMW" firstAttribute="centerY" secondItem="wTj-0z-QPC" secondAttribute="centerY" id="YJz-UK-0W7"/>
                                             <constraint firstItem="g9E-8v-sIh" firstAttribute="leading" secondItem="TI8-bq-b4t" secondAttribute="leading" constant="16" id="aZh-YU-ai2"/>
                                             <constraint firstItem="g9E-8v-sIh" firstAttribute="centerX" secondItem="TI8-bq-b4t" secondAttribute="centerX" id="drC-tx-0b6"/>
@@ -914,8 +910,8 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap icons on plate to decrease" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gA-uS-Ror">
-                                        <rect key="frame" x="10" y="51.000000000000028" width="323" height="14"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                        <rect key="frame" x="86.000000000000014" y="124.66666666666667" width="171.33333333333337" height="16.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                         <color key="textColor" red="0.63604795932769775" green="0.63654297590255737" blue="0.63612467050552368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -924,9 +920,6 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="73h-Oj-lfl" secondAttribute="trailing" id="3dd-XS-WPr"/>
                                     <constraint firstItem="WlI-vP-xgT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="73h-Oj-lfl" secondAttribute="bottom" constant="6" id="4LO-iU-kVL"/>
-                                    <constraint firstItem="7gA-uS-Ror" firstAttribute="top" secondItem="9Yz-n9-XeC" secondAttribute="bottom" constant="10" id="4VW-cN-AdZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="7gA-uS-Ror" secondAttribute="trailing" constant="10" id="72C-zn-Nno"/>
-                                    <constraint firstItem="7gA-uS-Ror" firstAttribute="leading" secondItem="9Yz-n9-XeC" secondAttribute="leading" id="7Gt-tv-m8F"/>
                                     <constraint firstItem="73h-Oj-lfl" firstAttribute="top" secondItem="OvY-yC-z4E" secondAttribute="top" constant="8" id="9fR-cj-F2d"/>
                                     <constraint firstItem="3mV-Cy-LKK" firstAttribute="leading" secondItem="OvY-yC-z4E" secondAttribute="leading" id="AJg-lg-Bu0"/>
                                     <constraint firstItem="WlI-vP-xgT" firstAttribute="top" secondItem="73h-Oj-lfl" secondAttribute="bottom" constant="6" id="DPb-9I-7d5"/>
@@ -935,22 +928,24 @@
                                     <constraint firstAttribute="trailing" secondItem="3mV-Cy-LKK" secondAttribute="trailing" id="SdS-Y2-AGL"/>
                                     <constraint firstItem="BAr-gu-p5a" firstAttribute="top" secondItem="TI8-bq-b4t" secondAttribute="bottom" id="TVH-dd-wUd"/>
                                     <constraint firstItem="TI8-bq-b4t" firstAttribute="top" secondItem="WlI-vP-xgT" secondAttribute="bottom" id="V87-Fa-zkS"/>
+                                    <constraint firstItem="7gA-uS-Ror" firstAttribute="centerX" secondItem="OvY-yC-z4E" secondAttribute="centerX" id="VZ3-vB-Tqi"/>
                                     <constraint firstAttribute="trailing" secondItem="WlI-vP-xgT" secondAttribute="trailing" id="Vlv-nF-F8Y"/>
                                     <constraint firstItem="tOM-bL-Hdo" firstAttribute="leading" secondItem="OvY-yC-z4E" secondAttribute="leading" id="Yzo-og-aqh"/>
                                     <constraint firstAttribute="trailing" secondItem="tOM-bL-Hdo" secondAttribute="trailing" id="ZZR-9O-Egj"/>
                                     <constraint firstItem="TI8-bq-b4t" firstAttribute="leading" secondItem="OvY-yC-z4E" secondAttribute="leading" id="f6w-De-X35"/>
                                     <constraint firstAttribute="trailing" secondItem="TI8-bq-b4t" secondAttribute="trailing" id="j37-Pf-b5o"/>
                                     <constraint firstItem="WlI-vP-xgT" firstAttribute="leading" secondItem="OvY-yC-z4E" secondAttribute="leading" id="jnY-Pn-kiw"/>
+                                    <constraint firstItem="g9E-8v-sIh" firstAttribute="top" secondItem="7gA-uS-Ror" secondAttribute="bottom" constant="-2" id="lFv-MJ-NCV"/>
                                     <constraint firstAttribute="bottom" secondItem="tOM-bL-Hdo" secondAttribute="bottom" constant="8" id="y6L-6C-TeT"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Date?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SW-H4-YKN">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Date?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SW-H4-YKN">
                                 <rect key="frame" x="26" y="721.66666666666663" width="100" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-Hg-xUM">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-Hg-xUM">
                                 <rect key="frame" x="131" y="714" width="224" height="34"/>
                                 <color key="backgroundColor" red="0.92661553621292114" green="0.73139512538909912" blue="0.34889471530914307" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
@@ -1544,6 +1539,7 @@
                         <viewLayoutGuide key="safeArea" id="LMi-Pb-t8m"/>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="fgW-LQ-7ax" id="1L8-xW-aDH"/>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="showHomeSegue" id="DTX-2Y-Kk5"/>
                     </connections>
                 </viewController>
@@ -1799,7 +1795,7 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 Hau-Ben Benjamin Shih built the FoodyLife app as a Free app. This SERVICE is provided by Hau-Ben Benjamin Shih at no cost and is intended for use as is.
 This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
 If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
@@ -1833,7 +1829,7 @@ Changes to This Privacy Policy
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
 Contact Us
 If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at h.b.shih@se15.qmul.ac.uk.
-This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</mutableString>
+This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</string>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="14"/>
                                         </attributes>
@@ -2358,7 +2354,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="rJ7-a7-eSd">
-                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="9ae-PQ-yns"/>
                                                     </constraints>
@@ -2367,7 +2363,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="irH-8D-0gV">
-                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="HoX-kj-m2o"/>
                                                     </connections>
@@ -2398,7 +2394,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="IJI-Q5-W9c">
-                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="tbB-CE-E0P"/>
                                                     </constraints>
@@ -2407,7 +2403,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2vH-rH-Ijp">
-                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="HeI-7Z-l4v"/>
                                                     </connections>
@@ -2438,7 +2434,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="akR-ij-vea">
-                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="q73-J3-uu5"/>
                                                     </constraints>
@@ -2447,7 +2443,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vcz-ts-guo">
-                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="2kS-y7-7xv"/>
                                                     </connections>
@@ -2478,7 +2474,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="0O6-Qg-I2T">
-                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="fcw-9v-DL1"/>
                                                     </constraints>
@@ -2487,7 +2483,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-k6-HVi">
-                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="PSN-qd-TrN"/>
                                                     </connections>
@@ -2518,7 +2514,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-B9-N7E">
-                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="Bd8-8z-Yes"/>
                                                     </constraints>
@@ -2527,7 +2523,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dvF-eh-iJ1">
-                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="gKG-fs-b6l"/>
                                                     </connections>
@@ -2612,7 +2608,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to Hau-Ben Benjamin Shih.
 Hau-Ben Benjamin Shih is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.
 The FoodyLife app stores and processes personal data that you have provided to us, in order to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the FoodyLife app won’t work properly or at all.
@@ -2626,7 +2622,7 @@ Changes to This Terms and Conditions
 I may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page. These changes are effective immediately after they are posted on this page.
 Contact Us
 If you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me  h.b.shih@se15.qmul.ac.uk.
-This Terms and Conditions page was generated by App Privacy Policy Generator</mutableString>
+This Terms and Conditions page was generated by App Privacy Policy Generator</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -2669,7 +2665,7 @@ This Terms and Conditions page was generated by App Privacy Policy Generator</mu
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content"> Designs Related
+                                        <string key="content"> Designs Related
 Logo inspired by Shannon Hargis
 https://dribbble.com/shannonhargis 
 
@@ -2822,7 +2818,7 @@ Copyright {2004} {Skyscanner}
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.</mutableString>
+   limitations under the License.</string>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="14"/>
                                         </attributes>
@@ -3026,16 +3022,16 @@ Copyright {2004} {Skyscanner}
                                         <rect key="frame" x="0.0" y="46" width="343" height="345"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_mat" translatesAutoresizingMaskIntoConstraints="NO" id="BTM-i7-Wwk">
-                                                <rect key="frame" x="16" y="94.333333333333314" width="311" height="158"/>
+                                                <rect key="frame" x="16" y="93.666666666666686" width="311" height="158"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_plate" translatesAutoresizingMaskIntoConstraints="NO" id="83k-Wx-LDS">
-                                                <rect key="frame" x="97" y="99.333333333333314" width="149" height="149"/>
+                                                <rect key="frame" x="97" y="98.666666666666686" width="149" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="83k-Wx-LDS" secondAttribute="height" multiplier="1:1" id="IZy-sl-JAb"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sDU-fH-ODB">
-                                                <rect key="frame" x="131.66666666666666" y="133.33333333333331" width="80" height="80"/>
+                                                <rect key="frame" x="131.66666666666666" y="132.66666666666669" width="80" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-o2-Mel">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -3186,7 +3182,7 @@ Copyright {2004} {Skyscanner}
                                                 </constraints>
                                             </stackView>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0A-m6-uWV">
-                                                <rect key="frame" x="279" y="64.333333333333314" width="48" height="48"/>
+                                                <rect key="frame" x="289" y="63.666666666666686" width="48" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_DairyPlace" translatesAutoresizingMaskIntoConstraints="NO" id="fng-OK-dNF">
                                                         <rect key="frame" x="-4.3333333333333144" y="0.0" width="57" height="57"/>
@@ -3225,27 +3221,29 @@ Copyright {2004} {Skyscanner}
                                                     <constraint firstItem="Ajj-In-SPT" firstAttribute="top" secondItem="fng-OK-dNF" secondAttribute="top" id="zZw-VB-F4n"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap icons on plate to decrease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-3q-s13">
+                                                <rect key="frame" x="85.000000000000014" y="80" width="171.33333333333337" height="16.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" red="0.63604795930000002" green="0.63654297589999997" blue="0.63612467049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="BTM-i7-Wwk" firstAttribute="leading" secondItem="jLS-Ex-eHQ" secondAttribute="leading" constant="16" id="71G-QD-SbX"/>
+                                            <constraint firstItem="IVs-3q-s13" firstAttribute="centerX" secondItem="jLS-Ex-eHQ" secondAttribute="centerX" id="JsW-dl-XRO"/>
                                             <constraint firstItem="sDU-fH-ODB" firstAttribute="centerY" secondItem="83k-Wx-LDS" secondAttribute="centerY" id="MNa-6d-bZC"/>
                                             <constraint firstItem="sDU-fH-ODB" firstAttribute="centerX" secondItem="83k-Wx-LDS" secondAttribute="centerX" id="Okm-E8-1BE"/>
                                             <constraint firstItem="BTM-i7-Wwk" firstAttribute="top" secondItem="u0A-m6-uWV" secondAttribute="bottom" constant="-18" id="PsF-Ab-NER"/>
-                                            <constraint firstItem="u0A-m6-uWV" firstAttribute="trailing" secondItem="BTM-i7-Wwk" secondAttribute="trailing" id="TN2-BA-5PR"/>
+                                            <constraint firstItem="u0A-m6-uWV" firstAttribute="trailing" secondItem="BTM-i7-Wwk" secondAttribute="trailing" constant="10" id="TN2-BA-5PR"/>
                                             <constraint firstItem="BTM-i7-Wwk" firstAttribute="centerX" secondItem="jLS-Ex-eHQ" secondAttribute="centerX" id="ZJc-0v-1kk"/>
                                             <constraint firstAttribute="trailing" secondItem="BTM-i7-Wwk" secondAttribute="trailing" constant="16" id="qC9-CK-Xdd"/>
                                             <constraint firstItem="BTM-i7-Wwk" firstAttribute="centerY" secondItem="jLS-Ex-eHQ" secondAttribute="centerY" id="quI-0t-T6j"/>
                                             <constraint firstItem="83k-Wx-LDS" firstAttribute="centerX" secondItem="BTM-i7-Wwk" secondAttribute="centerX" id="t33-nu-qlk"/>
                                             <constraint firstItem="83k-Wx-LDS" firstAttribute="centerY" secondItem="BTM-i7-Wwk" secondAttribute="centerY" id="tKE-fI-UkY"/>
+                                            <constraint firstItem="BTM-i7-Wwk" firstAttribute="top" secondItem="IVs-3q-s13" secondAttribute="bottom" constant="-2" id="vag-gE-2uy"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap icons on plate to decrease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-3q-s13">
-                                        <rect key="frame" x="10" y="46" width="165.33333333333334" height="14"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
-                                        <color key="textColor" red="0.63604795930000002" green="0.63654297589999997" blue="0.63612467049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3262,10 +3260,8 @@ Copyright {2004} {Skyscanner}
                                     <constraint firstAttribute="trailing" secondItem="H5L-zJ-RR2" secondAttribute="trailing" id="UmM-Wp-ziH"/>
                                     <constraint firstItem="kT6-80-hpg" firstAttribute="top" secondItem="3FR-1K-42c" secondAttribute="bottom" constant="6" id="Vu5-OJ-zcC"/>
                                     <constraint firstItem="Nax-aO-VZj" firstAttribute="top" secondItem="jLS-Ex-eHQ" secondAttribute="bottom" id="XUm-OX-bhX"/>
-                                    <constraint firstItem="IVs-3q-s13" firstAttribute="top" secondItem="vWK-3y-Qsr" secondAttribute="bottom" constant="5" id="Zrf-Ma-09a"/>
                                     <constraint firstAttribute="trailing" secondItem="kT6-80-hpg" secondAttribute="trailing" id="dwC-Ol-LN8"/>
                                     <constraint firstItem="kT6-80-hpg" firstAttribute="leading" secondItem="R8Y-Av-5ln" secondAttribute="leading" id="eW7-Nn-nJ6"/>
-                                    <constraint firstItem="IVs-3q-s13" firstAttribute="leading" secondItem="vWK-3y-Qsr" secondAttribute="leading" id="ew1-oF-kYx"/>
                                     <constraint firstItem="jLS-Ex-eHQ" firstAttribute="leading" secondItem="R8Y-Av-5ln" secondAttribute="leading" id="fJZ-7g-AL2"/>
                                     <constraint firstItem="9Cb-yk-Ock" firstAttribute="top" secondItem="H5L-zJ-RR2" secondAttribute="bottom" constant="15" id="h45-1U-ze2"/>
                                 </constraints>
@@ -12641,9 +12637,8 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="34h-gc-Teg"/>
         <segue reference="127-SN-MXU"/>
-        <segue reference="gYU-EM-wti"/>
+        <segue reference="DTX-2Y-Kk5"/>
         <segue reference="GHi-nD-NU8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -64,6 +64,7 @@
 "Please go back to the page to check your information again." = "請再到個人資訊頁面檢查一次，您的資料將不被儲存";
 "Plan Set" = "個人計劃設定完成";
 "According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy" = "根據您提供的資訊，您一天所需要攝取的食物類別份量為 [全穀雜糧類%@份],\n[蔬菜類%@份],\n[豆魚肉蛋類%@份],\n[水果類%@份],\n及[乳品類%@份]";
+"Ready to explore" = "開始探索";
 "Oops" = "噢！不！";
 "Please recheck if your age is correct" = "請檢查年齡的欄位是否錯誤";
 "Please recheck if your weight is correct" = "請檢查體重的欄位是否錯誤";
@@ -86,7 +87,7 @@
 "Tap on each of the icons to find out more about that group!" = "點擊各圖示顯示該類別的資訊";
 "OK" = "好";
 "Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@" = "今日飲食\n蔬菜：%@\n豆魚肉蛋：%@\n全穀雜糧：%@\n水果：%@\n乳品：%@";
-
+"You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today" = "您今天還需要攝取 %@份全穀雜糧、%@份蔬菜、%@水果、%@乳品以及%@豆魚肉蛋才能達到百分之百均衡！";
 
 
 

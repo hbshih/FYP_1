@@ -499,9 +499,23 @@ extension homepageViewController: CoachMarksControllerDataSource {
             return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
         }else
         {
+            // update value via healthpercentagecalculator
+            let nutritionDic = dataHandler.get5nList()
+            var healthData = HealthPercentageCalculator(fileNames: fileName,nutritionDic: nutritionDic)
+            let todayCount = healthData.getTodayEachElementData()
             switch(index) {
             case 0:
-                coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
+               // coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
+                
+                coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today".localized(), comment: ""),"\(Standard[0] - todayCount[0])","\(Standard[1] - todayCount[1])","\(Standard[3] - todayCount[2])","\(Standard[4] - todayCount[3])","\(Standard[2] - todayCount[4])")
+                /*
+                 grainInfo = "\(todayCount[0]) / \(Standard[0])"
+                 vegetableInfo = "\(todayCount[1]) / \(Standard[1])"
+                 fruitInfo = "\(todayCount[2]) / \(Standard[3])"
+                 dairyInfo = "\(todayCount[3]) / \(Standard[4])"
+                 proteinInfo = "\(todayCount[4]) / \(Standard[2])"
+                 
+                 */
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 1:
                 coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()

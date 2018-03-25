@@ -38,13 +38,13 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func getSelectedOption() -> [Double]
     {
-        if selectedOption == "Standard Male"
+        if selectedOption == "Standard Male".localized()
         {
             return maleDefaultSet
-        }else if selectedOption == "Standard Female"
+        }else if selectedOption == "Standard Female".localized()
         {
             return femaleDefauthSet
-        }else if selectedOption == "Personalize"
+        }else if selectedOption == "Personalize".localized()
         {
             return custom
         }else

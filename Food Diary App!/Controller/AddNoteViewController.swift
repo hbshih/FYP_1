@@ -275,9 +275,9 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     @IBAction func changeDateTapped(_ sender: Any)
     {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let todayAction = UIAlertAction(title: "Today", style: .default) { (Alert) in
+        let todayAction = UIAlertAction(title: "Today".localized(), style: .default) { (Alert) in
             self.dateChanged = true
-            self.showDate = "Today"
+            self.showDate = "Today".localized()
             self.dateButton.setTitle(self.showDate, for: .normal)
             self.savedDate = Date()
         }
@@ -288,14 +288,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         let formatterSaved = DateFormatter()
         formatterSaved.dateFormat = "yyyy-MM-dd-mm-ss"
         
-        let yesterdayAction = UIAlertAction(title: "Yesterday", style: .default) { (Alert) in
+        let yesterdayAction = UIAlertAction(title: "Yesterday".localized(), style: .default) { (Alert) in
             self.showDate = formatter.string(from: Date().yesterday)
             self.dateChanged = true
             self.dateButton.setTitle(self.showDate, for: .normal)
             self.savedDate = Date().yesterday
         }
         
-        let customAction = UIAlertAction(title: "Set Custom Date", style: .default) { (Alert) in
+        let customAction = UIAlertAction(title: "Set Custom Date".localized(), style: .default) { (Alert) in
             // Create a custom view controller
             let ChangeDateVC = ChangeDateViewController(nibName: "ChangeDateViewController", bundle: nil)
             
@@ -303,7 +303,7 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
             let popup = PopupDialog(viewController: ChangeDateVC, buttonAlignment: .horizontal, transitionStyle: .bounceUp, preferredWidth: 320, gestureDismissal: true, hideStatusBar: true)
             
             // Create first button
-            let buttonOne = CancelButton(title: "Set Date", action:
+            let buttonOne = CancelButton(title: "Set Date".localized(), action:
             {
                 self.showDate = formatter.string(from: ChangeDateVC.dateSelected.date)
                 self.dateChanged = true
@@ -317,7 +317,7 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
             self.present(popup, animated: true, completion: nil)
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Cancelled")
         })

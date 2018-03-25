@@ -15,9 +15,16 @@ class CustomizedPlanSettingViewController: FormViewController {
     var weight: Int = 0
     var height: Int = 0
     var gender: Int = 0
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let locale = NSLocale.current.languageCode
+        if (locale! == "zh")
+        {
+            doneButton.setImage(#imageLiteral(resourceName: "zh_Button_Donne"), for: .normal)
+        }
         
         if let personaldata = UserDefaultsHandler().getPersonalData() as? [String: Int]
         {
@@ -101,7 +108,7 @@ class CustomizedPlanSettingViewController: FormViewController {
     {
         if(age == 0 || weight == 0 || height == 0)
         {
-            SCLAlertMessage(title: "One of your information might be wrong", message: "Please go back to the page to check your information again. Your information is not recorded").showMessage()
+            SCLAlertMessage(title: "One of your information might be wrong".localized(), message: "Please go back to the page to check your information again. Your information is not recorded".localized()).showMessage()
         }
         else
         {
@@ -124,7 +131,7 @@ class CustomizedPlanSettingViewController: FormViewController {
         if !fromOnboarding
         {
 //            SCLAlertMessage(title: "Plan Set", message: "According to your information, your plan will be taking \(plan[0]) portions of grain, \(plan[1]) portions of vegetable, \(plan[2]) portions of protein, \(plan[3]) portions of fruit, \(plan[4]) portions of dairy").showMessage()
-            SCLAlertMessage(title: "Plan Set", message: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])")).showMessage()
+            SCLAlertMessage(title: "Plan Set".localized(), message: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])")).showMessage()
         }else
         {
             if !infoShown
@@ -139,8 +146,8 @@ class CustomizedPlanSettingViewController: FormViewController {
             let alert = SCLAlertView(appearance: appearance)
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
-            alert.addButton("Ready to explore", target: self, selector: #selector(self.showHome))
-            _ = alert.showCustom("Plan Set", subTitle: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])"), color: color, icon: icon!)
+            alert.addButton("Ready to explore".localized(), target: self, selector: #selector(self.showHome))
+            _ = alert.showCustom("Plan Set".localized(), subTitle: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])"), color: color, icon: icon!)
                 infoShown = true
             }
         }
