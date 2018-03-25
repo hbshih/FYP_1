@@ -21,6 +21,8 @@ struct messageGenerator {
     {
         let Greetings = ["Hi", "Nice to see you again", "Hey man", "Hey", "How's it going?", "What's up?","What's going on?","How's everything","How are things?","How's life","How's your day?", "Good to see you","Yo!","Are you OK","Howdy!","WHAZZUP!","Good day mate","Hiya!"]
         
+        let zh_Greetings = ["嗨","您好","吃飯了嗎",""]
+        
         let diceRoll:Int = Int(arc4random_uniform(UInt32(Greetings.count - 1)))
         return Greetings[diceRoll]
     }

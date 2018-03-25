@@ -32,9 +32,9 @@ class CustomizedPlanSettingViewController: FormViewController {
         
         let sexSegmented = SegmentedRowFormer<FormSegmentedCell>()
         {
-            $0.titleLabel.text = "Gender"
+            $0.titleLabel.text = "Gender".localized()
             }.configure { row in
-                row.segmentTitles = ["Female", "Male"]
+                row.segmentTitles = ["Female".localized(), "Male".localized()]
                 row.selectedIndex = gender
                 
             }.onSegmentSelected { (item, sex) in
@@ -42,10 +42,10 @@ class CustomizedPlanSettingViewController: FormViewController {
         }
         
         let agePickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-            $0.titleLabel.text = "Age"
+            $0.titleLabel.text = "Age".localized()
             }.configure {
                 $0.pickerItems = [InlinePickerItem(
-                    title: "Not set",
+                    title: "Not set".localized(),
                     displayTitle: NSAttributedString(string: "\(age)"),
                     value: nil)]
                     + (14...140).map { InlinePickerItem(title: "\($0)", displayTitle: NSAttributedString(string: "\($0)"), value: Int($0)) }
@@ -57,10 +57,10 @@ class CustomizedPlanSettingViewController: FormViewController {
         }
         
         let heightPickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-            $0.titleLabel.text = "Height"
+            $0.titleLabel.text = "Height".localized()
             }.configure {
                 $0.pickerItems = [InlinePickerItem(
-                    title: "Not set",
+                    title: "Not set".localized(),
                     displayTitle: NSAttributedString(string: "\(height) cm"),
                     value: nil)]
                     + (140...240).map { InlinePickerItem(title: "\($0) cm", displayTitle: NSAttributedString(string: "\($0) cm"), value: Int($0)) }
@@ -71,10 +71,10 @@ class CustomizedPlanSettingViewController: FormViewController {
                 }
         }
         let weightPickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-            $0.titleLabel.text = "Weight"
+            $0.titleLabel.text = "Weight".localized()
             }.configure {
                 $0.pickerItems = [InlinePickerItem(
-                    title: "Not set",
+                    title: "Not set".localized(),
                     displayTitle: NSAttributedString(string: "\(weight) kg"),
                     value: nil)]
                     + (30...150).map { InlinePickerItem(title: "\($0) kg", displayTitle: NSAttributedString(string: "\($0)"), value: Int($0)) }
@@ -93,7 +93,7 @@ class CustomizedPlanSettingViewController: FormViewController {
         }
         
         let section = SectionFormer(rowFormer: sexSegmented, agePickerRow,heightPickerRow,weightPickerRow)
-            .set(headerViewFormer: createHeader("Personal Information for plan setting"))
+            .set(headerViewFormer: createHeader("Personal Information for plan setting".localized()))
         former.append(sectionFormer: section)
     }
     
@@ -101,7 +101,7 @@ class CustomizedPlanSettingViewController: FormViewController {
     {
         if(age == 0 || weight == 0 || height == 0)
         {
-            SCLAlertMessage(title: "One of your information might be wrong", message: "Please go back to the page to check your information again.").showMessage()
+            SCLAlertMessage(title: "One of your information might be wrong", message: "Please go back to the page to check your information again. Your information is not recorded").showMessage()
         }
         else
         {
@@ -123,7 +123,8 @@ class CustomizedPlanSettingViewController: FormViewController {
         UserDefaultsHandler().setPersonalData(value: ["Gender": gender, "Age":age,"Weight":weight,"Height": height])
         if !fromOnboarding
         {
-            SCLAlertMessage(title: "Plan Set", message: "According to your information, your plan will be taking \(plan[0]) portions of grain, \(plan[1]) portions of vegetable, \(plan[2]) portions of protein, \(plan[3]) portions of fruit, \(plan[4]) portions of dairy").showMessage()
+//            SCLAlertMessage(title: "Plan Set", message: "According to your information, your plan will be taking \(plan[0]) portions of grain, \(plan[1]) portions of vegetable, \(plan[2]) portions of protein, \(plan[3]) portions of fruit, \(plan[4]) portions of dairy").showMessage()
+            SCLAlertMessage(title: "Plan Set", message: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])")).showMessage()
         }else
         {
             if !infoShown
@@ -139,7 +140,7 @@ class CustomizedPlanSettingViewController: FormViewController {
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
             alert.addButton("Ready to explore", target: self, selector: #selector(self.showHome))
-            _ = alert.showCustom("Plan Set", subTitle: "According to your information, your plan will be taking \(plan[0]) portions of grain, \(plan[1]) portions of vegetable, \(plan[2]) portions of protein, \(plan[3]) portions of fruit, \(plan[4]) portions of dairy", color: color, icon: icon!)
+            _ = alert.showCustom("Plan Set", subTitle: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])"), color: color, icon: icon!)
                 infoShown = true
             }
         }
@@ -154,13 +155,13 @@ class CustomizedPlanSettingViewController: FormViewController {
         fromOnboarding = true
         if(age == 0)
         {
-            SCLAlertMessage(title: "Oops", message: "Please recheck if your age is correct").showMessage()
+            SCLAlertMessage(title: "Oops".localized(), message: "Please recheck if your age is correct".localized()).showMessage()
         }else if (weight == 0)
         {
-            SCLAlertMessage(title: "Oops", message: "Please recheck if your weight is correct").showMessage()
+            SCLAlertMessage(title: "Oops".localized(), message: "Please recheck if your weight is correct".localized()).showMessage()
         }else if (height == 0)
         {
-            SCLAlertMessage(title: "Oops", message: "Please recheck if your height is correct").showMessage()
+            SCLAlertMessage(title: "Oops".localized(), message: "Please recheck if your height is correct".localized()).showMessage()
         }else
         {
             UserDefaultsHandler().setOnboardingStatus(status: true)

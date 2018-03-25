@@ -65,6 +65,11 @@ struct UserDefaultsHandler
         defaults.set(status, forKey: "HomepageTutorial")
     }
     
+    func setHomepageSecondTutorialStatus(status: Bool)
+    {
+        defaults.set(status, forKey: "HomepageSecondTutorial")
+    }
+    
     func setAddDataTutorialStatus(status: Bool)
     {
         defaults.set(status, forKey: "AddDataTutorial")
@@ -73,6 +78,11 @@ struct UserDefaultsHandler
     func getHomepageTutorialStatus() -> Bool
     {
         return defaults.bool(forKey: "HomepageTutorial")
+    }
+    
+    func getHomepageSecondTutorialStatus() -> Bool
+    {
+        return defaults.bool(forKey: "HomepageSecondTutorial")
     }
     
     func getAddDataTutorialStatus() -> Bool

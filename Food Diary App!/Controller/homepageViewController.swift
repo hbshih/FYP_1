@@ -70,6 +70,7 @@ class homepageViewController: UIViewController {
     
     // For tutorial walkthrough
     let coachMarksController = CoachMarksController()
+    var coachversion = 0
     
     override func viewDidLoad()
     {
@@ -82,6 +83,7 @@ class homepageViewController: UIViewController {
             /*Existing user, watched tutorial already*/
         }else
         {
+            coachversion = 1
             /*New User*/
             self.coachMarksController.dataSource = self
             self.coachMarksController.start(on: self)
@@ -89,6 +91,7 @@ class homepageViewController: UIViewController {
             let skipView = CoachMarkSkipDefaultView()
             skipView.setTitle("Skip", for: .normal)
             self.coachMarksController.skipView = skipView
+            
         }
         
         fanMenu.button = FanMenuButton(id: "main", image: "Icon_AddNew", color: Color(val: 0xADADAD))
@@ -211,17 +214,28 @@ class homepageViewController: UIViewController {
         //Existing User
         if fileName.count > 0
         {
+            if fileName.count == 1 && defaults.getHomepageSecondTutorialStatus() == false
+            {
+                coachversion = 2
+                self.coachMarksController.dataSource = self
+                self.coachMarksController.start(on: self)
+                self.coachMarksController.overlay.allowTap = true
+                showStartingMessageToNewUsers = true
+            }
+            
             if fileName.count == 1 && showStartingMessageToNewUsers == false
             {
                 showStartingMessageToNewUsers = true
                 SCLAlertMessage(title: "Congrats!".localized(), message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!".localized()).showMessage()
                 self.centerFaceArea.alpha = 0
                 self.centerInformationArea.alpha = 1
-                UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations:
+                    {
                     self.centerFaceArea.alpha = 1
                     self.centerInformationArea.alpha = 0
                 })
             }
+            
             // If some new data is recorded
             if fileName.count != currentNames.count || Standard != planStandard!
             {
@@ -306,7 +320,7 @@ class homepageViewController: UIViewController {
         dairyInfo = "0.0 / \(Standard[4])"
         proteinInfo = "0.0 / \(Standard[2])"
         centerInformationArea.text =
-        "\(dateOnly)\nVege : \(vegetableInfo)\nProtein : \(proteinInfo)\nGrain : \(grainInfo)\nFruit : \(fruitInfo)\n Dairy : \(dairyInfo)"
+        String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
     }
     
     private func presentTodayInformation(todayCount:[Double],Standard:[Double],dataDate:String)
@@ -337,7 +351,7 @@ class homepageViewController: UIViewController {
         }
         
         centerInformationArea.text =
-        "Today Info\nVege : \(vegetableInfo)\nProtein : \(proteinInfo)\nGrain : \(grainInfo)\nFruit : \(fruitInfo)\n Dairy : \(dairyInfo)"
+        String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
     }
     
     func showCircularSliderData()
@@ -454,10 +468,10 @@ class homepageViewController: UIViewController {
                 objPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             }
             else{
-            // For iOS versions < 11
-            
+                // For iOS versions < 11
+                
                 objPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-        }
+            }
             
             guard let aPlayer = objPlayer else { return }
             aPlayer.play()
@@ -473,47 +487,84 @@ class homepageViewController: UIViewController {
 extension homepageViewController: CoachMarksControllerDataSource {
     func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
         let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
-        switch(index) {
-        case 0:
-            coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was"
-            coachViews.bodyView.nextLabel.text = "Next"
-        case 1:
-            coachViews.bodyView.hintLabel.text = "Swipe up to get diet information / recommendation for today."
-            coachViews.bodyView.nextLabel.text = "Next"
-        case 2:
-            coachViews.bodyView.hintLabel.text = "Tap on each of the 5 food groups to find out individual balance"
-            coachViews.bodyView.nextLabel.text = "Next"
-        case 3:
-            coachViews.bodyView.hintLabel.text = "Explore more by adding your food now!"
-            coachViews.bodyView.nextLabel.text = "Start!"
-        default: break
+        
+        if coachversion == 1
+        {
+            switch(index) {
+            case 0:
+                coachViews.bodyView.hintLabel.text = "Start to use the app by adding your recent food now!".localized()
+                coachViews.bodyView.nextLabel.text = "Start!".localized()
+            default: break
+            }
+            return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+        }else
+        {
+            switch(index) {
+            case 0:
+                coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
+                coachViews.bodyView.nextLabel.text = "Next".localized()
+            case 1:
+                coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()
+                coachViews.bodyView.nextLabel.text = "Next".localized()
+            case 2:
+                coachViews.bodyView.hintLabel.text = "Swipe up to get diet information for today".localized()
+                coachViews.bodyView.nextLabel.text = "Next".localized()
+            case 3:
+                coachViews.bodyView.hintLabel.text = "Tap on each of the icons to find out more about that group!".localized()
+                coachViews.bodyView.nextLabel.text = "OK".localized()
+            default: break
+            }
+            return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
         }
-        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
     
     func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
-        switch(index)
+        
+        if coachversion == 1
         {
-        case 0:
-            return coachMarksController.helper.makeCoachMark(for: self.circularSlider)
-        case 1:
-            self.centerFaceArea.alpha = 0
-            self.centerInformationArea.alpha = 1
-            return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
-        case 2:
-            self.centerFaceArea.alpha = 1
-            self.centerInformationArea.alpha = 0
-            return coachMarksController.helper.makeCoachMark(for: self.foodgroupsStackView)
-        case 3:
-            UserDefaultsHandler().setHomepageTutorialStatus(status: true)
-            return coachMarksController.helper.makeCoachMark(for: self.fanMenu)
-        default:
-            return coachMarksController.helper.makeCoachMark()
+            switch(index)
+            {
+            case 0:
+                defaults.setHomepageTutorialStatus(status: true)
+                return coachMarksController.helper.makeCoachMark(for: self.fanMenu)
+            default:
+                return coachMarksController.helper.makeCoachMark()
+            }
+        }else
+        {
+            switch(index)
+            {
+            case 0:
+                return coachMarksController.helper.makeCoachMark(for: self.circularSlider)
+            case 1:
+                self.centerFaceArea.alpha = 1
+                self.centerInformationArea.alpha = 0
+                return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
+            case 2:
+                self.centerFaceArea.alpha = 0
+                self.centerInformationArea.alpha = 1
+                return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
+            case 3:
+                self.centerFaceArea.alpha = 1
+                self.centerInformationArea.alpha = 0
+                defaults.setHomepageSecondTutorialStatus(status: true)
+                showStartingMessageToNewUsers = false
+                return coachMarksController.helper.makeCoachMark(for: self.foodgroupsStackView)
+            default:
+                return coachMarksController.helper.makeCoachMark()
+            }
         }
     }
     
     func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
-        return 4
+        
+        if coachversion == 1
+        {
+            return 1
+        }else
+        {
+            return 4
+        }
     }
 }
 

@@ -52,7 +52,40 @@
 "Fruit human" = "水果人";
 "Diary human" = "乳品人";
 "yesterday" = "昨天";
-
+"Gender" = "性別";
+"Male" = "男性";
+"Female" = "女性";
+"Age" = "年紀";
+"Not set" = "無";
+"Height" = "身高";
+"Weight" = "體重";
+"Personal Information for plan setting" = "個人資訊";
+"One of your information might be wrong" = "您的資料可能有錯誤";
+"Please go back to the page to check your information again." = "請再到個人資訊頁面檢查一次，您的資料將不被儲存";
+"Plan Set" = "個人計劃設定完成";
+"According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy" = "根據您提供的資訊，您一天所需要攝取的食物類別份量為 [全穀雜糧類%@份],\n[蔬菜類%@份],\n[豆魚肉蛋類%@份],\n[水果類%@份],\n及[乳品類%@份]";
+"Oops" = "噢！不！";
+"Please recheck if your age is correct" = "請檢查年齡的欄位是否錯誤";
+"Please recheck if your weight is correct" = "請檢查體重的欄位是否錯誤";
+"Please recheck if your height is correct" = "請檢查身高的欄位是否錯誤";
+"Vegetable Dashboard" = "蔬菜相關";
+"Grain Dashboard" = "全穀雜糧相關";
+"Fruit Dashboard" = "水果相關";
+"Dairy Dashboard" = "乳品相關";
+"Protein Dashboard" = "豆魚肉蛋相關";
+"Please type in your feedback" = "請輸入您的建議";
+"Thank you" = "謝謝";
+"We have received your feedback, we will contact you if needed!" = "我們已經收到您的回饋，如有需要會再聯絡您";
+"Please recheck your email or check if you have type in correct message." = "請重新檢查您的信箱是否有誤或是否有輸入建議內容";
+"Start to use the app by adding your recent food now!" = "立刻加入您上一份食物的資料啟動App吧！";
+"Start!" = "開始使用！";
+"Check your indicator to know how balanced your overall diet was" = "利用圓框指標來觀察你最近的飲食均衡狀況！";
+"Next" = "下一步";
+"The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise" = "臉共有四種情緒，分別代表飲食均衡不好、尚可、好、和非常好。點擊臉部可能會有些驚喜。";
+"Swipe up to get diet information for today" = "往上滑可顯示今天的飲食狀況";
+"Tap on each of the icons to find out more about that group!" = "點擊各圖示顯示該類別的資訊";
+"OK" = "好";
+"Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@" = "今日飲食\n蔬菜：%@\n豆魚肉蛋：%@\n全穀雜糧：%@\n水果：%@\n乳品：%@";
 
 
 
