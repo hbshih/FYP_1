@@ -282,6 +282,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     }
     @IBAction func doneTapped(_ sender: Any)
     {
+        Analytics.logEvent("Done", parameters: nil)
         if(vegetable == 0.0 && grain == 0.0 && protein == 0.0 && fruit == 0.0 && dairy == 0.0)
         {
             let noEntryAlert = UIAlertController(title: nil, message: "Are you sure you don't want to record anything?".localized(), preferredStyle: UIAlertControllerStyle.alert)

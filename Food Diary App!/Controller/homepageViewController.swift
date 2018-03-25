@@ -123,9 +123,11 @@ class homepageViewController: UIViewController {
             print("ItemWillClick: \(button.id)")
             if button.id == "camAdd"
             {
+                Analytics.logEvent("New with Camera", parameters: nil)
                 self.performSegue(withIdentifier: "showCameraSegue", sender: nil)
             }else if button.id == "noteAdd"
             {
+                Analytics.logEvent("New with Note", parameters: nil)
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }

@@ -8,6 +8,7 @@
 import UIKit
 import Former
 import SCLAlertView
+import FirebaseAnalytics
 
 class CustomizedPlanSettingViewController: FormViewController {
     
@@ -159,6 +160,7 @@ class CustomizedPlanSettingViewController: FormViewController {
     
     @IBAction func doneTapped(_ sender: Any)
     {
+        Analytics.logEvent("Customize When Onboard", parameters: nil)
         fromOnboarding = true
         if(age == 0)
         {
