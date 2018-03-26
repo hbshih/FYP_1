@@ -417,6 +417,11 @@ class homepageViewController: UIViewController {
             _ = alert.showCustom("FOODY FACE", subTitle: messageToUsers[messageCounter % messageToUsers.count], color: color, icon: icon!)
             messageCounter += 1
         }
+        
+        if messageCounter == messageToUsers.count
+        {
+            centerFace.setImage(#imageLiteral(resourceName: "Face_Anonyed"), for: .normal)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

@@ -9,7 +9,7 @@
 "0yn-Zo-a1U.text" = "水果";
 
 /* Class = "UILabel"; text = "Custom"; ObjectID = "11z-qZ-szh"; */
-"11z-qZ-szh.text" = "自訂";
+"11z-qZ-szh.text" = "設定個人計畫";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "17d-xp-VSm"; */
 "17d-xp-VSm.text" = "1.0";
@@ -72,7 +72,7 @@
 "Bi5-9f-lpO.text" = "x1";
 
 /* Class = "UILabel"; text = "Dairy"; ObjectID = "CXy-Ef-cfA"; */
-"CXy-Ef-cfA.text" = "日記";
+"CXy-Ef-cfA.text" = "乳品";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "D1t-Lt-9j6"; */
 "D1t-Lt-9j6.normalTitle" = "上一步";
