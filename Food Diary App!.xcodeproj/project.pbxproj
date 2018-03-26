@@ -162,6 +162,7 @@
 		B59701572066A9F50044ED73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
 		B59701582066AAB80044ED73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
+		B5A71F332069298A0010A3EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -862,6 +863,7 @@
 			children = (
 				B579353A1FE022DE00E663DB /* Base */,
 				B554A14F2065E63300B58EF4 /* zh-Hant */,
+				B5A71F332069298A0010A3EF /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

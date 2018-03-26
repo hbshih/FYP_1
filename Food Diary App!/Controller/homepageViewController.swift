@@ -116,6 +116,7 @@ class homepageViewController: UIViewController {
         fanMenu.delay = 0.0
         
         fanMenu.onItemWillClick = { button in
+            Analytics.logEvent("Click Add on HomePage", parameters: nil)
             self.showView()
         }
         
@@ -145,7 +146,8 @@ class homepageViewController: UIViewController {
                 }
             }else if button.id == "noteAdd"
             {
-                Analytics.logEvent("New with Note", parameters: nil)
+                
+                
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }

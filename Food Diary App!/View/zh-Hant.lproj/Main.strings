@@ -53,7 +53,7 @@
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "8mX-Hk-AA2"; */
 "8mX-Hk-AA2.normalTitle" = "完成";
 
-/* Class = "UITabBarItem"; title = "Photo"; ObjectID = "8qe-IK-tHa"; */
+/* Class = "UITabBarItem"; title = "Photo"; ObjectID = "8qxe-IK-tHa"; */
 "8qe-IK-tHa.title" = "相片";
 
 /* Class = "UILabel"; text = "Plate contains?"; ObjectID = "9Yz-n9-XeC"; */
@@ -101,7 +101,7 @@
 /* Class = "UILabel"; text = "100%"; ObjectID = "Ign-TW-UDc"; */
 "Ign-TW-UDc.text" = "100%";
 
-/* Class = "UILabel"; text = "- Past 7 days score on each group -"; ObjectID = "KlM-AF-Ct2"; */
+/* Class = "UILabel"; text = "- Recent score on each group -"; ObjectID = "KlM-AF-Ct2"; */
 "KlM-AF-Ct2.text" = "- 最近在各食物類別的表現 -";
 
 /* Class = "UINavigationItem"; title = "Album"; ObjectID = "L5A-wI-3XO"; */
