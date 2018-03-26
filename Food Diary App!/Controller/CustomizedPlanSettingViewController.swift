@@ -119,6 +119,7 @@ class CustomizedPlanSettingViewController: FormViewController {
     
     func saveInformation()
     {
+        Analytics.logEvent("usedPersonalizedData", parameters: nil)
         var g = "Female"
         if gender == 1
         {

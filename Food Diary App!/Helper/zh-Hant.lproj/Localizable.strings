@@ -26,6 +26,7 @@
 "Congrats!" = "恭喜";
 "You've just initialize the indicator, keep recording everyday to get higher balance rates!" = "恭喜您開啟了飲食紀錄指示器，請記得持續的紀錄每天的飲食才能夠將指標維持在最完美的狀況噢！";
 "7-Days Balance: " = "最近均衡狀況： ";
+"Recent Balance: " = "最近均衡狀況： ";
 "Standard Male" = "標準男性";
 "Standard Female" = "標準女性";
 "Personalize" = "個人化方案";
@@ -87,7 +88,7 @@
 "Tap on each of the icons to find out more about that group!" = "點擊各圖示顯示該類別的資訊";
 "OK" = "好";
 "Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@" = "今日飲食\n蔬菜：%@\n豆魚肉蛋：%@\n全穀雜糧：%@\n水果：%@\n乳品：%@";
-"You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today" = "您今天還需要攝取 %@份全穀雜糧、%@份蔬菜、%@水果、%@乳品以及%@豆魚肉蛋才能達到百分之百均衡！";
+"You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today" = "您今天還需要攝取 %@份全穀雜糧、%@份蔬菜、%@份水果、%@份乳品以及%@份豆魚肉蛋才能達到百分之百均衡！";
 "Tip" = "小提示";
 "Add some notes and related information here!" = "再加入一些食物的資訊吧！";
 "Take a snap of your recent food or import one from your photo library" = "拍下您現在正在吃的照片或從相簿裡面新增一張吧！";

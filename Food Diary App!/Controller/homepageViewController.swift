@@ -116,7 +116,6 @@ class homepageViewController: UIViewController {
         fanMenu.delay = 0.0
         
         fanMenu.onItemWillClick = { button in
-            Analytics.logEvent("Click Add on HomePage", parameters: nil)
             self.showView()
         }
         
@@ -124,7 +123,6 @@ class homepageViewController: UIViewController {
             print("ItemWillClick: \(button.id)")
             if button.id == "camAdd"
             {
-                Analytics.logEvent("New with Camera", parameters: nil)
                 if UserDefaultsHandler().getCameraTip() != true
                 {
                     let appearance = SCLAlertView.SCLAppearance(
@@ -147,7 +145,7 @@ class homepageViewController: UIViewController {
             }else if button.id == "noteAdd"
             {
                 
-                
+                Analytics.logEvent("Add_WithNote", parameters: nil)
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
@@ -155,6 +153,7 @@ class homepageViewController: UIViewController {
     
     @objc func segueToCamera()
     {
+        Analytics.logEvent("Add_WithCam", parameters: nil)
         self.performSegue(withIdentifier: "showCameraSegue", sender: nil)
     }
     
