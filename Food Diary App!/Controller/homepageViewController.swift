@@ -124,13 +124,36 @@ class homepageViewController: UIViewController {
             if button.id == "camAdd"
             {
                 Analytics.logEvent("New with Camera", parameters: nil)
-                self.performSegue(withIdentifier: "showCameraSegue", sender: nil)
+                if UserDefaultsHandler().getCameraTip() != true
+                {
+                    let appearance = SCLAlertView.SCLAppearance(
+                        //kCircleIconHeight: 55.0
+                        kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                        kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                        kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                        showCloseButton: false
+                    )
+                    let alert = SCLAlertView(appearance: appearance)
+                    let icon = UIImage(named:"Alert_Yellow.png")
+                    let color = UIColor.orange
+                    alert.addButton(NSLocalizedString("Take a snap!", comment: ""), target: self, selector: #selector(self.segueToCamera))
+                    _ = alert.showCustom(NSLocalizedString("Tip", comment: ""), subTitle: NSLocalizedString("Take a snap of your recent food or import one from your photo library", comment: ""), color: color, icon: icon!)
+                    UserDefaultsHandler().setCameraTip(status: true)
+                }else
+                {
+                    self.segueToCamera()
+                }
             }else if button.id == "noteAdd"
             {
                 Analytics.logEvent("New with Note", parameters: nil)
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
+    }
+    
+    @objc func segueToCamera()
+    {
+        self.performSegue(withIdentifier: "showCameraSegue", sender: nil)
     }
     
     func showView() {
@@ -233,8 +256,8 @@ class homepageViewController: UIViewController {
                 self.centerInformationArea.alpha = 1
                 UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations:
                     {
-                    self.centerFaceArea.alpha = 1
-                    self.centerInformationArea.alpha = 0
+                        self.centerFaceArea.alpha = 1
+                        self.centerInformationArea.alpha = 0
                 })
             }
             
@@ -254,7 +277,7 @@ class homepageViewController: UIViewController {
                 updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
                 
                 // text below the slider
-                informationLabel.text = "7-Days Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
+                informationLabel.text = "Recent Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
                 
                 // Present the nutrition elements that users needs to intake today
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
@@ -322,7 +345,7 @@ class homepageViewController: UIViewController {
         dairyInfo = "0.0 / \(Standard[4])"
         proteinInfo = "0.0 / \(Standard[2])"
         centerInformationArea.text =
-        String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
+            String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
     }
     
     private func presentTodayInformation(todayCount:[Double],Standard:[Double],dataDate:String)
@@ -353,7 +376,7 @@ class homepageViewController: UIViewController {
         }
         
         centerInformationArea.text =
-        String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
+            String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
     }
     
     func showCircularSliderData()
@@ -512,7 +535,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
             let todayCount = healthData.getTodayEachElementData()
             switch(index) {
             case 0:
-               // coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
+                // coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
                 
                 coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today".localized(), comment: ""),"\(Standard[0] - todayCount[0])","\(Standard[1] - todayCount[1])","\(Standard[3] - todayCount[2])","\(Standard[4] - todayCount[3])","\(Standard[2] - todayCount[4])")
                 /*

@@ -10,6 +10,7 @@ import UIKit
 import YPImagePicker
 import FirebaseAnalytics
 import PopupDialog
+import Instructions
 
 class AddNoteViewController: UIViewController,UITextViewDelegate {
     
@@ -47,9 +48,23 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     private var vegetable = 0.0
     private var dairy = 0.0
     
+    // For tutorial walkthrough
+    let coachMarksController = CoachMarksController()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if UserDefaultsHandler().getAddNoteTip() != true
+        {
+            self.coachMarksController.dataSource = self
+            self.coachMarksController.start(on: self)
+            self.coachMarksController.overlay.allowTap = true
+            let skipView = CoachMarkSkipDefaultView()
+            skipView.setTitle("Skip", for: .normal)
+            self.coachMarksController.skipView = skipView
+        }
+        
         
         let locale = NSLocale.current.languageCode
         if (locale! == "zh")
@@ -69,11 +84,6 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        
-    }
-  
     @IBAction func close(_ sender: Any)
     {
         addnoteText.text = nil
@@ -333,12 +343,50 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         
     }
     
-    
-    
-    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+// MARK: - Protocol Conformance | CoachMarksControllerDataSource
+extension AddNoteViewController: CoachMarksControllerDataSource
+{
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?)
+    {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        switch(index)
+        {
+        case 0:
+            coachViews.bodyView.hintLabel.text = "Add a record of your food by adding some notes and related information".localized()
+            coachViews.bodyView.nextLabel.text = "Next".localized()
+        case 1:
+            coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct portions!".localized()
+            coachViews.bodyView.nextLabel.text = "Next".localized()
+            UserDefaultsHandler().setAddNoteTip(status: true)
+        default: break
+        }
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        
+        switch(index)
+        {
+        case 0:
+            return coachMarksController.helper.makeCoachMark(for: self.navBar)
+        case 1:
+            return coachMarksController.helper.makeCoachMark(for: self.foodgroupStackView)
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+        
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
+    {
+        return 2
     }
 }

@@ -90,13 +90,34 @@ struct UserDefaultsHandler
         return defaults.bool(forKey: "AddDataTutorial")
     }
     
+    func setCameraTip(status: Bool)
+    {
+        defaults.set(status, forKey: "cameraTip")
+    }
+    
+    func setAddNoteTip(status: Bool)
+    {
+        defaults.set(status, forKey: "noteTip")
+    }
+    
+    func getCameraTip() -> Bool
+    {
+        return defaults.bool(forKey: "cameraTip")
+    }
+    
+    func getAddNoteTip() -> Bool
+    {
+        return defaults.bool(forKey: "noteTip")
+    }
+    
     
     
     /*
-    func getTutorialStatus() -> Bool
-    {
-        
-    }
- */
+     func getTutorialStatus() -> Bool
+     {
+     
+     }
+     */
     
 }
+

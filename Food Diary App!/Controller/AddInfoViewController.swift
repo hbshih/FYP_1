@@ -10,6 +10,7 @@ import UIKit
 import YPImagePicker
 import FirebaseAnalytics
 import PopupDialog
+import Instructions
 
 class AddInfoViewController: UIViewController,UITextViewDelegate {
     
@@ -55,6 +56,9 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     private var fruit = 0.0
     private var vegetable = 0.0
     private var dairy = 0.0
+    // For tutorial walkthrough
+    
+    let coachMarksController = CoachMarksController()
     
     override func viewDidLoad()
     {
@@ -69,7 +73,6 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
             fIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_FruitBlank"), for: .normal)
             dIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_DairyBlank"), for: .normal)
         }
-        
         LaunchCamera = true
         pickerdismiss = false
         // Working with interface transition
@@ -91,7 +94,7 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
             if image.image == nil
             {
                 performSegue(withIdentifier: "closeSegue", sender: nil)
-                image.image = #imageLiteral(resourceName: "Sample_Image")
+                //      image.image = #imageLiteral(resourceName: "Sample_Image")
                 // Return Home
             }else
             {
@@ -181,7 +184,17 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
             self.navBar.alpha = 1
             self.savingDateLabel.alpha = 1
             self.dateButton.alpha = 1
-            picker.dismiss(animated: true, completion: nil)
+            picker.dismiss(animated: true, completion: {
+                if UserDefaultsHandler().getAddNoteTip() != true
+                {
+                    self.coachMarksController.dataSource = self
+                    self.coachMarksController.start(on: self)
+                    self.coachMarksController.overlay.allowTap = true
+                    let skipView = CoachMarkSkipDefaultView()
+                    skipView.setTitle("Skip", for: .normal)
+                    self.coachMarksController.skipView = skipView
+                }
+            })
         }
         present(picker, animated: true, completion: nil)
     }
@@ -453,13 +466,51 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         self.present(optionMenu, animated: true, completion: nil)
         
     }
-    
-    
-    
-    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
+
+// MARK: - Protocol Conformance | CoachMarksControllerDataSource
+extension AddInfoViewController: CoachMarksControllerDataSource
+{
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?)
+    {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        switch(index)
+        {
+        case 0:
+            coachViews.bodyView.hintLabel.text = "Add some notes and related information here!".localized()
+            coachViews.bodyView.nextLabel.text = "Next".localized()
+        case 1:
+            coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct portions!".localized()
+            coachViews.bodyView.nextLabel.text = "Next".localized()
+            UserDefaultsHandler().setAddNoteTip(status: true)
+        default: break
+        }
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        
+        switch(index)
+        {
+        case 0:
+            return coachMarksController.helper.makeCoachMark(for: self.navBar)
+        case 1:
+            return coachMarksController.helper.makeCoachMark(for: self.foodgroupStackView)
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+        
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
+    {
+        return 2
+    }
+}
+

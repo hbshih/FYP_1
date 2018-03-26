@@ -52,20 +52,21 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
             return maleDefaultSet
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
         picker.dataSource = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @objc func endEditing() {
         view.endEditing(true)
     }
 }
+

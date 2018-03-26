@@ -12,7 +12,7 @@ import PopupDialog
 import SCLAlertView
 
 class OnBoardingViewController: UIViewController {
-
+    
     var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
     let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
@@ -68,7 +68,7 @@ class OnBoardingViewController: UIViewController {
         if index == 3
         {
             selectPlan()
-         //   performSegue(withIdentifier: "getStartedSegue", sender: nil)
+            //   performSegue(withIdentifier: "getStartedSegue", sender: nil)
         }
     }
     
@@ -105,19 +105,19 @@ class OnBoardingViewController: UIViewController {
             {
                 //print("Customize")
                 self.segueToCustomize()
-//                self.defaults.setPlanStandard(value: numberOfServes().getCustom())
-//                let appearance = SCLAlertView.SCLAppearance(
-//                    //kCircleIconHeight: 55.0
-//                    kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
-//                    kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
-//                    kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
-//                    showCloseButton: false
-//                )
-//                let alert = SCLAlertView(appearance: appearance)
-//                let icon = UIImage(named:"Alert_Yellow.png")
-//                let color = UIColor.orange
-//                alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
-//                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
+                //                self.defaults.setPlanStandard(value: numberOfServes().getCustom())
+                //                let appearance = SCLAlertView.SCLAppearance(
+                //                    //kCircleIconHeight: 55.0
+                //                    kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                //                    kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                //                    kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                //                    showCloseButton: false
+                //                )
+                //                let alert = SCLAlertView(appearance: appearance)
+                //                let icon = UIImage(named:"Alert_Yellow.png")
+                //                let color = UIColor.orange
+                //                alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
+                //                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
             }else
             {
                 self.defaults.setOnboardingStatus(status: true)

@@ -582,7 +582,7 @@
                                         <rect key="frame" x="0.0" y="15" width="343" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTU-an-rri">
-                                                <rect key="frame" x="131" y="3" width="207" height="25"/>
+                                                <rect key="frame" x="131.66666666666663" y="3" width="206.33333333333337" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title=" Help" image="info-2">
                                                     <color key="titleColor" red="0.19096472859382629" green="0.43610948324203491" blue="0.92553603649139404" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -592,8 +592,8 @@
                                                     <action selector="instructionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="Ib4-3v-WqH"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plate contains?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-n9-XeC">
-                                                <rect key="frame" x="10" y="5" width="116" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food contains?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-n9-XeC">
+                                                <rect key="frame" x="10.000000000000007" y="5" width="116.66666666666669" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20.5" id="FIV-k4-hx6"/>
                                                 </constraints>
@@ -1346,8 +1346,8 @@
                                         <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Past 7 days score on each group -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlM-AF-Ct2">
-                                        <rect key="frame" x="84" y="429" width="198" height="16.666666666666686"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Recent score on each group -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlM-AF-Ct2">
+                                        <rect key="frame" x="97.333333333333314" y="429" width="172" height="16.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                         <color key="textColor" red="0.80622100830078125" green="0.80683785676956177" blue="0.8063165545463562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2848,9 +2848,19 @@ Copyright {2004} {Skyscanner}
                     <view key="view" contentMode="scaleToFill" id="K39-Gs-hOj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-uA-iPv">
+                                <rect key="frame" x="164" y="525" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5vl-dZ-bOJ"/>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="NJL-uA-iPv" id="c1l-ex-k8p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cir-pu-IcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2910,7 +2920,7 @@ Copyright {2004} {Skyscanner}
                                         <rect key="frame" x="0.0" y="15" width="343" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-ug-LCs">
-                                                <rect key="frame" x="131" y="3" width="61" height="25"/>
+                                                <rect key="frame" x="131.66666666666666" y="3" width="61" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title=" Help" image="info-2">
                                                     <color key="titleColor" red="0.19096472859999999" green="0.43610948319999998" blue="0.92553603650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2920,8 +2930,8 @@ Copyright {2004} {Skyscanner}
                                                     <action selector="instructionTapped:" destination="hVB-4o-Nr6" eventType="touchUpInside" id="cUR-VO-tAZ"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plate contains?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWK-3y-Qsr">
-                                                <rect key="frame" x="10" y="5" width="116" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food contains?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWK-3y-Qsr">
+                                                <rect key="frame" x="10.000000000000007" y="5" width="116.66666666666669" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20.5" id="BAZ-ZM-JUC"/>
                                                 </constraints>
@@ -12638,7 +12648,7 @@ WQAAAAAAAAAAAAAAAAAIcZk
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="127-SN-MXU"/>
-        <segue reference="DTX-2Y-Kk5"/>
+        <segue reference="D70-QE-Rdu"/>
         <segue reference="GHi-nD-NU8"/>
     </inferredMetricsTieBreakers>
 </document>

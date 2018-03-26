@@ -27,7 +27,7 @@
 "3fr-MI-9Zb.title" = "您的食物日記";
 
 /* Class = "UILabel"; text = "Saving Date?"; ObjectID = "4SW-H4-YKN"; */
-"4SW-H4-YKN.text" = "儲存日期？";
+"4SW-H4-YKN.text" = "時間？";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "58p-tm-y12"; */
 "58p-tm-y12.title" = "設定";
@@ -57,7 +57,7 @@
 "8qe-IK-tHa.title" = "相片";
 
 /* Class = "UILabel"; text = "Plate contains?"; ObjectID = "9Yz-n9-XeC"; */
-"9Yz-n9-XeC.text" = "餐盤包含？";
+"9Yz-n9-XeC.text" = "您的食物包含？";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "A3I-k9-6zo"; */
 "A3I-k9-6zo.text" = "1.0";
@@ -93,7 +93,7 @@
 "HdS-vv-iym.text" = "隱私權";
 
 /* Class = "UILabel"; text = "Saving Date?"; ObjectID = "HlD-Px-NUJ"; */
-"HlD-Px-NUJ.text" = "儲存日期？";
+"HlD-Px-NUJ.text" = "時間？";
 
 /* Class = "UILabel"; text = "Tap icons on plate to decrease"; ObjectID = "IVs-3q-s13"; */
 "IVs-3q-s13.text" = "點擊餐盤上的圖示減少份量";
@@ -102,7 +102,7 @@
 "Ign-TW-UDc.text" = "100%";
 
 /* Class = "UILabel"; text = "- Past 7 days score on each group -"; ObjectID = "KlM-AF-Ct2"; */
-"KlM-AF-Ct2.text" = "- 過去七天各食物類別的表現 -";
+"KlM-AF-Ct2.text" = "- 最近在各食物類別的表現 -";
 
 /* Class = "UINavigationItem"; title = "Album"; ObjectID = "L5A-wI-3XO"; */
 "L5A-wI-3XO.title" = "相簿";
@@ -264,7 +264,7 @@
 "vBJ-8h-QYx.text" = "Your Recent Vegetables";
 
 /* Class = "UILabel"; text = "Plate contains?"; ObjectID = "vWK-3y-Qsr"; */
-"vWK-3y-Qsr.text" = "餐盤包含？";
+"vWK-3y-Qsr.text" = "您的食物包含？";
 
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "wBm-Tm-X1Q"; */
 "wBm-Tm-X1Q.text" = "蔬菜";
