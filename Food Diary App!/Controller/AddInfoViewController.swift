@@ -305,14 +305,14 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                     let currentTime = Date()
-                    let currentFileName = "ont\(format.string(from: currentTime)).jpg"
+                    let currentFileName = "\(format.string(from: currentTime))10.jpg"
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: currentTime)
                 }else
                 {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                    let currentFileName = "not\(format.string(from: self.savedDate!)).jpg"
+                    let currentFileName = "\(format.string(from: self.savedDate!))11.jpg"
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: self.savedDate!)
                 }
@@ -327,14 +327,14 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                 let currentTime = Date()
-                let currentFileName = "ont\(format.string(from: currentTime)).jpg"
+                let currentFileName = "\(format.string(from: currentTime))10.jpg"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: currentTime)
             }else
             {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                let currentFileName = "not\(format.string(from: savedDate!)).jpg"
+                let currentFileName = "\(format.string(from: savedDate!))11.jpg"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: savedDate!)
             }

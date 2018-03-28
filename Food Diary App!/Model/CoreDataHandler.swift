@@ -68,6 +68,10 @@ struct CoreDataHandler
                     // Store data in the corresponding array
                     if let imageName = result.value(forKey: "imageName") as? String
                     {
+//                        if(imageName.prefix(3) == "not" || imageName.prefix(3) == "ont")
+//                        {
+//                            result.setValue(imageName.suffix(23), forKey: "imageName")
+//                        }
                         fileName.append(imageName)
                     }
                 }

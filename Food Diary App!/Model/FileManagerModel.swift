@@ -11,6 +11,7 @@ import UIKit
 
 struct FileManagerModel
 {
+    let locale = NSLocale.current.languageCode
     func lookupImage(fileNames: [String]) -> [UIImage]
     {
         var images: [UIImage] = []
@@ -40,18 +41,23 @@ struct FileManagerModel
         let fileManager = FileManager.default
         for imageName in fileNames
         {
-            let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-            print(imagePath)
-            if fileManager.fileExists(atPath: imagePath){
-                if let outputImage = UIImage(contentsOfFile: imagePath)
-                {
-                    images.append(outputImage)
-                }else
-                {
-                    print("cannot find \(imagePath)")
+            let validImage = (imageName.suffix(6)).prefix(1)
+            if validImage == "1" // Has image
+            {
+                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+                print(imagePath)
+                if fileManager.fileExists(atPath: imagePath){
+                    if let outputImage = UIImage(contentsOfFile: imagePath)
+                    {
+                        images.append(outputImage)
+                    }else
+                    {
+                        print("Panic! No Image!")
+                        print("cannot find \(imagePath)")
+                    }
                 }
-            }else{
-                let locale = NSLocale.current.languageCode
+            }else
+            {
                 if (locale! == "zh")
                 {
                     images.append(#imageLiteral(resourceName: "zh_NoImage"))
@@ -59,7 +65,6 @@ struct FileManagerModel
                 {
                     images.append(#imageLiteral(resourceName: "image_None"))
                 }
-                print("Panic! No Image!")
             }
         }
         return images

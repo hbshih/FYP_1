@@ -325,8 +325,9 @@ struct HealthPercentageCalculator
             var newFileName: [String] = []
             for i in 0 ..< Name.count
             {
-                let str = Name[i].prefix(13)
-                let date = str.suffix(10)
+                let date = Name[i].prefix(10)
+//                let str = Name[i].prefix(13)
+//                let date = str.suffix(10)
                 newFileName.append(String(date))
             }
             return newFileName

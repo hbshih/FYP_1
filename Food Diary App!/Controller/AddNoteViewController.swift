@@ -190,14 +190,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                     let currentTime = Date()
-                    let currentFileName = "ont\(format.string(from: currentTime))Note" // Save Ontime
+                    let currentFileName = "\(format.string(from: currentTime))00Note" // Save Ontime
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: currentTime)
                 }else
                 {
                     let format = DateFormatter()
-                    format.dateFormat = "yyyy-MM-dd"
-                    let currentFileName = "not\(format.string(from: self.savedDate!))Note" // Not Save Ontime
+                    format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                    let currentFileName = "\(format.string(from: self.savedDate!))01Note" // Not Save Ontime
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: self.savedDate!)
                 }
@@ -212,14 +212,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                 let currentTime = Date()
-                let currentFileName = "ont\(format.string(from: currentTime))Note"
+                let currentFileName = "\(format.string(from: currentTime))00Note"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: currentTime)
             }else
             {
                 let format = DateFormatter()
-                format.dateFormat = "yyyy-MM-dd"
-                let currentFileName = "not\(format.string(from: savedDate!))Note"
+                format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                let currentFileName = "\(format.string(from: savedDate!))01Note"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: savedDate!)
             }

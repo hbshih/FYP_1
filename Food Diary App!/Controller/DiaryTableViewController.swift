@@ -49,12 +49,15 @@ class DiaryTableViewController: UITableViewController {
         
         //-- to display the most up to date items first
         fileName = fileName.reversed()
+   //     print(KAUTH_FILESEC_NO_INHERIT)
         notes = notes.reversed()
         fruitList = fruitList.reversed()
         dairyList = dairyList.reversed()
         vegetableList = vegetableList.reversed()
         proteinList = proteinList.reversed()
         grainList = grainList.reversed()
+        
+       // print(fileName)
         
         print("filenames")
         print(fileName)
@@ -158,25 +161,23 @@ class DiaryTableViewController: UITableViewController {
         {
             // Manipulating Data, showing correct information
             let str = self.fileName[indexPath.row]
-            let type = str.prefix(3)
-            var subString = str.prefix(10)
-            let month = subString.suffix(2)
-            subString = str.prefix(13)
-            let day = subString.suffix(2)
-            subString = str.prefix(16)
-            let hour = subString.suffix(2)
-            subString = str.prefix(19)
-            let minute = subString.suffix(2)
+            var type = str.suffix(5)
+            type = type.prefix(1)
+            var sub = str.suffix(20)
+            var month = sub.prefix(2)
+            sub = str.suffix(17)
+            var day = sub.prefix(2)
+            sub = str.suffix(14)
+            var hour = sub.prefix(2)
+            sub = str.suffix(11)
+            var minute = sub.prefix(2)
             let date = "\(month)/\(day)"
             let time = "\(hour):\(minute)"
-            
-            print("FileName")
-            print(str)
             
             // Displaying informations
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
-            if type == "not" || time == "No:te"
+            if type == "1"
             {
                 cell.time.alpha = 0
             }else

@@ -149,12 +149,24 @@ struct messageGenerator {
     {
         let message = [
             "I think you are just enjoying pocking my face",
-            "I have gave you enough advices",
+            "I have given you enough advices",
             "Tapping it does abosolutely nothing except irritate me",
             "I know I conditioned you to tap my face in my counterpart apps, but I'm really serious: it doesn't do anything now",
             "Yet you're still poking my face",
             "OK, stop",
             "I am not going to talk anymore"]
+        
+        let zh_message =
+        [
+            "你是不是覺得戳我的臉很好玩",
+            "你繼續戳下去我也不會再給你其他建議了",
+            "不",
+            "要",
+            "戳",
+            "林北的臉！！！！",
+            
+        ]
+        
         return message
     }
     /*
