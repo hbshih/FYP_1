@@ -37,10 +37,13 @@ struct FileManagerModel
     
     func lookupImageDiary(fileNames: [String]) -> [UIImage]
     {
+        
         var images: [UIImage] = []
         let fileManager = FileManager.default
         for imageName in fileNames
         {
+            print("image looking for")
+            print(imageName)
             if imageName != "" // Has image
             {
                 let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)

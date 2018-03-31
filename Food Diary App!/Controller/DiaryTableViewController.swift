@@ -35,7 +35,7 @@ class DiaryTableViewController: UITableViewController {
         fileName = dataHandler.getImageFilename()
         dates = dataHandler.getTimestamp()
         notes = dataHandler.getNote()
-  //      hasImage = dataHandler.getHasImage()
+        //      hasImage = dataHandler.getHasImage()
         id = dataHandler.getId()
         let nutritionDic = dataHandler.get5nList()
         dairyList = nutritionDic["dairyList"]!
@@ -58,6 +58,9 @@ class DiaryTableViewController: UITableViewController {
         print("id_")
         print(id)
         
+        print("filename")
+        print(fileName)
+        
         //-- Accesing App File, getting images
         if id.count != 0
         {
@@ -67,6 +70,9 @@ class DiaryTableViewController: UITableViewController {
         {
             noDataIndicator.alpha = 1
         }
+        
+        print("image")
+        print(images)
         
         //-- Log firebase analytics
         Analytics.logEvent("DiaryVisited", parameters: nil)
@@ -80,7 +86,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return images.count
+        return id.count
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
@@ -131,21 +137,24 @@ class DiaryTableViewController: UITableViewController {
                 alertMessage(title: "Error", message: "An Error has occured, please try again later.")
             }
             
-            // Access to file and delete them
-            let fileManager = FileManager.default
-            let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row])
-            if fileManager.fileExists(atPath: imagePath)
+            if fileName[indexPath.row] != ""
             {
-                do
+                // Access to file and delete them
+                let fileManager = FileManager.default
+                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row])
+                if fileManager.fileExists(atPath: imagePath)
                 {
-                    try fileManager.removeItem(atPath: imagePath)
-                }catch
-                {
-                    print("error on filemanager remove")
+                    do
+                    {
+                        try fileManager.removeItem(atPath: imagePath)
+                    }catch
+                    {
+                        print("error on filemanager remove")
+                    }
+                    print("image deleted from \(imagePath)")
+                }else{
+                    print("Panic! No Image!")
                 }
-                print("image deleted from \(imagePath)")
-            }else{
-                print("Panic! No Image!")
             }
             // Delete from the table
             images.remove(at: indexPath.row)
@@ -167,52 +176,52 @@ class DiaryTableViewController: UITableViewController {
             let date = format.string(from: dates[indexPath.row])
             format.dateFormat = "hh:mm"
             let time = format.string(from: dates[indexPath.row])
-//            let str = self.fileName[indexPath.row]
-//            var type = str.suffix(5)
-//            type = type.prefix(1)
-//            var sub = str.suffix(20)
-//            var month = sub.prefix(2)
-//            sub = str.suffix(17)
-//            var day = sub.prefix(2)
-//            sub = str.suffix(14)
-//            var hour = sub.prefix(2)
-//            sub = str.suffix(11)
-//            var minute = sub.prefix(2)
-//            let date = "\(month)/\(day)"
-//            let time = "\(hour):\(minute)"
+            //            let str = self.fileName[indexPath.row]
+            //            var type = str.suffix(5)
+            //            type = type.prefix(1)
+            //            var sub = str.suffix(20)
+            //            var month = sub.prefix(2)
+            //            sub = str.suffix(17)
+            //            var day = sub.prefix(2)
+            //            sub = str.suffix(14)
+            //            var hour = sub.prefix(2)
+            //            sub = str.suffix(11)
+            //            var minute = sub.prefix(2)
+            //            let date = "\(month)/\(day)"
+            //            let time = "\(hour):\(minute)"
             
             // Displaying informations
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
             cell.time.text = time
-//            if type == "1"
-//            {
-//                cell.time.alpha = 0
-//            }else
-//            {
-//                cell.time.text = time
-//            }
-         //   cell.time.text = time
+            //            if type == "1"
+            //            {
+            //                cell.time.alpha = 0
+            //            }else
+            //            {
+            //                cell.time.text = time
+            //            }
+            //   cell.time.text = time
             cell.note.text = notes[indexPath.row]
             
             // Show nutrition icons and counts
             
-//            cell.vegetableField.alpha = 1
-//            cell.vegetableLabel.alpha = 1
-//            cell.vegetableLabel.text = String(vegetableList[indexPath.row])
-//            cell.proteinField.alpha = 1
-//            cell.proteinLabel.alpha = 1
-//            cell.proteinLabel.text =
-//                String(proteinList[indexPath.row])
-//            cell.grainField.alpha = 1
-//            cell.grainLabel.alpha = 1
-//            cell.grainLabel.text = String(grainList[indexPath.row])
-//            cell.fruitField.alpha = 1
-//            cell.fruitLabel.alpha = 1
-//            cell.fruitLabel.text = String(fruitList[indexPath.row])
-//            cell.dairyLabel.alpha = 1
-//            cell.dairyField.alpha = 1
-//            cell.dairyLabel.text = String(dairyList[indexPath.row])
+            //            cell.vegetableField.alpha = 1
+            //            cell.vegetableLabel.alpha = 1
+            //            cell.vegetableLabel.text = String(vegetableList[indexPath.row])
+            //            cell.proteinField.alpha = 1
+            //            cell.proteinLabel.alpha = 1
+            //            cell.proteinLabel.text =
+            //                String(proteinList[indexPath.row])
+            //            cell.grainField.alpha = 1
+            //            cell.grainLabel.alpha = 1
+            //            cell.grainLabel.text = String(grainList[indexPath.row])
+            //            cell.fruitField.alpha = 1
+            //            cell.fruitLabel.alpha = 1
+            //            cell.fruitLabel.text = String(fruitList[indexPath.row])
+            //            cell.dairyLabel.alpha = 1
+            //            cell.dairyField.alpha = 1
+            //            cell.dairyLabel.text = String(dairyList[indexPath.row])
             
             cell.vegetableLabel.text = String(vegetableList[indexPath.row])
             cell.proteinLabel.text = String(proteinList[indexPath.row])
