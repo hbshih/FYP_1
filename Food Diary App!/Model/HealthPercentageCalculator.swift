@@ -11,7 +11,7 @@ import Foundation
 struct HealthPercentageCalculator
 {
     // General Variables
-    private var fileName: [String] = [] // Storing the names of the images to get images
+    private var recordedTime: [String] = [] // Storing the names of the images to get images
     
     // Nutrition Info Variables
     var dairyList: [Double] = []
@@ -53,7 +53,7 @@ struct HealthPercentageCalculator
     
     
     
-    init(fileNames: [String], nutritionDic:[String:[Double]])
+    init(nutritionDic:[String:[Double]],timestamp: [Date])
     {
         /*
          * Access user defaults
@@ -68,20 +68,26 @@ struct HealthPercentageCalculator
         fruitStandard = userPlan[3]
         dairyStandard = userPlan[4]
         
-        self.fileName = getTrimmedDate(Name: fileNames)
-//        self.fileName = self.fileName.sorted()
-        if fileName.count > 0
+        
+        
+   //     self.recordedTime = getTrimmedDate(Name: fileNames)
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd"
+        for i in 0 ..< timestamp.count
+        {
+            recordedTime.append(format.string(from: timestamp[i]))
+        }
+        
+        print("Recorded time")
+        print(recordedTime)
+        
+        if recordedTime.count > 0
         {
             dairyList = nutritionDic["dairyList"]!
-
             vegetableList = nutritionDic["vegetableList"]!
-
             proteinList = nutritionDic["proteinList"]!
-
             fruitList = nutritionDic["fruitList"]!
-
             grainList = nutritionDic["grainList"]!
-
             calculateOverallHealthRate()
         }else
         {
@@ -99,14 +105,14 @@ struct HealthPercentageCalculator
     private mutating func calculateEachElementDailyTotalCount()
     {
         var keepTrackIndex = 0
-        if fileName.count > 0
+        if recordedTime.count > 0
         {
             
-            for i in 0 ..< fileName.count
+            for i in 0 ..< recordedTime.count
             {
-                if !dateSaved.contains(fileName[i])
+                if !dateSaved.contains(recordedTime[i])
                 {
-                    dateSaved.append(fileName[i])
+                    dateSaved.append(recordedTime[i])
                     dayCountDairy.append(dairyList[i])
                     dayCountFruit.append(fruitList[i])
                     dayCountGrain.append(grainList[i])

@@ -190,14 +190,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                     let currentTime = Date()
-                    let currentFileName = "\(format.string(from: currentTime))00Note" // Save Ontime
+                    let currentFileName = "\(format.string(from: currentTime))" // Save Ontime
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: currentTime)
                 }else
                 {
                     let format = DateFormatter()
                     format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                    let currentFileName = "\(format.string(from: self.savedDate!))01Note" // Not Save Ontime
+                    let currentFileName = "\(format.string(from: self.savedDate!))" // Not Save Ontime
                     print(currentFileName)
                     self.saveImage(imageName: currentFileName, time: self.savedDate!)
                 }
@@ -212,14 +212,14 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
                 let currentTime = Date()
-                let currentFileName = "\(format.string(from: currentTime))00Note"
+                let currentFileName = "\(format.string(from: currentTime))"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: currentTime)
             }else
             {
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-                let currentFileName = "\(format.string(from: savedDate!))01Note"
+                let currentFileName = "\(format.string(from: savedDate!))"
                 print(currentFileName)
                 saveImage(imageName: currentFileName, time: savedDate!)
             }
@@ -239,7 +239,8 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
             notes = addnoteText.text
         }
         //Save to Core
-        CoreDataHandler().setNewRecord(time: time, imageName: imageName, note: notes, nutritionInfo: nutritionValues)
+       // CoreDataHandler().setNewRecord(time: time, imageName: imageName, note: notes, nutritionInfo: nutritionValues)
+        CoreDataHandler().setNewRecord(time: time, imageName: "", note: notes, nutritionInfo: nutritionValues)
     }
     
     // Working with textfield ##

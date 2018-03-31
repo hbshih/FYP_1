@@ -16,6 +16,8 @@ class DiaryTableViewController: UITableViewController {
     var images: [UIImage] = [] // Storing Images
     var fileName: [String] = [] // Storing the names of the images to get images
     var notes: [String] = [] // Storing notes
+    var dates: [Date] = [] // Storinng dates
+    var id: [String] = []
     
     // Nutrition Info Variables
     var dairyList: [Double] = []
@@ -31,7 +33,10 @@ class DiaryTableViewController: UITableViewController {
         // Accessing Core Data
         var dataHandler = CoreDataHandler()
         fileName = dataHandler.getImageFilename()
+        dates = dataHandler.getTimestamp()
         notes = dataHandler.getNote()
+  //      hasImage = dataHandler.getHasImage()
+        id = dataHandler.getId()
         let nutritionDic = dataHandler.get5nList()
         dairyList = nutritionDic["dairyList"]!
         vegetableList = nutritionDic["vegetableList"]!
@@ -39,31 +44,22 @@ class DiaryTableViewController: UITableViewController {
         fruitList = nutritionDic["fruitList"]!
         grainList = nutritionDic["grainList"]!
         
-//       fileName = fileName.sorted()
-//        notes = notes.sorted()
-//        fruitList = fruitList.sorted()
-//        dairyList = dairyList.sorted()
-//        vegetableList = vegetableList.sorted()
-//        proteinList = proteinList.sorted()
-//        grainList = grainList.sorted()
-        
         //-- to display the most up to date items first
         fileName = fileName.reversed()
-   //     print(KAUTH_FILESEC_NO_INHERIT)
+        dates = dates.reversed()
         notes = notes.reversed()
+        id = id.reversed()
         fruitList = fruitList.reversed()
         dairyList = dairyList.reversed()
         vegetableList = vegetableList.reversed()
         proteinList = proteinList.reversed()
         grainList = grainList.reversed()
         
-       // print(fileName)
-        
-        print("filenames")
-        print(fileName)
+        print("id_")
+        print(id)
         
         //-- Accesing App File, getting images
-        if fileName.count != 0
+        if id.count != 0
         {
             noDataIndicator.alpha = 0
             images = FileManagerModel().lookupImageDiary(fileNames: fileName)
@@ -94,6 +90,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        
         // Delete Button
         if editingStyle == .delete
         {
@@ -101,23 +98,26 @@ class DiaryTableViewController: UITableViewController {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-            // Get the corresponding image that user intend to delete
-            request.predicate = NSPredicate(format: "imageName = %@", "\(fileName[indexPath.row])")
+            // Get the corresponding record that user intend to delete
+            request.predicate = NSPredicate(format: "id = %@", "\(id[indexPath.row])")
             request.returnsObjectsAsFaults = false
             do
             {
                 let result = try context.fetch(request)
-                
                 if result.count > 0
                 {
+                    print("Fetch Result")
+                    print(result)
                     for name in result as! [NSManagedObject]
                     {
                         // Access to coredata and delete them
-                        if let Imagename = name.value(forKey: "imageName") as? String
+                        if let id = name.value(forKey: "id") as? String
                         {
-                            print("\(Imagename) deleted complete")
+                            print(id)
+                            print("\(id) deleted complete")
                             context.delete(name)
-                            do {
+                            do
+                            {
                                 try context.save()
                             } catch  {
                                 alertMessage(title: "Delete Failed", message: "An Error has occured, please try again later.")
@@ -151,6 +151,8 @@ class DiaryTableViewController: UITableViewController {
             images.remove(at: indexPath.row)
             notes.remove(at: indexPath.row)
             fileName.remove(at: indexPath.row)
+            dates.remove(at: indexPath.row)
+            id.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
@@ -160,30 +162,36 @@ class DiaryTableViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DiaryTableViewCell
         {
             // Manipulating Data, showing correct information
-            let str = self.fileName[indexPath.row]
-            var type = str.suffix(5)
-            type = type.prefix(1)
-            var sub = str.suffix(20)
-            var month = sub.prefix(2)
-            sub = str.suffix(17)
-            var day = sub.prefix(2)
-            sub = str.suffix(14)
-            var hour = sub.prefix(2)
-            sub = str.suffix(11)
-            var minute = sub.prefix(2)
-            let date = "\(month)/\(day)"
-            let time = "\(hour):\(minute)"
+            let format = DateFormatter()
+            format.dateFormat = "MM/dd"
+            let date = format.string(from: dates[indexPath.row])
+            format.dateFormat = "hh:mm"
+            let time = format.string(from: dates[indexPath.row])
+//            let str = self.fileName[indexPath.row]
+//            var type = str.suffix(5)
+//            type = type.prefix(1)
+//            var sub = str.suffix(20)
+//            var month = sub.prefix(2)
+//            sub = str.suffix(17)
+//            var day = sub.prefix(2)
+//            sub = str.suffix(14)
+//            var hour = sub.prefix(2)
+//            sub = str.suffix(11)
+//            var minute = sub.prefix(2)
+//            let date = "\(month)/\(day)"
+//            let time = "\(hour):\(minute)"
             
             // Displaying informations
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
-            if type == "1"
-            {
-                cell.time.alpha = 0
-            }else
-            {
-                cell.time.text = time
-            }
+            cell.time.text = time
+//            if type == "1"
+//            {
+//                cell.time.alpha = 0
+//            }else
+//            {
+//                cell.time.text = time
+//            }
          //   cell.time.text = time
             cell.note.text = notes[indexPath.row]
             
@@ -269,7 +277,7 @@ class DiaryTableViewController: UITableViewController {
             
             // Add a ending line
             
-            if indexPath.row == fileName.count - 1
+            if indexPath.row == id.count - 1
             {
                 cell.separationLine.image = UIImage(named: "Timeline_endLine.png")
             }

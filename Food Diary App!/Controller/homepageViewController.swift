@@ -35,13 +35,12 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerFace: UIButton!
     @IBOutlet weak var centerInformationArea: UILabel!
     @IBOutlet weak var centerFaceArea: UIButton!
-    @IBOutlet weak var cameraButtonOutlet: UIButton!
+   // @IBOutlet weak var cameraButtonOutlet: UIButton!
     @IBOutlet weak var centerInformationView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var coverView: UIView!
-    
-    @IBOutlet weak var cameraButton: UIButton!
+   // @IBOutlet weak var cameraButton: UIButton
     
     // Variables to store percentage informations
     private var healthPercentage = 0.0
@@ -52,10 +51,10 @@ class homepageViewController: UIViewController {
     private var grainPercentage = 0.0
     
     // General Variables
-    private var images: [UIImage] = [] // Storing Images
-    private var fileName: [String] = [] // Storing the names of the images to get images
-    private var currentNames: [String] = []
+    private var timestamp: [Date] = []// Date
     private var notes: [String] = [] // Storing notes
+    private var recordCount = 0 // How many record the user has
+    private var recentCount = 0 //
     private var messageCounter = 0
     private var messageToUsers: [String] = []
     private var showStartingMessageToNewUsers = false
@@ -75,7 +74,6 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //    fetchDatabaseMessage()
         getInteractionMessages()
         centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
@@ -227,7 +225,7 @@ class homepageViewController: UIViewController {
     func getInteractionMessages()
     {
         messageToUsers.removeAll()
-        let mesGenerator = messageGenerator(nList: [self.vegetablePercentage,self.proteinPercentage,self.grainPercentage,self.fruitPercentage,self.dairyPercentage], count: self.fileName.count)
+        let mesGenerator = messageGenerator(nList: [self.vegetablePercentage,self.proteinPercentage,self.grainPercentage,self.fruitPercentage,self.dairyPercentage], count: self.recordCount)
         self.messageToUsers += mesGenerator.getMessage()
     }
     
@@ -235,12 +233,13 @@ class homepageViewController: UIViewController {
     {
         super.viewDidAppear(animated)
         // Present data and slider only when have data in database
-        fileName = dataHandler.getImageFilename()
+        timestamp = dataHandler.getTimestamp()
+        recordCount = timestamp.count
         let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
         //Existing User
-        if fileName.count > 0
+        if recordCount > 0
         {
-            if fileName.count == 1 && defaults.getHomepageSecondTutorialStatus() == false
+            if recordCount == 1 && defaults.getHomepageSecondTutorialStatus() == false
             {
                 coachversion = 2
                 self.coachMarksController.dataSource = self
@@ -249,7 +248,7 @@ class homepageViewController: UIViewController {
                 showStartingMessageToNewUsers = true
             }
             
-            if fileName.count == 1 && showStartingMessageToNewUsers == false
+            if recordCount == 1 && showStartingMessageToNewUsers == false
             {
                 showStartingMessageToNewUsers = true
                 SCLAlertMessage(title: "Congrats!".localized(), message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!".localized()).showMessage()
@@ -262,17 +261,15 @@ class homepageViewController: UIViewController {
                 })
             }
             
-            // If some new data is recorded
-            if fileName.count != currentNames.count || Standard != planStandard!
+            // If some new data is recorded or the user has change their plan
+            if recordCount != recentCount || Standard != planStandard!
             {
                 //Update standard
                 Standard = planStandard!
-                
-                currentNames = fileName
-                
+                recentCount = recordCount
                 // update value via healthpercentagecalculator
                 let nutritionDic = dataHandler.get5nList()
-                var healthData = HealthPercentageCalculator(fileNames: fileName,nutritionDic: nutritionDic)
+                var healthData = HealthPercentageCalculator(nutritionDic: nutritionDic, timestamp: timestamp)
                 
                 // update percentage
                 updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
@@ -532,21 +529,13 @@ extension homepageViewController: CoachMarksControllerDataSource {
         {
             // update value via healthpercentagecalculator
             let nutritionDic = dataHandler.get5nList()
-            var healthData = HealthPercentageCalculator(fileNames: fileName,nutritionDic: nutritionDic)
+            var healthData = HealthPercentageCalculator(nutritionDic: nutritionDic, timestamp: timestamp)
             let todayCount = healthData.getTodayEachElementData()
             switch(index) {
             case 0:
                 // coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
                 
                 coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today".localized(), comment: ""),"\(Standard[0] - todayCount[0])","\(Standard[1] - todayCount[1])","\(Standard[3] - todayCount[2])","\(Standard[4] - todayCount[3])","\(Standard[2] - todayCount[4])")
-                /*
-                 grainInfo = "\(todayCount[0]) / \(Standard[0])"
-                 vegetableInfo = "\(todayCount[1]) / \(Standard[1])"
-                 fruitInfo = "\(todayCount[2]) / \(Standard[3])"
-                 dairyInfo = "\(todayCount[3]) / \(Standard[4])"
-                 proteinInfo = "\(todayCount[4]) / \(Standard[2])"
-                 
-                 */
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 1:
                 coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()

@@ -73,7 +73,7 @@ class DashboardViewController: UIViewController {
     {
         informationLabel.text = "Your Recent \(dashboardType!)".localized()
         navDash.title = "\(dashboardType!) Dashboard".localized()
-        var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
+        var healthData = HealthPercentageCalculator(nutritionDic: dataHandler.get5nList(), timestamp: dataHandler.getTimestamp())
         
         if dashboardType == "Vegetable"
         {

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //Firebases
-        FirebaseApp.configure()
+     //   FirebaseApp.configure()
         if #available(iOS 8.0, *)
         {
             let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
         
-        Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
+     //    Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
         Fabric.sharedSDK().debug = true
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true

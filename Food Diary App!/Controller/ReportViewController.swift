@@ -36,7 +36,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         //Get initial data from core Data
         var coreManager = CoreDataHandler()
         //Calculate data
-        var healthData = HealthPercentageCalculator(fileNames: coreManager.getImageFilename(),nutritionDic: coreManager.get5nList())
+        var healthData = HealthPercentageCalculator(nutritionDic: coreManager.get5nList(), timestamp: coreManager.getTimestamp())
         dates = healthData.getTrimmedDate()
         blueLinePlotData = healthData.getDayBalancePercentage()
         personType(allElementPercentage: healthData.getElementPercentage())

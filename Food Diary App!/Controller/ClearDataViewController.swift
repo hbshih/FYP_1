@@ -73,7 +73,7 @@ class ClearDataViewController: UIViewController {
             {
                 let fileNames = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
                 for fileName in fileNames {
-                    if (fileName.hasSuffix(".jpg"))
+                    if (fileName.hasSuffix(".jpg") || fileName.hasSuffix("Note"))
                     {
                         try fileManager.removeItem(atPath: "\(documentPath)/\(fileName)")
                     }
