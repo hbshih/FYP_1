@@ -317,10 +317,16 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
             // Create first button
             let buttonOne = CancelButton(title: "Set Date".localized(), action:
             {
-                self.showDate = formatter.string(from: ChangeDateVC.dateSelected.date)
-                self.dateChanged = true
-                self.dateButton.setTitle(self.showDate, for: .normal)
-                self.savedDate =  ChangeDateVC.dateSelected.date
+                if ChangeDateVC.dateSelected.date > Date()
+                {
+                    SCLAlertMessage.init(title: "Oops", message: "Are you travelling to future? You have selected \(ChangeDateVC.dateSelected.date)").showMessage()
+                }else
+                {
+                    self.showDate = formatter.string(from: ChangeDateVC.dateSelected.date)
+                    self.dateChanged = true
+                    self.dateButton.setTitle(self.showDate, for: .normal)
+                    self.savedDate =  ChangeDateVC.dateSelected.date
+                }
             })
             // Add buttons to dialog
             popup.addButtons([buttonOne])
