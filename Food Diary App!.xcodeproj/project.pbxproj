@@ -22,6 +22,8 @@
 		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
+		B56C2CB12070380A00875E9E /* DayViewDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */; };
+		B56C2CB32070398500875E9E /* DayViewDairyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */; };
 		B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */; };
 		B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */; };
 		B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */; };
@@ -130,6 +132,8 @@
 		B554A14F2065E63300B58EF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B558A46A202E5A92003AA3F4 /* Food Diary App!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Diary App!.entitlements"; sourceTree = "<group>"; };
+		B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDiaryViewController.swift; sourceTree = "<group>"; };
+		B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDairyTableViewCell.swift; sourceTree = "<group>"; };
 		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
 		B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 				B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */,
 				B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */,
 				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
+				B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */,
+				B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -790,6 +796,8 @@
 				B52DB05620630557001C4003 /* messageGenerator.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
+				B56C2CB32070398500875E9E /* DayViewDairyTableViewCell.swift in Sources */,
+				B56C2CB12070380A00875E9E /* DayViewDiaryViewController.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
 				B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */,
 				B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */,

@@ -42,8 +42,6 @@ struct FileManagerModel
         let fileManager = FileManager.default
         for imageName in fileNames
         {
-            print("image looking for")
-            print(imageName)
             if imageName != "" // Has image
             {
                 let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)

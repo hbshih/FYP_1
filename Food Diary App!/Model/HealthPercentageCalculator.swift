@@ -137,6 +137,21 @@ struct HealthPercentageCalculator
         print("Daycount Of Dairy: \(dayCountDairy)")
     }
     
+    func getDateOfRecord () -> [String]
+    {
+        return dateSaved
+    }
+    
+    func getEachDayCount() -> [String: [Double]]
+    {
+        return[
+        "Vegetable": dayCountVegetable,
+         "Grain": dayCountGrain,
+         "Dairy": dayCountDairy,
+         "Fruit": dayCountFruit,
+         "Protein": dayCountProtein]
+    }
+    
     private mutating func convertDailyCountIntoBalancePercentage()
     {
         dayCountVegetablePercentage = dayCountVegetable

@@ -243,7 +243,6 @@ struct CoreDataHandler
                     }
                 }
             }
-            print ("grain list \(grainList)")
         }catch
         {
             print("Retrieving core data error")

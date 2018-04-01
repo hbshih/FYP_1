@@ -13,18 +13,24 @@ import FirebaseAnalytics
 class DiaryTableViewController: UITableViewController {
     
     // General Variables
-    var images: [UIImage] = [] // Storing Images
-    var fileName: [String] = [] // Storing the names of the images to get images
-    var notes: [String] = [] // Storing notes
-    var dates: [Date] = [] // Storinng dates
-    var id: [String] = []
+    private var images: [UIImage] = [] // Storing Images
+    private var fileName: [String] = [] // Storing the names of the images to get images
+    private var notes: [String] = [] // Storing notes
+    private var dates: [Date] = [] // Storinng dates
+    private var id: [String] = []
+    
     
     // Nutrition Info Variables
-    var dairyList: [Double] = []
-    var vegetableList: [Double] = []
-    var proteinList: [Double] = []
-    var fruitList: [Double] = []
-    var grainList: [Double] = []
+    private var dairyList: [Double] = []
+    private var vegetableList: [Double] = []
+    private var proteinList: [Double] = []
+    private var fruitList: [Double] = []
+    private var grainList: [Double] = []
+    
+    private var recordCount = 0
+    private var startShowing = -1
+    
+    var showRecord = "All"
     
     @IBOutlet weak var noDataIndicator: UILabel!
     
@@ -55,11 +61,26 @@ class DiaryTableViewController: UITableViewController {
         proteinList = proteinList.reversed()
         grainList = grainList.reversed()
         
-        print("id_")
-        print(id)
-        
-        print("filename")
-        print(fileName)
+        if showRecord != "All"
+        {
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd"
+            for i in 0 ..< dates.count
+            {
+                if format.string(from:dates[i]) == showRecord
+                {
+                    recordCount += 1
+                    if startShowing == -1
+                    {
+                        startShowing = i
+                    }
+                }
+            }
+        }else
+        {
+            recordCount = dates.count
+            startShowing = 0
+        }
         
         //-- Accesing App File, getting images
         if id.count != 0
@@ -70,12 +91,13 @@ class DiaryTableViewController: UITableViewController {
         {
             noDataIndicator.alpha = 1
         }
-        
-        print("image")
-        print(images)
-        
         //-- Log firebase analytics
         Analytics.logEvent("DiaryVisited", parameters: nil)
+        
+        print(dates)
+        print(id)
+        print("Dairy \(dairyList)")
+        print("Protein \(proteinList)")
         
     }
     
@@ -86,7 +108,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return id.count
+        return recordCount
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
@@ -105,7 +127,7 @@ class DiaryTableViewController: UITableViewController {
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
             // Get the corresponding record that user intend to delete
-            request.predicate = NSPredicate(format: "id = %@", "\(id[indexPath.row])")
+            request.predicate = NSPredicate(format: "id = %@", "\(id[indexPath.row + startShowing])")
             request.returnsObjectsAsFaults = false
             do
             {
@@ -114,6 +136,7 @@ class DiaryTableViewController: UITableViewController {
                 {
                     print("Fetch Result")
                     print(result)
+                    
                     for name in result as! [NSManagedObject]
                     {
                         // Access to coredata and delete them
@@ -137,11 +160,11 @@ class DiaryTableViewController: UITableViewController {
                 alertMessage(title: "Error", message: "An Error has occured, please try again later.")
             }
             
-            if fileName[indexPath.row] != ""
+            if fileName[indexPath.row + startShowing] != ""
             {
                 // Access to file and delete them
                 let fileManager = FileManager.default
-                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row])
+                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row + startShowing])
                 if fileManager.fileExists(atPath: imagePath)
                 {
                     do
@@ -156,13 +179,25 @@ class DiaryTableViewController: UITableViewController {
                     print("Panic! No Image!")
                 }
             }
+ 
             // Delete from the table
-            images.remove(at: indexPath.row)
-            notes.remove(at: indexPath.row)
-            fileName.remove(at: indexPath.row)
-            dates.remove(at: indexPath.row)
-            id.remove(at: indexPath.row)
+            images.remove(at: indexPath.row + startShowing)
+            notes.remove(at: indexPath.row + startShowing)
+            fileName.remove(at: indexPath.row + startShowing)
+            dates.remove(at: indexPath.row + startShowing)
+            id.remove(at: indexPath.row + startShowing)
+            dairyList.remove(at: indexPath.row + startShowing)
+            vegetableList.remove(at: indexPath.row + startShowing)
+            proteinList.remove(at: indexPath.row + startShowing)
+            fruitList.remove(at: indexPath.row + startShowing)
+            grainList.remove(at: indexPath.row + startShowing)
+            recordCount -= 1
+            print(dates)
+            print(id)
+            print("Dairy \(dairyList)")
+            print("Protein \(proteinList)")
             tableView.reloadData()
+ 
         }
     }
     
@@ -172,125 +207,90 @@ class DiaryTableViewController: UITableViewController {
         {
             // Manipulating Data, showing correct information
             let format = DateFormatter()
-            format.dateFormat = "MM/dd"
-            let date = format.string(from: dates[indexPath.row])
+            format.dateFormat = "yyyy-MM-dd"
+            var date = format.string(from: dates[indexPath.row + startShowing])
             format.dateFormat = "hh:mm"
-            let time = format.string(from: dates[indexPath.row])
-            //            let str = self.fileName[indexPath.row]
-            //            var type = str.suffix(5)
-            //            type = type.prefix(1)
-            //            var sub = str.suffix(20)
-            //            var month = sub.prefix(2)
-            //            sub = str.suffix(17)
-            //            var day = sub.prefix(2)
-            //            sub = str.suffix(14)
-            //            var hour = sub.prefix(2)
-            //            sub = str.suffix(11)
-            //            var minute = sub.prefix(2)
-            //            let date = "\(month)/\(day)"
-            //            let time = "\(hour):\(minute)"
+            let time = format.string(from: dates[indexPath.row + startShowing])
             
-            // Displaying informations
-            cell.foodImage.image = images[indexPath.row]
-            cell.date.text = date
-            cell.time.text = time
-            //            if type == "1"
-            //            {
-            //                cell.time.alpha = 0
-            //            }else
-            //            {
-            //                cell.time.text = time
-            //            }
-            //   cell.time.text = time
-            cell.note.text = notes[indexPath.row]
-            
-            // Show nutrition icons and counts
-            
-            //            cell.vegetableField.alpha = 1
-            //            cell.vegetableLabel.alpha = 1
-            //            cell.vegetableLabel.text = String(vegetableList[indexPath.row])
-            //            cell.proteinField.alpha = 1
-            //            cell.proteinLabel.alpha = 1
-            //            cell.proteinLabel.text =
-            //                String(proteinList[indexPath.row])
-            //            cell.grainField.alpha = 1
-            //            cell.grainLabel.alpha = 1
-            //            cell.grainLabel.text = String(grainList[indexPath.row])
-            //            cell.fruitField.alpha = 1
-            //            cell.fruitLabel.alpha = 1
-            //            cell.fruitLabel.text = String(fruitList[indexPath.row])
-            //            cell.dairyLabel.alpha = 1
-            //            cell.dairyField.alpha = 1
-            //            cell.dairyLabel.text = String(dairyList[indexPath.row])
-            
-            cell.vegetableLabel.text = String(vegetableList[indexPath.row])
-            cell.proteinLabel.text = String(proteinList[indexPath.row])
-            cell.grainLabel.text = String(grainList[indexPath.row])
-            cell.fruitLabel.text = String(fruitList[indexPath.row])
-            cell.dairyLabel.text = String(dairyList[indexPath.row])
-            
-            if vegetableList[indexPath.row] > 0
+            if date == showRecord || showRecord == "All"
             {
-                cell.vegetableField.alpha = 1
-                cell.vegetableLabel.alpha = 1
-                cell.vegetableLabel.text = String(vegetableList[indexPath.row])
-            }else
-            {
-                cell.vegetableField.alpha = 0.25
-                cell.vegetableLabel.alpha = 0.25
+                format.dateFormat = "MM/dd"
+                date = format.string(from: dates[indexPath.row + startShowing])
+                // Displaying informations
+                cell.foodImage.image = images[indexPath.row + startShowing]
+                cell.date.text = date
+                cell.time.text = time
+                cell.note.text = notes[indexPath.row + startShowing]
+                
+                // Show nutrition icons and counts
+                cell.vegetableLabel.text = String(vegetableList[indexPath.row + startShowing])
+                cell.proteinLabel.text = String(proteinList[indexPath.row + startShowing])
+                cell.grainLabel.text = String(grainList[indexPath.row + startShowing])
+                cell.fruitLabel.text = String(fruitList[indexPath.row + startShowing])
+                cell.dairyLabel.text = String(dairyList[indexPath.row + startShowing])
+                
+                if vegetableList[indexPath.row + startShowing] > 0
+                {
+                    cell.vegetableField.alpha = 1
+                    cell.vegetableLabel.alpha = 1
+                    cell.vegetableLabel.text = String(vegetableList[indexPath.row + startShowing])
+                }else
+                {
+                    cell.vegetableField.alpha = 0.25
+                    cell.vegetableLabel.alpha = 0.25
+                }
+                
+                if proteinList[indexPath.row + startShowing] > 0
+                {
+                    cell.proteinField.alpha = 1
+                    cell.proteinLabel.alpha = 1
+                    cell.proteinLabel.text = String(proteinList[indexPath.row + startShowing])
+                }else
+                {
+                    cell.proteinField.alpha = 0.25
+                    cell.proteinLabel.alpha = 0.25
+                }
+                
+                if grainList[indexPath.row + startShowing] > 0
+                {
+                    cell.grainField.alpha = 1
+                    cell.grainLabel.alpha = 1
+                    cell.grainLabel.text = String(grainList[indexPath.row + startShowing])
+                }else
+                {
+                    cell.grainField.alpha = 0.25
+                    cell.grainLabel.alpha = 0.25
+                }
+                
+                if fruitList[indexPath.row + startShowing] > 0
+                {
+                    cell.fruitField.alpha = 1
+                    cell.fruitLabel.alpha = 1
+                    cell.fruitLabel.text = String(fruitList[indexPath.row + startShowing])
+                }else
+                {
+                    cell.fruitField.alpha = 0.25
+                    cell.fruitLabel.alpha = 0.25
+                }
+                
+                if dairyList[indexPath.row + startShowing] != 0
+                {
+                    cell.dairyLabel.alpha = 1
+                    cell.dairyField.alpha = 1
+                    cell.dairyLabel.text = String(dairyList[indexPath.row + startShowing])
+                }else
+                {
+                    cell.dairyLabel.alpha = 0.25
+                    cell.dairyField.alpha = 0.25
+                }
+                
+                // Add a ending line
+                
+                if indexPath.row == id.count - 1
+                {
+                    cell.separationLine.image = UIImage(named: "Timeline_endLine.png")
+                }
             }
-            
-            if proteinList[indexPath.row] > 0
-            {
-                cell.proteinField.alpha = 1
-                cell.proteinLabel.alpha = 1
-                cell.proteinLabel.text = String(proteinList[indexPath.row])
-            }else
-            {
-                cell.proteinField.alpha = 0.25
-                cell.proteinLabel.alpha = 0.25
-            }
-            
-            if grainList[indexPath.row] > 0
-            {
-                cell.grainField.alpha = 1
-                cell.grainLabel.alpha = 1
-                cell.grainLabel.text = String(grainList[indexPath.row])
-            }else
-            {
-                cell.grainField.alpha = 0.25
-                cell.grainLabel.alpha = 0.25
-            }
-            
-            if fruitList[indexPath.row] > 0
-            {
-                cell.fruitField.alpha = 1
-                cell.fruitLabel.alpha = 1
-                cell.fruitLabel.text = String(fruitList[indexPath.row])
-            }else
-            {
-                cell.fruitField.alpha = 0.25
-                cell.fruitLabel.alpha = 0.25
-            }
-            
-            if dairyList[indexPath.row] != 0
-            {
-                cell.dairyLabel.alpha = 1
-                cell.dairyField.alpha = 1
-                cell.dairyLabel.text = String(dairyList[indexPath.row])
-            }else
-            {
-                cell.dairyLabel.alpha = 0.25
-                cell.dairyField.alpha = 0.25
-            }
-            
-            // Add a ending line
-            
-            if indexPath.row == id.count - 1
-            {
-                cell.separationLine.image = UIImage(named: "Timeline_endLine.png")
-            }
-            
             return cell
         }else
         {
@@ -298,6 +298,7 @@ class DiaryTableViewController: UITableViewController {
         }
     }
     
+
     func alertMessage(title: String, message: String)
     {
         let mes = AlertMessage()
