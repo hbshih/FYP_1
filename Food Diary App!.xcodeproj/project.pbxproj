@@ -73,6 +73,8 @@
 		B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */; };
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
+		B5F5BEC42072647F00CA0770 /* EditPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */; };
+		B5F5BEC52072647F00CA0770 /* EditPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */; };
 		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
+		B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPopUpViewController.xib; sourceTree = "<group>"; };
+		B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPopUpViewController.swift; sourceTree = "<group>"; };
 		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,6 +359,8 @@
 				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
 				B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */,
 				B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */,
+				B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */,
+				B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
 				B5D187062065516400F884E8 /* popSound.mp3 in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
+				B5F5BEC42072647F00CA0770 /* EditPopUpViewController.xib in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
@@ -801,6 +808,7 @@
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
 				B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */,
 				B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */,
+				B5F5BEC52072647F00CA0770 /* EditPopUpViewController.swift in Sources */,
 				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
 				B574322920616C9300C998D0 /* CustomizedPlanSettingViewController.swift in Sources */,
 				B58066FF201E763A00F8FB89 /* validate.swift in Sources */,

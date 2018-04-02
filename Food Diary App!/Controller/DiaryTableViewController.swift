@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import FirebaseAnalytics
+import PopupDialog
 
 class DiaryTableViewController: UITableViewController {
     
@@ -116,9 +117,108 @@ class DiaryTableViewController: UITableViewController {
         return true 
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // 生成刪除按鈕
+        
+        
+        let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler: {(action, indexPath) -> Void in
+            print("Delete!")
+        })
+        
+        deleteAction.backgroundColor = UIColor.red
+        
+        // 生成分享按鈕
+        let shareAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Edit", handler: {(action, indexPath) -> Void in
+            
+            print("Edit!")
+            
+            let n_Array = [self.grainList[indexPath.row + self.startShowing],self.vegetableList[indexPath.row + self.startShowing],
+                           self.proteinList[indexPath.row + self.startShowing],self.fruitList[indexPath.row + self.startShowing],
+                           self.dairyList[indexPath.row + self.startShowing]]
+            let note = self.notes[indexPath.row + self.startShowing]
+            
+
+            var image: UIImage?
+            image = self.images[indexPath.row + self.startShowing]
+            
+            self.showeditPopup(n_Array: n_Array, note: note, image: image!,whichRecord: indexPath.row + self.startShowing)
+            
+        })
+        
+        shareAction.backgroundColor = UIColor.orange
+        return [deleteAction, shareAction]
+    }
+    
+    func showeditPopup(n_Array:[Double],note: String,image: UIImage,whichRecord: Int)
+    {
+        // Create a custom view controller
+        let editVC = EditPopUpViewController(nibName: "EditPopUpViewController", bundle: nil)
+        
+        editVC.n_Values = n_Array
+        editVC.notes = note
+        
+        if image == #imageLiteral(resourceName: "zh_NoImage") || image == #imageLiteral(resourceName: "image_None")
+        {
+            editVC.hasImage = false
+        }else
+        {
+            editVC.hasImage = true
+            editVC.image = image
+        }
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: editVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+            // self.label.text = "You canceled the rating dialog"
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "OK", height: 60)
+        {
+            if editVC.recordChanged
+            {
+                self.updateRecord(newNutri: editVC.n_Values, newNote: editVC.notes, whoToUpdate: whichRecord)
+                print("Record has changed")
+            }else
+            {
+                print("Nothing is changed")
+            }
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func updateRecord(newNutri:[Double], newNote: String, whoToUpdate: Int)
+    {
+        // Accesing Core Data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+        // Get the corresponding record that user intend to delete
+        request.predicate = NSPredicate(format: "id = %@", "\(id[whoToUpdate])")
+        request.returnsObjectsAsFaults = false
+        do
+        {
+            let result = try context.fetch(request)
+            if result.count > 0
+            {
+                print("Update Fetch")
+                print(result)
+            }
+        }catch
+        {
+            alertMessage(title: "Error", message: "An Error has occured, please try again later.")
+        }
+    }
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        
         // Delete Button
         if editingStyle == .delete
         {
@@ -197,9 +297,8 @@ class DiaryTableViewController: UITableViewController {
             print("Dairy \(dairyList)")
             print("Protein \(proteinList)")
             tableView.reloadData()
- 
         }
-    }
+    }*/
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
