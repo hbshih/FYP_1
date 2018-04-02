@@ -13,6 +13,7 @@ import PopupDialog
 
 class DiaryTableViewController: UITableViewController {
     
+    @IBOutlet var tableViewController: UITableView!
     // General Variables
     private var images: [UIImage] = [] // Storing Images
     private var fileName: [String] = [] // Storing the names of the images to get images
@@ -91,15 +92,7 @@ class DiaryTableViewController: UITableViewController {
         }else
         {
             noDataIndicator.alpha = 1
-        }
-        //-- Log firebase analytics
-        Analytics.logEvent("DiaryVisited", parameters: nil)
-        
-        print(dates)
-        print(id)
-        print("Dairy \(dairyList)")
-        print("Protein \(proteinList)")
-        
+        }        
     }
     
     override func didReceiveMemoryWarning()
@@ -179,7 +172,14 @@ class DiaryTableViewController: UITableViewController {
         {
             if editVC.recordChanged
             {
-                self.updateRecord(newNutri: editVC.n_Values, newNote: editVC.notes, whoToUpdate: whichRecord)
+                if editVC.hasNewImage
+                {
+                    self.updateRecord(newNutri: editVC.n_Values, newNote: editVC.notes,hasNewImage:editVC.hasNewImage, newImage: editVC.newImage!, whoToUpdate: whichRecord)
+                }else
+                {
+                    self.updateRecord(newNutri: editVC.n_Values, newNote: editVC.notes,hasNewImage:editVC.hasNewImage, newImage: #imageLiteral(resourceName: "image_None"), whoToUpdate: whichRecord)
+                }
+               
                 print("Record has changed")
             }else
             {
@@ -194,7 +194,7 @@ class DiaryTableViewController: UITableViewController {
         present(popup, animated: true, completion: nil)
     }
     
-    func updateRecord(newNutri:[Double], newNote: String, whoToUpdate: Int)
+    func updateRecord(newNutri:[Double], newNote: String,hasNewImage: Bool, newImage: UIImage, whoToUpdate: Int)
     {
         // Accesing Core Data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -206,10 +206,55 @@ class DiaryTableViewController: UITableViewController {
         do
         {
             let result = try context.fetch(request)
-            if result.count > 0
+            if result.count == 1
             {
-                print("Update Fetch")
-                print(result)
+                let update = result[0] as! NSManagedObject
+                
+                update.setValue(newNote, forKey: "note")
+                update.setValue(newNutri[0], forKey: "n_Grain")
+                update.setValue(newNutri[1], forKey: "n_Vegetable")
+                update.setValue(newNutri[2], forKey: "n_Protein")
+                update.setValue(newNutri[3], forKey: "n_Fruit")
+                update.setValue(newNutri[4], forKey: "n_Dairy")
+                
+                notes.insert(newNote, at: whoToUpdate)
+                grainList.insert(newNutri[0], at: whoToUpdate)
+                vegetableList.insert(newNutri[1], at: whoToUpdate)
+                proteinList.insert(newNutri[2], at: whoToUpdate)
+                fruitList.insert(newNutri[3], at: whoToUpdate)
+                dairyList.insert(newNutri[4], at: whoToUpdate)
+                
+                if hasNewImage
+                {
+                    
+                    //Create name
+                    let format = DateFormatter()
+                    format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+                    let FileName = "\(format.string(from: dates[whoToUpdate])).jpg"
+                    //create an instance of the FileManager
+                    let fileManager = FileManager.default
+                    //get the image path
+                    let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(FileName)
+                    //get the JPG data for this image
+                    let data = UIImageJPEGRepresentation(newImage, 0.5)
+                    //store it in the document directory
+                    fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+                    update.setValue(FileName, forKey: "imageName")
+                    
+                    images.insert(newImage, at: whoToUpdate)
+                    
+                    print("Image Update Completed")
+                    print(imagePath)
+                }
+                do
+                {
+                    try context.save()
+                    tableViewController.reloadData()
+                    print("All Saved")
+                }catch
+                {
+                    print(error)
+                }
             }
         }catch
         {

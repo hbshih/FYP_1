@@ -29,6 +29,8 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
     var notes = ""
     var hasImage = false
     var image: UIImage?
+    var hasNewImage = false
+    var newImage: UIImage?
     
     var recordChanged = false
     
@@ -108,6 +110,8 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
         }
         n_Values = [grainStepper.value,vegetableStepper.value,proteinStepper.value,fruitStepper.value,dairyStepper.value]
         
+        
+        
     
     }
     
@@ -129,6 +133,8 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
             self.foodImage.image = img
             self.cameraButton.isHidden = true
             self.recordChanged = true
+            self.hasNewImage = true
+            self.newImage = img
             picker.dismiss(animated: true, completion: nil)
         }
         present(picker, animated: true, completion: nil)

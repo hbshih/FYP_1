@@ -63,6 +63,8 @@ class homepageViewController: UIViewController {
     
     private var Standard = [0.0,0.0,0.0,0.0,0.0]
     
+    private var n_List = ["grainList":[0.0],"vegetableList":[0.0],"proteinList":[0.0],"dairyList":[0.0],"fruitList":[0.0]]
+    
     // Access Data
     private var dataHandler = CoreDataHandler()
     let defaults = UserDefaultsHandler()
@@ -235,6 +237,7 @@ class homepageViewController: UIViewController {
         // Present data and slider only when have data in database
         timestamp = dataHandler.getTimestamp()
         recordCount = timestamp.count
+        let recent5nList = dataHandler.get5nList()
         let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
         //Existing User
         if recordCount > 0
@@ -261,15 +264,17 @@ class homepageViewController: UIViewController {
                 })
             }
             
+            
+            
             // If some new data is recorded or the user has change their plan
-            if recordCount != recentCount || Standard != planStandard!
+            if recordCount != recentCount || Standard != planStandard! || n_List["grainList"]! != recent5nList["grainList"]! || n_List["vegetableList"]! != recent5nList["vegetableList"]! || n_List["proteinList"]! != recent5nList["proteinList"]! || n_List["dairyList"]! != recent5nList["dairyList"]! || n_List["fruitList"]! != recent5nList["fruitList"]! 
             {
                 //Update standard
                 Standard = planStandard!
                 recentCount = recordCount
                 // update value via healthpercentagecalculator
-                let nutritionDic = dataHandler.get5nList()
-                var healthData = HealthPercentageCalculator(nutritionDic: nutritionDic, timestamp: timestamp)
+                n_List = recent5nList
+                var healthData = HealthPercentageCalculator(nutritionDic: n_List, timestamp: timestamp)
                 
                 // update percentage
                 updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
