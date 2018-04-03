@@ -11,6 +11,7 @@
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50322DD20267F4900584FA0 /* SettingTableViewController.swift */; };
+		B5087DFA2072FF1200964362 /* localNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5087DF92072FF1200964362 /* localNotification.swift */; };
 		B52DB05620630557001C4003 /* messageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DB05520630557001C4003 /* messageGenerator.swift */; };
 		B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52FD02A2031BF6700C41331 /* nougatine.ttf */; };
 		B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */; };
@@ -119,6 +120,7 @@
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50322DD20267F4900584FA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		B5087DF92072FF1200964362 /* localNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localNotification.swift; sourceTree = "<group>"; };
 		B52DB05520630557001C4003 /* messageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageGenerator.swift; sourceTree = "<group>"; };
 		B52FD02A2031BF6700C41331 /* nougatine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nougatine.ttf; sourceTree = "<group>"; };
 		B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				B5743220206082A200C998D0 /* personalisePlanCalculator.swift */,
 				B5B56930206176ED003158F8 /* calorieDeterminer.swift */,
 				B52DB05520630557001C4003 /* messageGenerator.swift */,
+				B5087DF92072FF1200964362 /* localNotification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */,
 				B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,
+				B5087DFA2072FF1200964362 /* localNotification.swift in Sources */,
 				B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */,
 				B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */,
 				B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */,

@@ -15,6 +15,7 @@ import Instructions
 import FanMenu
 import Macaw
 import AVFoundation
+import UserNotifications
 
 class homepageViewController: UIViewController {
     
@@ -151,6 +152,11 @@ class homepageViewController: UIViewController {
         }
     }
     
+    @IBAction func albumTapped(_ sender: Any)
+    {
+        localNotification(title: "Test", message: "Test").push()
+    }
+    
     @objc func segueToCamera()
     {
         Analytics.logEvent("Add_WithCam", parameters: nil)
@@ -267,7 +273,7 @@ class homepageViewController: UIViewController {
             
             
             // If some new data is recorded or the user has change their plan
-            if recordCount != recentCount || Standard != planStandard! || n_List["grainList"]! != recent5nList["grainList"]! || n_List["vegetableList"]! != recent5nList["vegetableList"]! || n_List["proteinList"]! != recent5nList["proteinList"]! || n_List["dairyList"]! != recent5nList["dairyList"]! || n_List["fruitList"]! != recent5nList["fruitList"]! 
+            if recordCount != recentCount || Standard != planStandard! || n_List["grainList"]! != recent5nList["grainList"]! || n_List["vegetableList"]! != recent5nList["vegetableList"]! || n_List["proteinList"]! != recent5nList["proteinList"]! || n_List["dairyList"]! != recent5nList["dairyList"]! || n_List["fruitList"]! != recent5nList["fruitList"]!
             {
                 //Update standard
                 Standard = planStandard!

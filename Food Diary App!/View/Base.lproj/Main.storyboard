@@ -1748,6 +1748,11 @@
                                                 <segue destination="E19-NE-F9i" kind="show" id="o6Y-XO-XE5"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="sAh-Mr-P0d">
+                                            <connections>
+                                                <action selector="albumTapped:" destination="kmQ-HH-xb9" id="wbU-6S-6JG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -12959,9 +12964,8 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="34h-gc-Teg"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="KNz-AH-BdB"/>
-        <segue reference="GHi-nD-NU8"/>
+        <segue reference="77E-go-f2t"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -103,6 +103,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         notes = dataHandler.getNote()
         id = dataHandler.getId()
         
+        
         if id.count > 0 && id.count != loadListcount
         {
             let nutritionDic = dataHandler.get5nList()
@@ -154,6 +155,21 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             FruitLabel.text = "\(todayCount[2]) / \(Standard[3]) " + "Fruit"
             DairyLabel.text = "\(todayCount[3]) / \(Standard[4]) " + "Dairy"
             ProteinLabel.text = "\(todayCount[4]) / \(Standard[2]) " + "Protein"
+            
+            if todayPercentage < 20.0
+            {
+                emotionFace.image = #imageLiteral(resourceName: "Face_Red")
+            }else if todayPercentage >= 20.0 && todayPercentage < 60.0
+            {
+                emotionFace.image = #imageLiteral(resourceName: "Face_Yellow")
+            }else if todayPercentage >= 60.0 && todayPercentage < 80.0
+            {
+                emotionFace.image = #imageLiteral(resourceName: "Face_Green")
+            }else
+            {
+                emotionFace.image = #imageLiteral(resourceName: "Face_Orange")
+            }
+            
         }else
         {
             balanceLabel.text = "No Entry Yet!"
@@ -162,6 +178,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             FruitLabel.text = "0 / \(Standard[3]) " + "Fruit"
             DairyLabel.text = "0 / \(Standard[4]) " + "Dairy"
             ProteinLabel.text = "0 / \(Standard[2]) " + "Protein"
+            emotionFace.image = #imageLiteral(resourceName: "Face_Sleep")
         }
     }
     @IBAction func todayTapped(_ sender: Any)

@@ -115,7 +115,79 @@ class DiaryTableViewController: UITableViewController {
         
         
         let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler: {(action, indexPath) -> Void in
-            print("Delete!")
+            
+            // Accesing Core Data
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+            // Get the corresponding record that user intend to delete
+            request.predicate = NSPredicate(format: "id = %@", "\(self.id[indexPath.row + self.startShowing])")
+            request.returnsObjectsAsFaults = false
+            do
+            {
+                let result = try context.fetch(request)
+                if result.count > 0
+                {
+                    print("Fetch Result")
+                    print(result)
+                    
+                    for name in result as! [NSManagedObject]
+                    {
+                        // Access to coredata and delete them
+                        if let id = name.value(forKey: "id") as? String
+                        {
+                            print(id)
+                            print("\(id) deleted complete")
+                            context.delete(name)
+                            do
+                            {
+                                try context.save()
+                            } catch  {
+                                self.alertMessage(title: "Delete Failed", message: "An Error has occured, please try again later.")
+                                print("Delete Failed")
+                            }
+                        }
+                    }
+                }
+            }catch
+            {
+                self.alertMessage(title: "Error", message: "An Error has occured, please try again later.")
+            }
+            
+            if self.fileName[indexPath.row + self.startShowing] != ""
+            {
+                // Access to file and delete them
+                let fileManager = FileManager.default
+                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(self.fileName[indexPath.row + self.startShowing])
+                if fileManager.fileExists(atPath: imagePath)
+                {
+                    do
+                    {
+                        try fileManager.removeItem(atPath: imagePath)
+                    }catch
+                    {
+                        print("error on filemanager remove")
+                    }
+                    print("image deleted from \(imagePath)")
+                }else{
+                    print("Panic! No Image!")
+                }
+            }
+            
+            // Delete from the table
+            self.images.remove(at: indexPath.row + self.startShowing)
+            self.notes.remove(at: indexPath.row + self.startShowing)
+            self.fileName.remove(at: indexPath.row + self.startShowing)
+            self.dates.remove(at: indexPath.row + self.startShowing)
+            self.id.remove(at: indexPath.row + self.startShowing)
+            self.dairyList.remove(at: indexPath.row + self.startShowing)
+            self.vegetableList.remove(at: indexPath.row + self.startShowing)
+            self.proteinList.remove(at: indexPath.row + self.startShowing)
+            self.fruitList.remove(at: indexPath.row + self.startShowing)
+            self.grainList.remove(at: indexPath.row + self.startShowing)
+            self.recordCount -= 1
+            tableView.reloadData()
+            
         })
         
         deleteAction.backgroundColor = UIColor.red
