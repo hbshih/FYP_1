@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        UNUserNotificationCenter.current().delegate = self
+        
         //Firebases
         //   FirebaseApp.configure()
         if #available(iOS 8.0, *)
@@ -34,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             application.registerForRemoteNotifications(matching: types)
         }
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
             
             if error != nil {
                 print("Authorization Unsuccessfull")
@@ -58,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //--facebook
         //FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+
         return true
     }
     

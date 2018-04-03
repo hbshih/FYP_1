@@ -19,7 +19,6 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     @IBOutlet weak var DairyLabel: UILabel!
     @IBOutlet weak var emotionFace: UIImageView!
     @IBOutlet weak var recentTableView: UITableView!
-    private var dataHandler = CoreDataHandler()
     private let userDefault = UserDefaultsHandler()
     private var nutriCalculation: HealthPercentageCalculator?
     private let showDayDetail = ""
@@ -54,6 +53,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         super.viewDidLoad()
         recentTableView.delegate = self
         recentTableView.dataSource = self
+        var dataHandler = CoreDataHandler()
         dates = dataHandler.getTimestamp()
         notes = dataHandler.getNote()
         id = dataHandler.getId()
@@ -99,47 +99,20 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     
     override func viewDidAppear(_ animated: Bool)
     {
-        dates = dataHandler.getTimestamp()
-        notes = dataHandler.getNote()
-        id = dataHandler.getId()
-        
-        
-        if id.count > 0 && id.count != loadListcount
+        var dataHandler = CoreDataHandler()
+        let newCount = dataHandler.getId().count
+        if loadListcount != newCount
         {
-            let nutritionDic = dataHandler.get5nList()
-            nutriCalculation = HealthPercentageCalculator(nutritionDic: nutritionDic, timestamp: dataHandler.getTimestamp())
-            let dayNutritionList = nutriCalculation?.getEachDayCount()
-            
-            dairyList = dayNutritionList!["Dairy"]!
-            vegetableList = dayNutritionList!["Vegetable"]!
-            proteinList = dayNutritionList!["Protein"]!
-            fruitList = dayNutritionList!["Fruit"]!
-            grainList = dayNutritionList!["Grain"]!
-            eachDayPercentage = nutriCalculation!.getDayBalancePercentage()
-            dateSaved = (nutriCalculation?.getDateOfRecord())!
-            
-            Standard = userDefault.getPlanStandard() as! [Double]
-            
-            //-- to display the most up to date items first
-            dates = dates.reversed()
-            dateSaved = dateSaved.reversed()
-            notes = notes.reversed()
-            id = id.reversed()
-            fruitList = fruitList.reversed()
-            dairyList = dairyList.reversed()
-            vegetableList = vegetableList.reversed()
-            proteinList = proteinList.reversed()
-            grainList = grainList.reversed()
-            eachDayPercentage = eachDayPercentage.reversed()
-            
-            format.dateFormat = "yyyy-MM-dd"
-            if format.string(from: dates[0]) == format.string(from: Date())
+            dates = dataHandler.getTimestamp()
+            if format.string(from: dates[0]) != format.string(from: Date())
             {
-                todayHasRecord = 1
+                todayHasRecord = 0
             }
-            // Main Function
             todayDiary()
-            recentTableView.reloadData()
+            loadListcount = newCount
+        }else
+        {
+            print("Nothing changed")
         }
     }
     

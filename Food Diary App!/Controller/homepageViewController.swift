@@ -150,6 +150,22 @@ class homepageViewController: UIViewController {
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
+            
+            if error != nil {
+                print("Authorization Unsuccessfull")
+            }else {
+                print("Authorization Successfull")
+            }
+        }
+        
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                // Notifications not allowed
+            }
+        }
+        
+        
     }
     
     @IBAction func albumTapped(_ sender: Any)
@@ -292,6 +308,7 @@ class homepageViewController: UIViewController {
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
                 
                 getInteractionMessages()
+                notifyStatus(todayCount: healthData.getTodayEachElementData(), Standard: Standard)
                 
                 // Present the slider
                 showCircularSliderData()
@@ -386,6 +403,52 @@ class homepageViewController: UIViewController {
         
         centerInformationArea.text =
             String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
+    }
+    
+    private func notifyStatus(todayCount:[Double],Standard:[Double])
+    {
+        var overConsume = ""
+        var lackConsume = ""
+        var rightPortion = ""
+        
+        if todayCount[0] >= Standard[0] && todayCount[0] <= Standard[0] + 1.0
+        {
+            rightPortion = "grain"
+        }else if todayCount[1] >= Standard[1] && todayCount[1] <= Standard[1] + 1.0
+        {
+            rightPortion = "vegetable"
+        }else if todayCount[4] >= Standard[2] && todayCount[4] <= Standard[2] + 1.0
+        {
+            rightPortion = "protein"
+        }else if todayCount[2] >= Standard[3] && todayCount[2] <= Standard[3] + 1.0
+        {
+            rightPortion = "fruit"
+        }else if todayCount[3] >= Standard[4] && todayCount[3] <= Standard[4] + 1.0
+        {
+            rightPortion = "dairy"
+        }
+        
+        if todayCount[0] > Standard[0] + 1.0
+        {
+            overConsume = "grain"
+        }else if todayCount[1] > Standard[1] + 1.0
+        {
+            overConsume = "vegetable"
+        }else if todayCount[4] > Standard[2] + 1.0
+        {
+            overConsume = "protein"
+        }else if todayCount[2] > Standard[3] + 1.0
+        {
+            overConsume = "fruit"
+        }else if todayCount[3] > Standard[4] + 1.0
+        {
+            overConsume = "dairy"
+        }
+        
+        let overConsumeMessage =
+        ["You have hit your target! Well done on eating \(rightPortion)s today!",]
+        
+        localNotification(title: "Wow", message: overConsumeMessage[0]).push()
     }
     
     func showCircularSliderData()
