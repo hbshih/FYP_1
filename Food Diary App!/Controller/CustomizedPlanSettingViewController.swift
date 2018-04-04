@@ -16,6 +16,7 @@ class CustomizedPlanSettingViewController: FormViewController {
     var weight: Int = 0
     var height: Int = 0
     var gender: Int = 0
+    var activityLevel: String = ""
     @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
@@ -27,12 +28,14 @@ class CustomizedPlanSettingViewController: FormViewController {
             doneButton.setImage(#imageLiteral(resourceName: "zh_Button_Donne"), for: .normal)
         }
         
-        if let personaldata = UserDefaultsHandler().getPersonalData() as? [String: Int]
+        if let personaldata = UserDefaultsHandler().getPersonalData() as? [String: Any]
         {
-            gender = personaldata["Gender"]!
-            weight = personaldata["Weight"]!
-            height = personaldata["Height"]!
-            age = personaldata["Age"]!
+            gender = personaldata["Gender"]! as! Int
+            weight = personaldata["Weight"]! as! Int
+            height = personaldata["Height"]! as! Int
+            age = personaldata["Age"]! as! Int
+            activityLevel = personaldata["ActivityLevel"]! as! String
+            print("nutri")
             print(personaldata)
         }else
         {
@@ -85,13 +88,35 @@ class CustomizedPlanSettingViewController: FormViewController {
                     title: "Not set".localized(),
                     displayTitle: NSAttributedString(string: "\(weight) kg"),
                     value: nil)]
-                    + (30...150).map { InlinePickerItem(title: "\($0) kg", displayTitle: NSAttributedString(string: "\($0)"), value: Int($0)) }
+                    + (30...150).map { InlinePickerItem(title: "\($0) kg", displayTitle: NSAttributedString(string: "\($0) kg"), value: Int($0)) }
             }.onValueChanged { item in
                 if let weight = item.value
                 {
                     self.weight = weight
                 }
         }
+        
+        let activityOptions = ["Sedentary (little or no exercise)",
+                               "Lightly active (1-3 times/week)",
+                               "Moderately active (3-5 times/week)",
+                               "Very active (6-7 times/week)",
+                               "Extra active twice/day)"]
+        
+        let activity = InlinePickerRowFormer<FormInlinePickerCell, String>() {
+            $0.titleLabel.text = "Activity"
+            }.configure {
+                let option = activityOptions
+                $0.pickerItems = [InlinePickerItem(
+                    title: "Not set".localized(),
+                    displayTitle: NSAttributedString(string: activityLevel),
+                    value: nil)] + option.map {
+                    InlinePickerItem(title: $0, displayTitle: NSAttributedString(string: $0), value: $0)
+                }
+            }.onValueChanged { item in
+                self.activityLevel = item.title
+        }
+        
+        
         let createHeader: ((String) -> ViewFormer) = { text in
             return LabelViewFormer<FormLabelHeaderView>()
                 .configure {
@@ -100,14 +125,14 @@ class CustomizedPlanSettingViewController: FormViewController {
             }
         }
         
-        let section = SectionFormer(rowFormer: sexSegmented, agePickerRow,heightPickerRow,weightPickerRow)
+        let section = SectionFormer(rowFormer: sexSegmented, agePickerRow,heightPickerRow,weightPickerRow,activity)
             .set(headerViewFormer: createHeader("Personal Information for plan setting".localized()))
         former.append(sectionFormer: section)
     }
     
     override func viewWillDisappear(_ animated: Bool)
     {
-        if(age == 0 || weight == 0 || height == 0)
+        if(age == 0 || weight == 0 || height == 0 || activityLevel == "Not set")
         {
             SCLAlertMessage(title: "One of your information might be wrong".localized(), message: "Please go back to the page to check your information again. Your information is not recorded".localized()).showMessage()
         }
@@ -125,11 +150,12 @@ class CustomizedPlanSettingViewController: FormViewController {
         {
             g = "Male"
         }
-        let calorie = calorieDeterminer(sex: g, age: Double(age), weight: Double(weight), height: Double(height)).getCalculateCalorie()
+        let calorie = calorieDeterminer(sex: g, age: Double(age), weight: Double(weight), height: Double(height), activityLevel: activityLevel).getCalculateCalorie()
         let planCalculator = personalisePlanCalculator(calorie: calorie)
         let plan = planCalculator.getPlan()
-        UserDefaultsHandler().setPlanStandard(value: plan)
-        UserDefaultsHandler().setPersonalData(value: ["Gender": gender, "Age":age,"Weight":weight,"Height": height])
+        UserDefaultsHandler().setPlanStandard(value: plan)        
+        UserDefaultsHandler().setPersonalData(value: ["Gender": gender, "Age":age,"Weight":weight,"Height": height,"ActivityLevel": activityLevel])
+        
         if !fromOnboarding
         {
 //            SCLAlertMessage(title: "Plan Set", message: "According to your information, your plan will be taking \(plan[0]) portions of grain, \(plan[1]) portions of vegetable, \(plan[2]) portions of protein, \(plan[3]) portions of fruit, \(plan[4]) portions of dairy").showMessage()

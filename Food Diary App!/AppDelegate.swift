@@ -60,7 +60,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //--facebook
         //FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
+        
+        // get the time the app last launched
+        let lastLaunch = UserDefaults.standard.double(forKey: "lastLaunch")
+        let lastLaunchDate = Date(timeIntervalSince1970: lastLaunch)
+        // check to see if lastLaunchDate is today.
+        let lastLaunchIsToday = Calendar.current.isDateInToday(lastLaunchDate)
+        
+        if UserDefaultsHandler().getNotificationStatus()
+        {
+            if !lastLaunchIsToday
+            {
+                print("First launch Today")
+                // show a popup or whatever
+                
+                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
+                
+            }else
+            {
+                print("Launched Today")
+                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+                    print(request)
+                })
+            }
+        }
+        // update the last launch value
+        UserDefaults().set(Date().timeIntervalSince1970, forKey: "lastLaunch")
+        
         return true
     }
     
@@ -88,9 +115,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication)
+    {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        print("Go Background")
+        
+        if UserDefaultsHandler().getNotificationStatus()
+        {
+            var coreDataHandler = CoreDataHandler()
+            if coreDataHandler.getId().count > 5
+            {
+                var healthCalculator = HealthPercentageCalculator(nutritionDic: coreDataHandler.get5nList(), timestamp: coreDataHandler.getTimestamp())
+                let _ = healthCalculator.getLastSevenDaysEachElementPercentage()
+                let minConsumeElement = healthCalculator.getMinConsumeElement() as String
+                if minConsumeElement != ""
+                {
+                    // Have element that percentage is less than 20%
+                    
+                    // Schedule remind notification tmr noon
+                    localNotification_Scheduled.init().scheduleTomorrowHelpBalanceNotification(MinConsume: minConsumeElement)
+                }
+            }
+        }
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {

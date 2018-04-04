@@ -17,6 +17,7 @@
 		B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
+		B536D68720755F4400617A70 /* localNotification_Scheduled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536D68620755F4400617A70 /* localNotification_Scheduled.swift */; };
 		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
 		B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
@@ -128,6 +129,7 @@
 		B531847D203B7C40002085A9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
+		B536D68620755F4400617A70 /* localNotification_Scheduled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localNotification_Scheduled.swift; sourceTree = "<group>"; };
 		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
 		B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDataViewController.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				B5B56930206176ED003158F8 /* calorieDeterminer.swift */,
 				B52DB05520630557001C4003 /* messageGenerator.swift */,
 				B5087DF92072FF1200964362 /* localNotification.swift */,
+				B536D68620755F4400617A70 /* localNotification_Scheduled.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B56C2CB32070398500875E9E /* DayViewDairyTableViewCell.swift in Sources */,
 				B56C2CB12070380A00875E9E /* DayViewDiaryViewController.swift in Sources */,
+				B536D68720755F4400617A70 /* localNotification_Scheduled.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
 				B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */,
 				B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */,

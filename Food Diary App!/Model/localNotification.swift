@@ -8,6 +8,7 @@
 
 import Foundation
 import UserNotifications
+import AudioToolbox
 
 struct localNotification
 {
@@ -16,13 +17,12 @@ struct localNotification
     
     func push()
     {
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        AudioServicesPlaySystemSound(4095)
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = message
-        
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
-        
         UNUserNotificationCenter.current().add(request) { (error) in
             if error != nil {
                 print("Push failed")
@@ -31,8 +31,5 @@ struct localNotification
                 print("Push completed")
             }
         }
-    }
-    
-
-    
+    }    
 }

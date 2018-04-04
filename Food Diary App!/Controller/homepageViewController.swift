@@ -16,6 +16,7 @@ import FanMenu
 import Macaw
 import AVFoundation
 import UserNotifications
+import AudioToolbox
 
 class homepageViewController: UIViewController {
     
@@ -86,6 +87,9 @@ class homepageViewController: UIViewController {
         {
             coachversion = 1
             /*New User*/
+            
+            defaults.setNotificationStatus(flag: true)
+            
             self.coachMarksController.dataSource = self
             self.coachMarksController.start(on: self)
             self.coachMarksController.overlay.allowTap = true
@@ -150,20 +154,20 @@ class homepageViewController: UIViewController {
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
-            
-            if error != nil {
-                print("Authorization Unsuccessfull")
-            }else {
-                print("Authorization Successfull")
-            }
-        }
-        
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-            if settings.authorizationStatus != .authorized {
-                // Notifications not allowed
-            }
-        }
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
+//
+//            if error != nil {
+//                print("Authorization Unsuccessfull")
+//            }else {
+//                print("Authorization Successfull")
+//            }
+//        }
+//
+//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+//            if settings.authorizationStatus != .authorized {
+//                // Notifications not allowed
+//            }
+//        }
         
         
     }
@@ -260,7 +264,8 @@ class homepageViewController: UIViewController {
         timestamp = dataHandler.getTimestamp()
         recordCount = timestamp.count
         let recent5nList = dataHandler.get5nList()
-        let planStandard = UserDefaultsHandler().getPlanStandard() as? [Double]
+        var defaults = UserDefaultsHandler()
+        let planStandard = defaults.getPlanStandard() as? [Double]
         //Existing User
         if recordCount > 0
         {
@@ -308,8 +313,21 @@ class homepageViewController: UIViewController {
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
                 
                 getInteractionMessages()
-                notifyStatus(todayCount: healthData.getTodayEachElementData(), Standard: Standard)
                 
+                if defaults.getNotificationStatus()
+                {
+                    if let savedData = defaults.getSavedTodayEachElementData() as? [Double]
+                    {
+                        if savedData != healthData.getTodayEachElementData()
+                        {
+                            notifyStatus(todayCount: healthData.getTodayEachElementData(), Standard: Standard, percentage: healthData.getTodayPercentage())
+                            defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
+                        }
+                    }else
+                    {
+                        defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
+                    }
+                }
                 // Present the slider
                 showCircularSliderData()
                 shake(layer: self.centerFace.layer)
@@ -405,11 +423,18 @@ class homepageViewController: UIViewController {
             String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
     }
     
-    private func notifyStatus(todayCount:[Double],Standard:[Double])
+    private func notifyStatus(todayCount:[Double],Standard:[Double],percentage: Double)
     {
         var overConsume = ""
-        var lackConsume = ""
         var rightPortion = ""
+        var hasRightPortion = true
+        var hasOverConsume = true
+        var hasgoodPercentage = false
+        
+        if percentage > 60
+        {
+            hasgoodPercentage = true
+        }
         
         if todayCount[0] >= Standard[0] && todayCount[0] <= Standard[0] + 1.0
         {
@@ -426,6 +451,9 @@ class homepageViewController: UIViewController {
         }else if todayCount[3] >= Standard[4] && todayCount[3] <= Standard[4] + 1.0
         {
             rightPortion = "dairy"
+        }else
+        {
+            hasRightPortion = false
         }
         
         if todayCount[0] > Standard[0] + 1.0
@@ -443,12 +471,37 @@ class homepageViewController: UIViewController {
         }else if todayCount[3] > Standard[4] + 1.0
         {
             overConsume = "dairy"
+        }else
+        {
+            hasOverConsume = false
         }
         
-        let overConsumeMessage =
-        ["You have hit your target! Well done on eating \(rightPortion)s today!",]
+        let rightPortionMessage =
+        ["You have hit your target! Well done on eating \(rightPortion)s today!", "You have achieve your goal! Good work onn \(rightPortion)s today"]
         
-        localNotification(title: "Wow", message: overConsumeMessage[0]).push()
+        let overConsumeMessage =
+        ["Oops! Seems like you have consume too much \(overConsume)s",
+        "Remember to keep your self balance, you have eaten too much \(overConsume)s"]
+        
+        let balanceMessage =
+        ["Great job on balancing your diet, your balance rate is \(percentage)% today"]
+        
+        if hasOverConsume
+        {
+            let diceRoll:Int = Int(arc4random_uniform(UInt32(overConsumeMessage.count - 1)))
+            localNotification(title: "Oops", message: overConsumeMessage[diceRoll]).push()
+        }else if hasgoodPercentage
+        {
+            let diceRoll:Int = Int(arc4random_uniform(UInt32(balanceMessage.count - 1)))
+            localNotification(title: "Great!", message: balanceMessage[diceRoll]).push()
+        }else if hasRightPortion
+        {
+            let diceRoll:Int = Int(arc4random_uniform(UInt32(rightPortionMessage.count - 1)))
+            localNotification(title: "Great!", message: rightPortionMessage[diceRoll]).push()
+        }else
+        {
+            //
+        }
     }
     
     func showCircularSliderData()
@@ -498,6 +551,7 @@ class homepageViewController: UIViewController {
     {
         Analytics.logEvent("FaceTapped", parameters: nil)
         playSound()
+        AudioServicesPlaySystemSound(4095)
         if !(messageCounter == messageToUsers.count)
         {
             let appearance = SCLAlertView.SCLAppearance(

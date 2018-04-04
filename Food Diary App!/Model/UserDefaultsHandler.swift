@@ -35,7 +35,7 @@ struct UserDefaultsHandler
         defaults.set(status, forKey: "OnboardingSuccess")
     }
     
-    func setPersonalData(value: [String:Int])
+    func setPersonalData(value: [String:Any])
     {
         defaults.set(value, forKey: "PersonalData")
     }
@@ -43,6 +43,26 @@ struct UserDefaultsHandler
     func getPersonalData() -> AnyObject
     {
         return defaults.object(forKey: "PersonalData") as AnyObject
+    }
+    
+    func setTodayEachElementData(value: [Double])
+    {
+        defaults.set(value, forKey: "TodayEachElementData")
+    }
+    
+    func getSavedTodayEachElementData() -> AnyObject
+    {
+        return defaults.object(forKey: "TodayEachElementData") as AnyObject
+    }
+    
+    func setNotificationStatus(flag: Bool)
+    {
+        defaults.set(flag, forKey: "needNotification")
+    }
+    
+    func getNotificationStatus() -> Bool
+    {
+        return defaults.bool(forKey: "needNotification")
     }
     
     func setMessageSeen(seen: Bool)

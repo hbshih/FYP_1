@@ -249,11 +249,13 @@ struct HealthPercentageCalculator
     }
     
     
-    var sevenDayVAverageList: [Double] = []
-    var sevenDayGAverageList: [Double] = []
-    var sevenDayPAverageList: [Double] = []
-    var sevenDayDAverageList: [Double] = []
-    var sevenDayFAverageList: [Double] = []
+    private var sevenDayVAverageList: [Double] = []
+    private var sevenDayGAverageList: [Double] = []
+    private var sevenDayPAverageList: [Double] = []
+    private var sevenDayDAverageList: [Double] = []
+    private var sevenDayFAverageList: [Double] = []
+    
+    private var averageEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
     
     mutating func getLastSevenDaysEachElementPercentage() -> [String:Double]
     {
@@ -262,6 +264,7 @@ struct HealthPercentageCalculator
         sevenDayPAverageList.removeAll()
         sevenDayDAverageList.removeAll()
         sevenDayFAverageList.removeAll()
+        averageEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
         
         if dateSaved.count > 7
         {
@@ -286,7 +289,6 @@ struct HealthPercentageCalculator
         }
         
         var sumEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
-        var averageEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
         let finalCount = sevenDayPAverageList.count
         
         for i in 0 ..< finalCount
@@ -307,9 +309,53 @@ struct HealthPercentageCalculator
             }
         }
         
-        return averageEachElement
+        return averageEachElement // Stores percentage of each elemetn
     }
     
+    mutating func getMinConsumeElement() -> String
+    {
+        var minConsumeElement = ""
+        var minValue = 0.0
+        var listOfAllElementsPercentage: [Double]?
+        print("HPC - getminconsumeelement")
+        print(averageEachElement)
+        if dateSaved.count > 1
+        {
+            listOfAllElementsPercentage = [averageEachElement["V"]!,averageEachElement["G"]!,averageEachElement["P"]!,averageEachElement["D"]!,averageEachElement["F"]!]
+            minValue = (listOfAllElementsPercentage?.min()!)!
+        }else
+        {
+            return ""
+        }
+        
+        if minValue < 5.0
+        {
+            switch minValue
+            {
+            case listOfAllElementsPercentage![0]:
+                minConsumeElement = "vegetable"
+            case listOfAllElementsPercentage![1]:
+                minConsumeElement = "grain"
+            case listOfAllElementsPercentage![2]:
+               minConsumeElement = "protein"
+            case listOfAllElementsPercentage![3]:
+                minConsumeElement = "dairy"
+            case listOfAllElementsPercentage![4]:
+                minConsumeElement = "fruit"
+            default:
+                minConsumeElement = ""
+            }
+        }else
+        {
+            return ""
+        }
+        
+        print("Min Consume")
+        print(minConsumeElement)
+        
+        return minConsumeElement
+        
+    }
     
     
     private mutating func getAverageOfEachElement()
@@ -387,6 +433,11 @@ struct HealthPercentageCalculator
     mutating func getDayBalancePercentage() -> [Double]
     {
         return dayBalancePercentage
+    }
+    
+    mutating func getTodayPercentage() -> Double
+    {
+        return round(dayBalancePercentage[dayBalancePercentage.count - 1]*100)/100
     }
     
     mutating func getElementPercentage() -> [String:Double]

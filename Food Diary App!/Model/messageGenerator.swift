@@ -164,7 +164,6 @@ struct messageGenerator {
             "要",
             "戳",
             "林北的臉！！！！",
-            
         ]
         
         return message
