@@ -37,12 +37,12 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerFace: UIButton!
     @IBOutlet weak var centerInformationArea: UILabel!
     @IBOutlet weak var centerFaceArea: UIButton!
-   // @IBOutlet weak var cameraButtonOutlet: UIButton!
+    // @IBOutlet weak var cameraButtonOutlet: UIButton!
     @IBOutlet weak var centerInformationView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var coverView: UIView!
-   // @IBOutlet weak var cameraButton: UIButton
+    // @IBOutlet weak var cameraButton: UIButton
     
     // Variables to store percentage informations
     private var healthPercentage = 0.0
@@ -154,20 +154,20 @@ class homepageViewController: UIViewController {
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
-//
-//            if error != nil {
-//                print("Authorization Unsuccessfull")
-//            }else {
-//                print("Authorization Successfull")
-//            }
-//        }
-//
-//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-//            if settings.authorizationStatus != .authorized {
-//                // Notifications not allowed
-//            }
-//        }
+        //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
+        //
+        //            if error != nil {
+        //                print("Authorization Unsuccessfull")
+        //            }else {
+        //                print("Authorization Successfull")
+        //            }
+        //        }
+        //
+        //        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+        //            if settings.authorizationStatus != .authorized {
+        //                // Notifications not allowed
+        //            }
+        //        }
         
         
     }
@@ -314,20 +314,35 @@ class homepageViewController: UIViewController {
                 
                 getInteractionMessages()
                 
-                if defaults.getNotificationStatus()
+                let todayPercentage = healthData.getTodayPercentage()
+                
+                if todayPercentage >= 60.0
                 {
-                    if let savedData = defaults.getSavedTodayEachElementData() as? [Double]
+                    SCLAlertMessage(title: "Awesome!", message: "You have reached \(todayPercentage)% balance!\nKeep it up to achieve 100%!").showMessage()
+                }else if todayPercentage >= 80.0
+                {
+                    SCLAlertMessage(title: "Fabulous!", message: "You are just a step away from maintaing your diet perfectly!\nYou are \(todayPercentage)% now!").showMessage()
+                }else
+                {
+                    //
+                }
+                
+                if let savedData = defaults.getSavedTodayEachElementData() as? [Double]
+                {
+                    if savedData != healthData.getTodayEachElementData()
                     {
-                        if savedData != healthData.getTodayEachElementData()
+                        if defaults.getNotificationStatus()
                         {
                             notifyStatus(todayCount: healthData.getTodayEachElementData(), Standard: Standard, percentage: healthData.getTodayPercentage())
                             defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
                         }
-                    }else
-                    {
-                        defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
                     }
+                }else
+                {
+                    defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
                 }
+                
+                
                 // Present the slider
                 showCircularSliderData()
                 shake(layer: self.centerFace.layer)
@@ -429,12 +444,6 @@ class homepageViewController: UIViewController {
         var rightPortion = ""
         var hasRightPortion = true
         var hasOverConsume = true
-        var hasgoodPercentage = false
-        
-        if percentage > 60
-        {
-            hasgoodPercentage = true
-        }
         
         if todayCount[0] >= Standard[0] && todayCount[0] <= Standard[0] + 1.0
         {
@@ -477,23 +486,16 @@ class homepageViewController: UIViewController {
         }
         
         let rightPortionMessage =
-        ["You have hit your target! Well done on eating \(rightPortion)s today!", "You have achieve your goal! Good work onn \(rightPortion)s today"]
+            ["You have hit your target! Well done on eating \(rightPortion)s today!", "You have achieve your goal! Good work onn \(rightPortion)s today"]
         
         let overConsumeMessage =
-        ["Oops! Seems like you have consume too much \(overConsume)s",
-        "Remember to keep your self balance, you have eaten too much \(overConsume)s"]
-        
-        let balanceMessage =
-        ["Great job on balancing your diet, your balance rate is \(percentage)% today"]
+            ["Oops! Seems like you have consume too much \(overConsume)s",
+                "Remember to keep your self balance, you have eaten too much \(overConsume)s"]
         
         if hasOverConsume
         {
             let diceRoll:Int = Int(arc4random_uniform(UInt32(overConsumeMessage.count - 1)))
             localNotification(title: "Oops", message: overConsumeMessage[diceRoll]).push()
-        }else if hasgoodPercentage
-        {
-            let diceRoll:Int = Int(arc4random_uniform(UInt32(balanceMessage.count - 1)))
-            localNotification(title: "Great!", message: balanceMessage[diceRoll]).push()
         }else if hasRightPortion
         {
             let diceRoll:Int = Int(arc4random_uniform(UInt32(rightPortionMessage.count - 1)))
