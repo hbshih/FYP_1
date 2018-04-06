@@ -331,8 +331,14 @@
                             <outlet property="delegate" destination="K1M-cg-dHG" id="Td0-97-494"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Food Diary" id="3fr-MI-9Zb">
-                        <barButtonItem key="rightBarButtonItem" title="Album" style="done" id="1UE-oO-2P4">
+                    <navigationItem key="navigationItem" title="Your Food Diary" largeTitleDisplayMode="never" id="3fr-MI-9Zb">
+                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="done" id="Ff8-Cl-xgJ">
+                            <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Chm-50-Iax" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="lfr-QR-uKZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="photo-library" style="done" id="1UE-oO-2P4">
                             <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="tGS-QA-qMt" kind="custom" customClass="PresentSlideSegue" customModule="IBAnimatable" id="34h-gc-Teg"/>
@@ -346,7 +352,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMK-75-yYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3101" y="409"/>
+            <point key="canvasLocation" x="3414" y="695"/>
         </scene>
         <!--Add more?-->
         <scene sceneID="4fi-3K-zRC">
@@ -508,7 +514,7 @@
             </objects>
             <point key="canvasLocation" x="3391" y="-1454"/>
         </scene>
-        <!--Day View Diary View Controller-->
+        <!--Diary-->
         <scene sceneID="LOQ-gN-ZTW">
             <objects>
                 <viewController id="Chm-50-Iax" customClass="DayViewDiaryViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
@@ -722,28 +728,50 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal" translatesAutoresizingMaskIntoConstraints="NO" id="Qiz-3X-VuG">
-                                                            <rect key="frame" x="202" y="9" width="20" height="20"/>
+                                                            <rect key="frame" x="116.5" y="9" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Pk7-xd-pFO"/>
                                                                 <constraint firstAttribute="width" constant="20" id="iyO-aM-PHe"/>
                                                                 <constraint firstAttribute="width" secondItem="Qiz-3X-VuG" secondAttribute="height" multiplier="1:1" id="kss-ZV-smk"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal" translatesAutoresizingMaskIntoConstraints="NO" id="g3X-FW-h35">
+                                                            <rect key="frame" x="166.5" y="9" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="g3X-FW-h35" secondAttribute="height" multiplier="1:1" id="R6Q-Wj-uPZ"/>
+                                                                <constraint firstAttribute="width" constant="20" id="qWX-zc-X50"/>
+                                                                <constraint firstAttribute="height" constant="20" id="x6g-0R-v5W"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal" translatesAutoresizingMaskIntoConstraints="NO" id="cw5-qz-M0f">
+                                                            <rect key="frame" x="141.5" y="9" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="MZR-Te-tZh"/>
+                                                                <constraint firstAttribute="width" constant="20" id="axZ-Ol-E9m"/>
+                                                                <constraint firstAttribute="width" secondItem="cw5-qz-M0f" secondAttribute="height" multiplier="1:1" id="h00-hQ-7eI"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="g3X-FW-h35" firstAttribute="width" secondItem="g3X-FW-h35" secondAttribute="height" multiplier="1:1" id="05P-hH-Xzb"/>
                                                         <constraint firstAttribute="trailing" secondItem="vOt-Rd-T6q" secondAttribute="trailing" constant="16" id="0o8-Hw-Kx1"/>
                                                         <constraint firstAttribute="bottom" secondItem="zsk-Lk-fei" secondAttribute="bottom" id="2jR-91-J9d"/>
                                                         <constraint firstItem="REV-qw-b1O" firstAttribute="top" secondItem="qet-KA-lxC" secondAttribute="top" constant="5" id="3Eo-ap-VjN"/>
                                                         <constraint firstAttribute="bottom" secondItem="vOt-Rd-T6q" secondAttribute="bottom" constant="5" id="5Zo-8Z-vqd"/>
                                                         <constraint firstItem="d3d-vt-MpX" firstAttribute="centerY" secondItem="REV-qw-b1O" secondAttribute="centerY" id="7Bf-a5-OYH"/>
+                                                        <constraint firstItem="g3X-FW-h35" firstAttribute="leading" secondItem="cw5-qz-M0f" secondAttribute="trailing" constant="5" id="83L-zi-rv0"/>
+                                                        <constraint firstItem="Qiz-3X-VuG" firstAttribute="leading" secondItem="d3d-vt-MpX" secondAttribute="trailing" constant="5" id="BQ1-Ku-02k"/>
                                                         <constraint firstAttribute="trailing" secondItem="REV-qw-b1O" secondAttribute="trailing" constant="16" id="Bqq-7J-nvK"/>
-                                                        <constraint firstItem="REV-qw-b1O" firstAttribute="leading" secondItem="Qiz-3X-VuG" secondAttribute="trailing" constant="5" id="JCw-7W-ALl"/>
+                                                        <constraint firstItem="g3X-FW-h35" firstAttribute="centerY" secondItem="cw5-qz-M0f" secondAttribute="centerY" id="QK2-S8-Vwl"/>
+                                                        <constraint firstItem="cw5-qz-M0f" firstAttribute="width" secondItem="cw5-qz-M0f" secondAttribute="height" multiplier="1:1" id="Vhc-dM-IMG"/>
                                                         <constraint firstItem="zsk-Lk-fei" firstAttribute="top" secondItem="qet-KA-lxC" secondAttribute="top" id="XQN-k8-LKz"/>
                                                         <constraint firstItem="zsk-Lk-fei" firstAttribute="leading" secondItem="qet-KA-lxC" secondAttribute="leading" id="Y6r-jN-B22"/>
                                                         <constraint firstItem="Qiz-3X-VuG" firstAttribute="centerY" secondItem="REV-qw-b1O" secondAttribute="centerY" id="aEE-hm-4tt"/>
                                                         <constraint firstItem="vOt-Rd-T6q" firstAttribute="leading" secondItem="qet-KA-lxC" secondAttribute="leading" constant="16" id="bun-8J-Cbe"/>
+                                                        <constraint firstItem="cw5-qz-M0f" firstAttribute="leading" secondItem="Qiz-3X-VuG" secondAttribute="trailing" constant="5" id="hEc-a4-Dqk"/>
+                                                        <constraint firstItem="cw5-qz-M0f" firstAttribute="centerY" secondItem="Qiz-3X-VuG" secondAttribute="centerY" id="mPO-k4-xnF"/>
                                                         <constraint firstAttribute="height" constant="84.5" id="nPn-yV-3ex"/>
                                                         <constraint firstItem="d3d-vt-MpX" firstAttribute="leading" secondItem="qet-KA-lxC" secondAttribute="leading" constant="16" id="vdb-C1-pwW"/>
                                                     </constraints>
@@ -763,6 +791,8 @@
                                             <outlet property="fruitInfo" destination="fTi-46-IMw" id="u2l-0q-bAq"/>
                                             <outlet property="grainInfo" destination="WZs-vI-S5y" id="9Fy-y5-T9b"/>
                                             <outlet property="metalPrize" destination="Qiz-3X-VuG" id="gLN-px-Gp2"/>
+                                            <outlet property="metalPrize3" destination="cw5-qz-M0f" id="zt7-7n-aq7"/>
+                                            <outlet property="metalPrize_2" destination="g3X-FW-h35" id="4aC-y3-wHY"/>
                                             <outlet property="proteinInfo" destination="djr-J6-h3g" id="tAn-xj-nqX"/>
                                             <outlet property="vegetableInfo" destination="Opf-sB-cD9" id="SyZ-jt-Lch"/>
                                         </connections>
@@ -793,17 +823,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4um-Uo-YE1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="q1j-we-yGN">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="ukG-2a-Svh">
+                    <navigationItem key="navigationItem" title="Diary" id="q1j-we-yGN">
+                        <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" id="ukG-2a-Svh">
+                            <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="kmQ-HH-xb9" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="KNz-AH-BdB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="v4I-da-IYr">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G7g-VN-WKY">
-                                <rect key="frame" x="288" y="7" width="71" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G7g-VN-WKY">
+                                <rect key="frame" x="245" y="0.0" width="114" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="photo-library"/>
                                 <connections>
                                     <action selector="checkAllDetailTapped:" destination="Chm-50-Iax" eventType="touchUpInside" id="qGy-dz-ncx"/>
                                 </connections>
@@ -821,7 +852,7 @@
                         <outlet property="emotionFace" destination="Xyw-lu-m5M" id="flb-ba-xf7"/>
                         <outlet property="grainLabel" destination="aJ5-Ad-Kyo" id="bvR-fC-4Hp"/>
                         <outlet property="recentTableView" destination="usZ-bh-Vkk" id="QOE-Si-bYt"/>
-                        <segue destination="K1M-cg-dHG" kind="show" identifier="diarySegue" id="77E-go-f2t"/>
+                        <segue destination="3bT-ut-WG0" kind="show" identifier="diarySegue" id="o60-am-oDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgh-wD-jRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1748,7 +1779,8 @@
                                                 <segue destination="E19-NE-F9i" kind="show" id="o6Y-XO-XE5"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="sAh-Mr-P0d">
+                                        <barButtonItem key="rightBarButtonItem" image="photo-library" id="sAh-Mr-P0d">
+                                            <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="albumTapped:" destination="kmQ-HH-xb9" id="wbU-6S-6JG"/>
                                             </connections>
@@ -2542,7 +2574,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                         <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" style="done" id="v1o-uQ-err">
                             <color key="tintColor" red="0.91059392690658569" green="0.59351462125778198" blue="0.2429879903793335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="K1M-cg-dHG" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="GHi-nD-NU8"/>
+                                <segue destination="3bT-ut-WG0" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="GHi-nD-NU8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2552,7 +2584,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-r8-rJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5642.3999999999996" y="95.802098950524751"/>
+            <point key="canvasLocation" x="5981.6000000000004" y="95.802098950524751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ZT-o6-p34">
@@ -2570,7 +2602,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTd-vQ-fMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4556" y="95.802098950524751"/>
+            <point key="canvasLocation" x="4895.1999999999998" y="95.802098950524751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ivb-hy-2Zc">
@@ -3682,7 +3714,7 @@ Copyright {2004} {Skyscanner}
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KYX-F7-HIP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KWQ-d6-cdK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" backIndicatorImage="Button_Back" id="KWQ-d6-cdK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3694,6 +3726,24 @@ Copyright {2004} {Skyscanner}
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoz-aO-oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2156" y="-683"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4a1-yA-Cua">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3bT-ut-WG0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GBR-6h-fIL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K1M-cg-dHG" kind="relationship" relationship="rootViewController" id="g8f-ZT-5Hb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2P1-N6-BO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2633" y="409"/>
         </scene>
     </scenes>
     <resources>
@@ -12986,11 +13036,13 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="info-2" width="25" height="25"/>
         <image name="mbri-growing-chart-1" width="30" height="30"/>
         <image name="mbri-setting3-1" width="30" height="30"/>
+        <image name="photo-library" width="22" height="22"/>
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="o60-am-oDA"/>
         <segue reference="127-SN-MXU"/>
-        <segue reference="DTX-2Y-Kk5"/>
-        <segue reference="77E-go-f2t"/>
+        <segue reference="KNz-AH-BdB"/>
+        <segue reference="lfr-QR-uKZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -199,6 +199,15 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             if (eachDayPercentage[indexPath.row + todayHasRecord] < 60)
             {
                 cell?.metalPrize.alpha = 0
+                cell?.metalPrize_2.alpha = 0
+                cell?.metalPrize3.alpha = 0
+            }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 80)
+            {
+                cell?.metalPrize_2.alpha = 0
+                cell?.metalPrize3.alpha = 0
+            }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 80)
+            {
+                cell?.metalPrize3.alpha = 0
             }
             cell?.dateAndTime.text = "\(dateSaved[indexPath.row + todayHasRecord])"
             cell?.balance.text = "\(eachDayPercentage[indexPath.row + todayHasRecord])% " + "Balance"

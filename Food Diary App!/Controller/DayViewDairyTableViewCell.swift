@@ -11,6 +11,8 @@ import UIKit
 class DayViewDairyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var metalPrize: UIImageView!
+    @IBOutlet weak var metalPrize_2: UIImageView!
+    @IBOutlet weak var metalPrize3: UIImageView!
     @IBOutlet weak var dateAndTime: UILabel!
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var vegetableInfo: UILabel!

@@ -249,6 +249,7 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         {
             addnoteText.text = ""
             addnoteText.textColor = UIColor.black
+            doneButton.alpha = 0
         }
     }
     func textViewDidEndEditing(_ textView: UITextView)
@@ -257,6 +258,7 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         {
             addnoteText.text = "add some note here...".localized()
             addnoteText.textColor = UIColor.lightGray
+            doneButton.alpha = 1
         }
     }
     
@@ -370,7 +372,7 @@ extension AddNoteViewController: CoachMarksControllerDataSource
             coachViews.bodyView.hintLabel.text = "Add a record of your food by adding some notes and related information".localized()
             coachViews.bodyView.nextLabel.text = "Next".localized()
         case 1:
-            coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct portions!".localized()
+            coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct servings!".localized()
             coachViews.bodyView.nextLabel.text = "Next".localized()
             UserDefaultsHandler().setAddNoteTip(status: true)
         default: break

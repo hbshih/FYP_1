@@ -38,6 +38,15 @@ class DiaryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let imgBackArrow = #imageLiteral(resourceName: "Button_Back_Orange")
+//        
+//        navigationController?.navigationBar.backIndicatorImage = imgBackArrow
+//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgBackArrow
+//        
+//        navigationItem.leftItemsSupplementBackButton = true
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
         // Accessing Core Data
         var dataHandler = CoreDataHandler()
         fileName = dataHandler.getImageFilename()

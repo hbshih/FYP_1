@@ -437,7 +437,17 @@ struct HealthPercentageCalculator
     
     mutating func getTodayPercentage() -> Double
     {
-        return round(dayBalancePercentage[dayBalancePercentage.count - 1]*100)/100
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDateString = formatter.string(from: Date())
+        // If the last recording is not today
+        if dateSaved[dateSaved.count - 1] != todayDateString
+        {
+            return 0.0
+        }else
+        {
+            return round(dayBalancePercentage[dayBalancePercentage.count - 1]*100)/100
+        }
     }
     
     mutating func getElementPercentage() -> [String:Double]

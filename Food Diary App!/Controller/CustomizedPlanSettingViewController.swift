@@ -159,7 +159,7 @@ class CustomizedPlanSettingViewController: FormViewController {
         if !fromOnboarding
         {
 //            SCLAlertMessage(title: "Plan Set", message: "According to your information, your plan will be taking \(plan[0]) portions of grain, \(plan[1]) portions of vegetable, \(plan[2]) portions of protein, \(plan[3]) portions of fruit, \(plan[4]) portions of dairy").showMessage()
-            SCLAlertMessage(title: "Plan Set".localized(), message: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])")).showMessage()
+            SCLAlertMessage(title: "Plan Set".localized(), message: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ servings of grain,\n%@ servings of vegetable,\n%@ servings of protein,\n%@ servings of fruit,\n%@ servings of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])")).showMessage()
         }else
         {
             if !infoShown
@@ -175,7 +175,7 @@ class CustomizedPlanSettingViewController: FormViewController {
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
             alert.addButton("Ready to explore".localized(), target: self, selector: #selector(self.showHome))
-            _ = alert.showCustom("Plan Set".localized(), subTitle: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ portions of grain,\n%@ portions of vegetable,\n%@ portions of protein,\n%@ portions of fruit,\n%@ portions of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])"), color: color, icon: icon!)
+            _ = alert.showCustom("Plan Set".localized(), subTitle: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ servings of grain,\n%@ servings of vegetable,\n%@ servings of protein,\n%@ servings of fruit,\n%@ servings of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])"), color: color, icon: icon!)
                 infoShown = true
             }
         }
