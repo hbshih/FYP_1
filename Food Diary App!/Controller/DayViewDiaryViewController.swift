@@ -41,6 +41,9 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     
     private var loadListcount = 0
     
+    var dataEditedFromDiary = false
+    var dataDeletedFromDiary = false
+    
     
     let format = DateFormatter()
     private var notes: [String] = [] // Storing notes
@@ -53,48 +56,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         super.viewDidLoad()
         recentTableView.delegate = self
         recentTableView.dataSource = self
-        var dataHandler = CoreDataHandler()
-        dates = dataHandler.getTimestamp()
-        notes = dataHandler.getNote()
-        id = dataHandler.getId()
-        
-        if id.count > 0
-        {
-            let nutritionDic = dataHandler.get5nList()
-            nutriCalculation = HealthPercentageCalculator(nutritionDic: nutritionDic, timestamp: dataHandler.getTimestamp())
-            let dayNutritionList = nutriCalculation?.getEachDayCount()
-            
-            dairyList = dayNutritionList!["Dairy"]!
-            vegetableList = dayNutritionList!["Vegetable"]!
-            proteinList = dayNutritionList!["Protein"]!
-            fruitList = dayNutritionList!["Fruit"]!
-            grainList = dayNutritionList!["Grain"]!
-            eachDayPercentage = nutriCalculation!.getDayBalancePercentage()
-            dateSaved = (nutriCalculation?.getDateOfRecord())!
-            
-            Standard = userDefault.getPlanStandard() as! [Double]
-            
-            //-- to display the most up to date items first
-            dates = dates.reversed()
-            dateSaved = dateSaved.reversed()
-            notes = notes.reversed()
-            id = id.reversed()
-            fruitList = fruitList.reversed()
-            dairyList = dairyList.reversed()
-            vegetableList = vegetableList.reversed()
-            proteinList = proteinList.reversed()
-            grainList = grainList.reversed()
-            eachDayPercentage = eachDayPercentage.reversed()
-            
-            format.dateFormat = "yyyy-MM-dd"
-            if format.string(from: dates[0]) == format.string(from: Date())
-            {
-                todayHasRecord = 1
-            }
-            // Main Function
-            todayDiary()
-            loadListcount = id.count
-        }
+        updateData()
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -114,6 +76,13 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         {
             print("Nothing changed")
         }
+        
+        if dataDeletedFromDiary || dataEditedFromDiary
+        {
+            updateData()
+            recentTableView.reloadData()
+        }
+    
     }
     
     func todayDiary()
@@ -165,7 +134,60 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         {
             SCLAlertMessage(title: "Oops", message: "You don't have any records today").showMessage()
         }
+    }
+    
+    func updateData()
+    {
+        dateSaved.removeAll()
+        fruitList.removeAll()
+        dairyList.removeAll()
+        vegetableList.removeAll()
+        proteinList.removeAll()
+        grainList.removeAll()
+        eachDayPercentage.removeAll()
         
+        dates.removeAll()
+        notes.removeAll()
+        id.removeAll()
+        
+        var dataHandler = CoreDataHandler()
+        dates = dataHandler.getTimestamp()
+        notes = dataHandler.getNote()
+        id = dataHandler.getId()
+        
+        let nutritionDic = dataHandler.get5nList()
+        nutriCalculation = HealthPercentageCalculator(nutritionDic: nutritionDic, timestamp: dataHandler.getTimestamp())
+        let dayNutritionList = nutriCalculation?.getEachDayCount()
+        dairyList = dayNutritionList!["Dairy"]!
+        vegetableList = dayNutritionList!["Vegetable"]!
+        proteinList = dayNutritionList!["Protein"]!
+        fruitList = dayNutritionList!["Fruit"]!
+        grainList = dayNutritionList!["Grain"]!
+        eachDayPercentage = nutriCalculation!.getDayBalancePercentage()
+        dateSaved = (nutriCalculation?.getDateOfRecord())!
+        
+        Standard = userDefault.getPlanStandard() as! [Double]
+        
+        //-- to display the most up to date items first
+        dates = dates.reversed()
+        dateSaved = dateSaved.reversed()
+        notes = notes.reversed()
+        id = id.reversed()
+        fruitList = fruitList.reversed()
+        dairyList = dairyList.reversed()
+        vegetableList = vegetableList.reversed()
+        proteinList = proteinList.reversed()
+        grainList = grainList.reversed()
+        eachDayPercentage = eachDayPercentage.reversed()
+        
+        format.dateFormat = "yyyy-MM-dd"
+        if format.string(from: dates[0]) == format.string(from: Date())
+        {
+            todayHasRecord = 1
+        }
+        // Main Function
+        todayDiary()
+        loadListcount = id.count
     }
     
     override func didReceiveMemoryWarning()
@@ -230,10 +252,13 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     {
         if segue.identifier == "diarySegue"
         {
-            if let vc = segue.destination as? DiaryTableViewController
+            if let navVC = segue.destination as? UINavigationController
             {
-                vc.showRecord = lookingDate
+                let tableVC = navVC.viewControllers.first as! DiaryTableViewController
+                tableVC.showRecord = lookingDate
             }
+            dataEditedFromDiary = true
+            dataDeletedFromDiary = true
         }
     }
 }

@@ -34,19 +34,13 @@ class DiaryTableViewController: UITableViewController {
     
     var showRecord = "All"
     
+    var dataEdited = false
+    var dataDeleted = false
+    
     @IBOutlet weak var noDataIndicator: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let imgBackArrow = #imageLiteral(resourceName: "Button_Back_Orange")
-//        
-//        navigationController?.navigationBar.backIndicatorImage = imgBackArrow
-//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgBackArrow
-//        
-//        navigationItem.leftItemsSupplementBackButton = true
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        
         // Accessing Core Data
         var dataHandler = CoreDataHandler()
         fileName = dataHandler.getImageFilename()
@@ -121,10 +115,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         // 生成刪除按鈕
-        
-        
         let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler: {(action, indexPath) -> Void in
-            
             // Accesing Core Data
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -195,6 +186,9 @@ class DiaryTableViewController: UITableViewController {
             self.fruitList.remove(at: indexPath.row + self.startShowing)
             self.grainList.remove(at: indexPath.row + self.startShowing)
             self.recordCount -= 1
+            
+            self.dataDeleted = true
+            
             tableView.reloadData()
             
         })
@@ -260,7 +254,7 @@ class DiaryTableViewController: UITableViewController {
                 {
                     self.updateRecord(newNutri: editVC.n_Values, newNote: editVC.notes,hasNewImage:editVC.hasNewImage, newImage: #imageLiteral(resourceName: "image_None"), whoToUpdate: whichRecord)
                 }
-               
+                self.dataEdited = true
                 print("Record has changed")
             }else
             {
@@ -342,6 +336,19 @@ class DiaryTableViewController: UITableViewController {
             alertMessage(title: "Error", message: "An Error has occured, please try again later.")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "dismissSegue"
+        {
+            if let vc = segue.destination as? DayViewDiaryViewController
+            {
+                vc.dataEditedFromDiary = dataEdited
+                vc.dataDeletedFromDiary = dataDeleted
+            }
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
@@ -523,7 +530,11 @@ class DiaryTableViewController: UITableViewController {
         }
     }
     
-
+    @IBAction func backButtonTapped(_ sender: Any)
+    {
+        performSegue(withIdentifier: "dismissSegue", sender: nil)
+    }
+    
     func alertMessage(title: String, message: String)
     {
         let mes = AlertMessage()
