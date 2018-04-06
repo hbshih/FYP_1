@@ -489,8 +489,8 @@ class homepageViewController: UIViewController {
             ["You have hit your target! Well done on eating \(rightPortion)s today!", "You have achieve your goal! Good work onn \(rightPortion)s today"]
         
         let overConsumeMessage =
-            ["Oops! Seems like you have consume too much \(overConsume)s",
-                "Remember to keep your self balance, you have eaten too much \(overConsume)s"]
+            ["Oops! Seems like you have consume too much \(overConsume)s today",
+                "Remember to keep your self balance, you have eaten too much \(overConsume)s today"]
         
         if hasOverConsume
         {

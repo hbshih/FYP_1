@@ -70,7 +70,7 @@ struct HealthPercentageCalculator
         
         
         
-   //     self.recordedTime = getTrimmedDate(Name: fileNames)
+        //     self.recordedTime = getTrimmedDate(Name: fileNames)
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         for i in 0 ..< timestamp.count
@@ -145,11 +145,11 @@ struct HealthPercentageCalculator
     func getEachDayCount() -> [String: [Double]]
     {
         return[
-        "Vegetable": dayCountVegetable,
-         "Grain": dayCountGrain,
-         "Dairy": dayCountDairy,
-         "Fruit": dayCountFruit,
-         "Protein": dayCountProtein]
+            "Vegetable": dayCountVegetable,
+            "Grain": dayCountGrain,
+            "Dairy": dayCountDairy,
+            "Fruit": dayCountFruit,
+            "Protein": dayCountProtein]
     }
     
     private mutating func convertDailyCountIntoBalancePercentage()
@@ -182,7 +182,7 @@ struct HealthPercentageCalculator
             {
                 dayCountProteinPercentage[i] = ((dayCountProtein[i] / proteinStandard)*20).rounded()
                 print("Day count protein \(dayCountProtein[i])")
-                 print("Day count protein \(proteinStandard)")
+                print("Day count protein \(proteinStandard)")
                 print("Day count protein percent \(dayCountProteinPercentage[i])")
                 if dayCountProteinPercentage[i] > 20
                 {
@@ -337,7 +337,7 @@ struct HealthPercentageCalculator
             case listOfAllElementsPercentage![1]:
                 minConsumeElement = "grain"
             case listOfAllElementsPercentage![2]:
-               minConsumeElement = "protein"
+                minConsumeElement = "protein"
             case listOfAllElementsPercentage![3]:
                 minConsumeElement = "dairy"
             case listOfAllElementsPercentage![4]:
@@ -393,8 +393,8 @@ struct HealthPercentageCalculator
             for i in 0 ..< Name.count
             {
                 let date = Name[i].prefix(10)
-//                let str = Name[i].prefix(13)
-//                let date = str.suffix(10)
+                //                let str = Name[i].prefix(13)
+                //                let date = str.suffix(10)
                 newFileName.append(String(date))
             }
             return newFileName
@@ -417,12 +417,22 @@ struct HealthPercentageCalculator
     mutating func getTodayEachElementData() -> [
         Double]
     {
-        let todayVegetable = dayCountVegetable[dayCountVegetable.count - 1]
-        let todayGrain = dayCountGrain[dayCountGrain.count - 1]
-        let todayProtein = dayCountProtein[dayCountProtein.count - 1]
-        let todayFruit = dayCountFruit[dayCountFruit.count - 1]
-        let todayDairy = dayCountDairy[dayCountDairy.count - 1]
-        return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDateString = formatter.string(from: Date())
+        // If the last recording is not today
+        if dateSaved[dateSaved.count - 1] != todayDateString
+        {
+            return [0.0,0.0,0.0,0.0,0.0]
+        }else
+        {
+            let todayVegetable = dayCountVegetable[dayCountVegetable.count - 1]
+            let todayGrain = dayCountGrain[dayCountGrain.count - 1]
+            let todayProtein = dayCountProtein[dayCountProtein.count - 1]
+            let todayFruit = dayCountFruit[dayCountFruit.count - 1]
+            let todayDairy = dayCountDairy[dayCountDairy.count - 1]
+            return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
+        }
     }
     
     mutating func getTrimmedDate() -> [String]
@@ -437,7 +447,7 @@ struct HealthPercentageCalculator
     
     mutating func getTodayPercentage() -> Double
     {
-        var formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let todayDateString = formatter.string(from: Date())
         // If the last recording is not today
