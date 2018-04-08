@@ -1366,24 +1366,24 @@
             <objects>
                 <viewController title="FoodyLife" id="kmQ-HH-xb9" customClass="homepageViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4G-b5-3FT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="699"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background_Image" translatesAutoresizingMaskIntoConstraints="NO" id="L4n-5d-aYt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="579"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joy-pB-Ave">
-                                <rect key="frame" x="5" y="80" width="365" height="462"/>
+                                <rect key="frame" x="5" y="80" width="365" height="494"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Center_Image" translatesAutoresizingMaskIntoConstraints="NO" id="ous-LR-51I">
-                                        <rect key="frame" x="-10" y="0.0" width="385" height="462"/>
+                                        <rect key="frame" x="-10" y="0.0" width="385" height="494"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUp-ne-UsP" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="25" width="312" height="312"/>
+                                        <rect key="frame" x="11" y="25" width="344" height="344"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFm-PL-ai4">
-                                                <rect key="frame" x="81" y="81" width="150" height="150"/>
+                                                <rect key="frame" x="97" y="97" width="150" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmb-77-CTh">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -1402,7 +1402,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVH-L1-Sfy">
-                                                <rect key="frame" x="65" y="64.5" width="183" height="183"/>
+                                                <rect key="frame" x="65" y="64.5" width="215" height="215"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="AVH-L1-Sfy" secondAttribute="height" multiplier="1:1" id="ywG-8p-zqg"/>
                                                 </constraints>
@@ -1443,7 +1443,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F1x-aq-haG">
-                                        <rect key="frame" x="16" y="332" width="333" height="60"/>
+                                        <rect key="frame" x="16" y="364" width="333" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8U-iT-VGW" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="66.5" height="60"/>
@@ -1656,31 +1656,31 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.33000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDN-GU-KBk">
-                                        <rect key="frame" x="168" y="392" width="29.5" height="16.5"/>
+                                        <rect key="frame" x="168" y="424" width="29.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.33000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKR-AI-eyG">
-                                        <rect key="frame" x="96.5" y="392" width="39" height="16.5"/>
+                                        <rect key="frame" x="96.5" y="424" width="39" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.33000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-Tm-X1Q">
-                                        <rect key="frame" x="22" y="392" width="55" height="16.5"/>
+                                        <rect key="frame" x="22" y="424" width="55" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.33000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yn-Zo-a1U">
-                                        <rect key="frame" x="236.5" y="392" width="25" height="16.5"/>
+                                        <rect key="frame" x="236.5" y="424" width="25" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.33000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dairy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leL-t3-wnw">
-                                        <rect key="frame" x="301.5" y="392" width="28.5" height="16.5"/>
+                                        <rect key="frame" x="301.5" y="424" width="28.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1695,7 +1695,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Recent score on each group -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlM-AF-Ct2">
-                                        <rect key="frame" x="96.5" y="318" width="172" height="16.5"/>
+                                        <rect key="frame" x="96.5" y="350" width="172" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                         <color key="textColor" red="0.80622100830078125" green="0.80683785676956177" blue="0.8063165545463562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1734,7 +1734,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-fa-Pzw" userLabel="Diary">
-                                <rect key="frame" x="310" y="589.5" width="45" height="45"/>
+                                <rect key="frame" x="310" y="621.5" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xgs-fa-Pzw" secondAttribute="height" multiplier="1:1" id="J5W-au-kts"/>
                                 </constraints>
@@ -1744,19 +1744,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-O3-Tft">
-                                <rect key="frame" x="318.5" y="633.5" width="28.5" height="16.5"/>
+                                <rect key="frame" x="318.5" y="665.5" width="28.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNt-Nh-D4S">
-                                <rect key="frame" x="24" y="633.5" width="37" height="16.5"/>
+                                <rect key="frame" x="24" y="665.5" width="37" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-qP-a8d" userLabel="Report">
-                                <rect key="frame" x="20" y="589.5" width="45" height="45"/>
+                                <rect key="frame" x="20" y="621.5" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IkS-qP-a8d" secondAttribute="height" multiplier="1:1" id="bD6-qb-mbC"/>
                                 </constraints>
@@ -1792,11 +1792,11 @@
                                 </items>
                             </navigationBar>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFS-s6-rnK">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="679"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1t-dp-T4N" customClass="FanMenu" customModule="FanMenu">
-                                <rect key="frame" x="67.5" y="497" width="240" height="240"/>
+                                <rect key="frame" x="67.5" y="529" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="2nK-hq-AzV"/>
                                     <constraint firstAttribute="height" constant="240" id="LEh-fO-G3J"/>
@@ -2158,11 +2158,11 @@
             <objects>
                 <viewController id="W5e-3X-GdF" customClass="ClearDataViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-7O-JEB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3z-5R-VTh">
-                                <rect key="frame" x="141" y="98.5" width="93" height="30"/>
+                                <rect key="frame" x="141" y="72.5" width="93" height="30"/>
                                 <state key="normal" title="Clear All Data"/>
                                 <connections>
                                     <action selector="clearData:" destination="W5e-3X-GdF" eventType="touchUpInside" id="DFz-RZ-2yn"/>
@@ -2186,11 +2186,11 @@
             <objects>
                 <viewController id="Tvi-3N-Shg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i2Y-xS-YrX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEc-4z-TBs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="657"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -2465,11 +2465,11 @@ Cg
             <objects>
                 <viewController id="2pa-mW-Wbs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6F3-aO-emn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Vs-aH-JPg">
-                                <rect key="frame" x="0.0" y="20" width="375" height="637"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Privacy Policy">
@@ -2541,7 +2541,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
             <objects>
                 <viewController id="XaQ-dj-0Ww" customClass="SendFeedbackViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNi-Zv-jPA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image_Background" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-6N-UWj">
@@ -2549,7 +2549,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please type in your feedback" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-WP-waS">
-                                <rect key="frame" x="16" y="93" width="343" height="224"/>
+                                <rect key="frame" x="16" y="73" width="343" height="224"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="KUb-BZ-Yrc"/>
@@ -2574,13 +2574,13 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-aM-URj" customClass="SkyFloatingLabelTextField" customModule="Food_Diary_App_" customModuleProvider="target">
-                                <rect key="frame" x="16" y="40" width="343" height="30"/>
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-I0-NIB">
-                                <rect key="frame" x="160.5" y="357" width="54" height="37"/>
+                                <rect key="frame" x="160.5" y="337" width="54" height="37"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
@@ -2615,7 +2615,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
             <objects>
                 <tableViewController id="634-VO-TJQ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5F1-a0-FD7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -2699,7 +2699,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
             <objects>
                 <viewController title="Dashboard" id="zBE-bZ-8WM" customClass="DashboardViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mzl-Ki-oyA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="699"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-IQ-J7y" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
@@ -2766,7 +2766,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7k3-3J-pdv">
-                                <rect key="frame" x="0.0" y="503" width="375" height="164"/>
+                                <rect key="frame" x="0.0" y="535" width="375" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7k3-3J-pdv" secondAttribute="height" multiplier="16:7" id="v7S-kd-V0R"/>
                                 </constraints>
@@ -2906,11 +2906,11 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
             <objects>
                 <viewController id="EOA-aA-dqT" customClass="FromLocalViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U9E-91-mUo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="699"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aSV-rH-hcR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="635"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jo7-hX-yN8">
                                     <size key="itemSize" width="182" height="182"/>
@@ -3396,11 +3396,11 @@ This Terms and Conditions page was generated by App Privacy Policy Generator</st
             <objects>
                 <viewController id="gkd-w1-6Hu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y8S-NH-pYs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tda-vd-mLp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="637"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="The following sets forth attribution notices for third party software that may be contained in this application. ">
@@ -4140,11 +4140,11 @@ Copyright {2004} {Skyscanner}
             <objects>
                 <viewController id="1Ix-3M-aA2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fux-pU-0FP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPO-Zy-Ruu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="657"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="VARIETY">
@@ -5778,11 +5778,11 @@ Cg
             <objects>
                 <viewController id="uXv-UM-xYL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xgv-e5-APZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwD-k6-9Vo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="657"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -5813,14 +5813,14 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">The SuperTracker database is based on the Food and Nutrient Database for Dietary Studies (FNDDS), and the Food Patterns Equivalents Database (FPED). Data collected during dietary studies, such as the USDA’s What We Eat in America (WWEIA) and the dietary interview in the National Health and Nutrition Examination Survey (NHANES) is used to translate foods eaten into food groups (e.g. Fruits) and subgroups (e.g. whole fruit and fruit juice).
+                                        <string key="content">The SuperTracker database is based on the Food and Nutrient Database for Dietary Studies (FNDDS), and the Food Patterns Equivalents Database (FPED). Data collected during dietary studies, such as the USDA’s What We Eat in America (WWEIA) and the dietary interview in the National Health and Nutrition Examination Survey (NHANES) is used to translate foods eaten into food groups (e.g. Fruits) and subgroups (e.g. whole fruit and fruit juice).
 
 Foodylife is built based one the guidelines and tips from the USDA Center for Nutrition Policy and Promotion (CNPP). Especially on the Dietary Guidelines for Americans introduced in 2010 - MyPlate.
 
 Foodylife follows the guide on MyPlate, which has sections for vegetables, fruits, grains, and protein foods, as well as a "cup" on the side for dairy. Each section is color coded (green for veggies, red for fruits, orange for grains, purple for protein, and blue for dairy) so you can see at a glance how much of these foods to eat.
 Together with MyPlate, Foodylife reminds us to:
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="12" name="HelveticaNeue"/>
@@ -6097,13 +6097,13 @@ How to use
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">It's easy to follow the the App’s graphic if you're eating a "meat, starch, and veg" meal where everything is prepared separately. But what if you're having a sandwich or a meal that mixes different foods together, like a salad, pasta dish, stew, or stir-fry? That's when you need to use the principles behind the plate as a guide instead of copying it exactly.
+                                        <string key="content">It's easy to follow the the App’s graphic if you're eating a "meat, starch, and veg" meal where everything is prepared separately. But what if you're having a sandwich or a meal that mixes different foods together, like a salad, pasta dish, stew, or stir-fry? That's when you need to use the principles behind the plate as a guide instead of copying it exactly.
 
 For a sandwich, let us guide you on what to choose. A healthy sandwich might start with two slices of whole-wheat bread — your grains. Add a slice of meat, cheese, or other protein. Then fill the sandwich with vegetables like lettuce, tomato, or grated carrots. Add a side of fruit and a cup of low-fat white milk and you've got your balanced meal.
 For one-dish meals (or salads), make sure that half of what you're eating are vegetables and fruits, about a quarter is lean protein, and a quarter is grain, preferably whole grain. For example, a spaghetti dish could be whole-wheat pasta with a meatball, tossed with chopped tomato along with other veggies, like spinach or carrots. A stir-fry might be mixed veggies with a few pieces of tofu or chicken and brown rice. Avoid or limit high-fat sauces (like cream sauces) in one-dish meals and don't add too much dressing to salads.
 
 Either Foodylife or MyPlate is only a guide. Not every meal you eat will have every food group, but try to include three or more. Take breakfast, for example: If you have a whole-wheat bagel with cream cheese for breakfast, add some fruit and maybe a glass of milk. You can make up any missing food groups, like veggies, later in the day. 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="12" name="HelveticaNeue"/>
@@ -15509,8 +15509,9 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RX4-OQ-TD4"/>
-        <segue reference="8tG-1D-cVd"/>
+        <segue reference="o6Y-XO-XE5"/>
+        <segue reference="y3G-Oa-xl1"/>
+        <segue reference="hmX-CM-pEO"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="gZZ-Bc-RPw"/>
     </inferredMetricsTieBreakers>

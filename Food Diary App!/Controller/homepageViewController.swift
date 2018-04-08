@@ -25,6 +25,7 @@ class homepageViewController: UIViewController {
     
     // outlets for showing average percentage
     @IBOutlet weak var informationLabel: UILabel!
+    
     // elements small slider area
     @IBOutlet weak var foodgroupsStackView: UIStackView!
     @IBOutlet weak var dairyCircularSlider: KDCircularProgress!
@@ -38,14 +39,15 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerFace: UIButton!
     @IBOutlet weak var centerInformationArea: UILabel!
     @IBOutlet weak var centerFaceArea: UIButton!
-    // @IBOutlet weak var cameraButtonOutlet: UIButton!
+
+    // UI
     @IBOutlet weak var centerInformationView: UIView!
     @IBOutlet weak var cardView: UIView!
+    // Fan menu for circular menu
     @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var coverView: UIView!
-    // @IBOutlet weak var cameraButton: UIButton
     
-    // Variables to store percentage informations
+    // Variables to store nutrition percentage informations
     private var healthPercentage = 0.0
     private var vegetablePercentage = 0.0
     private var dairyPercentage = 0.0
@@ -62,10 +64,11 @@ class homepageViewController: UIViewController {
     private var messageToUsers: [String] = []
     private var showStartingMessageToNewUsers = false
     
+    // For face tapping sound effect
     var objPlayer: AVAudioPlayer?
     
+    // Stores the plan standard of the user
     private var Standard = [0.0,0.0,0.0,0.0,0.0]
-    
     private var n_List = ["grainList":[0.0],"vegetableList":[0.0],"proteinList":[0.0],"dairyList":[0.0],"fruitList":[0.0]]
     
     // Access Data
@@ -79,30 +82,37 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Put this where you want the review prompt to appear
-        getInteractionMessages()
-        centerInformationArea.alpha = 0
+        presentCircularMenu()
+        
         if defaults.getHomepageTutorialStatus() == true
         {
             /*Existing user, watched tutorial already*/
+            // Get initial interaction messages
+            getInteractionMessages()
+            // UI adjustments
+            centerInformationArea.alpha = 0
         }else
         {
-            coachversion = 1
             /*New User*/
-            
+            // Show tutorial
+            coachversion = 1
             defaults.setNotificationStatus(flag: true)
-            
             self.coachMarksController.dataSource = self
             self.coachMarksController.start(on: self)
             self.coachMarksController.overlay.allowTap = true
-            let skipView = CoachMarkSkipDefaultView()
-            skipView.setTitle("Skip", for: .normal)
-            self.coachMarksController.skipView = skipView
-            
         }
+    }
+    
+    func presentCircularMenu()
+    {
+        fanMenu.menuRadius = 90.0
+        fanMenu.duration = 0.2
+        fanMenu.interval = (Double.pi + Double.pi/4, Double.pi + 3 * Double.pi/4)
+        fanMenu.radius = 25.0
+        fanMenu.delay = 0.0
         
+        // Add circular menu to home screen
         fanMenu.button = FanMenuButton(id: "main", image: "Icon_AddNew", color: Color(val: 0xADADAD))
-        
         fanMenu.items = [
             FanMenuButton(
                 id: "camAdd",
@@ -116,18 +126,11 @@ class homepageViewController: UIViewController {
             ),
         ]
         
-        fanMenu.menuRadius = 90.0
-        fanMenu.duration = 0.2
-        fanMenu.interval = (Double.pi + Double.pi/4, Double.pi + 3 * Double.pi/4)
-        fanMenu.radius = 25.0
-        fanMenu.delay = 0.0
-        
         fanMenu.onItemWillClick = { button in
             self.showView()
         }
         
         fanMenu.onItemDidClick = { button in
-            print("ItemWillClick: \(button.id)")
             if button.id == "camAdd"
             {
                 if UserDefaultsHandler().getCameraTip() != true
@@ -151,26 +154,146 @@ class homepageViewController: UIViewController {
                 }
             }else if button.id == "noteAdd"
             {
-                
                 Analytics.logEvent("Add_WithNote", parameters: nil)
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
     }
     
-    @IBAction func albumTapped(_ sender: Any)
+    override func viewDidAppear(_ animated: Bool)
     {
-        localNotification(title: "Test", message: "Test").push()
+        super.viewDidAppear(animated)
+        
+        // Present data and slider only when have data in database
+        timestamp = dataHandler.getTimestamp()
+        recordCount = timestamp.count
+        let recent5nList = dataHandler.get5nList()
+        // Update Plan Standard
+        let defaults = UserDefaultsHandler()
+        let planStandard = defaults.getPlanStandard() as? [Double]
+
+        //Has record in the system
+        if recordCount > 0
+        {
+            // Show tutorial when first entry confirmed
+            if recordCount == 1 && defaults.getHomepageSecondTutorialStatus() == false
+            {
+                coachversion = 2
+                self.coachMarksController.dataSource = self
+                self.coachMarksController.start(on: self)
+                self.coachMarksController.overlay.allowTap = true
+                showStartingMessageToNewUsers = true
+            }
+            
+            // Present message upon first entry done
+            if recordCount == 1 && showStartingMessageToNewUsers == false
+            {
+                showStartingMessageToNewUsers = true
+                SCLAlertMessage(title: "Congrats!".localized(), message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!".localized()).showMessage()
+                self.centerFaceArea.alpha = 0
+                self.centerInformationArea.alpha = 1
+                UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations:
+                    {
+                        self.centerFaceArea.alpha = 1
+                        self.centerInformationArea.alpha = 0
+                })
+            }
+            
+            // If some new data is recorded or the user has change their plan or the user has edited their record
+            if recordCount != recentCount || Standard != planStandard! || n_List["grainList"]! != recent5nList["grainList"]! || n_List["vegetableList"]! != recent5nList["vegetableList"]! || n_List["proteinList"]! != recent5nList["proteinList"]! || n_List["dairyList"]! != recent5nList["dairyList"]! || n_List["fruitList"]! != recent5nList["fruitList"]!
+            {
+                //Update standard
+                Standard = planStandard!
+                //Update counnt
+                recentCount = recordCount
+                
+                // update value via healthpercentagecalculator
+                n_List = recent5nList
+                var healthData = HealthPercentageCalculator(nutritionDic: n_List, timestamp: timestamp)
+                
+                // update percentage
+                updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
+                
+                // text below the slider
+                informationLabel.text = "Recent Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
+                
+                // Pop up for app review if has more than 3 day usage
+                if healthData.getDayBalancePercentage().count > 3
+                {
+                    if #available(iOS 10.3, *)
+                    {
+                        SKStoreReviewController.requestReview()
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+                
+                // Present the nutrition elements that users needs to intake today
+                presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
+                
+                // Reload customize messages
+                getInteractionMessages()
+                
+                // Get today overall percentage
+                let todayPercentage = healthData.getTodayPercentage()
+                
+                // Show message to encourage users if over 60
+                if todayPercentage >= 60.0
+                {
+                    SCLAlertMessage(title: "Awesome!", message: "You have reached \(todayPercentage)% balance!\nKeep it up to achieve 100%!").showMessage()
+                }else if todayPercentage >= 80.0
+                {
+                    SCLAlertMessage(title: "Fabulous!", message: "You are just a step away from maintaing your diet perfectly!\nYou are \(todayPercentage)% now!").showMessage()
+                }else
+                {
+                    //
+                }
+                
+                //Present Local Notification
+                if let savedData = defaults.getSavedTodayEachElementData() as? [Double]
+                {
+                    if savedData != healthData.getTodayEachElementData()
+                    {
+                        if defaults.getNotificationStatus()
+                        {
+                            notifyStatus(todayCount: healthData.getTodayEachElementData(), Standard: Standard, percentage: healthData.getTodayPercentage())
+                            defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
+                        }
+                    }
+                }else
+                {
+                    defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
+                }
+                
+                // Present the slider
+                showCircularSliderData()
+                // Animation
+                shake(layer: self.centerFace.layer)
+            }
+        }else
+        {
+            // New user
+            healthPercentage = 0
+            vegetablePercentage = 0
+            grainPercentage = 0
+            proteinPercentage = 0
+            fruitPercentage = 0
+            dairyPercentage = 0
+            showCircularSliderData()
+            presentTodayInformation(Standard: planStandard!)
+            informationLabel.text = "No data yet".localized()
+        }
     }
-    
+
+    // Present Camera
     @objc func segueToCamera()
     {
         Analytics.logEvent("Add_WithCam", parameters: nil)
         self.performSegue(withIdentifier: "showCameraSegue", sender: nil)
     }
     
+    // Show circular menu button view
     func showView() {
-        print(coverView.alpha)
         let newValue: CGFloat = coverView.alpha == 0.0 ? 0.75 : 0.0
         UIView.animate(withDuration: 0.35, animations: {
             self.coverView.alpha = newValue
@@ -236,6 +359,7 @@ class homepageViewController: UIViewController {
      }
      }*/
     
+    // Generate messages
     func getInteractionMessages()
     {
         messageToUsers.removeAll()
@@ -243,122 +367,7 @@ class homepageViewController: UIViewController {
         self.messageToUsers += mesGenerator.getMessage()
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        // Present data and slider only when have data in database
-        timestamp = dataHandler.getTimestamp()
-        recordCount = timestamp.count
-        let recent5nList = dataHandler.get5nList()
-        var defaults = UserDefaultsHandler()
-        let planStandard = defaults.getPlanStandard() as? [Double]
-        //Existing User
-        if recordCount > 0
-        {
-            if recordCount == 1 && defaults.getHomepageSecondTutorialStatus() == false
-            {
-                coachversion = 2
-                self.coachMarksController.dataSource = self
-                self.coachMarksController.start(on: self)
-                self.coachMarksController.overlay.allowTap = true
-                showStartingMessageToNewUsers = true
-            }
-            
-            if recordCount == 1 && showStartingMessageToNewUsers == false
-            {
-                showStartingMessageToNewUsers = true
-                SCLAlertMessage(title: "Congrats!".localized(), message:  "You've just initialize the indicator, keep recording everyday to get higher balance rates!".localized()).showMessage()
-                self.centerFaceArea.alpha = 0
-                self.centerInformationArea.alpha = 1
-                UIView.animate(withDuration: 0.5, delay: 10, options: .curveEaseIn, animations:
-                    {
-                        self.centerFaceArea.alpha = 1
-                        self.centerInformationArea.alpha = 0
-                })
-            }
-            
-            
-            
-            // If some new data is recorded or the user has change their plan
-            if recordCount != recentCount || Standard != planStandard! || n_List["grainList"]! != recent5nList["grainList"]! || n_List["vegetableList"]! != recent5nList["vegetableList"]! || n_List["proteinList"]! != recent5nList["proteinList"]! || n_List["dairyList"]! != recent5nList["dairyList"]! || n_List["fruitList"]! != recent5nList["fruitList"]!
-            {
-                //Update standard
-                Standard = planStandard!
-                recentCount = recordCount
-                // update value via healthpercentagecalculator
-                n_List = recent5nList
-                var healthData = HealthPercentageCalculator(nutritionDic: n_List, timestamp: timestamp)
-                
-                // update percentage
-                updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
-                
-                // text below the slider
-                informationLabel.text = "Recent Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
-                
-                // Pop up for app review if has more than 3 day usage
-                if healthData.getDayBalancePercentage().count > 3
-                {
-                    if #available(iOS 10.3, *)
-                    {
-                        SKStoreReviewController.requestReview()
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                }
-                
-                // Present the nutrition elements that users needs to intake today
-                presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
-                
-                getInteractionMessages()
-                
-                let todayPercentage = healthData.getTodayPercentage()
-                
-                if todayPercentage >= 60.0
-                {
-                    SCLAlertMessage(title: "Awesome!", message: "You have reached \(todayPercentage)% balance!\nKeep it up to achieve 100%!").showMessage()
-                }else if todayPercentage >= 80.0
-                {
-                    SCLAlertMessage(title: "Fabulous!", message: "You are just a step away from maintaing your diet perfectly!\nYou are \(todayPercentage)% now!").showMessage()
-                }else
-                {
-                    //
-                }
-                
-                if let savedData = defaults.getSavedTodayEachElementData() as? [Double]
-                {
-                    if savedData != healthData.getTodayEachElementData()
-                    {
-                        if defaults.getNotificationStatus()
-                        {
-                            notifyStatus(todayCount: healthData.getTodayEachElementData(), Standard: Standard, percentage: healthData.getTodayPercentage())
-                            defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
-                        }
-                    }
-                }else
-                {
-                    defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
-                }
-                
-                
-                // Present the slider
-                showCircularSliderData()
-                shake(layer: self.centerFace.layer)
-            }
-        }else
-        {
-            // New user
-            healthPercentage = 0
-            vegetablePercentage = 0
-            grainPercentage = 0
-            proteinPercentage = 0
-            fruitPercentage = 0
-            dairyPercentage = 0
-            showCircularSliderData()
-            presentTodayInformation(Standard: planStandard!)
-            informationLabel.text = "No data yet".localized()
-        }
-    }
-    
+    // Update sliders and data
     func updatePercentageData(totalBalancePercentage: Double, eachElementPercentage: [String:Double])
     {
         healthPercentage = totalBalancePercentage
@@ -369,6 +378,7 @@ class homepageViewController: UIViewController {
         dairyPercentage = eachElementPercentage["D"]!
     }
     
+    // Handle user actions
     @IBAction func handleSwipeup(recognizer:UISwipeGestureRecognizer) {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
             self.centerFaceArea.alpha = 0
@@ -376,7 +386,7 @@ class homepageViewController: UIViewController {
         })
         
     }
-    
+    // Handle user actions
     @IBAction func handleSwipedown(recognizer:UISwipeGestureRecognizer) {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
             self.centerFaceArea.alpha = 1
@@ -384,6 +394,7 @@ class homepageViewController: UIViewController {
         })
     }
     
+    // Present today information in the back of face
     private func presentTodayInformation(Standard: [Double])
     {
         let date = Date()
@@ -435,6 +446,7 @@ class homepageViewController: UIViewController {
             String.localizedStringWithFormat(NSLocalizedString("Today Info\nVege : %@\nProtein : %@\nGrain : %@\nFruit : %@\n Dairy : %@".localized(), comment: ""),"\(vegetableInfo)","\(proteinInfo)","\(grainInfo)","\(fruitInfo)","\(dairyInfo)")
     }
     
+    // Generate notification (If needed)
     private func notifyStatus(todayCount:[Double],Standard:[Double],percentage: Double)
     {
         var overConsume = ""
@@ -503,6 +515,7 @@ class homepageViewController: UIViewController {
         }
     }
     
+    // Update Slider
     func showCircularSliderData()
     {
         setSliderColor(valueP: vegetablePercentage, slider: vegetableCircularSlider)
@@ -529,15 +542,7 @@ class homepageViewController: UIViewController {
         centerFace.setImage(sliderController.getFace(), for: .normal)
     }
     
-    /*
-     func sendPhoto()
-     {
-     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-     self.performSegue(withIdentifier: "confirmPhotoSegue", sender: self)
-     }
-     }
-     */
-    
+    // Face Animation
     func shake(layer: CALayer)
     {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
@@ -546,6 +551,7 @@ class homepageViewController: UIViewController {
         layer.add(animation, forKey: "shake")
     }
     
+    // Show emssage
     @IBAction func faceTapped(_ sender: Any)
     {
         Analytics.logEvent("FaceTapped", parameters: nil)
@@ -572,6 +578,7 @@ class homepageViewController: UIViewController {
         }
     }
     
+    // Present dashboard
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "vegetableDashSegue"
@@ -609,6 +616,7 @@ class homepageViewController: UIViewController {
         }
     }
     
+    // Runn when user tapped the face
     func playSound()
     {
         guard let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3") else { return }
@@ -635,8 +643,9 @@ class homepageViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    
 }
+
+/*Tutorial*/
 
 // MARK: - Protocol Conformance | CoachMarksControllerDataSource
 extension homepageViewController: CoachMarksControllerDataSource {
@@ -686,6 +695,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
             switch(index)
             {
             case 0:
+                fanMenu.open()
                 defaults.setHomepageTutorialStatus(status: true)
                 return coachMarksController.helper.makeCoachMark(for: self.fanMenu)
             default:
