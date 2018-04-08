@@ -61,9 +61,9 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
             notesField.text = notes
         }else
         {
+            notesField.delegate = self
             notesField.text = "add some note here...".localized()
             notesField.textColor = UIColor.lightGray
-            notesField.delegate = self
         }
     }
     
@@ -108,11 +108,16 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
             self.recordChanged = true
             notes = notesField.text
         }
+        
+        if notesField.text == "add some note here...".localized()
+        {
+            notes = ""
+        }
+        
+        print(notesField.text)
+        print(notes)
+        
         n_Values = [grainStepper.value,vegetableStepper.value,proteinStepper.value,fruitStepper.value,dairyStepper.value]
-        
-        
-        
-    
     }
     
     

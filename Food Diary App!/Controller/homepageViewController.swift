@@ -17,6 +17,7 @@ import Macaw
 import AVFoundation
 import UserNotifications
 import AudioToolbox
+import StoreKit
 
 class homepageViewController: UIViewController {
     
@@ -78,6 +79,7 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        // Put this where you want the review prompt to appear
         getInteractionMessages()
         centerInformationArea.alpha = 0
         if defaults.getHomepageTutorialStatus() == true
@@ -154,22 +156,6 @@ class homepageViewController: UIViewController {
                 self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
             }
         }
-        //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
-        //
-        //            if error != nil {
-        //                print("Authorization Unsuccessfull")
-        //            }else {
-        //                print("Authorization Successfull")
-        //            }
-        //        }
-        //
-        //        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-        //            if settings.authorizationStatus != .authorized {
-        //                // Notifications not allowed
-        //            }
-        //        }
-        
-        
     }
     
     @IBAction func albumTapped(_ sender: Any)
@@ -308,6 +294,17 @@ class homepageViewController: UIViewController {
                 
                 // text below the slider
                 informationLabel.text = "Recent Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
+                
+                // Pop up for app review if has more than 3 day usage
+                if healthData.getDayBalancePercentage().count > 3
+                {
+                    if #available(iOS 10.3, *)
+                    {
+                        SKStoreReviewController.requestReview()
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
                 
                 // Present the nutrition elements that users needs to intake today
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])

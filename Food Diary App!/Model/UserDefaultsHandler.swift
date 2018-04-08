@@ -130,7 +130,10 @@ struct UserDefaultsHandler
         return defaults.bool(forKey: "noteTip")
     }
     
-    
+    func setGiveReviewState(status: Bool)
+    {
+        defaults.set(status, forKey: "GiveReviewState")
+    }
     
     /*
      func getTutorialStatus() -> Bool

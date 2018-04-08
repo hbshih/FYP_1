@@ -56,28 +56,22 @@ class DiaryTableViewController: UITableViewController {
         grainList = nutritionDic["grainList"]!
         
         //-- to display the most up to date items first
-        fileName = fileName.reversed()
-        dates = dates.reversed()
-        notes = notes.reversed()
-        id = id.reversed()
-        fruitList = fruitList.reversed()
-        dairyList = dairyList.reversed()
-        vegetableList = vegetableList.reversed()
-        proteinList = proteinList.reversed()
-        grainList = grainList.reversed()
-        
         if showRecord != "All"
         {
             let format = DateFormatter()
             format.dateFormat = "yyyy-MM-dd"
+            print(dates)
             for i in 0 ..< dates.count
             {
                 if format.string(from:dates[i]) == showRecord
                 {
+                    print("Similar dates \(dates[i]) == \(showRecord)")
+                    print(i)
                     recordCount += 1
                     if startShowing == -1
                     {
                         startShowing = i
+                        print("Start Showinng from \(startShowing)")
                     }
                 }
             }
@@ -95,7 +89,7 @@ class DiaryTableViewController: UITableViewController {
         }else
         {
             noDataIndicator.alpha = 1
-        }        
+        }
     }
     
     override func didReceiveMemoryWarning()
@@ -130,7 +124,6 @@ class DiaryTableViewController: UITableViewController {
                 {
                     print("Fetch Result")
                     print(result)
-                    
                     for name in result as! [NSManagedObject]
                     {
                         // Access to coredata and delete them
@@ -325,7 +318,6 @@ class DiaryTableViewController: UITableViewController {
                 {
                     try context.save()
                     tableViewController.reloadData()
-                    print("All Saved")
                 }catch
                 {
                     print(error)
@@ -524,7 +516,8 @@ class DiaryTableViewController: UITableViewController {
                 }
             }
             return cell
-        }else
+        }
+        else
         {
             return UITableViewCell ()
         }
