@@ -20,6 +20,7 @@ class DayViewDairyTableViewCell: UITableViewCell {
     @IBOutlet weak var grainInfo: UILabel!
     @IBOutlet weak var fruitInfo: UILabel!
     @IBOutlet weak var dairyInfo: UILabel!
+    @IBOutlet weak var colourIndicator: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

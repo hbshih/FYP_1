@@ -18,7 +18,9 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     @IBOutlet weak var VegetableLabel: UILabel!
     @IBOutlet weak var DairyLabel: UILabel!
     @IBOutlet weak var emotionFace: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var recentTableView: UITableView!
+    @IBOutlet weak var colourIndicator: UIView!
     private let userDefault = UserDefaultsHandler()
     private var nutriCalculation: HealthPercentageCalculator?
     private let showDayDetail = ""
@@ -63,6 +65,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     {
         var dataHandler = CoreDataHandler()
         let newCount = dataHandler.getId().count
+        
         if loadListcount != newCount
         {
             dates = dataHandler.getTimestamp()
@@ -101,15 +104,19 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             if todayPercentage < 20.0
             {
                 emotionFace.image = #imageLiteral(resourceName: "Face_Red")
+                backgroundImage.image = #imageLiteral(resourceName: "Image_Diary_todayArea_Red")
             }else if todayPercentage >= 20.0 && todayPercentage < 60.0
             {
                 emotionFace.image = #imageLiteral(resourceName: "Face_Yellow")
+                backgroundImage.image = #imageLiteral(resourceName: "Image_Diary_todayArea_Yellow")
             }else if todayPercentage >= 60.0 && todayPercentage < 80.0
             {
                 emotionFace.image = #imageLiteral(resourceName: "Face_Green")
+                backgroundImage.image = #imageLiteral(resourceName: "Image_Diary_todayArea_Green")
             }else
             {
                 emotionFace.image = #imageLiteral(resourceName: "Face_Orange")
+                backgroundImage.image = #imageLiteral(resourceName: "Image_Diary_todayArea_Orange")
             }
             
         }else
@@ -169,16 +176,16 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         Standard = userDefault.getPlanStandard() as! [Double]
         
         //-- to display the most up to date items first
-        dates = dates.reversed()
-        dateSaved = dateSaved.reversed()
-        notes = notes.reversed()
-        id = id.reversed()
-        fruitList = fruitList.reversed()
-        dairyList = dairyList.reversed()
-        vegetableList = vegetableList.reversed()
-        proteinList = proteinList.reversed()
-        grainList = grainList.reversed()
-        eachDayPercentage = eachDayPercentage.reversed()
+//        dates = dates.reversed()
+//        dateSaved = dateSaved.reversed()
+//        notes = notes.reversed()
+//        id = id.reversed()
+//        fruitList = fruitList.reversed()
+//        dairyList = dairyList.reversed()
+//        vegetableList = vegetableList.reversed()
+//        proteinList = proteinList.reversed()
+//        grainList = grainList.reversed()
+//        eachDayPercentage = eachDayPercentage.reversed()
         
         format.dateFormat = "yyyy-MM-dd"
         if format.string(from: dates[0]) == format.string(from: Date())
@@ -218,19 +225,29 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         print(todayHasRecord)
         if dateSaved.count > todayHasRecord
         {
-            if (eachDayPercentage[indexPath.row + todayHasRecord] < 60)
+            if (eachDayPercentage[indexPath.row + todayHasRecord] < 20)
             {
                 cell?.metalPrize.alpha = 0
                 cell?.metalPrize_2.alpha = 0
                 cell?.metalPrize3.alpha = 0
+                cell?.colourIndicator.backgroundColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
+            }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 60)
+            {
+                cell?.metalPrize.alpha = 0
+                cell?.metalPrize_2.alpha = 0
+                cell?.metalPrize3.alpha = 0
+                cell?.colourIndicator.backgroundColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0)
             }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 80)
             {
                 cell?.metalPrize_2.alpha = 0
                 cell?.metalPrize3.alpha = 0
-            }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 80)
+                cell?.colourIndicator.backgroundColor = UIColor(red:0.59, green:0.79, blue:0.30, alpha:1.0)
+            }else
             {
                 cell?.metalPrize3.alpha = 0
+                cell?.colourIndicator.backgroundColor = UIColor(red:0.94, green:0.60, blue:0.18, alpha:1.0)
             }
+            
             cell?.dateAndTime.text = "\(dateSaved[indexPath.row + todayHasRecord])"
             cell?.balance.text = "\(eachDayPercentage[indexPath.row + todayHasRecord])% " + "Balance"
             cell?.grainInfo.text = "\(grainList[indexPath.row + todayHasRecord]) / \(Standard[0])"
