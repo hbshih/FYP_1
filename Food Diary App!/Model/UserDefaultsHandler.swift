@@ -35,6 +35,26 @@ struct UserDefaultsHandler
         defaults.set(status, forKey: "OnboardingSuccess")
     }
     
+    func setDayDiaryTutorialStatus(status: Bool)
+    {
+        defaults.set(status, forKey: "DayDiaryTutorialStatus")
+    }
+    
+    mutating func getDayDiaryTutorialStatus() -> Bool
+    {
+        return defaults.bool(forKey: "DayDiaryTutorialStatus")
+    }
+    
+    func setDiaryTutorialStatus(status: Bool)
+    {
+        defaults.set(status, forKey: "DiaryTutorialStatus")
+    }
+    
+    mutating func getDiaryTutorialStatus() -> Bool
+    {
+        return defaults.bool(forKey: "DiaryTutorialStatus")
+    }
+    
     func setPersonalData(value: [String:Any])
     {
         defaults.set(value, forKey: "PersonalData")

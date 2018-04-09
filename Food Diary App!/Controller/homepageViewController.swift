@@ -97,6 +97,7 @@ class homepageViewController: UIViewController {
             // Show tutorial
             coachversion = 1
             defaults.setNotificationStatus(flag: true)
+            localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
             self.coachMarksController.dataSource = self
             self.coachMarksController.start(on: self)
             self.coachMarksController.overlay.allowTap = true
@@ -229,7 +230,7 @@ class homepageViewController: UIViewController {
                 }
                 
                 // Present the nutrition elements that users needs to intake today
-                presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[healthData.getTrimmedDate().count - 1])
+                presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[0])
                 
                 // Reload customize messages
                 getInteractionMessages()
@@ -397,10 +398,6 @@ class homepageViewController: UIViewController {
     // Present today information in the back of face
     private func presentTodayInformation(Standard: [Double])
     {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd"
-        let dateOnly = formatter.string(from: date)
         var grainInfo = ""
         var vegetableInfo = ""
         var fruitInfo = ""

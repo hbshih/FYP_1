@@ -420,17 +420,21 @@ struct HealthPercentageCalculator
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let todayDateString = formatter.string(from: Date())
+        
+        print("checkpoint")
+        print(dateSaved)
+        
         // If the last recording is not today
-        if dateSaved[dateSaved.count - 1] != todayDateString
+        if dateSaved[0] != todayDateString
         {
             return [0.0,0.0,0.0,0.0,0.0]
         }else
         {
-            let todayVegetable = dayCountVegetable[dayCountVegetable.count - 1]
-            let todayGrain = dayCountGrain[dayCountGrain.count - 1]
-            let todayProtein = dayCountProtein[dayCountProtein.count - 1]
-            let todayFruit = dayCountFruit[dayCountFruit.count - 1]
-            let todayDairy = dayCountDairy[dayCountDairy.count - 1]
+            let todayVegetable = dayCountVegetable[0]
+            let todayGrain = dayCountGrain[0]
+            let todayProtein = dayCountProtein[0]
+            let todayFruit = dayCountFruit[0]
+            let todayDairy = dayCountDairy[0]
             return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
         }
     }

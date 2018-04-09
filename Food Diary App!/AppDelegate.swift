@@ -25,16 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //Firebases
         //   FirebaseApp.configure()
-        if #available(iOS 8.0, *)
-        {
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
-        }else
-        {
-            let types: UIRemoteNotificationType = [.alert,.sound]
-            application.registerForRemoteNotifications(matching: types)
-        }
+//        if #available(iOS 8.0, *)
+//        {
+//            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
+//            application.registerUserNotificationSettings(settings)
+//            application.registerForRemoteNotifications()
+//        }else
+//        {
+//            let types: UIRemoteNotificationType = [.alert,.sound]
+//            application.registerForRemoteNotifications(matching: types)
+//        }
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
             
@@ -76,10 +76,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                 localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
+                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+                    print(request)
+                })
                 
             }else
             {
                 print("Launched Today")
+                
                 UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
                     print(request)
                 })
@@ -98,16 +102,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func connectToFCM()
     {
-        Messaging.messaging().connect { (error) in
-            if (error != nil)
-            {
-                print("Unable to connect \(error)")
-            }else
-            {
-                print("connected to FCM")
-            }
-            
+        // Won't connect since there is no token
+        guard InstanceID.instanceID().token() != nil else {
+            return;
         }
+        Messaging.messaging().shouldEstablishDirectChannel = true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -137,7 +136,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     // Schedule remind notification tmr noon
                     localNotification_Scheduled.init().scheduleTomorrowHelpBalanceNotification(MinConsume: minConsumeElement)
                 }
+                
             }
+        }
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (req) in
+            print("All scheduled Notifications \n\(req)")
         }
     }
     

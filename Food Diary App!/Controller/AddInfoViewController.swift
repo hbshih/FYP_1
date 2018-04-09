@@ -496,7 +496,9 @@ extension AddInfoViewController: CoachMarksControllerDataSource
         case 1:
             coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct servings!".localized()
             coachViews.bodyView.nextLabel.text = "Next".localized()
-            UserDefaultsHandler().setAddNoteTip(status: true)
+        case 2:
+            coachViews.bodyView.hintLabel.text = "Tap here if you need some help!".localized()
+            coachViews.bodyView.nextLabel.text = "Done".localized()
         default: break
         }
         return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
@@ -507,9 +509,12 @@ extension AddInfoViewController: CoachMarksControllerDataSource
         switch(index)
         {
         case 0:
-            return coachMarksController.helper.makeCoachMark(for: self.navBar)
+            return coachMarksController.helper.makeCoachMark(for: self.addnoteText)
         case 1:
             return coachMarksController.helper.makeCoachMark(for: self.foodgroupStackView)
+        case 2:
+            UserDefaultsHandler().setAddNoteTip(status: true)
+            return coachMarksController.helper.makeCoachMark(for: self.instructionOutlet)
         default:
             return coachMarksController.helper.makeCoachMark()
         }
@@ -518,7 +523,7 @@ extension AddInfoViewController: CoachMarksControllerDataSource
     
     func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
     {
-        return 2
+        return 3
     }
 }
 

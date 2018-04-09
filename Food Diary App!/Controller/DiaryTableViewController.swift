@@ -10,17 +10,18 @@ import UIKit
 import CoreData
 import FirebaseAnalytics
 import PopupDialog
+import Instructions
 
 class DiaryTableViewController: UITableViewController {
     
     @IBOutlet var tableViewController: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     // General Variables
     private var images: [UIImage] = [] // Storing Images
     private var fileName: [String] = [] // Storing the names of the images to get images
     private var notes: [String] = [] // Storing notes
     private var dates: [Date] = [] // Storinng dates
     private var id: [String] = []
-    
     
     // Nutrition Info Variables
     private var dairyList: [Double] = []
@@ -39,6 +40,11 @@ class DiaryTableViewController: UITableViewController {
     
     @IBOutlet weak var noDataIndicator: UILabel!
     
+    var defaults = UserDefaultsHandler()
+    
+    // For tutorial walkthrough
+    let coachMarksController = CoachMarksController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Accessing Core Data
@@ -54,6 +60,14 @@ class DiaryTableViewController: UITableViewController {
         proteinList = nutritionDic["proteinList"]!
         fruitList = nutritionDic["fruitList"]!
         grainList = nutritionDic["grainList"]!
+        
+        if id.count > 0 && defaults.getDiaryTutorialStatus() == false
+        {
+            
+            self.coachMarksController.dataSource = self
+            self.coachMarksController.start(on: self)
+            self.coachMarksController.overlay.allowTap = true
+        }
         
         //-- to display the most up to date items first
         if showRecord != "All"
@@ -198,7 +212,7 @@ class DiaryTableViewController: UITableViewController {
                            self.dairyList[indexPath.row + self.startShowing]]
             let note = self.notes[indexPath.row + self.startShowing]
             
-
+            
             var image: UIImage?
             image = self.images[indexPath.row + self.startShowing]
             
@@ -342,88 +356,88 @@ class DiaryTableViewController: UITableViewController {
     }
     
     /*
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
-        // Delete Button
-        if editingStyle == .delete
-        {
-            // Accesing Core Data
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-            // Get the corresponding record that user intend to delete
-            request.predicate = NSPredicate(format: "id = %@", "\(id[indexPath.row + startShowing])")
-            request.returnsObjectsAsFaults = false
-            do
-            {
-                let result = try context.fetch(request)
-                if result.count > 0
-                {
-                    print("Fetch Result")
-                    print(result)
-                    
-                    for name in result as! [NSManagedObject]
-                    {
-                        // Access to coredata and delete them
-                        if let id = name.value(forKey: "id") as? String
-                        {
-                            print(id)
-                            print("\(id) deleted complete")
-                            context.delete(name)
-                            do
-                            {
-                                try context.save()
-                            } catch  {
-                                alertMessage(title: "Delete Failed", message: "An Error has occured, please try again later.")
-                                print("Delete Failed")
-                            }
-                        }
-                    }
-                }
-            }catch
-            {
-                alertMessage(title: "Error", message: "An Error has occured, please try again later.")
-            }
-            
-            if fileName[indexPath.row + startShowing] != ""
-            {
-                // Access to file and delete them
-                let fileManager = FileManager.default
-                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row + startShowing])
-                if fileManager.fileExists(atPath: imagePath)
-                {
-                    do
-                    {
-                        try fileManager.removeItem(atPath: imagePath)
-                    }catch
-                    {
-                        print("error on filemanager remove")
-                    }
-                    print("image deleted from \(imagePath)")
-                }else{
-                    print("Panic! No Image!")
-                }
-            }
- 
-            // Delete from the table
-            images.remove(at: indexPath.row + startShowing)
-            notes.remove(at: indexPath.row + startShowing)
-            fileName.remove(at: indexPath.row + startShowing)
-            dates.remove(at: indexPath.row + startShowing)
-            id.remove(at: indexPath.row + startShowing)
-            dairyList.remove(at: indexPath.row + startShowing)
-            vegetableList.remove(at: indexPath.row + startShowing)
-            proteinList.remove(at: indexPath.row + startShowing)
-            fruitList.remove(at: indexPath.row + startShowing)
-            grainList.remove(at: indexPath.row + startShowing)
-            recordCount -= 1
-            print(dates)
-            print(id)
-            print("Dairy \(dairyList)")
-            print("Protein \(proteinList)")
-            tableView.reloadData()
-        }
-    }*/
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+     {
+     // Delete Button
+     if editingStyle == .delete
+     {
+     // Accesing Core Data
+     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+     let context = appDelegate.persistentContainer.viewContext
+     let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+     // Get the corresponding record that user intend to delete
+     request.predicate = NSPredicate(format: "id = %@", "\(id[indexPath.row + startShowing])")
+     request.returnsObjectsAsFaults = false
+     do
+     {
+     let result = try context.fetch(request)
+     if result.count > 0
+     {
+     print("Fetch Result")
+     print(result)
+     
+     for name in result as! [NSManagedObject]
+     {
+     // Access to coredata and delete them
+     if let id = name.value(forKey: "id") as? String
+     {
+     print(id)
+     print("\(id) deleted complete")
+     context.delete(name)
+     do
+     {
+     try context.save()
+     } catch  {
+     alertMessage(title: "Delete Failed", message: "An Error has occured, please try again later.")
+     print("Delete Failed")
+     }
+     }
+     }
+     }
+     }catch
+     {
+     alertMessage(title: "Error", message: "An Error has occured, please try again later.")
+     }
+     
+     if fileName[indexPath.row + startShowing] != ""
+     {
+     // Access to file and delete them
+     let fileManager = FileManager.default
+     let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row + startShowing])
+     if fileManager.fileExists(atPath: imagePath)
+     {
+     do
+     {
+     try fileManager.removeItem(atPath: imagePath)
+     }catch
+     {
+     print("error on filemanager remove")
+     }
+     print("image deleted from \(imagePath)")
+     }else{
+     print("Panic! No Image!")
+     }
+     }
+     
+     // Delete from the table
+     images.remove(at: indexPath.row + startShowing)
+     notes.remove(at: indexPath.row + startShowing)
+     fileName.remove(at: indexPath.row + startShowing)
+     dates.remove(at: indexPath.row + startShowing)
+     id.remove(at: indexPath.row + startShowing)
+     dairyList.remove(at: indexPath.row + startShowing)
+     vegetableList.remove(at: indexPath.row + startShowing)
+     proteinList.remove(at: indexPath.row + startShowing)
+     fruitList.remove(at: indexPath.row + startShowing)
+     grainList.remove(at: indexPath.row + startShowing)
+     recordCount -= 1
+     print(dates)
+     print(id)
+     print("Dairy \(dairyList)")
+     print("Protein \(proteinList)")
+     tableView.reloadData()
+     }
+     }*/
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -536,3 +550,45 @@ class DiaryTableViewController: UITableViewController {
     
     
 }
+
+// MARK: - Protocol Conformance | CoachMarksControllerDataSource
+extension DiaryTableViewController: CoachMarksControllerDataSource
+{
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?)
+    {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        switch(index)
+        {
+        case 0:
+            coachViews.bodyView.hintLabel.text = "Swipe left to edit or delete your record".localized()
+            coachViews.bodyView.nextLabel.text = "Done".localized()
+            UserDefaultsHandler().setDiaryTutorialStatus(status: true)
+        default: break
+        }
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark
+    {
+        
+        let cell_Frame = tableViewController.rectForRow(at: IndexPath(row: 0, section: 0))
+        let view_View = UIView(frame: cell_Frame)
+        view_View.frame = CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 25, width: view_View.frame.width, height: view_View.frame.height)
+        switch(index)
+        {
+        case 0:
+            return coachMarksController.helper.makeCoachMark(for: view_View)
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+        
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
+    {
+        return 1
+    }
+}
+
+

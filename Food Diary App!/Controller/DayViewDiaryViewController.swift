@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Instructions
 
 class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-
+    
     @IBOutlet weak var checkTodayDiary: UIButton!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var grainLabel: UILabel!
@@ -21,7 +22,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var recentTableView: UITableView!
     @IBOutlet weak var colourIndicator: UIView!
-    private let userDefault = UserDefaultsHandler()
+    private var userDefault = UserDefaultsHandler()
     private var nutriCalculation: HealthPercentageCalculator?
     private let showDayDetail = ""
     private var lookingDate = ""
@@ -52,6 +53,8 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     private var dates: [Date] = [] // Storing dates
     private var id: [String] = []
     
+    // For tutorial walkthrough
+    let coachMarksController = CoachMarksController()
     
     override func viewDidLoad()
     {
@@ -59,6 +62,14 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         recentTableView.delegate = self
         recentTableView.dataSource = self
         updateData()
+        
+        // Tutorial
+        if id.count > 0 && userDefault.getDayDiaryTutorialStatus() == false
+        {
+            self.coachMarksController.dataSource = self
+            self.coachMarksController.start(on: self)
+            self.coachMarksController.overlay.allowTap = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -85,7 +96,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             updateData()
             recentTableView.reloadData()
         }
-    
+        
     }
     
     func todayDiary()
@@ -176,21 +187,24 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         Standard = userDefault.getPlanStandard() as! [Double]
         
         //-- to display the most up to date items first
-//        dates = dates.reversed()
-//        dateSaved = dateSaved.reversed()
-//        notes = notes.reversed()
-//        id = id.reversed()
-//        fruitList = fruitList.reversed()
-//        dairyList = dairyList.reversed()
-//        vegetableList = vegetableList.reversed()
-//        proteinList = proteinList.reversed()
-//        grainList = grainList.reversed()
-//        eachDayPercentage = eachDayPercentage.reversed()
+        //        dates = dates.reversed()
+        //        dateSaved = dateSaved.reversed()
+        //        notes = notes.reversed()
+        //        id = id.reversed()
+        //        fruitList = fruitList.reversed()
+        //        dairyList = dairyList.reversed()
+        //        vegetableList = vegetableList.reversed()
+        //        proteinList = proteinList.reversed()
+        //        grainList = grainList.reversed()
+        //        eachDayPercentage = eachDayPercentage.reversed()
         
-        format.dateFormat = "yyyy-MM-dd"
-        if format.string(from: dates[0]) == format.string(from: Date())
+        if id.count > 0
         {
-            todayHasRecord = 1
+            format.dateFormat = "yyyy-MM-dd"
+            if format.string(from: dates[0]) == format.string(from: Date())
+            {
+                todayHasRecord = 1
+            }
         }
         // Main Function
         todayDiary()
@@ -219,7 +233,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DayViewDairyTableViewCell
-
+        
         print("table")
         print(dateSaved)
         print(todayHasRecord)
@@ -279,3 +293,39 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         }
     }
 }
+
+// MARK: - Protocol Conformance | CoachMarksControllerDataSource
+extension DayViewDiaryViewController: CoachMarksControllerDataSource
+{
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?)
+    {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        switch(index)
+        {
+        case 0:
+            coachViews.bodyView.hintLabel.text = "Check your daily informations right here! Tap on it to check daily activities".localized()
+            coachViews.bodyView.nextLabel.text = "Next".localized()
+            UserDefaultsHandler().setDayDiaryTutorialStatus(status: true)
+        default: break
+        }
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        switch(index)
+        {
+        case 0:
+            return coachMarksController.helper.makeCoachMark(for: backgroundImage)
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+        
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int
+    {
+        return 1
+    }
+}
+

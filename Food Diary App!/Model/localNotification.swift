@@ -26,7 +26,6 @@ struct localNotification
         UNUserNotificationCenter.current().add(request) { (error) in
             if error != nil {
                 print("Push failed")
-                print(error)
             }else {
                 print("Push completed")
             }
