@@ -139,7 +139,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEK-X8-18c">
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEK-X8-18c">
                             <rect key="frame" x="0.0" y="233" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">Add new records to display
@@ -3101,7 +3101,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="rJ7-a7-eSd">
-                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="9ae-PQ-yns"/>
                                                     </constraints>
@@ -3110,7 +3110,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="irH-8D-0gV">
-                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="HoX-kj-m2o"/>
                                                     </connections>
@@ -3141,7 +3141,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="IJI-Q5-W9c">
-                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="tbB-CE-E0P"/>
                                                     </constraints>
@@ -3150,7 +3150,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2vH-rH-Ijp">
-                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="HeI-7Z-l4v"/>
                                                     </connections>
@@ -3181,7 +3181,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="akR-ij-vea">
-                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="q73-J3-uu5"/>
                                                     </constraints>
@@ -3190,7 +3190,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vcz-ts-guo">
-                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="2kS-y7-7xv"/>
                                                     </connections>
@@ -3221,7 +3221,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="0O6-Qg-I2T">
-                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="fcw-9v-DL1"/>
                                                     </constraints>
@@ -3230,7 +3230,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-k6-HVi">
-                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="PSN-qd-TrN"/>
                                                     </connections>
@@ -3261,7 +3261,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-B9-N7E">
-                                                    <rect key="frame" x="300" y="9" width="59" height="31"/>
+                                                    <rect key="frame" x="245" y="9" width="59" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="Bd8-8z-Yes"/>
                                                     </constraints>
@@ -3270,7 +3270,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <stepper opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dvF-eh-iJ1">
-                                                    <rect key="frame" x="188" y="10" width="94" height="29"/>
+                                                    <rect key="frame" x="133" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="grainStepper:" destination="Rfo-VF-Sm2" eventType="valueChanged" id="gKG-fs-b6l"/>
                                                     </connections>
@@ -15513,9 +15513,10 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YiC-7c-neb"/>
         <segue reference="RX4-OQ-TD4"/>
         <segue reference="8tG-1D-cVd"/>
         <segue reference="127-SN-MXU"/>
-        <segue reference="D70-QE-Rdu"/>
+        <segue reference="SJg-7O-VKU"/>
     </inferredMetricsTieBreakers>
 </document>

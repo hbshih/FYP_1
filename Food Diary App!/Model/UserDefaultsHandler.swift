@@ -155,6 +155,16 @@ struct UserDefaultsHandler
         defaults.set(status, forKey: "GiveReviewState")
     }
     
+    func setHasNotified(value: [String])
+    {
+        defaults.set(value, forKey: "hasNotified")
+    }
+    
+    func getHasNotified() -> AnyObject
+    {
+        return defaults.object(forKey: "hasNotified") as AnyObject
+    }
+    
     /*
      func getTutorialStatus() -> Bool
      {

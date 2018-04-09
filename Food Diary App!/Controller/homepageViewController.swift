@@ -39,7 +39,7 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerFace: UIButton!
     @IBOutlet weak var centerInformationArea: UILabel!
     @IBOutlet weak var centerFaceArea: UIButton!
-
+    
     // UI
     @IBOutlet weak var centerInformationView: UIView!
     @IBOutlet weak var cardView: UIView!
@@ -172,7 +172,7 @@ class homepageViewController: UIViewController {
         // Update Plan Standard
         let defaults = UserDefaultsHandler()
         let planStandard = defaults.getPlanStandard() as? [Double]
-
+        
         //Has record in the system
         if recordCount > 0
         {
@@ -285,7 +285,7 @@ class homepageViewController: UIViewController {
             informationLabel.text = "No data yet".localized()
         }
     }
-
+    
     // Present Camera
     @objc func segueToCamera()
     {
@@ -447,68 +447,119 @@ class homepageViewController: UIViewController {
     private func notifyStatus(todayCount:[Double],Standard:[Double],percentage: Double)
     {
         var overConsume = ""
-        var rightPortion = ""
-        var hasRightPortion = true
-        var hasOverConsume = true
+        var groupList = ["grain", "vegetable","protein","fruit","dairy"]
+        var hasRightPortion = [false,false,false,false,false]
+        var presentRightPortionMessage = false
+        var hasOverConsume = [false,false,false,false,false]
+        var presentOverConsumeMessage = false
         
         if todayCount[0] >= Standard[0] && todayCount[0] <= Standard[0] + 1.0
         {
-            rightPortion = "grain"
-        }else if todayCount[1] >= Standard[1] && todayCount[1] <= Standard[1] + 1.0
+            hasRightPortion[0] = true
+        }
+        if todayCount[1] >= Standard[1] && todayCount[1] <= Standard[1] + 1.0
         {
-            rightPortion = "vegetable"
-        }else if todayCount[4] >= Standard[2] && todayCount[4] <= Standard[2] + 1.0
+            hasRightPortion[1] = true
+        }
+        if todayCount[4] >= Standard[2] && todayCount[4] <= Standard[2] + 1.0
         {
-            rightPortion = "protein"
-        }else if todayCount[2] >= Standard[3] && todayCount[2] <= Standard[3] + 1.0
+            hasRightPortion[2] = true
+        }
+        if todayCount[2] >= Standard[3] && todayCount[2] <= Standard[3] + 1.0
         {
-            rightPortion = "fruit"
-        }else if todayCount[3] >= Standard[4] && todayCount[3] <= Standard[4] + 1.0
+            hasRightPortion[3] = true
+        }
+        if todayCount[3] >= Standard[4] && todayCount[3] <= Standard[4] + 1.0
         {
-            rightPortion = "dairy"
-        }else
+            hasRightPortion[4] = true
+        }
+        
+        var hasPortionMessage = ""
+        var count = 0
+        
+        for i in 0 ..< hasRightPortion.count
         {
-            hasRightPortion = false
+            if hasRightPortion[i]
+            {
+                count += 1
+                if count == 1
+                {
+                    hasPortionMessage = "\(groupList[i])s"
+                    presentRightPortionMessage = true
+                }else if count > 1
+                {
+                    hasPortionMessage = hasPortionMessage + ", \(groupList[i])s"
+                }
+            }
         }
         
         if todayCount[0] > Standard[0] + 1.0
         {
-            overConsume = "grain"
-        }else if todayCount[1] > Standard[1] + 1.0
+            hasOverConsume[0] = true
+        }
+        if todayCount[1] > Standard[1] + 1.0
         {
-            overConsume = "vegetable"
-        }else if todayCount[4] > Standard[2] + 1.0
+            hasOverConsume[1] = true
+        }
+        if todayCount[4] > Standard[2] + 1.0
         {
-            overConsume = "protein"
-        }else if todayCount[2] > Standard[3] + 1.0
+            hasOverConsume[2] = true
+        }
+        if todayCount[2] > Standard[3] + 1.0
         {
-            overConsume = "fruit"
-        }else if todayCount[3] > Standard[4] + 1.0
+            hasOverConsume[3] = true
+        }
+        if todayCount[3] > Standard[4] + 1.0
         {
-            overConsume = "dairy"
-        }else
+            hasOverConsume[4] = true
+        }
+        
+        var hasOverMessage = ""
+        count = 0
+        
+        for i in 0 ..< hasOverConsume.count
         {
-            hasOverConsume = false
+            if hasOverConsume[i]
+            {
+                count += 1
+                if count == 1
+                {
+                    hasOverMessage = "\(groupList[i])s"
+                    presentOverConsumeMessage = true
+                }else if count > 1
+                {
+                    hasOverMessage = hasOverMessage + ", \(groupList[i])s"
+                }
+            }
         }
         
         let rightPortionMessage =
-            ["You have hit your target! Well done on eating \(rightPortion)s today!", "You have achieve your goal! Good work onn \(rightPortion)s today"]
+            ["You have hit your target! Well done on eating \(hasPortionMessage) today!", "You have achieve your goal! Good work on \(hasPortionMessage)s today"]
         
         let overConsumeMessage =
-            ["Oops! Seems like you have consume too much \(overConsume)s today",
-                "Remember to keep your self balance, you have eaten too much \(overConsume)s today"]
+            ["Oops! Seems like you have consume too much \(hasOverMessage) today",
+                "Remember to keep your self balance, you have eaten too much \(hasOverMessage) today"]
         
-        if hasOverConsume
+        var pastMessages = ["",""]
+        if let messageFromDefault = defaults.getHasNotified() as? [String]
         {
-            let diceRoll:Int = Int(arc4random_uniform(UInt32(overConsumeMessage.count - 1)))
-            localNotification(title: "Oops", message: overConsumeMessage[diceRoll]).push()
-        }else if hasRightPortion
+            pastMessages = messageFromDefault
+        }
+        
+        if pastMessages[1] != hasOverMessage || pastMessages[0] != hasPortionMessage
         {
-            let diceRoll:Int = Int(arc4random_uniform(UInt32(rightPortionMessage.count - 1)))
-            localNotification(title: "Great!", message: rightPortionMessage[diceRoll]).push()
-        }else
-        {
-            //
+            if presentOverConsumeMessage && pastMessages[1] != hasOverMessage
+            {
+                let diceRoll:Int = Int(arc4random_uniform(UInt32(overConsumeMessage.count - 1)))
+                localNotification(title: "Oops", message: overConsumeMessage[diceRoll]).push()
+            }
+            
+            if presentRightPortionMessage && pastMessages[0] != hasPortionMessage
+            {
+                let diceRoll:Int = Int(arc4random_uniform(UInt32(rightPortionMessage.count - 1)))
+                localNotification(title: "Great!", message: rightPortionMessage[diceRoll]).push()
+            }
+            defaults.setHasNotified(value: [hasPortionMessage,hasOverMessage])
         }
     }
     
