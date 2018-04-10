@@ -94,7 +94,7 @@ class OnBoardingViewController: UIViewController {
             let alert = SCLAlertView(appearance: appearance)
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
-            alert.addButton(NSLocalizedString("Ready to explore", comment: ""), target: self, selector: #selector(self.segueToHomeScreen))
+            alert.addButton(NSLocalizedString("Ready to explore", comment: ""), target: self, selector: #selector(self.segueToNotiAuthorization))
             _ = alert.showCustom(NSLocalizedString("Undecided plan?", comment: ""), subTitle: NSLocalizedString("Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", comment: ""), color: color, icon: icon!)
         }
         
@@ -122,7 +122,7 @@ class OnBoardingViewController: UIViewController {
             {
                 self.defaults.setOnboardingStatus(status: true)
                 //print("Customize2")
-                self.segueToHomeScreen()
+                self.segueToNotiAuthorization()
             }
         }
         
@@ -132,6 +132,12 @@ class OnBoardingViewController: UIViewController {
         // Present dialog
         present(popup, animated: true, completion:nil)
     }
+    
+    @objc func segueToNotiAuthorization()
+    {
+        performSegue(withIdentifier: "notificationAuthorizationSegue", sender: nil)
+    }
+    
     @objc func segueToHomeScreen()
     {
         performSegue(withIdentifier: "getStartedSegue", sender: nil)
@@ -194,7 +200,6 @@ extension OnBoardingViewController: SwiftyOnboardDataSource {
     func swiftyOnboardOverlayForPosition(_ swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
         let currentPage = round(position)
         overlay.pageControl.currentPage = Int(currentPage)
-        print(Int(currentPage))
         overlay.continueButton.tag = Int(position)
         
         if currentPage == 0.0 || currentPage == 1.0 || currentPage == 2.0{

@@ -8,8 +8,9 @@
 
 import UIKit
 import UserNotifications
+import Firebase
 
-class NotificationPageViewController: UIViewController {
+class NotificationPageViewController: UIViewController,UNUserNotificationCenterDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +25,37 @@ class NotificationPageViewController: UIViewController {
     
     @IBAction func AllowTapped(_ sender: Any)
     {
+                if #available(iOS 10.0, *) {
+                    // For iOS 10 display notification (sent via APNS)
+                    UNUserNotificationCenter.current().delegate = self
+        
+                    let authOptions: UNAuthorizationOptions = [.alert, .sound]
+                    UNUserNotificationCenter.current().requestAuthorization(
+                        options: authOptions,
+                        completionHandler: {_, _ in })
+                }
+//                else {
+//                    let settings: UIUserNotificationSettings =
+//                        UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
+//                    application.registerUserNotificationSettings(settings)
+//                }
+//
+//                application.registerForRemoteNotifications()
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
             
             if error != nil {
                 print("Authorization Unsuccessfull")
             }else {
                 print("Authorization Successfull")
+                UserDefaultsHandler().setNotificationStatus(flag: true)
             }
         }
-        
+        performSegue(withIdentifier: "showHomeSegue", sender: nil)
     }
+    @IBAction func notNowTapped(_ sender: Any)
+    {
+        UserDefaultsHandler().setNotificationStatus(flag: false)
+        performSegue(withIdentifier: "showHomeSegue", sender: nil)
+    }
+    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X9V-IU-S4a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W60-A2-Qhn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,9 +29,6 @@
         </array>
         <array key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
-        </array>
-        <array key="Montserrat-Light.otf">
-            <string>Montserrat-Light</string>
         </array>
         <array key="Montserrat-Medium.otf">
             <string>Montserrat-Medium</string>
@@ -1902,6 +1899,7 @@
                     <connections>
                         <outlet property="doneButton" destination="fgW-LQ-7ax" id="1L8-xW-aDH"/>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="showHomeSegue" id="DTX-2Y-Kk5"/>
+                        <segue destination="X9V-IU-S4a" kind="show" identifier="notificationAuthorizationSegue" id="v8L-j8-3Jw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0q-LZ-MuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2205,46 +2203,7 @@
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
@@ -2257,96 +2216,18 @@ Cg
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">There is more than one way to eat healthfully and everyone has their own eating style. Make healthier choices that reflect your preferences, culture, traditions, and budget. Choose fruits, vegetables, grains, dairy, and protein foods to get the most nutrition and meet your personal calorie needs. Aim for a variety of foods and beverages from each food group and limit saturated fat, sodium, and added sugars.</mutableString>
+                                        <string key="content">There is more than one way to eat healthfully and everyone has their own eating style. Make healthier choices that reflect your preferences, culture, traditions, and budget. Choose fruits, vegetables, grains, dairy, and protein foods to get the most nutrition and meet your personal calorie needs. Aim for a variety of foods and beverages from each food group and limit saturated fat, sodium, and added sugars.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.31373000000000001" green="0.31373000000000001" blue="0.31373000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <color key="NSStrokeColor" red="0.31373000000000001" green="0.31373000000000001" blue="0.31373000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
@@ -2359,46 +2240,7 @@ Cg
                                             <color key="NSColor" red="0.31373000000000001" green="0.31373000000000001" blue="0.31373000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="13" name="HelveticaNeue-Light"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <color key="NSStrokeColor" red="0.31373000000000001" green="0.31373000000000001" blue="0.31373000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
@@ -2517,7 +2359,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">The saturated fat, sodium, and added sugars found in foods and beverages are important for you to think about as you build your healthy eating style. Saturated fat and sodium are sometimes found naturally in foods and beverages. Sugars, sodium, and ingredients high in saturated fat can also be added during processing or preparing foods and beverages.</mutableString>
+                                        <string key="content">The saturated fat, sodium, and added sugars found in foods and beverages are important for you to think about as you build your healthy eating style. Saturated fat and sodium are sometimes found naturally in foods and beverages. Sugars, sodium, and ingredients high in saturated fat can also be added during processing or preparing foods and beverages.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.31373000000000001" green="0.31373000000000001" blue="0.31373000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2588,7 +2430,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">Create an eating style that can improve your health now and in the future by making small changes over time. Consider changes that reflect your personal preferences, culture and traditions. Think of each change as a “win” as you build positive habits and find solutions that reflect your healthy eating style. Each change is a MyWin that can help you build your healthy eating style. Use the tips and links below to find little victories that work for you.</mutableString>
+                                        <string key="content">Create an eating style that can improve your health now and in the future by making small changes over time. Consider changes that reflect your personal preferences, culture and traditions. Think of each change as a “win” as you build positive habits and find solutions that reflect your healthy eating style. Each change is a MyWin that can help you build your healthy eating style. Use the tips and links below to find little victories that work for you.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.31373000000000001" green="0.31373000000000001" blue="0.31373000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3525,6 +3367,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                     <connections>
                         <segue destination="kmQ-HH-xb9" kind="show" identifier="getStartedSegue" id="1BD-Ta-gEc"/>
                         <segue destination="8Uv-Vk-yRr" kind="show" identifier="customizeSegue" id="OQk-Zv-MDF"/>
+                        <segue destination="X9V-IU-S4a" kind="show" identifier="notificationAuthorizationSegue" id="xVu-hD-yEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3f-se-l3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3551,15 +3394,15 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_white" translatesAutoresizingMaskIntoConstraints="NO" id="E7h-Y6-YZ7">
-                                        <rect key="frame" x="107" y="415.5" width="160" height="39"/>
+                                        <rect key="frame" x="107" y="412" width="160" height="39"/>
                                         <color key="tintColor" red="0.33549222350120544" green="0.63697808980941772" blue="0.97258597612380981" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="a3O-Ns-eiV"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-3T-hvS">
-                                        <rect key="frame" x="114.5" y="420" width="146" height="30"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <rect key="frame" x="113" y="415" width="149" height="33"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                         <state key="normal" title="ALLOW COACH TIPS">
                                             <color key="titleColor" red="0.14072424173355103" green="0.65388178825378418" blue="0.9568982720375061" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -3574,16 +3417,19 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To increase your success, we would like to send regular tips and reminders to you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0Z-31-WjS">
-                                        <rect key="frame" x="30" y="318" width="315" height="62.5"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
+                                        <rect key="frame" x="30" y="318" width="315" height="59"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzs-ka-kh9">
-                                        <rect key="frame" x="151" y="480" width="72" height="30"/>
+                                        <rect key="frame" x="151" y="476.5" width="72" height="30"/>
                                         <state key="normal" title="NOT NOW">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="notNowTapped:" destination="X9V-IU-S4a" eventType="touchUpInside" id="EcD-Ki-2dF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -3613,6 +3459,10 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PsU-ie-p6H"/>
                     </view>
+                    <connections>
+                        <segue destination="kmQ-HH-xb9" kind="show" identifier="showHomeSegue" id="dfg-c0-kh3"/>
+                        <segue destination="kmQ-HH-xb9" kind="show" id="e9B-3y-vbz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anf-HX-hP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6002,14 +5852,14 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">It's easy to follow the the App’s graphic if you're eating a "meat, starch, and veg" meal where everything is prepared separately. But what if you're having a sandwich or a meal that mixes different foods together, like a salad, pasta dish, stew, or stir-fry? That's when you need to use the principles behind the plate as a guide instead of copying it exactly.
+                                        <string key="content">It's easy to follow the the App’s graphic if you're eating a "meat, starch, and veg" meal where everything is prepared separately. But what if you're having a sandwich or a meal that mixes different foods together, like a salad, pasta dish, stew, or stir-fry? That's when you need to use the principles behind the plate as a guide instead of copying it exactly.
 
 For a sandwich, let us guide you on what to choose. A healthy sandwich might start with two slices of whole-wheat bread — your grains. Add a slice of meat, cheese, or other protein. Then fill the sandwich with vegetables like lettuce, tomato, or grated carrots. Add a side of fruit and a cup of low-fat white milk and you've got your balanced meal.
 
 For one-dish meals (or salads), make sure that half of what you're eating are vegetables and fruits, about a quarter is lean protein, and a quarter is grain, preferably whole grain. For example, a spaghetti dish could be whole-wheat pasta with a meatball, tossed with chopped tomato along with other veggies, like spinach or carrots. A stir-fry might be mixed veggies with a few pieces of tofu or chicken and brown rice. Avoid or limit high-fat sauces (like cream sauces) in one-dish meals and don't add too much dressing to salads.
 
 Either Foodylife or MyPlate is only a guide. Not every meal you eat will have every food group, but try to include three or more. Take breakfast, for example: If you have a whole-wheat bagel with cream cheese for breakfast, add some fruit and maybe a glass of milk. You can make up any missing food groups, like veggies, later in the day.
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="16" name="HelveticaNeue"/>
@@ -6059,14 +5909,14 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">The SuperTracker database is based on the Food and Nutrient Database for Dietary Studies (FNDDS), and the Food Patterns Equivalents Database (FPED). Data collected during dietary studies, such as the USDA’s What We Eat in America (WWEIA) and the dietary interview in the National Health and Nutrition Examination Survey (NHANES) is used to translate foods eaten into food groups (e.g. Fruits) and subgroups (e.g. whole fruit and fruit juice).
+                                        <string key="content">The SuperTracker database is based on the Food and Nutrient Database for Dietary Studies (FNDDS), and the Food Patterns Equivalents Database (FPED). Data collected during dietary studies, such as the USDA’s What We Eat in America (WWEIA) and the dietary interview in the National Health and Nutrition Examination Survey (NHANES) is used to translate foods eaten into food groups (e.g. Fruits) and subgroups (e.g. whole fruit and fruit juice).
 
 Foodylife is built based one the guidelines and tips from the USDA Center for Nutrition Policy and Promotion (CNPP). Especially on the Dietary Guidelines for Americans introduced in 2010 - MyPlate.
 
 Foodylife follows the guide on MyPlate, which has sections for vegetables, fruits, grains, and protein foods, as well as a "cup" on the side for dairy. Each section is color coded (green for veggies, red for fruits, orange for grains, purple for protein, and blue for dairy) so you can see at a glance how much of these foods to eat.
 Together with MyPlate, Foodylife reminds us to:
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="16" name="HelveticaNeue"/>
@@ -15754,8 +15604,9 @@ WQAAAAAAAAAAAAAAAAAIcZk
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RX4-OQ-TD4"/>
+        <segue reference="v8L-j8-3Jw"/>
         <segue reference="8tG-1D-cVd"/>
         <segue reference="127-SN-MXU"/>
-        <segue reference="gYU-EM-wti"/>
+        <segue reference="dfg-c0-kh3"/>
     </inferredMetricsTieBreakers>
 </document>

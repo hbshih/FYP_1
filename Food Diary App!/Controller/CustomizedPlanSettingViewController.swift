@@ -174,7 +174,7 @@ class CustomizedPlanSettingViewController: FormViewController {
             let alert = SCLAlertView(appearance: appearance)
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
-            alert.addButton("Ready to explore".localized(), target: self, selector: #selector(self.showHome))
+            alert.addButton("Ready to explore".localized(), target: self, selector: #selector(self.segueToNotiAuthorization))
             _ = alert.showCustom("Plan Set".localized(), subTitle: String.localizedStringWithFormat(NSLocalizedString("According to your information, your plan will be taking \n%@ servings of grain,\n%@ servings of vegetable,\n%@ servings of protein,\n%@ servings of fruit,\n%@ servings of dairy", comment: ""),"\(plan[0])","\(plan[1])","\(plan[2])","\(plan[3])","\(plan[4])"), color: color, icon: icon!)
                 infoShown = true
             }
@@ -208,6 +208,11 @@ class CustomizedPlanSettingViewController: FormViewController {
     @objc func showHome()
     {
         performSegue(withIdentifier: "showHomeSegue", sender: nil)
+    }
+    
+    @objc func segueToNotiAuthorization()
+    {
+        performSegue(withIdentifier: "notificationAuthorizationSegue", sender: nil)
     }
     
 }

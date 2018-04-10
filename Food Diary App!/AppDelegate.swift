@@ -22,9 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
+        Messaging.messaging().delegate = self as? MessagingDelegate
         
         //Firebases
-        //   FirebaseApp.configure()
+        FirebaseApp.configure()
 //        if #available(iOS 8.0, *)
 //        {
 //            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
@@ -36,18 +37,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //            application.registerForRemoteNotifications(matching: types)
 //        }
         
+//        if #available(iOS 10.0, *) {
+//            // For iOS 10 display notification (sent via APNS)
+//            UNUserNotificationCenter.current().delegate = self
+//
+//            let authOptions: UNAuthorizationOptions = [.alert, .sound]
+//            UNUserNotificationCenter.current().requestAuthorization(
+//                options: authOptions,
+//                completionHandler: {_, _ in })
+//        } else {
+//            let settings: UIUserNotificationSettings =
+//                UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
+//            application.registerUserNotificationSettings(settings)
+//        }
+        
+        application.registerForRemoteNotifications()
+        
 //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
-//            
+//
 //            if error != nil {
 //                print("Authorization Unsuccessfull")
 //            }else {
 //                print("Authorization Successfull")
 //            }
 //        }
-//        
+        
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-            if settings.authorizationStatus != .authorized {
+            if settings.authorizationStatus != .authorized
+            {
+                print("Notification Not Authorized")
                 // Notifications not allowed
+            }else
+            {
+                print("Notification Authorized")
             }
         }
         
@@ -94,12 +116,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         return true
     }
+//
+//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+//        print("Firebase registration token: \(fcmToken)")
+//
+//        // TODO: If necessary send token to application server.
+//        // Note: This callback is fired at each app startup and whenever a new token is generated.
+//    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Device Tokenn \(deviceToken)")
+        Messaging.messaging().apnsToken = deviceToken
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+    }
+    
+//    func application(application: UIApplication,
+//                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+//        Messaging.messaging().apnsToken = deviceToken
+//    }
     
     @objc func tokenRefreshNotification(notification: NSNotification)
     {
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
         connectToFCM()
     }
-    
     func connectToFCM()
     {
         // Won't connect since there is no token
