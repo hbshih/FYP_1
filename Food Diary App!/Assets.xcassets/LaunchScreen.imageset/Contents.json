@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Wallpaper@1x.jpg",
+      "filename" : "LaunchScreen@1x.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Wallpaper@2x.jpg",
+      "filename" : "LaunchScreen@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Wallpaper@3x.jpg",
+      "filename" : "LaunchScreen@3x.jpg",
       "scale" : "3x"
     }
   ],
