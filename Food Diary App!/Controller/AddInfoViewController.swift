@@ -372,8 +372,8 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
         {
             addnoteText.text = ""
             addnoteText.textColor = UIColor.black
-            doneButton.alpha = 0
         }
+        doneButton.alpha = 0.25
     }
     func textViewDidEndEditing(_ textView: UITextView)
     {

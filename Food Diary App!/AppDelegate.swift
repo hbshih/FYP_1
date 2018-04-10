@@ -36,15 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //            application.registerForRemoteNotifications(matching: types)
 //        }
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
-            
-            if error != nil {
-                print("Authorization Unsuccessfull")
-            }else {
-                print("Authorization Successfull")
-            }
-        }
-        
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
+//            
+//            if error != nil {
+//                print("Authorization Unsuccessfull")
+//            }else {
+//                print("Authorization Successfull")
+//            }
+//        }
+//        
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
             if settings.authorizationStatus != .authorized {
                 // Notifications not allowed

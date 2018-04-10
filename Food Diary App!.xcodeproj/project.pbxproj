@@ -49,6 +49,7 @@
 		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
 		B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */; };
 		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
+		B5A7AF65207C527B00F1208F /* NotificationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */; };
@@ -173,6 +174,7 @@
 		B59701582066AAB80044ED73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A71F332069298A0010A3EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPageViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */,
 				B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */,
 				B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */,
+				B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */,
+				B5A7AF65207C527B00F1208F /* NotificationPageViewController.swift in Sources */,
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
 				B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */,

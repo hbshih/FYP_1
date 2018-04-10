@@ -524,7 +524,7 @@ class DiaryTableViewController: UITableViewController {
                 
                 // Add a ending line
                 
-                if indexPath.row == id.count - 1
+                if indexPath.row == recordCount - 1
                 {
                     cell.separationLine.image = UIImage(named: "Timeline_endLine.png")
                 }

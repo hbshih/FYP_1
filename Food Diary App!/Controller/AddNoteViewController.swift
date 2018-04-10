@@ -249,8 +249,9 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         {
             addnoteText.text = ""
             addnoteText.textColor = UIColor.black
-            doneButton.alpha = 0
+            
         }
+        doneButton.alpha = 0.25
     }
     func textViewDidEndEditing(_ textView: UITextView)
     {
@@ -258,8 +259,8 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
         {
             addnoteText.text = "add some note here...".localized()
             addnoteText.textColor = UIColor.lightGray
-            doneButton.alpha = 1
         }
+        doneButton.alpha = 1
     }
     
     // Show instructions

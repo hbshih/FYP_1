@@ -199,7 +199,7 @@
                             </constraints>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2pQ-5Z-uKr">
-                            <rect key="frame" x="142" y="8" width="162" height="118"/>
+                            <rect key="frame" x="142" y="28" width="162" height="98"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -229,7 +229,7 @@
                         <constraint firstItem="2pQ-5Z-uKr" firstAttribute="bottom" secondItem="y2G-YZ-1mZ" secondAttribute="bottom" id="rZj-pD-Nz3"/>
                         <constraint firstItem="2pQ-5Z-uKr" firstAttribute="leading" secondItem="y2G-YZ-1mZ" secondAttribute="trailing" constant="8" id="u0J-BF-pGK"/>
                         <constraint firstAttribute="trailing" secondItem="fsW-FC-aOV" secondAttribute="trailing" constant="16" id="wN4-gP-U9K"/>
-                        <constraint firstItem="2pQ-5Z-uKr" firstAttribute="top" secondItem="y2G-YZ-1mZ" secondAttribute="top" id="ze4-Zy-RK8"/>
+                        <constraint firstItem="2pQ-5Z-uKr" firstAttribute="top" secondItem="y2G-YZ-1mZ" secondAttribute="top" constant="20" id="ze4-Zy-RK8"/>
                     </constraints>
                 </view>
             </subviews>
