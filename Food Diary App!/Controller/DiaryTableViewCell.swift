@@ -14,7 +14,7 @@ class DiaryTableViewCell: UITableViewCell {
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var note: UILabel!
+    @IBOutlet weak var noteView: UITextView!
     @IBOutlet weak var separationLine: UIImageView!
     @IBOutlet weak var vegetableField: UIImageView!
     @IBOutlet weak var proteinField: UIImageView!

@@ -80,7 +80,13 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         if loadListcount != newCount
         {
             dates = dataHandler.getTimestamp()
-            if format.string(from: dates[0]) != format.string(from: Date())
+            if dates.count > 0
+            {
+                if format.string(from: dates[0]) != format.string(from: Date())
+                {
+                    todayHasRecord = 0
+                }
+            }else
             {
                 todayHasRecord = 0
             }
@@ -96,7 +102,6 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             updateData()
             recentTableView.reloadData()
         }
-        
     }
     
     func todayDiary()
@@ -247,18 +252,15 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
                 cell?.colourIndicator.backgroundColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
             }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 60)
             {
-                cell?.metalPrize.alpha = 0
-                cell?.metalPrize_2.alpha = 0
                 cell?.metalPrize3.alpha = 0
+                cell?.metalPrize.alpha = 0
                 cell?.colourIndicator.backgroundColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0)
             }else if (eachDayPercentage[indexPath.row + todayHasRecord] < 80)
             {
-                cell?.metalPrize_2.alpha = 0
-                cell?.metalPrize3.alpha = 0
+                cell?.metalPrize.alpha = 0
                 cell?.colourIndicator.backgroundColor = UIColor(red:0.59, green:0.79, blue:0.30, alpha:1.0)
             }else
             {
-                cell?.metalPrize3.alpha = 0
                 cell?.colourIndicator.backgroundColor = UIColor(red:0.94, green:0.60, blue:0.18, alpha:1.0)
             }
             

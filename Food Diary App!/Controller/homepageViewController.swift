@@ -40,6 +40,8 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerInformationArea: UILabel!
     @IBOutlet weak var centerFaceArea: UIButton!
     
+    var Percentage = 0.0
+    
     // UI
     @IBOutlet weak var centerInformationView: UIView!
     @IBOutlet weak var cardView: UIView!
@@ -83,21 +85,19 @@ class homepageViewController: UIViewController {
     {
         super.viewDidLoad()
         presentCircularMenu()
+        // UI adjustments
+        centerInformationArea.alpha = 0
+        // Get initial interaction messages
+        getInteractionMessages()
         
         if defaults.getHomepageTutorialStatus() == true
         {
             /*Existing user, watched tutorial already*/
-            // Get initial interaction messages
-            getInteractionMessages()
-            // UI adjustments
-            centerInformationArea.alpha = 0
         }else
         {
             /*New User*/
             // Show tutorial
             coachversion = 1
-            defaults.setNotificationStatus(flag: true)
-            localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
             self.coachMarksController.dataSource = self
             self.coachMarksController.start(on: self)
             self.coachMarksController.overlay.allowTap = true
@@ -215,8 +215,9 @@ class homepageViewController: UIViewController {
                 // update percentage
                 updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
                 
+                Percentage = round(healthData.getLastSevenDaysPercentage()*100)/100
                 // text below the slider
-                informationLabel.text = "Recent Balance: ".localized() + "\(round(healthData.getLastSevenDaysPercentage()*100)/100)%"
+                informationLabel.text = "Recent Balance: ".localized() + "\(Percentage)%"
                 
                 // Pop up for app review if has more than 3 day usage
                 if healthData.getDayBalancePercentage().count > 3
@@ -604,7 +605,7 @@ class homepageViewController: UIViewController {
     {
         Analytics.logEvent("FaceTapped", parameters: nil)
         playSound()
-        AudioServicesPlaySystemSound(4095)
+        //        AudioServicesPlaySystemSound(4095)
         if !(messageCounter == messageToUsers.count)
         {
             let appearance = SCLAlertView.SCLAppearance(
@@ -622,7 +623,10 @@ class homepageViewController: UIViewController {
         
         if messageCounter == messageToUsers.count
         {
-            centerFace.setImage(#imageLiteral(resourceName: "Face_Anonyed"), for: .normal)
+            centerFace.setImage(#imageLiteral(resourceName: "Face_Annoyed"), for: .normal)
+            circularSlider.trackColor = UIColor(red: 0.6 , green: 0.6, blue: 0.6, alpha: 1)
+            circularSlider.set(colors: UIColor(red: 0.6 , green: 0.6, blue: 0.6, alpha: 0.2))
+            informationLabel.textColor = UIColor.gray
         }
     }
     
@@ -634,30 +638,35 @@ class homepageViewController: UIViewController {
             if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Vegetable"
+                Analytics.logEvent("vDashboard", parameters: nil)
             }
         }else if segue.identifier == "grainDashSegue"
         {
             if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Grain"
+                Analytics.logEvent("gDashboard", parameters: nil)
             }
         }else if segue.identifier == "proteinDashSegue"
         {
             if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Protein"
+                Analytics.logEvent("pDashboard", parameters: nil)
             }
         }else if segue.identifier == "fruitDashSegue"
         {
             if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Fruit"
+                Analytics.logEvent("fDashboard", parameters: nil)
             }
         }else if segue.identifier == "dairyDashSegue"
         {
             if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Dairy"
+                Analytics.logEvent("dDashboard", parameters: nil)
             }
         }else
         {
@@ -704,7 +713,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
         {
             switch(index) {
             case 0:
-                coachViews.bodyView.hintLabel.text = "Start to use the app by adding your recent food now!".localized()
+                coachViews.bodyView.hintLabel.text = "Start to use the app by adding your recent food now! ".localized()
                 coachViews.bodyView.nextLabel.text = "Start!".localized()
             default: break
             }
@@ -718,14 +727,14 @@ extension homepageViewController: CoachMarksControllerDataSource {
             switch(index) {
             case 0:
                 // coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
-                
-                coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today".localized(), comment: ""),"\(Standard[0] - todayCount[0])","\(Standard[1] - todayCount[1])","\(Standard[3] - todayCount[2])","\(Standard[4] - todayCount[3])","\(Standard[2] - todayCount[4])")
+                coachViews.bodyView.hintLabel.text = "Good Start! Your diet balance is now \(Percentage)%! Your past 7 days diet balance will be shown here".localized()
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 1:
                 coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()
+                coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today".localized(), comment: ""),"\(Standard[0] - todayCount[0])","\(Standard[1] - todayCount[1])","\(Standard[3] - todayCount[2])","\(Standard[4] - todayCount[3])","\(Standard[2] - todayCount[4])")
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 2:
-                coachViews.bodyView.hintLabel.text = "Swipe up to get diet information for today".localized()
+                coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 3:
                 coachViews.bodyView.hintLabel.text = "Tap on each of the icons to find out more about that group!".localized()
@@ -754,14 +763,12 @@ extension homepageViewController: CoachMarksControllerDataSource {
             switch(index)
             {
             case 0:
-                return coachMarksController.helper.makeCoachMark(for: self.circularSlider)
+                return coachMarksController.helper.makeCoachMark(for: self.informationLabel)
             case 1:
+                return coachMarksController.helper.makeCoachMark(for: self.circularSlider)
+            case 2:
                 self.centerFaceArea.alpha = 1
                 self.centerInformationArea.alpha = 0
-                return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
-            case 2:
-                self.centerFaceArea.alpha = 0
-                self.centerInformationArea.alpha = 1
                 return coachMarksController.helper.makeCoachMark(for: self.centerFaceArea)
             case 3:
                 self.centerFaceArea.alpha = 1

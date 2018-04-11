@@ -8,6 +8,7 @@
 
 import UIKit
 import YPImagePicker
+import FirebaseAnalytics
 
 class EditPopUpViewController: UIViewController,UITextViewDelegate {
 
@@ -36,6 +37,7 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.logEvent("EditPopUp", parameters: nil)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
         
         grainStepper.value = n_Values[0]
@@ -94,6 +96,7 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
         default:
             break
         }
+        Analytics.logEvent("Edit_Servings", parameters: nil)
         recordChanged = true
     }
     
@@ -107,6 +110,7 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
         {
             self.recordChanged = true
             notes = notesField.text
+            Analytics.logEvent("Edit_Note", parameters: nil)
         }
         
         if notesField.text == "add some note here...".localized()
@@ -140,6 +144,7 @@ class EditPopUpViewController: UIViewController,UITextViewDelegate {
             self.recordChanged = true
             self.hasNewImage = true
             self.newImage = img
+            Analytics.logEvent("Edit_NewImage", parameters: nil)
             picker.dismiss(animated: true, completion: nil)
         }
         present(picker, animated: true, completion: nil)

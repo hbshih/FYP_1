@@ -50,9 +50,6 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         percentageLabel.text = "\((round(healthData.getAverageHealth()*100)/100))%"
         setupConstraints()
         
-        // -- Log Analytics
-        Analytics.logEvent("ReportVisited", parameters: nil)
-        
     }
     
     // drawing the values to the graph

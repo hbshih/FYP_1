@@ -44,6 +44,7 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F44BD20627B90001FD68C /* StringExtension.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
+		B58C2E32207D4D6400924D1C /* Appsee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58C2E31207D4D6400924D1C /* Appsee.framework */; };
 		B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F339205F110C0070124D /* ChangeDateViewController.swift */; };
 		B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F33C205F1DFC0070124D /* Date_Extension.swift */; };
 		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
@@ -165,6 +166,7 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
+		B58C2E31207D4D6400924D1C /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appsee.framework; path = ../../../Downloads/Appsee.framework; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
 		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			files = (
 				B5CF54F7202E467900D1B305 /* AdSupport.framework in Frameworks */,
 				373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */,
+				B58C2E32207D4D6400924D1C /* Appsee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +245,7 @@
 		0CEB4A157D41D8E9D1A2D617 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B58C2E31207D4D6400924D1C /* Appsee.framework */,
 				B531847D203B7C40002085A9 /* Crashlytics.framework */,
 				B5318478203B79F8002085A9 /* Fabric.framework */,
 				B5CF54F6202E467800D1B305 /* AdSupport.framework */,

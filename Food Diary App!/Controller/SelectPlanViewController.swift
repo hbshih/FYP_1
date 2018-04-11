@@ -13,7 +13,7 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     /*Outlets and variables*/
     @IBOutlet weak var picker: UIPickerView!
-    private let options = ["Standard Male".localized(),"Standard Female".localized(),"Personalize".localized()]
+    private let options = ["Personalize".localized(),"Standard Male".localized(),"Standard Female".localized()]
     private var selectedOption = "" // To store which plan user selected
     private let maleDefaultSet = numberOfServes().getMaleSet()
     private let femaleDefauthSet = numberOfServes().getFemaleSet()

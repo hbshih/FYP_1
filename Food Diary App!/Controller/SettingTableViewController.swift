@@ -15,12 +15,14 @@ class SettingTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        print("Notification Status \(UserDefaultsHandler().getNotificationStatus())")
         if UserDefaultsHandler().getNotificationStatus()
         {
             notificationSwitch.setOn(true, animated: false)
         }else
         {
-            notificationSwitch.setOn(false, animated: false)
+           notificationSwitch.setOn(false, animated: false)
+        //    notificationSwitch.isOn = false
         }
     }
     @IBAction func smartNotificationSwitch(_ sender: Any)
@@ -70,6 +72,7 @@ class SettingTableViewController: UITableViewController
         }else
         {
             //Do nothing
+            
         }
     }
     

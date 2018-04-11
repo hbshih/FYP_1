@@ -41,10 +41,10 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dK-o7-StC">
-                            <rect key="frame" x="114" y="141" width="152" height="48"/>
+                            <rect key="frame" x="114" y="141" width="136" height="48"/>
                             <string key="text">your PALM
 is
-2 ~ 3 Serving of Protein</string>
+3 Servings of Protein</string>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -67,13 +67,13 @@ is
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5T-WB-KOH">
-                            <rect key="frame" x="114" y="49.5" width="180" height="63.5"/>
+                            <rect key="frame" x="114" y="57.5" width="180" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="180" id="aFK-Py-5N3"/>
                             </constraints>
                             <string key="text">your FIST
 is 
-1 Servings of Vegetable, Grain, Dairy, or Fruit</string>
+1 Serving of Vegetable, Grain, Dairy, or Fruit</string>
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

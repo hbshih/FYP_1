@@ -18,7 +18,7 @@ struct localNotification
     func push()
     {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
-        AudioServicesPlaySystemSound(4095)
+        //AudioServicesPlaySystemSound(4095)
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = message

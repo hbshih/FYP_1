@@ -8,9 +8,9 @@
 
 import UIKit
 import Firebase
-import IQKeyboardManagerSwift
 import CoreData
 import Fabric
+import IQKeyboardManagerSwift
 import UserNotifications
 import Appsee
 
@@ -26,41 +26,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //Firebases
         FirebaseApp.configure()
-//        if #available(iOS 8.0, *)
-//        {
-//            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
-//            application.registerUserNotificationSettings(settings)
-//            application.registerForRemoteNotifications()
-//        }else
-//        {
-//            let types: UIRemoteNotificationType = [.alert,.sound]
-//            application.registerForRemoteNotifications(matching: types)
-//        }
+        //        if #available(iOS 8.0, *)
+        //        {
+        //            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
+        //            application.registerUserNotificationSettings(settings)
+        //            application.registerForRemoteNotifications()
+        //        }else
+        //        {
+        //            let types: UIRemoteNotificationType = [.alert,.sound]
+        //            application.registerForRemoteNotifications(matching: types)
+        //        }
         
-//        if #available(iOS 10.0, *) {
-//            // For iOS 10 display notification (sent via APNS)
-//            UNUserNotificationCenter.current().delegate = self
-//
-//            let authOptions: UNAuthorizationOptions = [.alert, .sound]
-//            UNUserNotificationCenter.current().requestAuthorization(
-//                options: authOptions,
-//                completionHandler: {_, _ in })
-//        } else {
-//            let settings: UIUserNotificationSettings =
-//                UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
-//            application.registerUserNotificationSettings(settings)
-//        }
+        //        if #available(iOS 10.0, *) {
+        //            // For iOS 10 display notification (sent via APNS)
+        //            UNUserNotificationCenter.current().delegate = self
+        //
+        //            let authOptions: UNAuthorizationOptions = [.alert, .sound]
+        //            UNUserNotificationCenter.current().requestAuthorization(
+        //                options: authOptions,
+        //                completionHandler: {_, _ in })
+        //        } else {
+        //            let settings: UIUserNotificationSettings =
+        //                UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
+        //            application.registerUserNotificationSettings(settings)
+        //        }
         
         application.registerForRemoteNotifications()
         
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
-//
-//            if error != nil {
-//                print("Authorization Unsuccessfull")
-//            }else {
-//                print("Authorization Successfull")
-//            }
-//        }
+        //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
+        //
+        //            if error != nil {
+        //                print("Authorization Unsuccessfull")
+        //            }else {
+        //                print("Authorization Successfull")
+        //            }
+        //        }
         
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
             if settings.authorizationStatus != .authorized
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
         
-        //    Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
+     //   Appsee.start("8e1bbd84d1774f038f42b27e23edcbef")
         Fabric.sharedSDK().debug = true
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
@@ -116,13 +116,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         return true
     }
-//
-//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-//        print("Firebase registration token: \(fcmToken)")
-//
-//        // TODO: If necessary send token to application server.
-//        // Note: This callback is fired at each app startup and whenever a new token is generated.
-//    }
+    //
+    //    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    //        print("Firebase registration token: \(fcmToken)")
+    //
+    //        // TODO: If necessary send token to application server.
+    //        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    //    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("Device Tokenn \(deviceToken)")
@@ -131,10 +131,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("FCM token: \(token ?? "")")
     }
     
-//    func application(application: UIApplication,
-//                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-//        Messaging.messaging().apnsToken = deviceToken
-//    }
+    //    func application(application: UIApplication,
+    //                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    //        Messaging.messaging().apnsToken = deviceToken
+    //    }
     
     @objc func tokenRefreshNotification(notification: NSNotification)
     {

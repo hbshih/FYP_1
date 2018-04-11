@@ -10,12 +10,13 @@ import UIKit
 import SwiftyOnboard
 import PopupDialog
 import SCLAlertView
+import FirebaseAnalytics
 
 class OnBoardingViewController: UIViewController {
     
     var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
-    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
+    let colors:[UIColor] = [#colorLiteral(red: 0.9725490196, green: 0.6705882353, blue: 0.2745098039, alpha: 1),#colorLiteral(red: 0.9921568627, green: 0.5215686275, blue: 0.3490196078, alpha: 1),#colorLiteral(red: 0.9764705882, green: 0.4470588235, blue: 0.4039215686, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
     
     var titleArray: [String] = ["Welcome to FoodyLife!".localized(), NSLocalizedString("Track your food", comment: ""), NSLocalizedString("Balance the five food groups", comment: ""),NSLocalizedString("Become healthier and happier!", comment: "")]
     
@@ -120,6 +121,7 @@ class OnBoardingViewController: UIViewController {
                 //                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
             }else
             {
+                Analytics.logEvent("Chose_Gender_Standard", parameters: nil)
                 self.defaults.setOnboardingStatus(status: true)
                 //print("Customize2")
                 self.segueToNotiAuthorization()

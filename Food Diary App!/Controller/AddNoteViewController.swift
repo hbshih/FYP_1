@@ -180,7 +180,7 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     }
     @IBAction func doneTapped(_ sender: Any)
     {
-        Analytics.logEvent("Done", parameters: nil)
+        Analytics.logEvent("Done_with_AddNote", parameters: nil)
         if(vegetable == 0.0 && grain == 0.0 && protein == 0.0 && fruit == 0.0 && dairy == 0.0)
         {
             let noEntryAlert = UIAlertController(title: nil, message: "Are you sure you don't want to record anything?".localized(), preferredStyle: UIAlertControllerStyle.alert)
@@ -267,7 +267,7 @@ class AddNoteViewController: UIViewController,UITextViewDelegate {
     @IBAction func instructionTapped(_ sender: Any)
     {
         // Log to analytics
-        Analytics.logEvent("instructionShown", parameters: nil)
+        Analytics.logEvent("instructionShown_with_AddNote", parameters: nil)
         // Create a custom view controller
         let InstructionPopUpVC = InstructionPopUpViewController(nibName: "InstructionPopUpViewController", bundle: nil)
         
@@ -376,7 +376,7 @@ extension AddNoteViewController: CoachMarksControllerDataSource
             coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct servings!".localized()
             coachViews.bodyView.nextLabel.text = "Next".localized()
         case 2:
-            coachViews.bodyView.hintLabel.text = "Tap here if you need some help!".localized()
+            coachViews.bodyView.hintLabel.text = "Tap here to help with identifying food groups and counting their servings!".localized()
             coachViews.bodyView.nextLabel.text = "Done".localized()
         default: break
         }

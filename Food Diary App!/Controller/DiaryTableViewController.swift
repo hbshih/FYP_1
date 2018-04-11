@@ -16,6 +16,7 @@ class DiaryTableViewController: UITableViewController {
     
     @IBOutlet var tableViewController: UITableView!
     @IBOutlet weak var navigationBar: UINavigationItem!
+    
     // General Variables
     private var images: [UIImage] = [] // Storing Images
     private var fileName: [String] = [] // Storing the names of the images to get images
@@ -458,7 +459,8 @@ class DiaryTableViewController: UITableViewController {
                 cell.foodImage.image = images[indexPath.row + startShowing]
                 cell.date.text = date
                 cell.time.text = time
-                cell.note.text = notes[indexPath.row + startShowing]
+              //  cell.note.text = notes[indexPath.row + startShowing]
+                cell.noteView.text = notes[indexPath.row + startShowing]
                 
                 // Show nutrition icons and counts
                 cell.vegetableLabel.text = String(vegetableList[indexPath.row + startShowing])
@@ -561,7 +563,7 @@ extension DiaryTableViewController: CoachMarksControllerDataSource
         switch(index)
         {
         case 0:
-            coachViews.bodyView.hintLabel.text = "Swipe left to edit or delete your record".localized()
+            coachViews.bodyView.hintLabel.text = "Swipe Left! 👈👈👈".localized()
             coachViews.bodyView.nextLabel.text = "Done".localized()
             UserDefaultsHandler().setDiaryTutorialStatus(status: true)
         default: break

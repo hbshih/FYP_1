@@ -11,13 +11,13 @@ import UserNotifications
 import Firebase
 
 class NotificationPageViewController: UIViewController,UNUserNotificationCenterDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -25,32 +25,35 @@ class NotificationPageViewController: UIViewController,UNUserNotificationCenterD
     
     @IBAction func AllowTapped(_ sender: Any)
     {
-                if #available(iOS 10.0, *) {
-                    // For iOS 10 display notification (sent via APNS)
-                    UNUserNotificationCenter.current().delegate = self
-        
-                    let authOptions: UNAuthorizationOptions = [.alert, .sound]
-                    UNUserNotificationCenter.current().requestAuthorization(
-                        options: authOptions,
-                        completionHandler: {_, _ in })
-                }
-//                else {
-//                    let settings: UIUserNotificationSettings =
-//                        UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
-//                    application.registerUserNotificationSettings(settings)
-//                }
-//
-//                application.registerForRemoteNotifications()
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        }
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
             
             if error != nil {
                 print("Authorization Unsuccessfull")
+                UserDefaultsHandler().setNotificationStatus(flag: false)
             }else {
                 print("Authorization Successfull")
+                Analytics.logEvent("Accept_Notification", parameters: nil)
                 UserDefaultsHandler().setNotificationStatus(flag: true)
+                localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
             }
         }
-        performSegue(withIdentifier: "showHomeSegue", sender: nil)
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3)
+        { // change 2 to desired number of seconds
+            // Your code with delay
+            self.performSegue(withIdentifier: "showHomeSegue", sender: nil)
+        }
     }
     @IBAction func notNowTapped(_ sender: Any)
     {

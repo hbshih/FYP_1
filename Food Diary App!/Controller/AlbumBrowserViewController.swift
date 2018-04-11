@@ -25,23 +25,19 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         // Making sure that the arrays are empty
         fileName.removeAll()
         fileImage.removeAll()
-      //  caption.removeAll()
         images.removeAll()
-        
         // Accessing Core Data
         var dataHandler = CoreDataHandler()
         fileName = dataHandler.getImageFilename()
-      //  caption = dataHandler.getNote()
-
         //Get photos
         if fileName.count != 0
         {
             fileImage = FileManagerModel().lookupImage(fileNames: fileName)
+        }else
+        {
+            SCLAlertMessage(title: "Oops", message: "You don't have any photo yet!").showMessage()
         }
         
-        // Reverse order
-        fileImage = fileImage.reversed()
-     //   caption = caption.reversed()
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
         SKPhotoBrowserOptions.displayStatusbar = false
