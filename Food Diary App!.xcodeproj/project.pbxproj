@@ -165,6 +165,13 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
+		B585E6F4207FF9D000137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B585E6F5207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B585E6F6207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ChangeDateViewController.strings"; sourceTree = "<group>"; };
+		B585E6F7207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
+		B585E6F8207FF9D200137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
+		B585E6F9207FF9D300137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B585E6FA207FF9D300137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B58C2E31207D4D6400924D1C /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appsee.framework; path = ../../../Downloads/Appsee.framework; sourceTree = "<group>"; };
 		B594D145207F71CD000B56F2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
@@ -540,6 +547,7 @@
 				en,
 				Base,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = B57935291FE022DE00E663DB;
 			productRefGroup = B57935331FE022DE00E663DB /* Products */;
@@ -894,6 +902,7 @@
 			children = (
 				B579353A1FE022DE00E663DB /* Base */,
 				B594D145207F71CD000B56F2 /* zh-Hant */,
+				B585E6F4207FF9D000137503 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -903,6 +912,7 @@
 			children = (
 				B579353F1FE022DE00E663DB /* Base */,
 				B5DA2A802050A4E2003BCDB1 /* zh-Hant */,
+				B585E6F5207FF9D100137503 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -912,6 +922,7 @@
 			children = (
 				B5965DFC2050B120002A2648 /* Base */,
 				B5965DFF2050B14B002A2648 /* zh-Hant */,
+				B585E6F8207FF9D200137503 /* zh-Hans */,
 			);
 			name = SelectPlanViewController.xib;
 			sourceTree = "<group>";
@@ -922,6 +933,7 @@
 				B59701552066A9E90044ED73 /* en */,
 				B59701572066A9F50044ED73 /* zh-Hant */,
 				B59701582066AAB80044ED73 /* Base */,
+				B585E6F7207FF9D100137503 /* zh-Hans */,
 			);
 			name = InstructionPopUpViewController.xib;
 			sourceTree = "<group>";
@@ -930,6 +942,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5B569392061D3DA003158F8 /* Base */,
+				B585E6F6207FF9D100137503 /* zh-Hans */,
 			);
 			name = ChangeDateViewController.xib;
 			path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog";
@@ -940,6 +953,7 @@
 			children = (
 				B5D8A6552061DAA2002BE648 /* Base */,
 				B5D8A6572061DAFD002BE648 /* zh-Hant */,
+				B585E6FA207FF9D300137503 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -950,6 +964,7 @@
 				B5DA2A842050A525003BCDB1 /* en */,
 				B5DA2A862050A53B003BCDB1 /* zh-Hant */,
 				B5D8A64F2061D575002BE648 /* Base */,
+				B585E6F9207FF9D300137503 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
