@@ -447,7 +447,6 @@ class homepageViewController: UIViewController {
     // Generate notification (If needed)
     private func notifyStatus(todayCount:[Double],Standard:[Double],percentage: Double)
     {
-        var overConsume = ""
         var groupList = ["grain", "vegetable","protein","fruit","dairy"]
         var hasRightPortion = [false,false,false,false,false]
         var presentRightPortionMessage = false

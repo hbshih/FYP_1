@@ -153,8 +153,18 @@ struct messageGenerator {
             "Tapping it does abosolutely nothing except irritate me",
             "I know I conditioned you to tap my face in my counterpart apps, but I'm really serious: it doesn't do anything now",
             "Yet you're still poking my face",
+            "Stop",
+            "Stop",
+            "Stop",
+            "Stop",
+            "S",
+            "T",
+            "O",
+            "P",
+            "STOP!!!",
             "OK, stop",
-            "I am not going to talk anymore"]
+            "I am not going to talk anymore"
+        ]
         
         let zh_message =
         [
@@ -163,7 +173,11 @@ struct messageGenerator {
             "不",
             "要",
             "戳",
-            "林北的臉！！！！",
+            "我的臉！！！！",
+            "嗯",
+            "嗯",
+            "不講話就是不講話",
+            "恩恩恩恩恩恩"
         ]
         
         return message
