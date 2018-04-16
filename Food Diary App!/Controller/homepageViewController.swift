@@ -537,7 +537,7 @@ class homepageViewController: UIViewController {
             ["You have hit your target! Well done on eating \(hasPortionMessage) today!", "You have achieve your goal! Good work on \(hasPortionMessage)s today"]
         
         let overConsumeMessage =
-            ["Oops! Seems like you have consume too much \(hasOverMessage) today",
+            ["Oops! Seems like you have consumed too much \(hasOverMessage) today",
                 "Remember to keep your self balance, you have eaten too much \(hasOverMessage) today"]
         
         var pastMessages = ["",""]

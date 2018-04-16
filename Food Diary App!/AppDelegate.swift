@@ -89,6 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // check to see if lastLaunchDate is today.
         let lastLaunchIsToday = Calendar.current.isDateInToday(lastLaunchDate)
         
+        print("Home Loaded")
+        
         if UserDefaultsHandler().getNotificationStatus()
         {
             if !lastLaunchIsToday
@@ -98,17 +100,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                 localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
-                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
-                    print(request)
-                })
                 
             }else
             {
                 print("Launched Today")
                 
-                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
-                    print(request)
-                })
+//                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+//                    print(request)
+//                })
             }
         }
         // update the last launch value
@@ -151,6 +150,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         print("Go Background")
         
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+            var identifiers: [String] = []
+            for notification:UNNotificationRequest in notificationRequests {
+                if notification.identifier == "lackConsumeNoti" {
+                    identifiers.append(notification.identifier)
+                }
+            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            
+            DispatchQueue.main.asyncAfter(deadline:.now(), execute:
+            {
+                    self.lackConsumeNotification()
+                    UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+                        print(request)
+                    })
+            })
+        }
+    }
+    
+    func lackConsumeNotification()
+    {
         if UserDefaultsHandler().getNotificationStatus()
         {
             var coreDataHandler = CoreDataHandler()
@@ -161,16 +181,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 let minConsumeElement = healthCalculator.getMinConsumeElement() as String
                 if minConsumeElement != ""
                 {
+                    print("Has less")
                     // Have element that percentage is less than 20%
-                    
                     // Schedule remind notification tmr noon
                     localNotification_Scheduled.init().scheduleTomorrowHelpBalanceNotification(MinConsume: minConsumeElement)
                 }
                 
             }
-        }
-        UNUserNotificationCenter.current().getPendingNotificationRequests { (req) in
-            print("All scheduled Notifications \n\(req)")
         }
     }
     

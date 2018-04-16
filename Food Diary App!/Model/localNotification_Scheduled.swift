@@ -49,7 +49,7 @@ struct localNotification_Scheduled
         print("Notification Date \(newComponents)")
         
         let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-        let notificationRequest = UNNotificationRequest(identifier: "\(NSDate().timeIntervalSince1970)", content: notificationContent, trigger: notificationTrigger)
+        let notificationRequest = UNNotificationRequest(identifier: "lackConsumeNoti", content: notificationContent, trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
             if let error = error
             {
