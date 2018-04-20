@@ -21,7 +21,6 @@
 		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
 		B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
-		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
 		B56C2CB12070380A00875E9E /* DayViewDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */; };
@@ -51,6 +50,7 @@
 		B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */; };
 		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
 		B5A7AF65207C527B00F1208F /* NotificationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */; };
+		B5A8515E208A8EF60008422E /* EditPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A85160208A8EF60008422E /* EditPopUpViewController.xib */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */; };
@@ -72,12 +72,10 @@
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
 		B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DA2A852050A525003BCDB1 /* Localizable.strings */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
-		B5ECA91D20489E0A00E7F819 /* CameraAndImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */; };
 		B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91E2048B16900E7F819 /* photoProcessor.swift */; };
 		B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */; };
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
-		B5F5BEC42072647F00CA0770 /* EditPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */; };
 		B5F5BEC52072647F00CA0770 /* EditPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */; };
 		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -135,7 +133,6 @@
 		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
 		B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDataViewController.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
-		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B558A46A202E5A92003AA3F4 /* Food Diary App!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Diary App!.entitlements"; sourceTree = "<group>"; };
@@ -183,6 +180,9 @@
 		B59701582066AAB80044ED73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPageViewController.swift; sourceTree = "<group>"; };
+		B5A8515F208A8EF60008422E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EditPopUpViewController.xib; sourceTree = "<group>"; };
+		B5A85164208A8EFE0008422E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/EditPopUpViewController.strings"; sourceTree = "<group>"; };
+		B5A85166208A8F050008422E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/EditPopUpViewController.strings"; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -208,13 +208,11 @@
 		B5DA2A842050A525003BCDB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5DA2A862050A53B003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
-		B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndImagePickerViewController.swift; sourceTree = "<group>"; };
 		B5ECA91E2048B16900E7F819 /* photoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoProcessor.swift; sourceTree = "<group>"; };
 		B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		B5F2BAA520897C0E0092B0D8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
-		B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPopUpViewController.xib; sourceTree = "<group>"; };
 		B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPopUpViewController.swift; sourceTree = "<group>"; };
 		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -355,8 +353,6 @@
 				B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */,
 				B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */,
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
-				B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */,
-				B55234321FE9AC79009A757D /* CameraViewController.swift */,
 				B595F339205F110C0070124D /* ChangeDateViewController.swift */,
 				B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */,
 				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
@@ -378,7 +374,7 @@
 				B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */,
 				B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */,
 				B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */,
-				B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */,
+				B5A85160208A8EF60008422E /* EditPopUpViewController.xib */,
 				B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */,
 			);
 			path = Controller;
@@ -576,7 +572,7 @@
 				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
 				B5D187062065516400F884E8 /* popSound.mp3 in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
-				B5F5BEC42072647F00CA0770 /* EditPopUpViewController.xib in Resources */,
+				B5A8515E208A8EF60008422E /* EditPopUpViewController.xib in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
@@ -839,7 +835,6 @@
 				B5B56931206176ED003158F8 /* calorieDeterminer.swift in Sources */,
 				B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */,
 				B595F33B205F110D0070124D /* ChangeDateViewController.swift in Sources */,
-				B5ECA91D20489E0A00E7F819 /* CameraAndImagePickerViewController.swift in Sources */,
 				B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
 				B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */,
@@ -863,7 +858,6 @@
 				B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */,
 				B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */,
 				B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */,
-				B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +932,16 @@
 				B585E6F7207FF9D100137503 /* zh-Hans */,
 			);
 			name = InstructionPopUpViewController.xib;
+			sourceTree = "<group>";
+		};
+		B5A85160208A8EF60008422E /* EditPopUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5A8515F208A8EF60008422E /* Base */,
+				B5A85164208A8EFE0008422E /* zh-Hant */,
+				B5A85166208A8F050008422E /* zh-Hans */,
+			);
+			name = EditPopUpViewController.xib;
 			sourceTree = "<group>";
 		};
 		B5B569362061D3D3003158F8 /* ChangeDateViewController.xib */ = {
