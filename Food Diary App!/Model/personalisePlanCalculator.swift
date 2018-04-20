@@ -21,7 +21,6 @@ struct personalisePlanCalculator
     private mutating func customisePlanCalculator()
     {
         var personPlan = [0.0,0.0,0.0,0.0,0.0] // Grain,Vegetable,Protein,Fruit,Dairy
-        
         let locale = NSLocale.current.languageCode
         if (locale! == "zh")
         {
@@ -49,6 +48,7 @@ struct personalisePlanCalculator
             }
         }else
         {
+            // Plan in MyPlate
             if calorie! < 1700.00
             {
                 personPlan = [5.0,2.0,5.0,1.5,3.0]

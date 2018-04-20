@@ -16,6 +16,7 @@ struct calorieDeterminer
     var height: Double
     var activityLevel: String
     
+    // Calculation for Calorie
     func getCalculateCalorie() -> Double
     {
         let Calculation = 10 * (weight) + 6.25 * (height)

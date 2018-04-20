@@ -84,12 +84,6 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        presentCircularMenu()
-        // UI adjustments
-        centerInformationArea.alpha = 0
-        // Get initial interaction messages
-        getInteractionMessages()
-        
         if defaults.getHomepageTutorialStatus() == true
         {
             /*Existing user, watched tutorial already*/
@@ -102,6 +96,11 @@ class homepageViewController: UIViewController {
             self.coachMarksController.start(on: self)
             self.coachMarksController.overlay.allowTap = true
         }
+        presentCircularMenu()
+        // UI adjustments
+        centerInformationArea.alpha = 0
+        // Get initial interaction messages
+        getInteractionMessages()
     }
     
     func presentCircularMenu()
@@ -164,16 +163,14 @@ class homepageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
-        // Present data and slider only when have data in database
+        // Get all record's timestamp
         timestamp = dataHandler.getTimestamp()
         recordCount = timestamp.count
-        let recent5nList = dataHandler.get5nList()
-        // Update Plan Standard
+        // Get user's plan standard
         let defaults = UserDefaultsHandler()
         let planStandard = defaults.getPlanStandard() as? [Double]
         
-        //Has record in the system
+        // Present data and slider only when have data in database
         if recordCount > 0
         {
             // Show tutorial when first entry confirmed
@@ -200,12 +197,13 @@ class homepageViewController: UIViewController {
                 })
             }
             
+            let recent5nList = dataHandler.get5nList()
             // If some new data is recorded or the user has change their plan or the user has edited their record
             if recordCount != recentCount || Standard != planStandard! || n_List["grainList"]! != recent5nList["grainList"]! || n_List["vegetableList"]! != recent5nList["vegetableList"]! || n_List["proteinList"]! != recent5nList["proteinList"]! || n_List["dairyList"]! != recent5nList["dairyList"]! || n_List["fruitList"]! != recent5nList["fruitList"]!
             {
                 //Update standard
                 Standard = planStandard!
-                //Update counnt
+                //Update count
                 recentCount = recordCount
                 
                 // update value via healthpercentagecalculator
@@ -214,21 +212,9 @@ class homepageViewController: UIViewController {
                 
                 // update percentage
                 updatePercentageData(totalBalancePercentage: healthData.getLastSevenDaysPercentage(), eachElementPercentage: healthData.getLastSevenDaysEachElementPercentage())
-                
                 Percentage = round(healthData.getLastSevenDaysPercentage()*100)/100
                 // text below the slider
                 informationLabel.text = "Recent Balance: ".localized() + "\(Percentage)%"
-                
-                // Pop up for app review if has more than 3 day usage
-                if healthData.getDayBalancePercentage().count > 3
-                {
-                    if #available(iOS 10.3, *)
-                    {
-                        SKStoreReviewController.requestReview()
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                }
                 
                 // Present the nutrition elements that users needs to intake today
                 presentTodayInformation(todayCount: healthData.getTodayEachElementData(), Standard: Standard, dataDate: healthData.getTrimmedDate()[0])
@@ -240,16 +226,13 @@ class homepageViewController: UIViewController {
                 let todayPercentage = healthData.getTodayPercentage()
                 
                 // Show message to encourage users if over 60
-                if todayPercentage >= 60.0
-                {
-                    SCLAlertMessage(title: "Awesome!", message: "You have reached \(todayPercentage)% balance!\nKeep it up to achieve 100%!").showMessage()
-                }else if todayPercentage >= 80.0
-                {
-                    SCLAlertMessage(title: "Fabulous!", message: "You are just a step away from maintaing your diet perfectly!\nYou are \(todayPercentage)% now!").showMessage()
-                }else
-                {
-                    //
-                }
+                encouragingMessages(todayPercentage: todayPercentage)
+                
+                // Present the slider
+                showCircularSliderData()
+                
+                // Animation
+                shake(layer: self.centerFace.layer)
                 
                 //Present Local Notification
                 if let savedData = defaults.getSavedTodayEachElementData() as? [Double]
@@ -266,24 +249,51 @@ class homepageViewController: UIViewController {
                 {
                     defaults.setTodayEachElementData(value: healthData.getTodayEachElementData())
                 }
-                
-                // Present the slider
-                showCircularSliderData()
-                // Animation
-                shake(layer: self.centerFace.layer)
             }
         }else
         {
             // New user
-            healthPercentage = 0
-            vegetablePercentage = 0
-            grainPercentage = 0
-            proteinPercentage = 0
-            fruitPercentage = 0
-            dairyPercentage = 0
-            showCircularSliderData()
-            presentTodayInformation(Standard: planStandard!)
-            informationLabel.text = "No data yet".localized()
+            newUserHomeScreen(planStandard: planStandard!)
+        }
+        // Pop up for app ratings
+        if recordCount > 5
+        {
+            appReviewPopUp()
+        }
+    }
+    
+    func newUserHomeScreen(planStandard: [Double])
+    {
+        healthPercentage = 0
+        vegetablePercentage = 0
+        grainPercentage = 0
+        proteinPercentage = 0
+        fruitPercentage = 0
+        dairyPercentage = 0
+        showCircularSliderData()
+        presentTodayInformation(Standard: planStandard)
+        informationLabel.text = "No data yet".localized()
+    }
+    
+    func encouragingMessages(todayPercentage: Double)
+    {
+        if todayPercentage >= 60.0
+        {
+            SCLAlertMessage(title: "Awesome!", message: "You have reached \(todayPercentage)% balance!\nKeep it up to achieve 100%!").showMessage()
+        }else if todayPercentage >= 80.0
+        {
+            SCLAlertMessage(title: "Fabulous!", message: "You are just a step away from maintaing your diet perfectly!\nYou are \(todayPercentage)% now!").showMessage()
+        }else
+        {
+            //
+        }
+    }
+    
+    func appReviewPopUp()
+    {
+        if #available(iOS 10.3, *)
+        {
+            SKStoreReviewController.requestReview()
         }
     }
     
@@ -447,7 +457,7 @@ class homepageViewController: UIViewController {
     // Generate notification (If needed)
     private func notifyStatus(todayCount:[Double],Standard:[Double],percentage: Double)
     {
-        var groupList = ["grain", "vegetable","protein","fruit","dairy"]
+        var groupList = ["grains", "vegetables","proteins","fruits","dairies"]
         var hasRightPortion = [false,false,false,false,false]
         var presentRightPortionMessage = false
         var hasOverConsume = [false,false,false,false,false]
@@ -484,11 +494,11 @@ class homepageViewController: UIViewController {
                 count += 1
                 if count == 1
                 {
-                    hasPortionMessage = "\(groupList[i])s"
+                    hasPortionMessage = "\(groupList[i])"
                     presentRightPortionMessage = true
                 }else if count > 1
                 {
-                    hasPortionMessage = hasPortionMessage + ", \(groupList[i])s"
+                    hasPortionMessage = hasPortionMessage + ", \(groupList[i])"
                 }
             }
         }
@@ -524,20 +534,20 @@ class homepageViewController: UIViewController {
                 count += 1
                 if count == 1
                 {
-                    hasOverMessage = "\(groupList[i])s"
+                    hasOverMessage = "\(groupList[i])"
                     presentOverConsumeMessage = true
                 }else if count > 1
                 {
-                    hasOverMessage = hasOverMessage + ", \(groupList[i])s"
+                    hasOverMessage = hasOverMessage + ", \(groupList[i])"
                 }
             }
         }
         
         let rightPortionMessage =
-            ["You have hit your target! Well done on eating \(hasPortionMessage) today!", "You have achieve your goal! Good work on \(hasPortionMessage)s today"]
+            ["You have hit your target! Well done on eating \(hasPortionMessage) today!", "You have achieve your goal! Good work on \(hasPortionMessage) today"]
         
         let overConsumeMessage =
-            ["Oops! Seems like you have consumed too much \(hasOverMessage) today",
+            ["Seems like you have consumed too much \(hasOverMessage) today",
                 "Remember to keep your self balance, you have eaten too much \(hasOverMessage) today"]
         
         var pastMessages = ["",""]

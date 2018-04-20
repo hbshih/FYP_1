@@ -39,7 +39,7 @@ struct localNotification_Scheduled
     func scheduleTomorrowHelpBalanceNotification(MinConsume: String)
     {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.body = "I would like to advise you to eat more \(MinConsume)s today to make your diet balance"
+        notificationContent.body = "I would like to advise you to eat more \(MinConsume) today to make your diet balance"
         AudioServicesPlaySystemSound(4095)
         
         let calendar = Calendar(identifier: .gregorian)

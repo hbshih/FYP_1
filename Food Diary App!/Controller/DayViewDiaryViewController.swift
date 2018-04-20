@@ -190,19 +190,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         dateSaved = (nutriCalculation?.getDateOfRecord())!
         
         Standard = userDefault.getPlanStandard() as! [Double]
-        
-        //-- to display the most up to date items first
-        //        dates = dates.reversed()
-        //        dateSaved = dateSaved.reversed()
-        //        notes = notes.reversed()
-        //        id = id.reversed()
-        //        fruitList = fruitList.reversed()
-        //        dairyList = dairyList.reversed()
-        //        vegetableList = vegetableList.reversed()
-        //        proteinList = proteinList.reversed()
-        //        grainList = grainList.reversed()
-        //        eachDayPercentage = eachDayPercentage.reversed()
-        
+
         if id.count > 0
         {
             format.dateFormat = "yyyy-MM-dd"

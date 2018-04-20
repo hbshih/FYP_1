@@ -211,6 +211,7 @@
 		B5ECA91C20489E0A00E7F819 /* CameraAndImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndImagePickerViewController.swift; sourceTree = "<group>"; };
 		B5ECA91E2048B16900E7F819 /* photoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoProcessor.swift; sourceTree = "<group>"; };
 		B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
+		B5F2BAA520897C0E0092B0D8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
 		B5F5BEC22072647D00CA0770 /* EditPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPopUpViewController.xib; sourceTree = "<group>"; };
@@ -276,6 +277,7 @@
 		B57935291FE022DE00E663DB = {
 			isa = PBXGroup;
 			children = (
+				B5F2BAA520897C0E0092B0D8 /* README.md */,
 				B57935341FE022DE00E663DB /* Food Diary App! */,
 				B57935491FE022DE00E663DB /* Food Diary App!Tests */,
 				B57935541FE022DE00E663DB /* Food Diary App!UITests */,

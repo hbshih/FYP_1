@@ -21,10 +21,10 @@ class OnBoardingViewController: UIViewController {
     var titleArray: [String] = ["Welcome to FoodyLife!".localized(), NSLocalizedString("Track your food", comment: ""), NSLocalizedString("Balance the five food groups", comment: ""),NSLocalizedString("Become healthier and happier!", comment: "")]
     
     var subTitleArray: [String] = [
-        NSLocalizedString("Understanding more of your diet helps you eat right and live a healthier life!", comment: ""),
+        NSLocalizedString("Understanding more about your diet helps you eat right and live a healthier life!", comment: ""),
         NSLocalizedString("Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier.", comment: ""),
-        NSLocalizedString("Have you eaten vegetables today? Check your Balance Board of the 5 food groups and get all nutrition needed every day.", comment: ""),
-        NSLocalizedString("Transform the way you eat without the focus on calories counting! Become a Foody with a balanced diet and a balanced life!.", comment: "")]
+        NSLocalizedString("Have you eaten your vegetables today? Check the Balance Board to review your progress with the 5 food groups and get all nutrition needed every day.", comment: ""),
+        NSLocalizedString("Transform the way you eat without the focus on calorie counting! Become a Foody with a balanced diet and a balanced life!.", comment: "")]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view

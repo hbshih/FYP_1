@@ -68,8 +68,6 @@ struct HealthPercentageCalculator
         fruitStandard = userPlan[3]
         dairyStandard = userPlan[4]
         
-        
-        
         //     self.recordedTime = getTrimmedDate(Name: fileNames)
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
@@ -207,13 +205,6 @@ struct HealthPercentageCalculator
             }
             dayBalancePercentage.append((dayCountGrainPercentage[i] + dayCountFruitPercentage[i] + dayCountProteinPercentage[i] + dayCountDairyPercentage[i] + dayCountVegetablePercentage[i]))
         }
-        print("###")
-        print("convertDailyCountIntoBalancePercentage V: \(dayCountVegetablePercentage)")
-        print("convertDailyCountIntoBalancePercentage G: \(dayCountGrainPercentage)")
-        print("convertDailyCountIntoBalancePercentage P: \(dayCountProteinPercentage)")
-        print("convertDailyCountIntoBalancePercentage F: \(dayCountFruitPercentage)")
-        print("convertDailyCountIntoBalancePercentage D: \(dayCountDairyPercentage)")
-        print("Average: \(dayBalancePercentage)")
     }
     
     
@@ -333,15 +324,15 @@ struct HealthPercentageCalculator
             switch minValue
             {
             case listOfAllElementsPercentage![0]:
-                minConsumeElement = "vegetable"
+                minConsumeElement = "vegetables"
             case listOfAllElementsPercentage![1]:
-                minConsumeElement = "grain"
+                minConsumeElement = "grains"
             case listOfAllElementsPercentage![2]:
-                minConsumeElement = "protein"
+                minConsumeElement = "proteins"
             case listOfAllElementsPercentage![3]:
-                minConsumeElement = "dairy"
+                minConsumeElement = "dairies"
             case listOfAllElementsPercentage![4]:
-                minConsumeElement = "fruit"
+                minConsumeElement = "fruits"
             default:
                 minConsumeElement = ""
             }
