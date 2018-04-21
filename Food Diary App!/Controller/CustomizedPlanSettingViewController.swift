@@ -96,14 +96,14 @@ class CustomizedPlanSettingViewController: FormViewController {
                 }
         }
         
-        let activityOptions = ["Sedentary (little or no exercise)",
-                               "Lightly active (1-3 times/week)",
-                               "Moderately active (3-5 times/week)",
-                               "Very active (6-7 times/week)",
-                               "Extra active twice/day)"]
+        let activityOptions = ["Sedentary (little or no exercise)".localized(),
+                               "Lightly active (1-3 times/week)".localized(),
+                               "Moderately active (3-5 times/week)".localized(),
+                               "Very active (6-7 times/week)".localized(),
+                               "Extra active (twice/day)".localized()]
         
         let activity = InlinePickerRowFormer<FormInlinePickerCell, String>() {
-            $0.titleLabel.text = "Activity"
+            $0.titleLabel.text = "Activity".localized()
             }.configure {
                 let option = activityOptions
                 $0.pickerItems = [InlinePickerItem(
@@ -198,7 +198,11 @@ class CustomizedPlanSettingViewController: FormViewController {
         }else if (height == 0)
         {
             SCLAlertMessage(title: "Oops".localized(), message: "Please recheck if your height is correct".localized()).showMessage()
-        }else
+        }else if (activityLevel == "")
+        {
+            SCLAlertMessage(title: "Oops".localized(), message: "Please recheck if your activity rate is correct".localized()).showMessage()
+        }
+        else
         {
             UserDefaultsHandler().setOnboardingStatus(status: true)
             saveInformation()

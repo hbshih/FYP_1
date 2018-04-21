@@ -35,7 +35,7 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
             fileImage = FileManagerModel().lookupImage(fileNames: fileName)
         }else
         {
-            SCLAlertMessage(title: "Oops", message: "You don't have any photo yet!").showMessage()
+            AlertMessage().displayAlert(title: "Oops".localized(), message: "You don't have any photo yet".localized(), VC: self)
         }
         
         // Static setup

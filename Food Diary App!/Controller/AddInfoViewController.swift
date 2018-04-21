@@ -497,7 +497,7 @@ extension AddInfoViewController: CoachMarksControllerDataSource
             coachViews.bodyView.hintLabel.text = "Tap on the food groups that you think your food contains and record the correct servings!".localized()
             coachViews.bodyView.nextLabel.text = "Next".localized()
         case 2:
-            coachViews.bodyView.hintLabel.text = "Tap here if you need some help!".localized()
+            coachViews.bodyView.hintLabel.text = "Tap here to help with identifying food groups and counting their servings!".localized()
             coachViews.bodyView.nextLabel.text = "Done".localized()
         default: break
         }

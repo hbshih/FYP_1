@@ -1,15 +1,15 @@
 
 /* Class = "UITableViewSection"; headerTitle = "choose custom to edit the values "; ObjectID = "0KQ-zb-gfQ"; */
-"0KQ-zb-gfQ.headerTitle" = "choose custom to edit the values ";
+"0KQ-zb-gfQ.headerTitle" = "選擇自訂調整攝取量";
 
 /* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "0Ph-WE-rHD"; */
 "0Ph-WE-rHD.title" = "完成";
 
 /* Class = "UILabel"; text = "Fruit"; ObjectID = "0yn-Zo-a1U"; */
-"0yn-Zo-a1U.text" = "水果類";
+"0yn-Zo-a1U.text" = "水果";
 
 /* Class = "UILabel"; text = "Custom"; ObjectID = "11z-qZ-szh"; */
-"11z-qZ-szh.text" = "Custom";
+"11z-qZ-szh.text" = "自訂";
 
 /* Class = "UILabel"; text = "1.0"; ObjectID = "17d-xp-VSm"; */
 "17d-xp-VSm.text" = "1.0";
@@ -66,7 +66,7 @@
 "Bi5-9f-lpO.text" = "x1";
 
 /* Class = "UILabel"; text = "Dairy"; ObjectID = "CXy-Ef-cfA"; */
-"CXy-Ef-cfA.text" = "乳品類";
+"CXy-Ef-cfA.text" = "乳品（杯）";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "D1t-Lt-9j6"; */
 "D1t-Lt-9j6.normalTitle" = "上一頁";
@@ -111,7 +111,7 @@
 "L5A-wI-3XO.title" = "相簿";
 
 /* Class = "UILabel"; text = "Fruit"; ObjectID = "Lby-sG-nLH"; */
-"Lby-sG-nLH.text" = "水果類";
+"Lby-sG-nLH.text" = "水果（份）";
 
 /* Class = "UITextView"; text = "Enter your note here..."; ObjectID = "MBS-dE-m9b"; */
 "MBS-dE-m9b.text" = "加入筆記...";
@@ -129,7 +129,7 @@
 "Nuc-aW-mSp.headerTitle" = "設定";
 
 /* Class = "UILabel"; text = "Male"; ObjectID = "ObH-m5-Skf"; */
-"ObH-m5-Skf.text" = "男";
+"ObH-m5-Skf.text" = "標準男性方案";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Opf-sB-cD9"; */
 "Opf-sB-cD9.text" = "Label";
@@ -156,7 +156,7 @@
 "REV-qw-b1O.text" = "100% Balance";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "RKR-AI-eyG"; */
-"RKR-AI-eyG.text" = "豆魚肉蛋類";
+"RKR-AI-eyG.text" = "豆魚蛋肉";
 
 /* Class = "UILabel"; text = "Stay Motivated!"; ObjectID = "RNW-QD-hX6"; */
 "RNW-QD-hX6.text" = "保持動力！";
@@ -171,7 +171,7 @@
 "SfA-zy-VYS.text" = "開源許可";
 
 /* Class = "UILabel"; text = "How to use this app"; ObjectID = "TOk-FN-wrz"; */
-"TOk-FN-wrz.text" = "如何使用這個App（英文版）";
+"TOk-FN-wrz.text" = "如何使用這個App";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "Tul-JP-aHo"; */
 "Tul-JP-aHo.text" = "x1";
@@ -228,7 +228,7 @@
 "aJ5-Ad-Kyo.text" = "4.5 / 5.5 Grain";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "b4H-ls-2Om"; */
-"b4H-ls-2Om.text" = "豆魚蛋肉類";
+"b4H-ls-2Om.text" = "豆魚蛋肉（份）";
 
 /* Class = "UINavigationItem"; title = "Foody Life"; ObjectID = "cB6-8z-GiS"; */
 "cB6-8z-GiS.title" = "吃貨人生";
@@ -243,7 +243,7 @@
 "djr-J6-h3g.text" = "Label";
 
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "fCM-ws-go0"; */
-"fCM-ws-go0.text" = "蔬菜類";
+"fCM-ws-go0.text" = "蔬菜（碟）";
 
 /* Class = "UILabel"; text = "Add new records to display\n"; ObjectID = "fEK-X8-18c"; */
 "fEK-X8-18c.text" = "還沒有任何記錄n";
@@ -258,7 +258,7 @@
 "gqg-lw-KK1.text" = "x1";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "hDN-GU-KBk"; */
-"hDN-GU-KBk.text" = "全穀雜糧類";
+"hDN-GU-KBk.text" = "全穀雜糧";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "hbb-8J-DGg"; */
 "hbb-8J-DGg.text" = "Label";
@@ -279,16 +279,16 @@
 "kmQ-HH-xb9.title" = "吃貨人生";
 
 /* Class = "UILabel"; text = "Dairy"; ObjectID = "leL-t3-wnw"; */
-"leL-t3-wnw.text" = "乳品累";
+"leL-t3-wnw.text" = "乳品";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "nGZ-Tw-YJI"; */
 "nGZ-Tw-YJI.text" = "x1";
 
 /* Class = "UILabel"; text = "Grain"; ObjectID = "nak-Oc-QQT"; */
-"nak-Oc-QQT.text" = "全組雜糧類";
+"nak-Oc-QQT.text" = "全穀雜糧（碗）";
 
 /* Class = "UILabel"; text = "Terms & Conditions"; ObjectID = "qz9-z0-BXC"; */
-"qz9-z0-BXC.text" = "使用條款（英文）";
+"qz9-z0-BXC.text" = "使用條款（英文版）";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "szm-w4-61O"; */
 "szm-w4-61O.normalTitle" = "完成";
@@ -300,13 +300,13 @@
 "tjh-Pv-ZgY.title" = "增加新的紀錄";
 
 /* Class = "UILabel"; text = "Female"; ObjectID = "uLr-sc-3LD"; */
-"uLr-sc-3LD.text" = "女性";
+"uLr-sc-3LD.text" = "標準女性方案";
 
 /* Class = "UILabel"; text = "Your Recent Vegetables"; ObjectID = "vBJ-8h-QYx"; */
 "vBJ-8h-QYx.text" = "Your Recent Vegetables";
 
 /* Class = "UILabel"; text = "Tips and Guidelines"; ObjectID = "vPC-Ta-5KW"; */
-"vPC-Ta-5KW.text" = "提示及指南";
+"vPC-Ta-5KW.text" = "提示及指南（英文版）";
 
 /* Class = "UILabel"; text = "Food contains?"; ObjectID = "vWK-3y-Qsr"; */
 "vWK-3y-Qsr.text" = "您的食物包含？";
@@ -315,7 +315,7 @@
 "w6v-5B-zXB.text" = "五大類食物介紹";
 
 /* Class = "UILabel"; text = "Vegetable"; ObjectID = "wBm-Tm-X1Q"; */
-"wBm-Tm-X1Q.text" = "蔬菜類";
+"wBm-Tm-X1Q.text" = "蔬菜";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "xBm-F4-vLA"; */
 "xBm-F4-vLA.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";

@@ -44,12 +44,9 @@ class SelectPlanViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }else if selectedOption == "Standard Female".localized()
         {
             return femaleDefauthSet
-        }else if selectedOption == "Personalize".localized()
+        }else 
         {
             return custom
-        }else
-        {
-            return maleDefaultSet
         }
     }
     

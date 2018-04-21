@@ -197,6 +197,7 @@
 		B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		B5D187052065516400F884E8 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
+		B5D2E9D6208B3CF70026782E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ChangeDateViewController.strings"; sourceTree = "<group>"; };
 		B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPercentageCalculator.swift; sourceTree = "<group>"; };
 		B5D8A64F2061D575002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -949,6 +950,7 @@
 			children = (
 				B5B569392061D3DA003158F8 /* Base */,
 				B585E6F6207FF9D100137503 /* zh-Hans */,
+				B5D2E9D6208B3CF70026782E /* zh-Hant */,
 			);
 			name = ChangeDateViewController.xib;
 			path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog";

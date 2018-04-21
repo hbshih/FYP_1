@@ -110,12 +110,12 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
         {
             let todayPercentage = eachDayPercentage[0]
             todayCount = nutriCalculation!.getTodayEachElementData()
-            balanceLabel.text = "\(todayPercentage)% " + "Balance"
-            grainLabel.text = "\(todayCount[0]) / \(Standard[0]) " + "Grain"
-            VegetableLabel.text = "\(todayCount[1]) / \(Standard[1]) " + "Vegetable"
-            FruitLabel.text = "\(todayCount[2]) / \(Standard[3]) " + "Fruit"
-            DairyLabel.text = "\(todayCount[3]) / \(Standard[4]) " + "Dairy"
-            ProteinLabel.text = "\(todayCount[4]) / \(Standard[2]) " + "Protein"
+            balanceLabel.text = "\(todayPercentage)% " + "Balance".localized()
+            grainLabel.text = "\(todayCount[0]) / \(Standard[0]) " + "Grain".localized()
+            VegetableLabel.text = "\(todayCount[1]) / \(Standard[1]) " + "Vegetable".localized()
+            FruitLabel.text = "\(todayCount[2]) / \(Standard[3]) " + "Fruit".localized()
+            DairyLabel.text = "\(todayCount[3]) / \(Standard[4]) " + "Dairy".localized()
+            ProteinLabel.text = "\(todayCount[4]) / \(Standard[2]) " + "Protein".localized()
             
             if todayPercentage < 20.0
             {
@@ -137,12 +137,12 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             
         }else
         {
-            balanceLabel.text = "No Entry Yet!"
-            grainLabel.text = "0 / \(Standard[0]) " + "Grain"
-            VegetableLabel.text = "0 / \(Standard[1]) " + "Vegetable"
-            FruitLabel.text = "0 / \(Standard[3]) " + "Fruit"
-            DairyLabel.text = "0 / \(Standard[4]) " + "Dairy"
-            ProteinLabel.text = "0 / \(Standard[2]) " + "Protein"
+            balanceLabel.text = "No Entry Yet!".localized()
+            grainLabel.text = "0 / \(Standard[0]) " + "Grain".localized()
+            VegetableLabel.text = "0 / \(Standard[1]) " + "Vegetable".localized()
+            FruitLabel.text = "0 / \(Standard[3]) " + "Fruit".localized()
+            DairyLabel.text = "0 / \(Standard[4]) " + "Dairy".localized()
+            ProteinLabel.text = "0 / \(Standard[2]) " + "Protein".localized()
             emotionFace.image = #imageLiteral(resourceName: "Face_Sleep")
         }
     }
@@ -155,7 +155,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             performSegue(withIdentifier: "diarySegue", sender: nil)
         }else
         {
-            SCLAlertMessage(title: "Oops", message: "You don't have any records today").showMessage()
+            SCLAlertMessage(title: "Oops".localized(), message: "You don't have any records today".localized()).showMessage()
         }
     }
     

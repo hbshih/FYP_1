@@ -100,7 +100,7 @@ class DashboardViewController: UIViewController {
     
     func setUpSlider(value: Double)
     {
-        var sliderDeterminer = circularSliderDeterminer(value: value)
+        var sliderDeterminer = circularSliderDeterminer(value: value, count: 2)
         let slider = circularProgress!
         slider.set(colors: sliderDeterminer.getSliderColour())
         slider.trackColor = sliderDeterminer.getSliderTrackColour()

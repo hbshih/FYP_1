@@ -124,7 +124,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         // 生成刪除按鈕
-        let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler: {(action, indexPath) -> Void in
+        let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete".localized(), handler: {(action, indexPath) -> Void in
             // Accesing Core Data
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -204,10 +204,8 @@ class DiaryTableViewController: UITableViewController {
         deleteAction.backgroundColor = UIColor.red
         
         // 生成分享按鈕
-        let shareAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Edit", handler: {(action, indexPath) -> Void in
-            
-            print("Edit!")
-            
+        let shareAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Edit".localized(), handler: {(action, indexPath) -> Void in
+
             let n_Array = [self.grainList[indexPath.row + self.startShowing],self.vegetableList[indexPath.row + self.startShowing],
                            self.proteinList[indexPath.row + self.startShowing],self.fruitList[indexPath.row + self.startShowing],
                            self.dairyList[indexPath.row + self.startShowing]]
@@ -246,12 +244,12 @@ class DiaryTableViewController: UITableViewController {
         let popup = PopupDialog(viewController: editVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
         
         // Create first button
-        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+        let buttonOne = CancelButton(title: "CANCEL".localized(), height: 60) {
             // self.label.text = "You canceled the rating dialog"
         }
         
         // Create second button
-        let buttonTwo = DefaultButton(title: "OK", height: 60)
+        let buttonTwo = DefaultButton(title: "OK".localized(), height: 60)
         {
             if editVC.recordChanged
             {

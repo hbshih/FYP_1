@@ -587,12 +587,16 @@ class homepageViewController: UIViewController {
     func setSliderColor(valueP: Double, slider: KDCircularProgress)
     {
         var value = valueP
+        var sliderController: circularSliderDeterminer
         if slider != circularSlider
         {
             // The maximum percentage of each element is 20.0
             value *= 5
+            sliderController = circularSliderDeterminer.init(value: value, count: recordCount+1)// +1 to make it know that it's not the main circular slider
+        }else
+        {
+            sliderController = circularSliderDeterminer.init(value: value, count: recordCount)
         }
-        var sliderController = circularSliderDeterminer.init(value: value)
         value = sliderController.getSliderValue()
         slider.animate(toAngle: value, duration: 1.5, completion: nil)
         slider.set(colors: sliderController.getSliderColour())
@@ -722,7 +726,7 @@ extension homepageViewController: CoachMarksControllerDataSource {
         {
             switch(index) {
             case 0:
-                coachViews.bodyView.hintLabel.text = "Start to use the app by adding your recent food now! ".localized()
+                coachViews.bodyView.hintLabel.text = "Start to use the app by adding your recent food now!".localized()
                 coachViews.bodyView.nextLabel.text = "Start!".localized()
             default: break
             }
@@ -736,14 +740,13 @@ extension homepageViewController: CoachMarksControllerDataSource {
             switch(index) {
             case 0:
                 // coachViews.bodyView.hintLabel.text = "Check your indicator to know how balanced your overall diet was".localized()
-                coachViews.bodyView.hintLabel.text = "Good Start! Your diet balance is now \(Percentage)%! Your past 7 days diet balance will be shown here".localized()
+                coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("Good Start! Your diet balance is now %@! Your past 7 days diet balance will be shown here".localized(), comment: ""),"\(Percentage)")
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 1:
-                coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()
                 coachViews.bodyView.hintLabel.text = String.localizedStringWithFormat(NSLocalizedString("You still need to eat %@ grains, %@ vegetables, %@ fruits, %@ dairies and %@ proteins to get 100 percent today".localized(), comment: ""),"\(Standard[0] - todayCount[0])","\(Standard[1] - todayCount[1])","\(Standard[3] - todayCount[2])","\(Standard[4] - todayCount[3])","\(Standard[2] - todayCount[4])")
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 2:
-                coachViews.bodyView.hintLabel.text = "The face's emotion has 4 states, indicates Bad, Good, Happy, and Great. Tap on it for some surprise".localized()
+                coachViews.bodyView.hintLabel.text = "The face's emotion depends on your balance. Tap on it for some surprise".localized()
                 coachViews.bodyView.nextLabel.text = "Next".localized()
             case 3:
                 coachViews.bodyView.hintLabel.text = "Tap on each of the icons to find out more about that group!".localized()

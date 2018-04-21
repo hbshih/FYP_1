@@ -16,10 +16,12 @@ struct circularSliderDeterminer
     var sliderColor: UIColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
     var sliderTrackColor: UIColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
     var face: UIImage?
+    var count: Int?
     
-    init(value:Double)
+    init(value:Double, count: Int)
     {
         self.value = value
+        self.count = count
         setValueAndColourDeterminer()
     }
     
@@ -41,9 +43,18 @@ struct circularSliderDeterminer
         let value = self.value!
         if value > 0.0 && value <= 20.0
         {
-            sliderColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
-            sliderTrackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
-            face = #imageLiteral(resourceName: "Face_Red")
+            if count == 1
+            {
+                sliderColor = UIColor(red:248/255, green:123/255, blue:28/255, alpha:1.0)
+                sliderTrackColor = UIColor(red:248/255, green:123/255, blue:28/255, alpha:0.2)
+                face = #imageLiteral(resourceName: "Face_JustStarted")
+            }
+            else
+            {
+                sliderColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0)
+                sliderTrackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
+                face = #imageLiteral(resourceName: "Face_Red")
+            }
         }else if value > 20.0 && value <= 60.0 || value == 0
         {
             sliderColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0)
