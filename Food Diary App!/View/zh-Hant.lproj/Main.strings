@@ -147,7 +147,7 @@
 "PVz-H0-BWC.text" = "x1";
 
 /* Class = "UITextView"; text = "Please type in your feedback"; ObjectID = "R5U-WP-waS"; */
-"R5U-WP-waS.text" = "請輸入您的回饋訊息";
+"R5U-WP-waS.text" = "請輸入您的回饋訊息 (ps. 目前中文版正在強力加強中，如遇到任何錯誤請原諒工程師，我們馬上會更新！！)";
 
 /* Class = "UIButton"; normalTitle = "Today"; ObjectID = "RB8-Sx-zBY"; */
 "RB8-Sx-zBY.normalTitle" = "今天";

@@ -162,33 +162,29 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
-		B585E6F4207FF9D000137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B585E6F5207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		B585E6F6207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ChangeDateViewController.strings"; sourceTree = "<group>"; };
-		B585E6F7207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
-		B585E6F8207FF9D200137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
-		B585E6F9207FF9D300137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B585E6FA207FF9D300137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B58C2E31207D4D6400924D1C /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appsee.framework; path = ../../../Downloads/Appsee.framework; sourceTree = "<group>"; };
-		B594D145207F71CD000B56F2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B595F339205F110C0070124D /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeDateViewController.swift; path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog/ChangeDateViewController.swift"; sourceTree = "<group>"; };
 		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
-		B5965DFF2050B14B002A2648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
 		B59701552066A9E90044ED73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
-		B59701572066A9F50044ED73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
 		B59701582066AAB80044ED73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
 		B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPageViewController.swift; sourceTree = "<group>"; };
 		B5A8515F208A8EF60008422E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EditPopUpViewController.xib; sourceTree = "<group>"; };
-		B5A85164208A8EFE0008422E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/EditPopUpViewController.strings"; sourceTree = "<group>"; };
-		B5A85166208A8F050008422E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/EditPopUpViewController.strings"; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		B5B56930206176ED003158F8 /* calorieDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calorieDeterminer.swift; sourceTree = "<group>"; };
 		B5B569392061D3DA003158F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChangeDateViewController.xib; sourceTree = "<group>"; };
 		B5C32B0E208D080D00A8A871 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		B5C32B10208D319500A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B5C32B11208D319E00A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
+		B5C32B12208D31A300A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ChangeDateViewController.strings"; sourceTree = "<group>"; };
+		B5C32B13208D31AC00A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
+		B5C32B14208D31B400A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/EditPopUpViewController.strings"; sourceTree = "<group>"; };
+		B5C32B15208D31C500A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackViewController.swift; sourceTree = "<group>"; };
 		B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularSliderDeterminer.swift; sourceTree = "<group>"; };
@@ -198,7 +194,6 @@
 		B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		B5D187052065516400F884E8 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
-		B5D2E9D6208B3CF70026782E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ChangeDateViewController.strings"; sourceTree = "<group>"; };
 		B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPercentageCalculator.swift; sourceTree = "<group>"; };
 		B5D8A64F2061D575002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -208,7 +203,6 @@
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		B5DA2A802050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		B5DA2A842050A525003BCDB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B5DA2A862050A53B003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
 		B5ECA91E2048B16900E7F819 /* photoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoProcessor.swift; sourceTree = "<group>"; };
 		B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
@@ -900,8 +894,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B579353A1FE022DE00E663DB /* Base */,
-				B594D145207F71CD000B56F2 /* zh-Hant */,
-				B585E6F4207FF9D000137503 /* zh-Hans */,
+				B5C32B15208D31C500A8A871 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -920,8 +913,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5965DFC2050B120002A2648 /* Base */,
-				B5965DFF2050B14B002A2648 /* zh-Hant */,
-				B585E6F8207FF9D200137503 /* zh-Hans */,
+				B5C32B13208D31AC00A8A871 /* zh-Hant */,
 			);
 			name = SelectPlanViewController.xib;
 			sourceTree = "<group>";
@@ -930,9 +922,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B59701552066A9E90044ED73 /* en */,
-				B59701572066A9F50044ED73 /* zh-Hant */,
 				B59701582066AAB80044ED73 /* Base */,
-				B585E6F7207FF9D100137503 /* zh-Hans */,
+				B5C32B11208D319E00A8A871 /* zh-Hant */,
 			);
 			name = InstructionPopUpViewController.xib;
 			sourceTree = "<group>";
@@ -941,8 +932,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5A8515F208A8EF60008422E /* Base */,
-				B5A85164208A8EFE0008422E /* zh-Hant */,
-				B5A85166208A8F050008422E /* zh-Hans */,
+				B5C32B14208D31B400A8A871 /* zh-Hant */,
 			);
 			name = EditPopUpViewController.xib;
 			sourceTree = "<group>";
@@ -951,8 +941,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5B569392061D3DA003158F8 /* Base */,
-				B585E6F6207FF9D100137503 /* zh-Hans */,
-				B5D2E9D6208B3CF70026782E /* zh-Hant */,
+				B5C32B12208D31A300A8A871 /* zh-Hant */,
 			);
 			name = ChangeDateViewController.xib;
 			path = "../../../../../Downloads/PopupDialog-master 4/Example/PopupDialog";
@@ -972,9 +961,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5DA2A842050A525003BCDB1 /* en */,
-				B5DA2A862050A53B003BCDB1 /* zh-Hant */,
 				B5D8A64F2061D575002BE648 /* Base */,
-				B585E6F9207FF9D300137503 /* zh-Hans */,
+				B5C32B10208D319500A8A871 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -299,11 +299,12 @@ class DiaryTableViewController: UITableViewController {
                 update.setValue(newNutri[4], forKey: "n_Dairy")
                 
                 notes.insert(newNote, at: whoToUpdate)
-                grainList.insert(newNutri[0], at: whoToUpdate)
-                vegetableList.insert(newNutri[1], at: whoToUpdate)
-                proteinList.insert(newNutri[2], at: whoToUpdate)
-                fruitList.insert(newNutri[3], at: whoToUpdate)
-                dairyList.insert(newNutri[4], at: whoToUpdate)
+                notes[whoToUpdate] = newNote
+                grainList[whoToUpdate] = newNutri[0]
+                vegetableList[whoToUpdate] = newNutri[1]
+                proteinList[whoToUpdate] = newNutri[2]
+                fruitList[whoToUpdate] = newNutri[3]
+                dairyList[whoToUpdate] = newNutri[4]
                 
                 if hasNewImage
                 {

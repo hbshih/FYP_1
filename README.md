@@ -1,3 +1,8 @@
+# Submitted files
+* Full code for the project
+* Assets (Images) used in this project
+* Executable XCWorkspace Xcode File
+
 # Food Diary App - FoodyLife
 ‘FoodyLife’ is an app that helps users track their daily diet by allowing them to keep their own food diary. The app shows neither calories nor numbers; instead, users have only to take a picture, enter their diet information, then they are able their overall diet balance. It is very simple and highly effective. Users can explore their eating habits visually, improving self-consciousness about eating habits.  
 
@@ -8,9 +13,10 @@
 * iOS 10.0 or above
 
 **Installation**
-1. Download the Xcode 9 release.
+1. Download the Xcode 9 recent release.
 2. Clone this repository.
-3. Run make test-all to build and run tests on all platforms.
+3. Open Food Diary App!.xcworkspace
+4. Run the program in Xcode
 
 **In the App Store**
 Say what the step will be

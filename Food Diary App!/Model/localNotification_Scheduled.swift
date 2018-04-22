@@ -15,7 +15,7 @@ struct localNotification_Scheduled
     func scheduleTomorrowNoUseNotification()
     {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.body = "No eating today, update now?"
+        notificationContent.body = "No eating today, update now?".localized()
         AudioServicesPlaySystemSound(4095)
         
         let calendar = Calendar(identifier: .gregorian)
@@ -39,8 +39,10 @@ struct localNotification_Scheduled
     func scheduleTomorrowHelpBalanceNotification(MinConsume: String)
     {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.body = "I would like to advise you to eat more \(MinConsume) today to make your diet balance"
+        notificationContent.body = String.localizedStringWithFormat(NSLocalizedString("I would like to advise you to eat more %@ today to make your diet balance".localized(), comment: ""),"\(MinConsume)")
         AudioServicesPlaySystemSound(4095)
+        
+        
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: .current, from: Date())

@@ -40,9 +40,6 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         dates = healthData.getTrimmedDate()
         blueLinePlotData = healthData.getDayBalancePercentage()
         personType(allElementPercentage: healthData.getElementPercentage())
-        // Display the most recent data first
-        dates = dates?.reversed()
-        blueLinePlotData = blueLinePlotData?.reversed()
         // Create graph
         graphView = createMultiPlotGraph(self.graphField.frame)
         graphView.backgroundFillColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)

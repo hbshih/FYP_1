@@ -253,7 +253,7 @@ class DayViewDiaryViewController: UIViewController, UITableViewDelegate,UITableV
             }
             
             cell?.dateAndTime.text = "\(dateSaved[indexPath.row + todayHasRecord])"
-            cell?.balance.text = "\(eachDayPercentage[indexPath.row + todayHasRecord])% " + "Balance"
+            cell?.balance.text = "\(eachDayPercentage[indexPath.row + todayHasRecord])% " + "Balance".localized()
             cell?.grainInfo.text = "\(grainList[indexPath.row + todayHasRecord]) / \(Standard[0])"
             cell?.vegetableInfo.text = "\(vegetableList[indexPath.row + todayHasRecord]) / \(Standard[1])"
             cell?.proteinInfo.text = "\(proteinList[indexPath.row + todayHasRecord]) / \(Standard[2])"

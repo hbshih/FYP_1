@@ -15,19 +15,22 @@ struct messageGenerator {
     var Max: Double?
     var Min: Double?
     var nList: [Double] = []
-    let locale = NSLocale.current.identifier
+    let locale = NSLocale.current.languageCode
     
     func setGreetingMessages() -> String
     {
         var Greetings: [String] = []
         
-        if (locale == "zh-Hant")
+        if (locale == "zh")
         {
             Greetings = ["嗨","您好","吃飯了嗎","最近還好嗎？","早安","汪汪"]
-        }else if (locale == "zh-Hans")
-        {
-            Greetings = ["嗨","您好","吃饭了吗","最近还好吗？","早安","汪汪"]
-        }else
+        }
+            else if (locale == "zh-Hans")
+             {
+             Greetings = ["嗨","您好","吃饭了吗","最近还好吗？","早安","汪汪"]
+             }
+ 
+        else
         {
             Greetings = ["Hi", "Nice to see you again", "Hey man", "Hey", "How's it going?", "What's up?","What's going on?","How's everything","How are things?","How's life","How's your day?", "Good to see you","Yo!","Are you OK","Howdy!","WHAZZUP!","Good day mate","Hiya!"]
         }
@@ -62,7 +65,7 @@ struct messageGenerator {
         var lackMessage: [String] = []
         if Min! < 5.0
         {
-            if (locale == "zh-Hant")
+            if (locale == "zh")
             {
                 lackMessage =
                     [
@@ -92,10 +95,10 @@ struct messageGenerator {
             }
         }else
         {
-            if (locale == "zh-Hant")
+            if (locale == "zh")
             {
                 lackMessage =
-                [
+                    [
                         "你最近的飲食狀況不錯喔",
                         "每個人都有自己的飲食習慣，重點是吃之前想想會不會造成你身體的負擔",
                         "記得要多做運動！一週大約兩三小時 :-)"
@@ -110,11 +113,11 @@ struct messageGenerator {
                         "记得要多做运动！一周大约两三小时 :-)"
                 ]
             }
-            
+                
             else
             {
                 lackMessage =
-                [
+                    [
                         "You are doing a great job balancing your diet",
                         "There is more than one way to eat healthfully and everyone has their own eating style.",
                         "Be physically active at least 2 1/2 hours per week."
@@ -132,14 +135,14 @@ struct messageGenerator {
     func healthQuotes() -> [String]
     {
         var healthQuote : [String] = []
-        if (locale == "zh-Hant")
+        if (locale == "zh")
         {
             healthQuote = ["均衡飲食是維持健康的要素",
-                          "以穀物類為主，並多吃蔬菜及水果，進食適量的肉、魚、蛋和奶類及其代替品，減少鹽、油、糖分",
-                          "不同食物有不同的營養價值，因此身體不能從單一食物中得到全部所需營養素",
-                          "進食太多或太少都不利於身體健康，我們的身體每天需要一定分量的營養素來維持最佳狀態",
-                          "少吃高脂肪、高膽固醇的食品",
-                          "飲食定時和定量，每日三餐不可少。",
+                           "以穀物類為主，並多吃蔬菜及水果，進食適量的肉、魚、蛋和奶類及其代替品，減少鹽、油、糖分",
+                           "不同食物有不同的營養價值，因此身體不能從單一食物中得到全部所需營養素",
+                           "進食太多或太少都不利於身體健康，我們的身體每天需要一定分量的營養素來維持最佳狀態",
+                           "少吃高脂肪、高膽固醇的食品",
+                           "飲食定時和定量，每日三餐不可少。",
             ]
         }
         else if (locale == "zh-Hans")
@@ -166,7 +169,7 @@ struct messageGenerator {
                            "Make half your grains whole grains. Grains include whole grains and refined, enriched grains. Choose whole grains more often.",
                            "Vary your protein routine. Protein foods include both animal and plant sources. Choose a variety of lean protein foods from both plant and animal sources.",
                            "Move to low-fat or fat-free milk or yogurt. Dairy includes milk, yogurt, cheese, and calcium-fortified soy beverages (soymilk)."
-                           ]
+            ]
         }
         let diceRoll:Int = Int(arc4random_uniform(UInt32(healthQuote.count - 1)))
         var diceRoll2:Int = Int(arc4random_uniform(UInt32(healthQuote.count - 1)))
@@ -233,7 +236,7 @@ struct messageGenerator {
         }
         
         let zh_message =
-        [
+            [
                 "你是不是覺得戳我的臉很好玩",
                 "不要再戳了喔^^",
                 "不",
@@ -266,7 +269,7 @@ struct messageGenerator {
                 "工程师在崩溃中",
                 "我也要崩溃了"
         ]
-        if (locale == "zh-Hant")
+        if (locale == "zh")
         {
             return zh_message
         }

@@ -83,7 +83,7 @@
 "Fruit Dashboard" = "水果相關";
 "Dairy Dashboard" = "乳品相關";
 "Protein Dashboard" = "豆魚肉蛋相關";
-"Please type in your feedback" = "請輸入您的建議";
+"Please type in your feedback" = "請輸入您的建議(ps. 目前中文版正在強力加強中，如遇到任何錯誤請原諒工程師，我們馬上會更新！！)";
 "Thank you" = "謝謝";
 "We have received your feedback, we will contact you if needed!" = "我們已經收到您的回饋，如有需要會再聯絡您";
 "Please recheck your email or check if you have type in correct message." = "請重新檢查您的信箱是否有誤或是否有輸入建議內容";
@@ -129,3 +129,16 @@
 "You don't have any photo yet" = "你還沒有加入任何照片";
 "Tap here to help with identifying food groups and counting their servings!" = "如果不知道怎麼算份量可以點選這裡觀看提示";
 "FOODY FACE" = "吃貨臉";
+"Balance" = "均衡";
+"You have hit your target! Well done on eating %@ today!" = "做的好！今天在%@表現得很好！";
+"You have achieve your goal! Good work on %@ today" = "你超棒！%@攝取量已經達成目標！";
+"Seems like you have consumed too much %@ today" = "你今天好像攝取太多%@了";
+"Remember to keep your self balance, you have eaten too much %@ today" = "記得要保持飲食均衡，你今天有點吃太多%@了喔！";
+"grains" = "全穀雜糧類";
+"vegetables" = "蔬菜類";
+"proteins" = "豆魚肉蛋類";
+"dairies" = "乳品類";
+"fruits" = "水果類";
+"No eating today, update now?" = "今天有吃飯嗎？快更新日記吧！";
+"I would like to advise you to eat more %@ today to make your diet balance" = "建議你今天多吃點 %@ 保持飲食均衡喔！";
+"Great!" = "讚讚讚";

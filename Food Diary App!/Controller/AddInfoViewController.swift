@@ -64,22 +64,23 @@ class AddInfoViewController: UIViewController,UITextViewDelegate {
     {
         super.viewDidLoad()
         
-        let locale = NSLocale.current.identifier
-        if (locale == "zh-Hant")
+        let locale = NSLocale.current.languageCode
+        if (locale == "zh")
         {
             vIncreaseButtonn.setImage(#imageLiteral(resourceName: "zh_Icon_VegetableBlank"), for: .normal)
             gIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_GrainBlank"), for: .normal)
             pIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_ProteinBlank"), for: .normal)
             fIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_FruitBlank"), for: .normal)
             dIncreaseButton.setImage(#imageLiteral(resourceName: "zh_Icon_DairyBlank"), for: .normal)
-        }else if (locale == "zh-Hans")
+        }
+        /*else if (locale == "zh-Hans")
         {
             vIncreaseButtonn.setImage(#imageLiteral(resourceName: "zh_hans_Icon_VegetableBlank"), for: .normal)
             gIncreaseButton.setImage(#imageLiteral(resourceName: "zh_hans_Icon_GrainBlank"), for: .normal)
             pIncreaseButton.setImage(#imageLiteral(resourceName: "zh_hans_Icon_ProteinBlank"), for: .normal)
             fIncreaseButton.setImage(#imageLiteral(resourceName: "zh_hans_Icon_FruitBlank"), for: .normal)
             dIncreaseButton.setImage(#imageLiteral(resourceName: "zh_hans_Icon_DairyBlank"), for: .normal)
-        }
+        }*/
         
         LaunchCamera = true
         pickerdismiss = false

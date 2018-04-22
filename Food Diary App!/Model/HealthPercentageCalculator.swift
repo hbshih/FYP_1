@@ -324,15 +324,15 @@ struct HealthPercentageCalculator
             switch minValue
             {
             case listOfAllElementsPercentage![0]:
-                minConsumeElement = "vegetables"
+                minConsumeElement = "vegetables".localized()
             case listOfAllElementsPercentage![1]:
-                minConsumeElement = "grains"
+                minConsumeElement = "grains".localized()
             case listOfAllElementsPercentage![2]:
-                minConsumeElement = "proteins"
+                minConsumeElement = "proteins".localized()
             case listOfAllElementsPercentage![3]:
-                minConsumeElement = "dairies"
+                minConsumeElement = "dairies".localized()
             case listOfAllElementsPercentage![4]:
-                minConsumeElement = "fruits"
+                minConsumeElement = "fruits".localized()
             default:
                 minConsumeElement = ""
             }

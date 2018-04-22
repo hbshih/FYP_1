@@ -457,7 +457,7 @@ class homepageViewController: UIViewController {
     // Generate notification (If needed)
     private func notifyStatus(todayCount:[Double],Standard:[Double],percentage: Double)
     {
-        var groupList = ["grains", "vegetables","proteins","fruits","dairies"]
+        var groupList = ["grains".localized(), "vegetables".localized(),"proteins".localized(),"fruits".localized(),"dairies".localized()]
         var hasRightPortion = [false,false,false,false,false]
         var presentRightPortionMessage = false
         var hasOverConsume = [false,false,false,false,false]
@@ -544,12 +544,13 @@ class homepageViewController: UIViewController {
         }
         
         let rightPortionMessage =
-            ["You have hit your target! Well done on eating \(hasPortionMessage) today!", "You have achieve your goal! Good work on \(hasPortionMessage) today"]
-        
+            [String.localizedStringWithFormat(NSLocalizedString("You have hit your target! Well done on eating %@ today!".localized(), comment: ""),"\(hasPortionMessage)")
+                ,String.localizedStringWithFormat(NSLocalizedString("You have achieve your goal! Good work on %@ today".localized(), comment: ""),"\(hasPortionMessage)")]
+ 
         let overConsumeMessage =
-            ["Seems like you have consumed too much \(hasOverMessage) today",
-                "Remember to keep your self balance, you have eaten too much \(hasOverMessage) today"]
-        
+            [String.localizedStringWithFormat(NSLocalizedString("Seems like you have consumed too much %@ today".localized(), comment: ""),"\(hasOverMessage)"),
+             String.localizedStringWithFormat(NSLocalizedString("Remember to keep your self balance, you have eaten too much %@ today".localized(), comment: ""),"\(hasOverMessage)")]
+
         var pastMessages = ["",""]
         if let messageFromDefault = defaults.getHasNotified() as? [String]
         {
@@ -561,13 +562,13 @@ class homepageViewController: UIViewController {
             if presentOverConsumeMessage && pastMessages[1] != hasOverMessage
             {
                 let diceRoll:Int = Int(arc4random_uniform(UInt32(overConsumeMessage.count - 1)))
-                localNotification(title: "Oops", message: overConsumeMessage[diceRoll]).push()
+                localNotification(title: "Oops".localized(), message: overConsumeMessage[diceRoll]).push()
             }
             
             if presentRightPortionMessage && pastMessages[0] != hasPortionMessage
             {
                 let diceRoll:Int = Int(arc4random_uniform(UInt32(rightPortionMessage.count - 1)))
-                localNotification(title: "Great!", message: rightPortionMessage[diceRoll]).push()
+                localNotification(title: "Great!".localized(), message: rightPortionMessage[diceRoll]).push()
             }
             defaults.setHasNotified(value: [hasPortionMessage,hasOverMessage])
         }
