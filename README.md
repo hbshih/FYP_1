@@ -18,16 +18,13 @@
 3. Open Food Diary App!.xcworkspace
 4. Run the program in Xcode
 
-**In the App Store**
-Say what the step will be
-
 
 # Meta
 * Queen Mary University of London
 * BSc Computer Science and Multimedia
 * Final Year Project 2017/2018
 * Hau-Ben Benjamin Shih - hbshih@gmail.com
-* Distributed under the MIT license. See Licennse for more information
+* Distributed under the MIT license. See License for more information
 
 # Contribute
   **Designs Related**
