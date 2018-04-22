@@ -113,7 +113,7 @@
 "Check your daily informations right here! Tap on it to check daily activities" = "在这里你可以查看你的每日记录，点点看我看会发生什么事";
 "You don't have any records today" = "今天没有任何记录";
 "No Entry Yet!" = "还没有纪录！";
-"Balance" = "平均";
+"Balance" = "均衡";
 "Vegetable" = "蔬菜";
 "Protein" = "豆鱼肉蛋";
 "Grain" = "全谷杂粮";
@@ -126,3 +126,6 @@
 "OK" = "确定";
 "Good Start! Your diet balance today is now %@! Your past 7 days diet balance will be shown here" = "好的开始！您今天的饮食均衡已经达到%@！这里记录你过去七天的均衡状况";
 "You don't have any photo yet" = "你还没有加入任何照片";
+"Tap here to help with identifying food groups and counting their servings!" = "如果不知道怎么算份量可以点选这里观看提示";
+"FOODY FACE" = "吃货脸";
+"Done" = "好";

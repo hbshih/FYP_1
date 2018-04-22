@@ -113,7 +113,7 @@
 "Check your daily informations right here! Tap on it to check daily activities" = "在這裡你可以查看你的每日記錄，點點看我看會發生什麼事";
 "You don't have any records today" = "今天沒有任何記錄";
 "No Entry Yet!" = "還沒有紀錄！";
-"Balance" = "平均";
+"Balance" = "均衡";
 "Vegetable" = "蔬菜";
 "Protein" = "豆魚肉蛋";
 "Grain" = "全穀雜糧";
@@ -123,7 +123,9 @@
 "Delete" = "刪除";
 "Edit" = "編輯";
 "CANCEL" = "取消";
+"Done" = "好";
 "OK" = "確定";
 "Good Start! Your diet balance today is now %@! Your past 7 days diet balance will be shown here" = "好的開始！您今天的飲食均衡已經達到%@！這裡記錄你過去七天的均衡狀況";
 "You don't have any photo yet" = "你還沒有加入任何照片";
 "Tap here to help with identifying food groups and counting their servings!" = "如果不知道怎麼算份量可以點選這裡觀看提示";
+"FOODY FACE" = "吃貨臉";

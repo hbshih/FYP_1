@@ -630,7 +630,7 @@ class homepageViewController: UIViewController {
             let alert = SCLAlertView(appearance: appearance)
             let icon = UIImage(named:"Alert_Yellow.png")
             let color = UIColor.orange
-            _ = alert.showCustom("FOODY FACE", subTitle: messageToUsers[messageCounter % messageToUsers.count], color: color, icon: icon!)
+            _ = alert.showCustom("FOODY FACE".localized(), subTitle: messageToUsers[messageCounter % messageToUsers.count], color: color, icon: icon!)
             messageCounter += 1
         }
         
