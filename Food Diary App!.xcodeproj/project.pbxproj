@@ -188,6 +188,7 @@
 		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		B5B56930206176ED003158F8 /* calorieDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calorieDeterminer.swift; sourceTree = "<group>"; };
 		B5B569392061D3DA003158F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChangeDateViewController.xib; sourceTree = "<group>"; };
+		B5C32B0E208D080D00A8A871 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackViewController.swift; sourceTree = "<group>"; };
 		B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularSliderDeterminer.swift; sourceTree = "<group>"; };
@@ -277,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F2BAA520897C0E0092B0D8 /* README.md */,
+				B5C32B0E208D080D00A8A871 /* LICENSE.md */,
 				B57935341FE022DE00E663DB /* Food Diary App! */,
 				B57935491FE022DE00E663DB /* Food Diary App!Tests */,
 				B57935541FE022DE00E663DB /* Food Diary App!UITests */,
