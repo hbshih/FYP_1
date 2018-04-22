@@ -17,75 +17,75 @@ Say what the step will be
 
 
 # Meta
-Queen Mary University of London
-BSc Computer Science and Multimedia
-Final Year Project 2017/2018
-Hau-Ben Benjamin Shih - hbshih@gmail.com
-Distributed under the MIT license. See Licennse for more information
+*Queen Mary University of London
+*BSc Computer Science and Multimedia
+*Final Year Project 2017/2018
+*Hau-Ben Benjamin Shih - hbshih@gmail.com
+*Distributed under the MIT license. See Licennse for more information
 
 # Contribute
   **Designs Related**
-Logo inspired by Shannon Hargis https://dribbble.com/shannonhargis 
+*Logo inspired by Shannon Hargis https://dribbble.com/shannonhargis 
 
-On boarding page 1, image credits to Shannon Hargis https://dribbble.com/shannonhargis 
+*On boarding page 1, image credits to Shannon Hargis https://dribbble.com/shannonhargis 
 
-On boarding page 4, image credits to Mohit Sharma https://dribbble.com/thearteesta
+*On boarding page 4, image credits to Mohit Sharma https://dribbble.com/thearteesta
 
 ————————
 
 **Frameworks Related**
-IBAnimatable 
+*IBAnimatable 
 MIT License
 https://github.com/IBAnimatable/IBAnimatable 
 Copyright (c) 2015 IBAnimatable  
 
-SKPhotoBrowser
+*SKPhotoBrowser
 MIT License
 https://github.com/suzuki-0000/SKPhotoBrowser 
 Copyright (c) 2015 suzuki_keishi
 
-SCLAlertView
+*SCLAlertView
 MIT License
 https://github.com/vikmeup/SCLAlertView-Swift
 
-IQKeyboardManagerSwift', ‘5.0.0'
+*IQKeyboardManagerSwift', ‘5.0.0'
 MIT License
 https://github.com/hackiftekhar/IQKeyboardManager
 Copyright (c) 2013-2017 Iftekhar Qurashi
 
-ScrollableGraphView
+*ScrollableGraphView
 MIT License
 https://github.com/philackm/ScrollableGraphView
 Copyright (c) 2016 Phillip
 
-SwiftyOnboard
+*SwiftyOnboard
 MIT License
 https://github.com/juanpablofernandez/SwiftyOnboard
 Copyright (c) 2017 Juan Pablo Fernandez
 
-PopupDialog
+*PopupDialog
 MIT License
 https://github.com/Orderella/PopupDialog
 Copyright (c) 2016 Orderella Ltd. (http://orderella.co.uk)
 
-Sky floating
+*Sky floating
 Apache License
 https://github.com/Skyscanner/SkyFloatingLabelTextField
 Copyright {2004} {Skyscanner}
 
-Instructions
+*Instructions
 The MIT License (MIT)
 Copyright (c) 2015, 2016 Frédéric Maquin <fred@ephread.com>
 and other contributors
 
-YPImagePicker
+*YPImagePicker
 The MIT License (MIT)
 Copyright (c) 2016 ytakzk
 
-Former
+*Former
 The MIT License (MIT)
 Copyright (c) 2015 ra1028
 
-FanMenu
+*FanMenu
 Copyright (c) 2016 exyte <info@exyte.com>
 
