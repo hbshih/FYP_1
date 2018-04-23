@@ -20,7 +20,8 @@
 
 **In App Store**
 
-* Check https://itunes.apple.com/us/app/foodylife/id1350599517?ls=1&mt=8 for app installation.
+* Check https://itunes.apple.com/us/app/foodylife/id1350599517?ls=1&mt=8 for app installation. 
+(May not be available - Subject to Apple's regulation)
 
 # Meta
 * Queen Mary University of London
