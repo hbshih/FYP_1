@@ -18,6 +18,9 @@
 3. Open Food Diary App!.xcworkspace
 4. Run the program in Xcode
 
+**In App Store**
+
+* Check https://itunes.apple.com/us/app/foodylife/id1350599517?ls=1&mt=8 for app installation.
 
 # Meta
 * Queen Mary University of London
